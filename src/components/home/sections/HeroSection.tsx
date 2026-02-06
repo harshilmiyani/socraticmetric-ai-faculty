@@ -24,12 +24,12 @@ export function HeroSection() {
 
   return (
     <section className="relative pt-24 pb-16 md:pt-36 md:pb-32 overflow-hidden">
-      {/* Animated Background Mesh Gradients */}
+      {/* Animated Background Mesh Gradients - Optimized with will-change-transform */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-300/30 rounded-full mix-blend-multiply filter blur-[128px] animate-[blob_7s_infinite]"></div>
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-purple-300/30 rounded-full mix-blend-multiply filter blur-[128px] animate-[blob_7s_infinite_2s]"></div>
-        <div className="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-pink-300/30 rounded-full mix-blend-multiply filter blur-[128px] animate-[blob_7s_infinite_4s]"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-100/20 rounded-full mix-blend-multiply filter blur-[96px] animate-pulse"></div>
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-300/30 rounded-full mix-blend-multiply filter blur-[128px] animate-[blob_7s_infinite] will-change-transform opacity-70"></div>
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-purple-300/30 rounded-full mix-blend-multiply filter blur-[128px] animate-[blob_7s_infinite_2s] will-change-transform opacity-70"></div>
+        <div className="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-pink-300/30 rounded-full mix-blend-multiply filter blur-[128px] animate-[blob_7s_infinite_4s] will-change-transform opacity-70"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-100/20 rounded-full mix-blend-multiply filter blur-[96px] animate-pulse will-change-opacity"></div>
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
