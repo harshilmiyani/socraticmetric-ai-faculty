@@ -5,6 +5,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { LoadingScreen } from "@/components/ui/LoadingScreen";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -27,6 +28,7 @@ export default function RootLayout({
         playfair.variable
       )}>
         {children}
+        <LoadingScreen />
         <ScrollToTop />
         <CookieConsent />
         
