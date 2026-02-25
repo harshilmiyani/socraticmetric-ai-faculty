@@ -4,6 +4,12 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
 
+  /* Custom Colors */
+  --color-navy-900: #0F2C4C;
+  --color-navy-800: #1a3b5c;
+  --color-orange-500: #FF6B35;
+  --color-orange-600: #e85d2a;
+
   @keyframes shimmer {
     from {
       transform: translateX(-100%);
@@ -47,6 +53,6 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#0F2C4C] to-[#FF6B35];
   }
 }

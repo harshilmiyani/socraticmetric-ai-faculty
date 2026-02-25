@@ -54,7 +54,7 @@ export function LoadingScreen() {
             initial={{ width: 0 }}
             animate={{ width: "200px" }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="mt-8 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full"
+            className="mt-8 h-1 bg-gradient-to-r from-[#FF6B35] to-[#e85d2a] rounded-full"
           />
         </motion.div>
       )}

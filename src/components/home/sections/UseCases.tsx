@@ -5,19 +5,19 @@ export function UseCases() {
   const cases = [
     {
       icon: GraduationCap,
-      colorClass: "bg-blue-100 text-blue-600",
+      colorClass: "bg-[#0F2C4C]/10 text-[#0F2C4C]",
       title: "Education",
       desc: "Ensure academic integrity in humanities and business courses where essay mills are prevalent. Perfect for high-stakes assessments."
     },
     {
       icon: Building,
-      colorClass: "bg-purple-100 text-purple-600",
+      colorClass: "bg-slate-100 text-slate-600",
       title: "Government",
       desc: "Secure, on-premise solutions for public sector training and language verification. Meets strict compliance and data sovereignty standards."
     },
     {
       icon: Users,
-      colorClass: "bg-indigo-100 text-indigo-600",
+      colorClass: "bg-orange-50 text-[#FF6B35]",
       title: "Businesses",
       desc: "Verify candidates actually have the skills they claim. Streamline soft-skills training and compliance checks for remote teams."
     }

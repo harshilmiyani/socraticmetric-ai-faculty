@@ -128,7 +128,7 @@ export function Navbar() {
         
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden p-2 text-slate-600 hover:text-indigo-600"
+          className="md:hidden p-2 text-slate-600 hover:text-[#FF6B35]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X /> : <Menu />}
@@ -143,8 +143,8 @@ export function Navbar() {
                   className={cn(
                     "flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-full transition-colors",
                     hoveredNav === item.label 
-                      ? "text-indigo-600 bg-indigo-50" 
-                      : "text-slate-600 hover:text-indigo-600 hover:bg-slate-50"
+                      ? "text-[#FF6B35] bg-orange-50" 
+                      : "text-slate-600 hover:text-[#FF6B35] hover:bg-orange-50"
                   )}
                   onMouseEnter={() => setHoveredNav(item.label)}
                   onClick={() => setHoveredNav(hoveredNav === item.label ? null : item.label)}
@@ -155,7 +155,7 @@ export function Navbar() {
               ) : (
                 <Link 
                   href={item.href || "#"}
-                  className="block px-4 py-2 text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded-full transition-colors"
+                  className="block px-4 py-2 text-sm font-medium text-slate-600 hover:text-[#FF6B35] hover:bg-orange-50 rounded-full transition-colors"
                   onMouseEnter={() => setHoveredNav(null)}
                 >
                   {item.label}
@@ -188,13 +188,13 @@ export function Navbar() {
                                 <li key={subIdx}>
                                   <Link 
                                     href={subItem.href}
-                                    className="flex items-start gap-3 group/item p-2 rounded-lg hover:bg-slate-50 transition-colors"
+                                    className="flex items-start gap-3 group/item p-2 rounded-lg hover:bg-orange-50 transition-colors"
                                   >
-                                    <div className="mt-0.5 p-1.5 rounded-md bg-indigo-50 text-indigo-600 group-hover/item:bg-indigo-600 group-hover/item:text-white transition-colors">
+                                    <div className="mt-0.5 p-1.5 rounded-md bg-orange-50 text-[#FF6B35] group-hover/item:bg-[#FF6B35] group-hover/item:text-white transition-colors">
                                       <subItem.icon className="h-4 w-4" />
                                     </div>
                                     <div>
-                                      <p className="text-sm font-semibold text-slate-900 group-hover/item:text-indigo-700">
+                                      <p className="text-sm font-semibold text-[#0F2C4C] group-hover/item:text-[#FF6B35]">
                                         {subItem.title}
                                       </p>
                                       <p className="text-xs text-slate-500 line-clamp-1">
@@ -219,7 +219,7 @@ export function Navbar() {
         {/* CTA Button */}
         <div className="hidden md:flex items-center pl-8">
           <Link href="#contact">
-            <Button size="sm" className="group relative overflow-hidden rounded-full px-6 h-10 bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-200 hover:shadow-lg hover:shadow-indigo-500/30 hover:scale-105 transition-all duration-300 border border-indigo-500/20">
+            <Button size="sm" className="group relative overflow-hidden rounded-full px-6 h-10 bg-[#FF6B35] text-white shadow-md shadow-orange-200 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-105 transition-all duration-300 border border-orange-500/20">
               <span className="relative z-10 flex items-center gap-2">
                 Book Demo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
@@ -258,7 +258,7 @@ export function Navbar() {
                                   <Link 
                                     href={subItem.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="flex items-center gap-3 text-slate-600 hover:text-indigo-600"
+                                    className="flex items-center gap-3 text-slate-600 hover:text-[#FF6B35]"
                                   >
                                     <subItem.icon className="h-4 w-4" />
                                     <span>{subItem.title}</span>

@@ -18,7 +18,7 @@ export function HowItWorks() {
         
         <div className="grid md:grid-cols-4 gap-8 relative">
           {/* Connecting line for desktop */}
-          <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-indigo-200 to-transparent -z-10"></div>
+          <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#FF6B35]/30 to-transparent -z-10"></div>
           
           {[
             {
@@ -51,9 +51,9 @@ export function HowItWorks() {
               className="relative flex flex-col items-center text-center group"
             >
               <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-2xl bg-white shadow-xl shadow-slate-200/50 border border-slate-100 group-hover:-translate-y-2 transition-transform duration-300">
-                <step.icon className="h-10 w-10 text-indigo-600 group-hover:scale-110 transition-transform duration-300" />
+                <step.icon className="h-10 w-10 text-[#0F2C4C] group-hover:scale-110 group-hover:text-[#FF6B35] transition-all duration-300" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+              <h3 className="text-xl font-bold text-[#0F2C4C] mb-3">{step.title}</h3>
               <p className="text-slate-600 text-sm leading-relaxed px-4">{step.desc}</p>
             </motion.div>
           ))}
