@@ -15,11 +15,11 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1 space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <Image 
-                src="/img/logo.png" 
+                src="/img/logos/sm_nav_logo.svg" 
                 alt="SocraticMetric" 
-                width={150} 
-                height={50} 
-                className="w-auto h-8"
+                width={180} 
+                height={60} 
+                className="w-auto h-10"
               />
             </Link>
             <p className="text-sm text-slate-500 font-medium">

@@ -44,11 +44,11 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group mr-8">
           <Image 
-            src="/img/logo.png" 
+            src="/img/logos/sm_nav_logo.svg" 
             alt="SocraticMetric" 
-            width={180} 
-            height={60} 
-            className="w-auto h-8 md:h-10 transition-all duration-300"
+            width={220} 
+            height={70} 
+            className="w-auto h-10 md:h-12 transition-all duration-300"
             priority
           />
         </Link>
