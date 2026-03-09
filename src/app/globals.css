@@ -45,6 +45,17 @@
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
+  
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-72%, -62%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%,-40%) scale(1);
+    }
+  }
 }
 
 @layer utilities {
@@ -54,5 +65,24 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#0F2C4C] to-[#FF6B35];
+  }
+  
+  .bg-dot-black\/\[0\.2\] {
+    background-image: radial-gradient(circle at 1px 1px, rgb(0 0 0 / 0.2) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+  
+  .bg-dot-thick-neutral-300 {
+    background-image: radial-gradient(circle at 1px 1px, rgb(212 212 212) 2px, transparent 0);
+    background-size: 32px 32px;
+  }
+  
+  .bg-dot-thick-orange-500 {
+    background-image: radial-gradient(circle at 1px 1px, rgb(249 115 22) 2px, transparent 0);
+    background-size: 32px 32px;
+  }
+  
+  .animate-spotlight {
+    animation: spotlight 2s ease .75s 1 forwards;
   }
 }

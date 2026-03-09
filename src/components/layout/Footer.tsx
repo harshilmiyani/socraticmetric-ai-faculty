@@ -1,69 +1,75 @@
+"use client";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-[#1a3b5c] bg-[#0F2C4C] pt-20 pb-10">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid gap-12 md:grid-cols-4 lg:gap-16">
-          <div className="space-y-6">
-            <Link href="/" className="flex items-center">
+    <footer className="relative bg-white w-full overflow-hidden border-t border-slate-100 pt-20 pb-10">
+        <div className="absolute inset-0 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
+          <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div>
+        </div>
+      <div className="relative z-10 container mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
+          <div className="col-span-2 md:col-span-1 space-y-4">
+            <Link href="/" className="flex items-center gap-2">
               <Image 
-                src="/img/logo-light-video.png" 
+                src="/img/logo.png" 
                 alt="SocraticMetric" 
-                width={200} 
-                height={65} 
-                className="h-14 w-auto brightness-0 invert"
+                width={150} 
+                height={50} 
+                className="w-auto h-8"
               />
             </Link>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              Restoring authenticity to assessment. Our platform ensures true understanding through real-time oral defense and AI-powered feedback.
+            <p className="text-sm text-slate-500 font-medium">
+              AI-Era Cognitive Verification
             </p>
-            <div className="flex gap-4">
-              <Link href="#" className="text-slate-400 hover:text-[#FF6B35] transition-colors"><Twitter className="h-5 w-5" /></Link>
-              <Link href="#" className="text-slate-400 hover:text-[#FF6B35] transition-colors"><Linkedin className="h-5 w-5" /></Link>
-              <Link href="#" className="text-slate-400 hover:text-[#FF6B35] transition-colors"><Github className="h-5 w-5" /></Link>
-            </div>
           </div>
           
           <div>
-            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">Product</h3>
-            <ul className="space-y-4 text-sm text-slate-300">
-              <li><Link href="#features" className="hover:text-[#FF6B35] transition-colors">Features</Link></li>
-              <li><Link href="#how-it-works" className="hover:text-[#FF6B35] transition-colors">How it Works</Link></li>
-              <li><Link href="#security" className="hover:text-[#FF6B35] transition-colors">Security</Link></li>
-              <li><Link href="#pricing" className="hover:text-[#FF6B35] transition-colors">Pricing</Link></li>
+            <h4 className="font-bold text-[#0F2C4C] mb-6 text-sm">Product</h4>
+            <ul className="space-y-4 text-sm text-slate-500 font-medium">
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Platform</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Science</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Patents</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Security</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-[#0F2C4C] mb-6 text-sm">Solutions</h4>
+            <ul className="space-y-4 text-sm text-slate-500 font-medium">
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Higher Education</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Enterprise</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Government</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Aerospace</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-[#0F2C4C] mb-6 text-sm">Resources</h4>
+            <ul className="space-y-4 text-sm text-slate-500 font-medium">
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Documentation</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Case Studies</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">White Papers</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Support</Link></li>
             </ul>
           </div>
           
-          <div>
-            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">Company</h3>
-            <ul className="space-y-4 text-sm text-slate-300">
-              <li><Link href="/about" className="hover:text-[#FF6B35] transition-colors">About Us</Link></li>
-              <li><Link href="/careers" className="hover:text-[#FF6B35] transition-colors">Careers</Link></li>
-              <li><Link href="/blog" className="hover:text-[#FF6B35] transition-colors">Blog</Link></li>
-              <li><Link href="/contact" className="hover:text-[#FF6B35] transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white">Legal</h3>
-            <ul className="space-y-4 text-sm text-slate-300">
-              <li><Link href="/privacy" className="hover:text-[#FF6B35] transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-[#FF6B35] transition-colors">Terms of Service</Link></li>
-              <li><Link href="/cookies" className="hover:text-[#FF6B35] transition-colors">Cookie Policy</Link></li>
+           <div>
+            <h4 className="font-bold text-[#0F2C4C] mb-6 text-sm">Company</h4>
+            <ul className="space-y-4 text-sm text-slate-500 font-medium">
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">About</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Careers</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Contact</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Legal</Link></li>
             </ul>
           </div>
         </div>
         
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-[#1a3b5c] pt-8 text-center md:flex-row">
-          <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} SocraticMetric AI Inc. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-sm font-medium text-slate-400">
-            <Link href="mailto:hello@socraticmetric.ai" className="hover:text-[#FF6B35] transition-colors">hello@socraticmetric.ai</Link>
-          </div>
+        <div className="pt-8 border-t border-slate-200/60 flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-slate-500 font-medium">
+          <p>&copy; {new Date().getFullYear()} Socratic Metric. All rights reserved.</p>
         </div>
       </div>
     </footer>

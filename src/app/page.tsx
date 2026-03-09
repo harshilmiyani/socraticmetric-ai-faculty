@@ -4,26 +4,28 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/sections/HeroSection";
 
 // Lazy load components that are not in the initial viewport
-const TrustedBy = dynamic(() => import("@/components/home/sections/TrustedBy").then(mod => mod.TrustedBy));
-const ProblemSolution = dynamic(() => import("@/components/home/sections/ProblemSolution").then(mod => mod.ProblemSolution));
+const TheNewRisk = dynamic(() => import("@/components/home/sections/TheNewRisk").then(mod => mod.TheNewRisk));
+const ThePlatform = dynamic(() => import("@/components/home/sections/ThePlatform").then(mod => mod.ThePlatform));
+const DemoVideo = dynamic(() => import("@/components/home/sections/DemoVideo").then(mod => mod.DemoVideo));
 const HowItWorks = dynamic(() => import("@/components/home/sections/HowItWorks").then(mod => mod.HowItWorks));
-const UseCases = dynamic(() => import("@/components/home/sections/UseCases").then(mod => mod.UseCases));
+const HighStakes = dynamic(() => import("@/components/home/sections/HighStakes").then(mod => mod.HighStakes));
 const ContactSection = dynamic(() => import("@/components/home/sections/ContactSection").then(mod => mod.ContactSection));
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900 overflow-x-hidden">
+    <div className="flex min-h-screen flex-col bg-white text-slate-900 overflow-x-hidden font-sans">
       <Navbar />
 
       <main className="flex-1">
         {/* Load Hero immediately for LCP (Largest Contentful Paint) */}
         <HeroSection />
 
-        {/* Lazy load the rest */}
-        <TrustedBy />
-        <ProblemSolution />
+        {/* Lazy load the rest in order */}
+        <TheNewRisk />
+        <ThePlatform />
+        <DemoVideo />
         <HowItWorks />
-        <UseCases />
+        <HighStakes />
         <ContactSection />
       </main>
 
