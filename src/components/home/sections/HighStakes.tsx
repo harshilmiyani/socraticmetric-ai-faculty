@@ -1,39 +1,58 @@
+"use client";
+
+import { useState } from "react";
 import { GraduationCap, Building, Shield } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export function HighStakes() {
-  const items = [
+  const [activeTab, setActiveTab] = useState("higher-ed");
+
+  const tabs = [
     {
+      id: "higher-ed",
+      label: "Higher Education",
       icon: GraduationCap,
-      title: "Higher Education",
-      desc: "Verify authentic comprehension beyond AI-written submissions. Restore academic integrity through oral verification.",
-      points: [
-        "Academic integrity verification",
-        "Oral exam administration",
-        "Learning outcome assessment",
-        "Accreditation compliance"
-      ]
+      content: {
+        title: "Higher Education",
+        description: "Verify authentic comprehension beyond AI-written submissions. Restore academic integrity through oral verification.",
+        points: [
+          "Academic integrity verification",
+          "Oral exam administration",
+          "Learning outcome assessment",
+          "Accreditation compliance"
+        ]
+      }
     },
     {
+      id: "enterprise",
+      label: "Enterprise",
       icon: Building,
-      title: "Enterprise",
-      desc: "Ensure your workforce can articulate and apply critical policies and procedures beyond documentation.",
-      points: [
-        "Compliance verification",
-        "Training effectiveness",
-        "Knowledge retention",
-        "Operational readiness"
-      ]
+      content: {
+        title: "Enterprise",
+        description: "Ensure your workforce can articulate and apply critical policies and procedures beyond documentation.",
+        points: [
+          "Compliance verification",
+          "Training effectiveness",
+          "Knowledge retention",
+          "Operational readiness"
+        ]
+      }
     },
     {
+      id: "government",
+      label: "Government & Defense",
       icon: Shield,
-      title: "Government & Defense",
-      desc: "Verify operator competency under high-stakes conditions with audit-ready verification records.",
-      points: [
-        "Mission-critical verification",
-        "Security clearance validation",
-        "Doctrine comprehension",
-        "Audit trail compliance"
-      ]
+      content: {
+        title: "Government & Defense",
+        description: "Verify operator competency under high-stakes conditions with audit-ready verification records.",
+        points: [
+          "Mission-critical verification",
+          "Security clearance validation",
+          "Doctrine comprehension",
+          "Audit trail compliance"
+        ]
+      }
     }
   ];
 
@@ -41,36 +60,98 @@ export function HighStakes() {
     <section className="py-24 bg-slate-50/50 relative overflow-hidden">
       {/* Glass Background Blobs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-         <div className="absolute top-[10%] right-[10%] w-[400px] h-[400px] bg-blue-100/40 rounded-full blur-[100px]"></div>
-         <div className="absolute bottom-[10%] left-[10%] w-[400px] h-[400px] bg-orange-100/30 rounded-full blur-[100px]"></div>
+        <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-[10%] left-[10%] w-[500px] h-[500px] bg-orange-100/30 rounded-full blur-[100px]"></div>
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#0F2C4C]">Built for High-Stakes Environments</h2>
+        <div className="text-center mb-12">
+          <span className="text-blue-500 font-bold text-xs tracking-widest uppercase mb-4 block">
+            BUILT FOR HIGH-STAKES ENVIRONMENTS
+          </span>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {items.map((item, i) => (
-            <div key={i} className="p-8 rounded-2xl border border-white/60 bg-white/60 backdrop-blur-lg shadow-lg hover:shadow-xl hover:bg-white/80 transition-all duration-300 flex flex-col h-full ring-1 ring-white/50">
-              <div className="h-12 w-12 rounded-xl bg-blue-50/80 flex items-center justify-center mb-6 text-blue-600">
-                <item.icon className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-[#0F2C4C]">{item.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed mb-8">
-                {item.desc}
-              </p>
-              
-              <ul className="space-y-3 mt-auto">
-                {item.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-slate-500">
-                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 flex-shrink-0" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+
+        {/* Tabbed Interface Container with Glassmorphism */}
+        <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-white/40 backdrop-blur-xl border border-white/60 ring-1 ring-white/50">
+          
+          {/* Tabs Header */}
+          <div className="grid grid-cols-1 md:grid-cols-3 border-b border-white/20 bg-white/50">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={cn(
+                  "py-5 px-6 text-sm md:text-base font-bold transition-all duration-300 flex items-center justify-center gap-2 relative overflow-hidden",
+                  activeTab === tab.id
+                    ? "text-white bg-[#0F2C4C] shadow-inner"
+                    : "text-[#0F2C4C] hover:bg-white/60 hover:text-[#FF6B35]"
+                )}
+              >
+                {/* Active Tab Indicator/Glow (Subtle) */}
+                {activeTab === tab.id && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-20" />
+                )}
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab Content Area */}
+          <div className="p-8 md:p-12 min-h-[400px] bg-white/60 backdrop-blur-md">
+            <AnimatePresence mode="wait">
+              {tabs.map((tab) => (
+                tab.id === activeTab && (
+                  <motion.div
+                    key={tab.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="grid md:grid-cols-2 gap-12 items-center h-full"
+                  >
+                    {/* Left Column: Text Content */}
+                    <div className="flex flex-col h-full justify-center space-y-8">
+                      <div>
+                         <h3 className="text-2xl md:text-3xl font-bold text-[#0F2C4C] mb-4 drop-shadow-sm">
+                          {tab.content.title}
+                        </h3>
+                        <p className="text-base md:text-lg text-slate-700 leading-relaxed font-medium">
+                          {tab.content.description}
+                        </p>
+                      </div>
+                      
+                      <ul className="space-y-4">
+                        {tab.content.points.map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-3 text-slate-600 font-medium text-sm md:text-base group">
+                            <span className="mt-1.5 h-2 w-2 rounded-full bg-[#FF6B35] flex-shrink-0 shadow-sm group-hover:scale-125 transition-transform" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Right Column: Visualization Placeholder (Glass Card) */}
+                    <div className="relative h-[250px] md:h-[350px] w-full rounded-xl border border-white/60 bg-white/40 backdrop-blur-md shadow-inner flex items-center justify-center overflow-hidden group">
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-50" />
+                      
+                      <div className="text-center p-6 relative z-10">
+                         <div className="w-16 h-16 rounded-full bg-white/80 shadow-md flex items-center justify-center mx-auto mb-4 text-[#0F2C4C] group-hover:scale-110 transition-transform duration-500">
+                            <tab.icon className="h-8 w-8" />
+                         </div>
+                         <p className="text-slate-500 font-medium text-xs uppercase tracking-wide">
+                           [Visualization / Data Chart]
+                         </p>
+                      </div>
+
+                       {/* Decorative Elements */}
+                       <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#FF6B35]/10 rounded-full blur-2xl group-hover:bg-[#FF6B35]/20 transition-colors duration-500" />
+                       <div className="absolute -top-10 -left-10 w-32 h-32 bg-[#0F2C4C]/5 rounded-full blur-2xl" />
+                    </div>
+                  </motion.div>
+                )
+              ))}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>

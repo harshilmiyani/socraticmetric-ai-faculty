@@ -6,7 +6,8 @@ import { Play, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Spotlight } from "@/components/ui/Spotlight";
 
-import { HeroHighlight, Highlight } from "@/components/ui/HeroHighlight";
+import { Highlight } from "@/components/ui/HeroHighlight";
+import { ModernBackground } from "@/components/ui/ModernBackground";
 
 export function HeroSection() {
   const fadeIn = {
@@ -15,7 +16,7 @@ export function HeroSection() {
   };
 
   return (
-    <HeroHighlight containerClassName="h-auto py-32 md:py-48 overflow-hidden bg-white selection:bg-orange-100 selection:text-[#0F2C4C]">
+    <ModernBackground className="py-32 md:py-48 selection:bg-orange-100 selection:text-[#0F2C4C]">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="#0F2C4C"
@@ -81,6 +82,6 @@ export function HeroSection() {
           </div>
         </motion.div>
       </div>
-    </HeroHighlight>
+    </ModernBackground>
   );
 }
