@@ -31,8 +31,8 @@ export function IndustrySelector() {
                 className={cn(
                   "relative px-4 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all duration-200 border border-slate-300",
                   isActive 
-                    ? "bg-[#0F2C4C] text-white border-[#0F2C4C] shadow-md" 
-                    : "bg-white text-slate-600 hover:border-[#FF6B35] hover:text-[#FF6B35]"
+                    ? "bg-[#1F2A44] text-white border-[#1F2A44] shadow-md"
+                    : "bg-white text-slate-600 hover:border-[#F58022] hover:text-[#F58022]"
                 )}
               >
                 {industry.label.toUpperCase()}

@@ -10,27 +10,27 @@ export function BookDemoForm() {
         <div className="grid grid-cols-2 gap-5">
           <div className="space-y-2">
             <label htmlFor="first-name" className="text-sm font-semibold text-slate-700">First Name</label>
-            <input id="first-name" className="w-full h-11 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF6B35] transition-all" placeholder="Jane" />
+            <input id="first-name" className="w-full h-11 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#F58022] transition-all" placeholder="Jane" />
           </div>
           <div className="space-y-2">
             <label htmlFor="last-name" className="text-sm font-semibold text-slate-700">Last Name</label>
-            <input id="last-name" className="w-full h-11 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF6B35] transition-all" placeholder="Doe" />
+            <input id="last-name" className="w-full h-11 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#F58022] transition-all" placeholder="Doe" />
           </div>
         </div>
         
         <div className="space-y-2">
           <label htmlFor="email" className="text-sm font-semibold text-slate-700">Work Email</label>
-          <input id="email" type="email" className="w-full h-11 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF6B35] transition-all" placeholder="jane@university.edu" />
+          <input id="email" type="email" className="w-full h-11 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#F58022] transition-all" placeholder="jane@university.edu" />
         </div>
         
         <div className="space-y-2">
           <label htmlFor="organization" className="text-sm font-semibold text-slate-700">Organization</label>
-          <input id="organization" className="w-full h-11 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF6B35] transition-all" placeholder="Acme University" />
+          <input id="organization" className="w-full h-11 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#F58022] transition-all" placeholder="Acme University" />
         </div>
         
         <div className="space-y-2">
           <label htmlFor="message" className="text-sm font-semibold text-slate-700">Message</label>
-          <textarea id="message" className="w-full h-32 px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#FF6B35] transition-all resize-none" placeholder="Tell us about your needs..." />
+          <textarea id="message" className="w-full h-32 px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#F58022] transition-all resize-none" placeholder="Tell us about your needs..." />
         </div>
         
         <Button className="w-full h-12 text-base font-semibold" size="lg">Submit Inquiry</Button>

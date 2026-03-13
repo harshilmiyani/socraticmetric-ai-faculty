@@ -4,12 +4,26 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/Button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navItems = [
-  { label: "Solutions", href: "#solutions" },
+type NavItem = {
+  label: string;
+  href: string;
+  children?: { label: string; href: string }[];
+};
+
+const navItems: NavItem[] = [
+  { 
+    label: "Solutions", 
+    href: "#solutions",
+    children: [
+      { label: "Education", href: "/education" },
+      { label: "Enterprise", href: "/enterprise" },
+      { label: "Government", href: "/government" }
+    ]
+  },
   { label: "Science", href: "#science" },
   { label: "Use Cases", href: "#use-cases" },
   { label: "About", href: "#about" },
@@ -19,6 +33,7 @@ const navItems = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +42,11 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleMobileExpand = (label: string) => {
+    setMobileExpanded(mobileExpanded === label ? null : label);
+  };
+
 
   return (
     <div className={cn("fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300", scrolled ? "pt-4 px-4" : "pt-0 px-0")}>
@@ -55,7 +75,7 @@ export function Navbar() {
         
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden p-2 text-slate-600 hover:text-[#FF6B35]"
+          className="md:hidden p-2 text-slate-600 hover:text-[#F58022]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X /> : <Menu />}
@@ -64,13 +84,32 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <Link 
-              key={item.label}
-              href={item.href}
-              className="text-sm font-medium text-slate-600 hover:text-[#FF6B35] transition-colors"
-            >
-              {item.label}
-            </Link>
+            <div key={item.label} className="relative group">
+              <Link 
+                href={item.href}
+                className="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-[#F58022] transition-colors py-2"
+              >
+                {item.label}
+                {item.children && <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />}
+              </Link>
+              
+              {/* Dropdown Menu */}
+              {item.children && (
+                <div className="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 min-w-[200px]">
+                  <div className="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden p-2">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.label}
+                        href={child.href}
+                        className="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-[#F58022] hover:bg-slate-50 rounded-lg transition-colors"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 
@@ -95,14 +134,41 @@ export function Navbar() {
           >
             <div className="p-6 space-y-6 pb-20">
               {navItems.map((item) => (
-                <Link 
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block font-bold text-slate-900 text-lg hover:text-[#FF6B35]"
-                >
-                  {item.label}
-                </Link>
+                <div key={item.label} className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <Link 
+                      href={item.href}
+                      onClick={() => !item.children && setMobileMenuOpen(false)}
+                      className="block font-bold text-slate-900 text-lg hover:text-[#F58022]"
+                    >
+                      {item.label}
+                    </Link>
+                    {item.children && (
+                      <button 
+                        onClick={() => toggleMobileExpand(item.label)}
+                        className="p-1 text-slate-500 hover:text-[#F58022]"
+                      >
+                        <ChevronDown className={cn("w-5 h-5 transition-transform", mobileExpanded === item.label ? "rotate-180" : "")} />
+                      </button>
+                    )}
+                  </div>
+                  
+                  {/* Mobile Dropdown Items */}
+                  {item.children && mobileExpanded === item.label && (
+                    <div className="pl-4 space-y-3 border-l-2 border-slate-100 ml-1">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.label}
+                          href={child.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block font-medium text-slate-600 text-base hover:text-[#F58022]"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <div className="pt-4">
                 <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>

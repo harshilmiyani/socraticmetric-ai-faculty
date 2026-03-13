@@ -6,7 +6,7 @@ export function ContactSection() {
     <section id="contact" className="py-32 bg-white text-center">
       <div className="container mx-auto px-6 md:px-12">
         <div className="max-w-3xl mx-auto space-y-8">
-          <h2 className="font-sans text-4xl md:text-5xl font-bold text-[#0F2C4C] leading-tight">
+          <h2 className="font-sans text-4xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
             Verify Understanding.<br />
             Not Documents.
           </h2>
@@ -15,7 +15,7 @@ export function ContactSection() {
           </p>
           <div className="pt-4">
             <Link href="#">
-              <Button size="lg" className="px-10 h-14 text-lg rounded-lg bg-[#FF6B35] text-white hover:bg-[#e85d2a] shadow-lg shadow-orange-200/50 transition-all font-medium">
+              <Button size="lg" className="px-10 h-14 text-lg rounded-lg bg-[#F58022] text-white hover:bg-[#D16D1A] shadow-lg shadow-orange-200/50 transition-all font-medium">
                 Request a Demo
               </Button>
             </Link>

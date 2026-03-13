@@ -5,10 +5,15 @@
   --font-serif: var(--font-playfair);
 
   /* Custom Colors */
-  --color-navy-900: #0F2C4C;
-  --color-navy-800: #1a3b5c;
-  --color-orange-500: #FF6B35;
-  --color-orange-600: #e85d2a;
+  --color-navy-900: #1F2A44;
+  --color-navy-800: #2a3b55;
+  --color-orange-500: #F58022;
+  --color-orange-600: #D16D1A;
+  --color-primary-blue: #3370F7;
+  --color-secondary-blue: #4C8FD6;
+  --color-secondary-teal: #2EA3C7;
+  --color-light-blue: #EAF1FE;
+  --color-neutral-gray: #85756F;
 
   @keyframes shimmer {
     from {
@@ -77,7 +82,7 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#0F2C4C] to-[#FF6B35];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1F2A44] to-[#F58022];
   }
   
   .bg-dot-black\/\[0\.2\] {

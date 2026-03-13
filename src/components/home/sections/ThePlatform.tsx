@@ -45,7 +45,7 @@ export function ThePlatform() {
               <div className="h-10 w-10 rounded-lg bg-blue-50/80 flex items-center justify-center mb-4 text-blue-600">
                 <feature.icon className="h-5 w-5" />
               </div>
-              <h3 className="text-sm font-semibold text-[#0F2C4C] leading-snug">{feature.title}</h3>
+              <h3 className="text-sm font-semibold text-[#1F2A44] leading-snug">{feature.title}</h3>
             </div>
           ))}
         </div>

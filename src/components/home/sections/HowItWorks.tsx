@@ -32,7 +32,7 @@ export function HowItWorks() {
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#0F2C4C]">How It Works</h2>
+          <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">How It Works</h2>
         </div>
         
         <div className="flex flex-col md:flex-row justify-center items-start gap-8 md:gap-12 relative">
@@ -41,7 +41,7 @@ export function HowItWorks() {
               <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-500 text-white shadow-lg shadow-blue-200 group-hover:-translate-y-1 transition-transform duration-300">
                 <step.icon className="h-8 w-8" />
               </div>
-              <h3 className="text-lg font-bold text-[#0F2C4C] mb-3">{step.title}</h3>
+              <h3 className="text-lg font-bold text-[#1F2A44] mb-3">{step.title}</h3>
               <p className="text-slate-500 text-sm leading-relaxed px-4">{step.desc}</p>
               
               {/* Arrow for desktop */}

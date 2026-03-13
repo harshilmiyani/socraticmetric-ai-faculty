@@ -35,7 +35,7 @@ export function TheNewRisk() {
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <span className="text-blue-500 font-bold text-xs tracking-widest uppercase">THE NEW RISK</span>
-          <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#0F2C4C]">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">
             When AI Can Write It,<br />
             Documentation Proves Nothing.
           </h2>
@@ -47,7 +47,7 @@ export function TheNewRisk() {
               <div className="h-12 w-12 rounded-lg bg-blue-50/80 flex items-center justify-center mb-6 text-blue-600">
                 <card.icon className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-[#0F2C4C]">{card.title}</h3>
+              <h3 className="text-xl font-bold mb-3 text-[#1F2A44]">{card.title}</h3>
               <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
                 {card.desc}
               </p>

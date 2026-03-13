@@ -16,10 +16,10 @@ export function HeroSection() {
   };
 
   return (
-    <ModernBackground className="py-32 md:py-48 selection:bg-orange-100 selection:text-[#0F2C4C]">
+    <ModernBackground className="py-32 md:py-48 selection:bg-orange-100 selection:text-[#1F2A44]">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="#0F2C4C"
+        fill="#1F2A44"
       />
       
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -42,7 +42,7 @@ export function HeroSection() {
             AI-Era Cognitive Verification
           </motion.div>
 
-          <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#0F2C4C] leading-tight">
+          <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#1F2A44] leading-tight">
             Written Output Is No Longer <br className="hidden md:block" />
             Proof of <Highlight className="text-white">Understanding.</Highlight>
           </h1>
@@ -56,7 +56,7 @@ export function HeroSection() {
             <Link href="#contact">
               <Button 
                 size="lg" 
-                className="group relative overflow-hidden w-full sm:w-auto text-base px-8 h-14 rounded-full bg-[#FF6B35] text-white shadow-xl shadow-orange-200/50 hover:shadow-2xl hover:shadow-orange-500/40 hover:-translate-y-0.5 transition-all duration-300 border border-orange-500/20"
+                className="group relative overflow-hidden w-full sm:w-auto text-base px-8 h-14 rounded-full bg-[#F58022] text-white shadow-xl shadow-orange-200/50 hover:shadow-2xl hover:shadow-orange-500/40 hover:-translate-y-0.5 transition-all duration-300 border border-orange-500/20"
               >
                  <span className="relative z-10 flex items-center gap-2 font-bold tracking-wide">
                     Request a Demo <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
