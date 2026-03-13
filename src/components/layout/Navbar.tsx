@@ -25,7 +25,7 @@ const navItems: NavItem[] = [
     ]
   },
   { label: "Science", href: "#science" },
-  { label: "Use Cases", href: "#use-cases" },
+  { label: "Why it matters", href: "/why-it-matters" },
   { label: "About", href: "#about" },
   { label: "Patents", href: "#patents" },
 ];
