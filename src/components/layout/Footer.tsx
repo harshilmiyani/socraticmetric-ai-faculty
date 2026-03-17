@@ -28,42 +28,42 @@ export function Footer() {
           </div>
           
           <div>
-            <h4 className="font-bold text-[#1F2A44] mb-6 text-sm">Product</h4>
+            <h4 className="font-bold text-[#0F2C4C] mb-6 text-sm">Product</h4>
             <ul className="space-y-4 text-sm text-slate-500 font-medium">
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Platform</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Science</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Patents</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Security</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Platform</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Science</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Patents</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Security</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-[#1F2A44] mb-6 text-sm">Solutions</h4>
+            <h4 className="font-bold text-[#0F2C4C] mb-6 text-sm">Solutions</h4>
             <ul className="space-y-4 text-sm text-slate-500 font-medium">
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Higher Education</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Enterprise</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Government</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Aerospace</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Higher Education</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Enterprise</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Government</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Aerospace</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-[#1F2A44] mb-6 text-sm">Resources</h4>
+            <h4 className="font-bold text-[#0F2C4C] mb-6 text-sm">Resources</h4>
             <ul className="space-y-4 text-sm text-slate-500 font-medium">
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Documentation</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Case Studies</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">White Papers</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Support</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Documentation</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Case Studies</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">White Papers</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Support</Link></li>
             </ul>
           </div>
           
            <div>
-            <h4 className="font-bold text-[#1F2A44] mb-6 text-sm">Company</h4>
+            <h4 className="font-bold text-[#0F2C4C] mb-6 text-sm">Company</h4>
             <ul className="space-y-4 text-sm text-slate-500 font-medium">
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">About</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Careers</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Contact</Link></li>
-              <li><Link href="#" className="hover:text-[#F58022] transition-colors">Legal</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">About</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Careers</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Contact</Link></li>
+              <li><Link href="#" className="hover:text-[#FF6B35] transition-colors">Legal</Link></li>
             </ul>
           </div>
         </div>
