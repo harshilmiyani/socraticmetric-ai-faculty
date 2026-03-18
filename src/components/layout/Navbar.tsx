@@ -115,9 +115,9 @@ export function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden md:flex items-center pl-4">
-          <Link href="#contact">
-            <Button size="sm" className="rounded-full px-6 h-10 bg-[#3b82f6] text-white hover:bg-blue-600 shadow-md transition-all duration-300 font-medium">
-              Request Demo
+          <Link href="/request-demo">
+            <Button size="sm" className="rounded-full px-6 h-10 bg-[#F58022] text-white hover:bg-[#D16D1A] shadow-md transition-all duration-300 font-medium">
+              Request a Demo
             </Button>
           </Link>
         </div>
@@ -171,9 +171,9 @@ export function Navbar() {
                 </div>
               ))}
               <div className="pt-4">
-                <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>
-                  <Button className="w-full rounded-full h-12 text-lg bg-[#3b82f6] hover:bg-blue-600">
-                    Request Demo
+                <Link href="/request-demo" onClick={() => setMobileMenuOpen(false)}>
+                  <Button className="w-full rounded-full h-12 text-lg bg-[#F58022] hover:bg-[#D16D1A]">
+                    Request a Demo
                   </Button>
                 </Link>
               </div>
