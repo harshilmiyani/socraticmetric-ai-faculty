@@ -21,6 +21,12 @@ export function RequestDemoForm() {
             "cal-text-emphasis": "#1F2A44",
             "cal-border-subtle": "#e2e8f0",
           },
+          dark: {
+            "cal-brand": "#3370F7",
+            "cal-text": "#1F2A44",
+            "cal-text-emphasis": "#1F2A44",
+            "cal-border-subtle": "#e2e8f0",
+          },
         },
       });
     })();
