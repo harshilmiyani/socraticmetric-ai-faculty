@@ -5,8 +5,8 @@ import { FileCheck, BadgeCheck, Network } from "lucide-react";
 export function EnterpriseSolution() {
   const solutions = [
     {
-      icon: <FileCheck className="w-10 h-10 text-orange-500" />,
-      bg: "bg-orange-50",
+      icon: <FileCheck className="w-10 h-10 text-[#F58022]" />,
+      bg: "bg-[#F58022]/10",
       title: "Critical policy and decision verification",
       desc: "Use structured oral reviews to ensure owners and approvers can explain key policies, trade-offs, and implications in their own words."
     },
@@ -17,8 +17,8 @@ export function EnterpriseSolution() {
       desc: "Run standardized oral check-ins after trainings, playbook rollouts, or policy changes to confirm employees truly understand how to apply them"
     },
     {
-      icon: <Network className="w-10 h-10 text-blue-500" />,
-      bg: "bg-blue-50",
+      icon: <Network className="w-10 h-10 text-[#3370F7]" />,
+      bg: "bg-[#EAF1FE]",
       title: "Cross-functional alignment",
       desc: "Validate that stakeholders across legal, compliance, operations, and leadership share a common understanding before high-stakes decisions go live."
     }
@@ -43,7 +43,7 @@ export function EnterpriseSolution() {
                 {item.icon}
               </div>
               <h3 className="text-xl font-bold text-[#1F2A44] mb-2">{item.title}</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
+              <p className="text-[#85756F] leading-relaxed text-sm">
                 {item.desc}
               </p>
             </div>

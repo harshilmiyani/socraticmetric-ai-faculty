@@ -32,7 +32,7 @@ export function EducationHero() {
               can your student defend it?
             </h1>
 
-            <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
+            <p className="text-lg text-[#85756F] max-w-xl leading-relaxed">
               AI-written assignments make it harder to know who actually understands the material. 
               Oral verification helps you confirm real learning in high-stakes education environments.
             </p>
@@ -40,7 +40,7 @@ export function EducationHero() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="#contact">
                 <Button
-                  className="rounded-full px-8 h-12 bg-[#3370F7] text-white hover:bg-[#285ecf] shadow-lg shadow-blue-200 transition-all font-medium text-base"
+                  className="rounded-full px-8 h-12 bg-[#3370F7] text-white hover:bg-[#285ecf] shadow-lg shadow-[#4C8FD6]/30 transition-all font-medium text-base"
                 >
                   Talk to our team
                 </Button>
@@ -48,7 +48,7 @@ export function EducationHero() {
               <Link href="#how-it-works">
                 <Button
                   variant="ghost"
-                  className="h-12 text-slate-600 hover:text-[#3370F7] font-medium text-base hover:bg-transparent px-0 sm:px-4 justify-start"
+                  className="h-12 text-[#85756F] hover:text-[#3370F7] font-medium text-base hover:bg-transparent px-0 sm:px-4 justify-start"
                 >
                   See how oral verification works
                 </Button>
@@ -63,7 +63,7 @@ export function EducationHero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-[4/3] w-full bg-white rounded-3xl shadow-xl shadow-blue-100/50 border border-white/50 backdrop-blur-sm">
+            <div className="aspect-[4/3] w-full bg-white rounded-3xl shadow-xl shadow-[#4C8FD6]/20 border border-white/50 backdrop-blur-sm">
               {/* Image/Video Placeholder */}
             </div>
           </motion.div>

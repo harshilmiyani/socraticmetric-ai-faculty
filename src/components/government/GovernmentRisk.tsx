@@ -29,7 +29,7 @@ export function GovernmentRisk() {
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">
             The new risk in in government & aerospace operations
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg text-[#85756F] max-w-3xl mx-auto">
             AI can draft procedures, mission plans, and after-action reports. If teams rely on documentation they
             can't fully reason through, mission performance and public safety are at risk.
           </p>
@@ -39,7 +39,7 @@ export function GovernmentRisk() {
           {risks.map((risk, i) => (
             <div
               key={i}
-              className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col items-start text-left space-y-6 h-full"
+              className="bg-white p-8 rounded-2xl border border-[#EAF1FE] hover:border-slate-300 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col items-start text-left space-y-6 h-full"
             >
               <div className="p-0">
                   {risk.icon}

@@ -26,8 +26,8 @@ export function HowItWorks() {
     <section id="how-it-works" className="py-24 bg-white relative overflow-hidden">
       {/* Glass Background Blobs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-         <div className="absolute top-[20%] left-[5%] w-[500px] h-[500px] bg-blue-100/30 rounded-full blur-[120px]"></div>
-         <div className="absolute bottom-[10%] right-[5%] w-[500px] h-[500px] bg-orange-50/40 rounded-full blur-[120px]"></div>
+         <div className="absolute top-[20%] left-[5%] w-[500px] h-[500px] bg-[#EAF1FE]/30 rounded-full blur-[120px]"></div>
+         <div className="absolute bottom-[10%] right-[5%] w-[500px] h-[500px] bg-[#F58022]/10 rounded-full blur-[120px]"></div>
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -38,11 +38,11 @@ export function HowItWorks() {
         <div className="flex flex-col md:flex-row justify-center items-start gap-8 md:gap-12 relative">
           {steps.map((step, i) => (
             <div key={i} className="flex-1 flex flex-col items-center text-center relative group max-w-sm p-6 rounded-2xl border border-white/60 bg-white/60 backdrop-blur-lg shadow-lg hover:shadow-xl transition-all duration-300 ring-1 ring-white/50">
-              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-blue-500 text-white shadow-lg shadow-blue-200 group-hover:-translate-y-1 transition-transform duration-300">
+              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-[#3370F7] text-white shadow-lg shadow-[#4C8FD6]/30 group-hover:-translate-y-1 transition-transform duration-300">
                 <step.icon className="h-8 w-8" />
               </div>
               <h3 className="text-lg font-bold text-[#1F2A44] mb-3">{step.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed px-4">{step.desc}</p>
+              <p className="text-[#85756F] text-sm leading-relaxed px-4">{step.desc}</p>
               
               {/* Arrow for desktop */}
               {i < steps.length - 1 && (

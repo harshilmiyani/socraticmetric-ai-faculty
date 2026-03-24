@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export function EnterpriseTestimonial() {
   return (
-    <section className="py-24 bg-gradient-to-br from-[#EAF1FE] to-[#D0E6F8] relative overflow-hidden text-slate-900">
+    <section className="py-24 bg-gradient-to-br from-[#EAF1FE] to-[#D0E6F8] relative overflow-hidden text-[#1F2A44]">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tight text-[#1F2A44]">
@@ -31,7 +31,7 @@ export function EnterpriseTestimonial() {
               </div>
               <div className="text-center">
                 <div className="font-bold text-lg text-[#1F2A44]">Chief Risk Officer</div>
-                <div className="text-sm font-medium text-slate-500">
+                <div className="text-sm font-medium text-[#85756F]">
                   Global enterprise (placeholder)
                 </div>
               </div>

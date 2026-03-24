@@ -22,7 +22,7 @@ export function EducationTestimonial() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl relative text-slate-900 text-center">
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl relative text-[#1F2A44] text-center">
             <Quote className="w-12 h-12 text-[#F58022]/20 absolute top-8 left-8" />
             
             <blockquote className="text-xl md:text-2xl font-medium text-[#1F2A44] leading-relaxed mb-8 relative z-10 italic">
@@ -35,7 +35,7 @@ export function EducationTestimonial() {
               </div>
               <div className="text-center">
                 <div className="font-bold text-lg text-[#1F2A44]">Dr. Sarah Mitchell</div>
-                <div className="text-sm font-medium text-slate-500 uppercase tracking-wide">
+                <div className="text-sm font-medium text-[#85756F] uppercase tracking-wide">
                   Professor of Computer Science, State University
                 </div>
               </div>

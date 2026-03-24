@@ -5,8 +5,8 @@ import { FileText, BadgeCheck, BarChart3 } from "lucide-react";
 export function GovernmentSolution() {
   const solutions = [
     {
-      icon: <FileText className="w-10 h-10 text-orange-500" />,
-      bg: "bg-orange-50",
+      icon: <FileText className="w-10 h-10 text-[#F58022]" />,
+      bg: "bg-[#F58022]/10",
       title: "Mission-critical knowledge validation",
       desc: "Use structured oral scenarios to confirm operators and leaders can explain procedures, contingencies, and decision points in their own words."
     },
@@ -17,8 +17,8 @@ export function GovernmentSolution() {
       desc: "Add oral checkpoints to training, simulations, and recertification so you can validate real understanding before granting critical responsibilities."
     },
     {
-      icon: <BarChart3 className="w-10 h-10 text-blue-500" />,
-      bg: "bg-blue-50",
+      icon: <BarChart3 className="w-10 h-10 text-[#3370F7]" />,
+      bg: "bg-[#EAF1FE]",
       title: "Operational alignment",
       desc: "Ensure that teams across operations, safety, and command share a common mental model before executing high-risk missions or procedures."
     }
@@ -43,7 +43,7 @@ export function GovernmentSolution() {
                 {item.icon}
               </div>
               <h3 className="text-xl font-bold text-[#1F2A44] mb-2">{item.title}</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
+              <p className="text-[#85756F] leading-relaxed text-sm">
                 {item.desc}
               </p>
             </div>

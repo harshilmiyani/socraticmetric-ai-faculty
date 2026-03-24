@@ -48,7 +48,7 @@ export function GovernmentUseCases() {
                   {item.id}
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium text-slate-600 mb-2 group-hover:text-[#F58022] transition-colors duration-300 leading-snug">
+                  <h3 className="text-xl font-medium text-[#85756F] mb-2 group-hover:text-[#F58022] transition-colors duration-300 leading-snug">
                     {item.title}
                   </h3>
                 </div>
@@ -71,7 +71,7 @@ export function GovernmentUseCases() {
                   {item.id}
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium text-slate-600 mb-2 group-hover:text-[#F58022] transition-colors duration-300 leading-snug">
+                  <h3 className="text-xl font-medium text-[#85756F] mb-2 group-hover:text-[#F58022] transition-colors duration-300 leading-snug">
                     {item.title}
                   </h3>
                 </div>

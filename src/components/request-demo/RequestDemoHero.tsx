@@ -26,7 +26,7 @@ export function RequestDemoHero() {
               See how Socratic Metric verifies real understanding
             </h1>
 
-            <p className="text-lg text-slate-700 max-w-xl leading-relaxed">
+            <p className="text-lg text-[#85756F] max-w-xl leading-relaxed">
               Socratic Metric turns high-stakes documentation into oral verification. Our platform helps teams confirm that people can explain, reason through, and defend the work they sign off on—before decisions, grades, or missions go live.
             </p>
 
@@ -36,7 +36,7 @@ export function RequestDemoHero() {
                   <div className="mt-1 bg-white rounded-full p-0.5 shadow-sm shrink-0">
                     <CheckCircle2 className="w-5 h-5 text-[#3370F7]" />
                   </div>
-                  <span className="text-slate-700 font-medium">{feature}</span>
+                  <span className="text-[#85756F] font-medium">{feature}</span>
                 </div>
               ))}
             </div>
@@ -44,7 +44,7 @@ export function RequestDemoHero() {
 
           {/* Right Column: Placeholder Video/Image */}
           <div className="relative">
-            <div className="aspect-[4/3] w-full bg-white rounded-3xl shadow-xl shadow-blue-100/50 border border-white/50 backdrop-blur-sm">
+            <div className="aspect-[4/3] w-full bg-white rounded-3xl shadow-xl shadow-[#4C8FD6]/20 border border-white/50 backdrop-blur-sm">
               {/* Image/Video Placeholder */}
             </div>
           </div>

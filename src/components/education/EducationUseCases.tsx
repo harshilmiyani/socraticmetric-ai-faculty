@@ -58,7 +58,7 @@ export function EducationUseCases() {
                   <h3 className="text-xl font-bold text-[#1F2A44] mb-2 group-hover:text-[#F58022] transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 text-base leading-relaxed">
+                  <p className="text-[#85756F] text-base leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -84,7 +84,7 @@ export function EducationUseCases() {
                   <h3 className="text-xl font-bold text-[#1F2A44] mb-2 group-hover:text-[#F58022] transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 text-base leading-relaxed">
+                  <p className="text-[#85756F] text-base leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

@@ -42,7 +42,7 @@ export function RequestDemoForm() {
           </h2>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-white rounded-3xl p-4 md:p-8 shadow-xl shadow-blue-100/40 border border-slate-100 overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-white rounded-3xl p-4 md:p-8 shadow-xl shadow-blue-100/40 border border-[#F5F5F5] overflow-hidden">
           <Cal
             calLink={CALCOM_LINK}
             style={{ width: "100%", height: "100%", overflow: "auto" }}

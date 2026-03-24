@@ -17,7 +17,7 @@ export function EducationOutcomes() {
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">
             Outcomes for education partners
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg text-[#85756F] max-w-3xl mx-auto">
             Institutions use oral verification to restore confidence in grades and protect the value of their degrees.
           </p>
         </div>
@@ -35,7 +35,7 @@ export function EducationOutcomes() {
               <div className="text-5xl lg:text-6xl font-extrabold text-[#F58022] tracking-tight">
                 {item.value}
               </div>
-              <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed">
+              <p className="text-sm md:text-base text-[#85756F] font-medium leading-relaxed">
                 {item.label}
               </p>
             </motion.div>

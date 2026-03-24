@@ -6,17 +6,17 @@ export function EnterpriseRisk() {
   const risks = [
     {
       icon: <Search className="w-10 h-10 text-[#1F2A44]" />,
-      iconBg: "bg-orange-100", // Using a circle background for icon
+      iconBg: "bg-[#F58022]/20", // Using a circle background for icon
       title: "AI-drafted policies approved without deep review",
     },
     {
       icon: <PenTool className="w-10 h-10 text-[#1F2A44]" />,
-      iconBg: "bg-blue-100",
+      iconBg: "bg-[#EAF1FE]",
       title: "Leaders signing off on documentation they can't fully explain",
     },
     {
       icon: <ClipboardList className="w-10 h-10 text-[#1F2A44]" />,
-      iconBg: "bg-slate-100",
+      iconBg: "bg-[#EAF1FE]",
       title: "Hidden gaps in understanding across distributed teams",
     },
     {
@@ -33,7 +33,7 @@ export function EnterpriseRisk() {
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">
             The new risk in enterprise organizations
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg text-[#85756F] max-w-3xl mx-auto">
             Knowledge-work teams can now rely on AI to draft policies, procedures, and analyses. 
             When decisions are made on documents no one fully understands, risk increases across the business.
           </p>
@@ -43,7 +43,7 @@ export function EnterpriseRisk() {
           {risks.map((risk, i) => (
             <div
               key={i}
-              className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col items-center text-center space-y-6"
+              className="bg-white p-8 rounded-2xl border border-[#EAF1FE] hover:border-slate-300 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col items-center text-center space-y-6"
             >
               <div className="relative">
                 <div className={`absolute -inset-2 rounded-full opacity-50 ${risk.iconBg}`} />

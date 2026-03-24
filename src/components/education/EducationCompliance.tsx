@@ -20,7 +20,7 @@ export function EducationCompliance() {
             <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44] leading-tight">
               Support policy, compliance, <br /> and accreditation
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
+            <p className="text-lg text-[#85756F] leading-relaxed max-w-lg mx-auto lg:mx-0">
               Oral verification gives institutions a concrete way to show that grades, credits, and credentials are based on verified student learning.
             </p>
           </div>
@@ -41,7 +41,7 @@ export function EducationCompliance() {
                     <div className="mt-1 bg-white rounded-full p-1 shadow-sm">
                       <CheckCircle2 className="w-5 h-5 text-[#3370F7]" />
                     </div>
-                    <span className="text-slate-700 font-medium text-base md:text-lg leading-snug">
+                    <span className="text-[#85756F] font-medium text-base md:text-lg leading-snug">
                       {point}
                     </span>
                   </motion.div>

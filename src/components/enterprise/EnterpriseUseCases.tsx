@@ -48,7 +48,7 @@ export function EnterpriseUseCases() {
                   {item.id}
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium text-slate-700 mb-2 group-hover:text-[#F58022] transition-colors duration-300">
+                  <h3 className="text-xl font-medium text-[#85756F] mb-2 group-hover:text-[#F58022] transition-colors duration-300">
                     {item.title}
                   </h3>
                 </div>
@@ -71,7 +71,7 @@ export function EnterpriseUseCases() {
                   {item.id}
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium text-slate-700 mb-2 group-hover:text-[#F58022] transition-colors duration-300">
+                  <h3 className="text-xl font-medium text-[#85756F] mb-2 group-hover:text-[#F58022] transition-colors duration-300">
                     {item.title}
                   </h3>
                 </div>

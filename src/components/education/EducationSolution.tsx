@@ -5,8 +5,8 @@ import { CheckCircle2, ShieldCheck, Users, BarChart3, HelpCircle } from "lucide-
 export function EducationSolution() {
   const solutions = [
     {
-      icon: <ShieldCheck className="w-10 h-10 text-blue-500" />,
-      bg: "bg-blue-50",
+      icon: <ShieldCheck className="w-10 h-10 text-[#3370F7]" />,
+      bg: "bg-[#EAF1FE]",
       title: "Academic integrity verification",
       desc: "Use structured oral assessments to confirm students can explain and defend their work in their own words."
     },
@@ -25,7 +25,7 @@ export function EducationSolution() {
   ];
 
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden">
+    <section className="py-24 bg-[#F5F5F5] relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">
@@ -37,13 +37,13 @@ export function EducationSolution() {
           {solutions.map((item, i) => (
             <div
               key={i}
-              className="bg-white p-8 rounded-2xl border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center space-y-6 group"
+              className="bg-white p-8 rounded-2xl border border-[#F5F5F5] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center space-y-6 group"
             >
               <div className={`p-4 rounded-xl ${item.bg} group-hover:scale-110 transition-transform duration-300`}>
                 {item.icon}
               </div>
               <h3 className="text-xl font-bold text-[#1F2A44] mb-2">{item.title}</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
+              <p className="text-[#85756F] leading-relaxed text-sm">
                 {item.desc}
               </p>
             </div>

@@ -6,19 +6,19 @@ export function HowPlatformWorks() {
   const steps = [
     {
       icon: <ShieldCheck className="w-10 h-10 text-[#1F2A44]" />,
-      bg: "bg-slate-100",
+      bg: "bg-[#EAF1FE]",
       title: "Oral Verification at Scale",
       desc: "Standardized workflows confirm people can explain their work in their own words."
     },
     {
       icon: <Eye className="w-10 h-10 text-[#1F2A44]" />,
-      bg: "bg-blue-50",
+      bg: "bg-[#EAF1FE]",
       title: "Defensible Evidence",
       desc: "Documented, repeatable proof of comprehension for audits, accreditation, or oversight."
     },
     {
       icon: <Target className="w-10 h-10 text-[#1F2A44]" />,
-      bg: "bg-orange-50",
+      bg: "bg-[#F58022]/10",
       title: "High-Stakes Confidence",
       desc: "Know grades, decisions, and operations reflect real understanding, not just paperwork."
     },
@@ -49,7 +49,7 @@ export function HowPlatformWorks() {
                 {item.icon}
               </div>
               <h3 className="text-lg font-bold text-[#1F2A44] mb-2">{item.title}</h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
+              <p className="text-[#85756F] leading-relaxed text-sm">
                 {item.desc}
               </p>
             </div>

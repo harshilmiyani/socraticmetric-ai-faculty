@@ -35,7 +35,7 @@ export const blogPosts = [
 
 export default function BlogPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900 overflow-x-hidden">
+    <div className="flex min-h-screen flex-col bg-[#F5F5F5] text-[#1F2A44] overflow-x-hidden">
       <Navbar />
 
       <main className="flex-1">
@@ -46,19 +46,19 @@ export default function BlogPage() {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-tight mb-6"
             >
               Insights & <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Perspectives</span>
             </motion.h1>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg text-[#85756F] max-w-2xl mx-auto">
               Exploring the intersection of AI, assessment, and human learning.
             </p>
           </div>
         </section>
 
         {/* Blog Grid */}
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 bg-[#F5F5F5]">
           <div className="container mx-auto px-6 md:px-12">
             <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
               {blogPosts.map((post, i) => (
@@ -68,7 +68,7 @@ export default function BlogPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-100 flex flex-col"
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-[#F5F5F5] flex flex-col"
                 >
                   {/* Image Placeholder */}
                   <div className={`h-48 w-full ${post.image} relative overflow-hidden group`}>
@@ -87,29 +87,29 @@ export default function BlogPage() {
                     <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-indigo-600 mb-4">
                       <span>{post.category}</span>
                       <span className="text-slate-300">•</span>
-                      <span className="flex items-center gap-1 text-slate-500 normal-case font-normal">
+                      <span className="flex items-center gap-1 text-[#85756F] normal-case font-normal">
                         <Clock className="h-3 w-3" /> {post.readTime}
                       </span>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-slate-900 mb-3 hover:text-indigo-600 transition-colors">
+                    <h2 className="text-2xl font-bold text-[#1F2A44] mb-3 hover:text-indigo-600 transition-colors">
                       <Link href={`/blog/${post.slug}`}>
                         {post.title}
                       </Link>
                     </h2>
                     
-                    <p className="text-slate-600 leading-relaxed mb-6 flex-1">
+                    <p className="text-[#85756F] leading-relaxed mb-6 flex-1">
                       {post.excerpt}
                     </p>
 
-                    <div className="flex items-center justify-between pt-6 border-t border-slate-100 mt-auto">
+                    <div className="flex items-center justify-between pt-6 border-t border-[#F5F5F5] mt-auto">
                       <div className="flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-bold text-sm">
+                        <div className="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center text-[#85756F] font-bold text-sm">
                             {post.author.charAt(0)}
                         </div>
                         <div>
-                          <p className="text-sm font-bold text-slate-900">{post.author}</p>
-                          <p className="text-xs text-slate-500">{post.date}</p>
+                          <p className="text-sm font-bold text-[#1F2A44]">{post.author}</p>
+                          <p className="text-xs text-[#85756F]">{post.date}</p>
                         </div>
                       </div>
                       

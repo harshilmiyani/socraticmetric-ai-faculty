@@ -28,14 +28,14 @@ export function WhyItMattersHero() {
               Can Write It
             </h1>
 
-            <p className="text-lg text-slate-700 max-w-xl leading-relaxed">
+            <p className="text-lg text-[#85756F] max-w-xl leading-relaxed">
               Socratic Metric is the oral verification platform that confirms people can explain, reason through, and defend high-stakes work. Don't let AI-generated documentation hide comprehension gaps—get defensible proof before grades, decisions, or operations go live.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="#contact">
                 <Button
-                  className="rounded-full px-8 h-12 bg-[#3370F7] text-white hover:bg-[#285ecf] shadow-lg shadow-blue-200 transition-all font-medium text-base"
+                  className="rounded-full px-8 h-12 bg-[#3370F7] text-white hover:bg-[#285ecf] shadow-lg shadow-[#4C8FD6]/30 transition-all font-medium text-base"
                 >
                   Talk to our team
                 </Button>
@@ -50,7 +50,7 @@ export function WhyItMattersHero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-[4/3] w-full bg-white rounded-3xl shadow-xl shadow-blue-100/50 border border-white/50 backdrop-blur-sm">
+            <div className="aspect-[4/3] w-full bg-white rounded-3xl shadow-xl shadow-[#4C8FD6]/20 border border-white/50 backdrop-blur-sm">
               {/* Image/Video Placeholder */}
             </div>
           </motion.div>

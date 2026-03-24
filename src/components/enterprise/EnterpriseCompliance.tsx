@@ -20,7 +20,7 @@ export function EnterpriseCompliance() {
             <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44] leading-tight">
               Support compliance and <br /> governance programs
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed max-w-lg mx-auto lg:mx-0">
+            <p className="text-lg text-[#85756F] leading-relaxed max-w-lg mx-auto lg:mx-0">
               Oral verification gives enterprises a concrete way to show that people responsible for policies and processes can actually reason through them.
             </p>
           </div>
@@ -41,7 +41,7 @@ export function EnterpriseCompliance() {
                     <div className="mt-1 bg-white rounded-full p-1 shadow-sm">
                       <CheckCircle2 className="w-5 h-5 text-[#3370F7]" />
                     </div>
-                    <span className="text-slate-700 font-medium text-base md:text-lg leading-snug">
+                    <span className="text-[#85756F] font-medium text-base md:text-lg leading-snug">
                       {point}
                     </span>
                   </motion.div>

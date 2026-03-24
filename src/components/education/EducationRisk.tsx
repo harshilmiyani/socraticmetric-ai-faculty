@@ -10,18 +10,18 @@ export function EducationRisk() {
       title: "Undetected AI-generated essays and assignments",
     },
     {
-      icon: <BookOpen className="w-8 h-8 text-blue-500" />,
-      bg: "bg-blue-50",
+      icon: <BookOpen className="w-8 h-8 text-[#3370F7]" />,
+      bg: "bg-[#EAF1FE]",
       title: "Limited visibility into individual student understanding",
     },
     {
-      icon: <Award className="w-8 h-8 text-blue-500" />,
-      bg: "bg-blue-50",
+      icon: <Award className="w-8 h-8 text-[#3370F7]" />,
+      bg: "bg-[#EAF1FE]",
       title: "Difficulty proving academic integrity to accreditors",
     },
     {
-      icon: <Hourglass className="w-8 h-8 text-orange-500" />,
-      bg: "bg-orange-50",
+      icon: <Hourglass className="w-8 h-8 text-[#F58022]" />,
+      bg: "bg-[#F58022]/10",
       title: "Faculty time consumed by suspected cheating investigations",
     },
   ];
@@ -33,7 +33,7 @@ export function EducationRisk() {
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">
             The new risk in higher education
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg text-[#85756F] max-w-3xl mx-auto">
             AI tools make it easy for students to submit polished work that may not reflect their own thinking.
             Grading written documentation alone no longer proves authentic comprehension.
           </p>
@@ -43,7 +43,7 @@ export function EducationRisk() {
           {risks.map((risk, i) => (
             <div
               key={i}
-              className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col items-center text-center space-y-6"
+              className="bg-white p-8 rounded-2xl border border-[#EAF1FE] hover:border-slate-300 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col items-center text-center space-y-6"
             >
               <div className={`p-4 rounded-full ${risk.bg} group-hover:scale-110 transition-transform`}>
                 {risk.icon}

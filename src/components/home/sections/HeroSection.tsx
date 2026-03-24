@@ -8,6 +8,8 @@ import { Spotlight } from "@/components/ui/Spotlight";
 
 import { Highlight } from "@/components/ui/HeroHighlight";
 import { ModernBackground } from "@/components/ui/ModernBackground";
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
+import { Building, GraduationCap, Shield } from "lucide-react";
 
 export function HeroSection() {
   const fadeIn = {
@@ -15,8 +17,14 @@ export function HeroSection() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
+  const trustedItems = [
+    { id: 1, name: "Higher Education", designation: "Top Tier Universities", image: <GraduationCap /> },
+    { id: 2, name: "Enterprise", designation: "Fortune 500 Companies", image: <Building /> },
+    { id: 3, name: "Government", designation: "Defense & Aerospace", image: <Shield /> },
+  ];
+
   return (
-    <ModernBackground className="py-32 md:py-48 selection:bg-orange-100 selection:text-[#1F2A44]">
+    <ModernBackground className="py-32 md:py-48 selection:bg-[#F58022]/20 selection:text-[#1F2A44]">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="#1F2A44"
@@ -33,11 +41,11 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs md:text-sm font-semibold tracking-wide uppercase shadow-sm"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF1FE] border border-blue-100 text-[#3370F7] text-xs md:text-sm font-semibold tracking-wide uppercase shadow-sm"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#3370F7]"></span>
             </span>
             AI-Era Cognitive Verification
           </motion.div>
@@ -47,7 +55,7 @@ export function HeroSection() {
             Proof of <Highlight className="text-white">Understanding.</Highlight>
           </h1>
           
-          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-[#85756F] max-w-3xl mx-auto leading-relaxed">
             Socratic Metric™ verifies whether your people can <br className="hidden md:block" />
             articulate, defend, and reason — in real time.
           </p>
@@ -68,16 +76,19 @@ export function HeroSection() {
               </Button>
             </Link>
             <Link href="#how-it-works">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto text-base px-8 h-14 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white border-slate-200 text-slate-700 font-medium shadow-sm hover:shadow-md transition-all">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto text-base px-8 h-14 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white border-[#EAF1FE] text-[#85756F] font-medium shadow-sm hover:shadow-md transition-all">
                 <Play className="mr-2 h-4 w-4 fill-current" /> See How it Works
               </Button>
             </Link>
           </div>
 
-          <div className="pt-16 md:pt-24 w-full border-t border-slate-100/50 mt-12 relative">
+          <div className="pt-16 md:pt-24 w-full border-t border-[#F5F5F5]/50 mt-12 relative flex flex-col items-center justify-center">
              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-4 text-slate-400 text-xs font-semibold uppercase tracking-wider">Trusted By</div>
-            <p className="text-xs md:text-sm text-slate-500 font-medium tracking-wide opacity-80">
-              3,000+ simultaneous users | 4 U.S. AI Patents Issued | Trusted in Education, Enterprise & Government
+            <div className="flex flex-row items-center justify-center mb-4 w-full pt-4">
+              <AnimatedTooltip items={trustedItems} />
+            </div>
+            <p className="text-xs md:text-sm text-[#85756F] font-medium tracking-wide opacity-80 mt-2">
+              3,000+ simultaneous users | 4 U.S. AI Patents Issued
             </p>
           </div>
         </motion.div>

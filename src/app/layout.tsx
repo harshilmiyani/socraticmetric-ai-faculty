@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={cn(
-        "min-h-screen bg-slate-50 font-sans antialiased selection:bg-orange-100 selection:text-[#1F2A44]",
+        "min-h-screen bg-[#F5F5F5] font-sans antialiased selection:bg-[#F58022]/20 selection:text-[#1F2A44]",
         inter.variable,
         playfair.variable
       )}>

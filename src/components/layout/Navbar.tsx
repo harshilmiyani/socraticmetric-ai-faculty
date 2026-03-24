@@ -75,7 +75,7 @@ export function Navbar() {
         
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden p-2 text-slate-600 hover:text-[#F58022]"
+          className="md:hidden p-2 text-[#85756F] hover:text-[#F58022]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X /> : <Menu />}
@@ -87,7 +87,7 @@ export function Navbar() {
             <div key={item.label} className="relative group">
               <Link 
                 href={item.href}
-                className="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-[#F58022] transition-colors py-2"
+                className="flex items-center gap-1 text-sm font-medium text-[#85756F] hover:text-[#F58022] transition-colors py-2"
               >
                 {item.label}
                 {item.children && <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />}
@@ -96,12 +96,12 @@ export function Navbar() {
               {/* Dropdown Menu */}
               {item.children && (
                 <div className="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 min-w-[200px]">
-                  <div className="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden p-2">
+                  <div className="bg-white rounded-xl shadow-xl border border-[#F5F5F5] overflow-hidden p-2">
                     {item.children.map((child) => (
                       <Link
                         key={child.label}
                         href={child.href}
-                        className="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-[#F58022] hover:bg-slate-50 rounded-lg transition-colors"
+                        className="block px-4 py-2.5 text-sm font-medium text-[#85756F] hover:text-[#F58022] hover:bg-[#F5F5F5] rounded-lg transition-colors"
                       >
                         {child.label}
                       </Link>
@@ -130,7 +130,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-[80px] z-40 bg-white md:hidden overflow-y-auto border-t border-slate-100"
+            className="fixed inset-0 top-[80px] z-40 bg-white md:hidden overflow-y-auto border-t border-[#F5F5F5]"
           >
             <div className="p-6 space-y-6 pb-20">
               {navItems.map((item) => (
@@ -139,14 +139,14 @@ export function Navbar() {
                     <Link 
                       href={item.href}
                       onClick={() => !item.children && setMobileMenuOpen(false)}
-                      className="block font-bold text-slate-900 text-lg hover:text-[#F58022]"
+                      className="block font-bold text-[#1F2A44] text-lg hover:text-[#F58022]"
                     >
                       {item.label}
                     </Link>
                     {item.children && (
                       <button 
                         onClick={() => toggleMobileExpand(item.label)}
-                        className="p-1 text-slate-500 hover:text-[#F58022]"
+                        className="p-1 text-[#85756F] hover:text-[#F58022]"
                       >
                         <ChevronDown className={cn("w-5 h-5 transition-transform", mobileExpanded === item.label ? "rotate-180" : "")} />
                       </button>
@@ -155,13 +155,13 @@ export function Navbar() {
                   
                   {/* Mobile Dropdown Items */}
                   {item.children && mobileExpanded === item.label && (
-                    <div className="pl-4 space-y-3 border-l-2 border-slate-100 ml-1">
+                    <div className="pl-4 space-y-3 border-l-2 border-[#F5F5F5] ml-1">
                       {item.children.map((child) => (
                         <Link
                           key={child.label}
                           href={child.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="block font-medium text-slate-600 text-base hover:text-[#F58022]"
+                          className="block font-medium text-[#85756F] text-base hover:text-[#F58022]"
                         >
                           {child.label}
                         </Link>
