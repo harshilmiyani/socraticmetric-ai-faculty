@@ -60,7 +60,7 @@ export function HeroSection() {
             articulate, defend, and reason — in real time.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 w-full justify-center pt-6">
+          <div className="flex flex-col sm:flex-row gap-4 w-full justify-center pt-6 pb-12">
             <Link href="#contact">
               <Button 
                 size="lg" 
@@ -80,6 +80,16 @@ export function HeroSection() {
                 <Play className="mr-2 h-4 w-4 fill-current" /> See How it Works
               </Button>
             </Link>
+          </div>
+
+          {/* Embedded Visual Animation */}
+          <div className="w-full max-w-[680px] mx-auto rounded-2xl overflow-hidden shadow-2xl shadow-[#3370F7]/10 border border-[#EAF1FE] bg-white">
+            <iframe 
+              src="/animation/visual-1-live-session.html" 
+              className="w-full h-[580px] sm:h-[520px] md:h-[500px] border-none"
+              title="SocraticMetric Live Session Simulation"
+              scrolling="no" 
+            />
           </div>
 
           <div className="pt-16 md:pt-24 w-full border-t border-[#F5F5F5]/50 mt-12 relative flex flex-col items-center justify-center">

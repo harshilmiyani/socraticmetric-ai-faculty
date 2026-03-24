@@ -54,31 +54,29 @@ const features = [
 
 export default function PricingPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F5F5] text-[#1F2A44] overflow-x-hidden">
+    <div className="flex min-h-screen flex-col bg-[#f8fafc] text-[#163460] overflow-x-hidden">
       <Navbar />
 
       <main className="flex-1">
         {/* Header */}
         <section className="relative pt-24 pb-16 md:pt-48 md:pb-24 overflow-hidden">
-           <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-            <div className="absolute -top-[10%] left-[20%] w-[40%] h-[40%] rounded-full bg-indigo-200/40 blur-[100px] animate-pulse"></div>
-          </div>
+           
           
           <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-tight mb-6"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#163460] leading-tight mb-6"
             >
-              Transparent Pricing for <br/>
+              Transparent Pricing for <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Institutions of All Sizes</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-lg md:text-xl text-[#85756F] max-w-2xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-[#64748b] max-w-2xl mx-auto leading-relaxed"
             >
               Whether you're running a pilot or transforming an entire university, we have a plan that fits.
             </motion.p>
@@ -96,7 +94,7 @@ export default function PricingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 + 0.2 }}
-                  className={`relative flex flex-col p-8 rounded-2xl border ${plan.popular ? 'border-indigo-600 shadow-xl shadow-indigo-100 bg-white ring-1 ring-indigo-600' : 'border-[#EAF1FE] bg-white/50 hover:bg-white hover:shadow-lg transition-all'}`}
+                  className={`relative flex flex-col p-8 rounded-2xl border ${plan.popular ? 'border-indigo-600 shadow-xl shadow-indigo-100 bg-white ring-1 ring-indigo-600' : 'border-[#e8eff5] bg-white/90 hover:bg-white hover:shadow-lg transition-all'}`}
                 >
                   {plan.popular && (
                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
@@ -105,17 +103,17 @@ export default function PricingPage() {
                   )}
                   
                   <div className="mb-6">
-                    <h3 className="text-xl font-bold text-[#1F2A44] mb-2">{plan.title}</h3>
-                    <p className="text-[#85756F] text-sm h-10">{plan.description}</p>
+                    <h3 className="text-xl font-extrabold tracking-tight text-[#163460] mb-2">{plan.title}</h3>
+                    <p className="text-[#64748b] text-sm h-10">{plan.description}</p>
                   </div>
                   
                   <div className="mb-6">
-                    <span className="text-3xl font-bold text-[#1F2A44]">{plan.price}</span>
+                    <span className="text-3xl font-bold text-[#163460]">{plan.price}</span>
                   </div>
                   
                   <ul className="space-y-4 mb-8 flex-1">
                     {plan.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-[#85756F]">
+                      <li key={i} className="flex items-start gap-3 text-sm text-[#64748b]">
                         <CheckCircle className={`h-5 w-5 flex-shrink-0 ${plan.popular ? 'text-indigo-600' : 'text-slate-400'}`} />
                         <span>{item}</span>
                       </li>
@@ -132,11 +130,11 @@ export default function PricingPage() {
         </section>
 
         {/* Feature Highlights */}
-        <section className="py-24 bg-white border-t border-[#F5F5F5]">
+        <section className="py-24 md:py-32 bg-white border-t border-[#f8fafc]">
           <div className="container mx-auto px-6 md:px-12">
              <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#1F2A44] mb-6">Why SocraticMetric?</h2>
-              <p className="text-lg text-[#85756F]">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#163460] mb-6">Why SocraticMetric?</h2>
+              <p className="text-lg text-[#64748b]">
                 The only platform designed specifically for high-stakes oral assessment at scale.
               </p>
             </div>
@@ -148,10 +146,10 @@ export default function PricingPage() {
                  { title: "LMS Sync", desc: "Grades and feedback push directly to Canvas, Blackboard, and Moodle.", icon: Globe },
                  { title: "Enterprise Security", desc: "FERPA compliant, SOC2 certified, and fully encrypted.", icon: Building },
                ].map((feature, i) => (
-                 <div key={i} className="p-6 bg-[#F5F5F5] rounded-xl">
+                 <div key={i} className="p-6 bg-[#f8fafc] rounded-xl">
                    <feature.icon className="h-8 w-8 text-indigo-600 mb-4" />
-                   <h3 className="font-bold text-[#1F2A44] mb-2">{feature.title}</h3>
-                   <p className="text-sm text-[#85756F]">{feature.desc}</p>
+                   <h3 className="font-bold text-[#163460] mb-2">{feature.title}</h3>
+                   <p className="text-sm text-[#64748b]">{feature.desc}</p>
                  </div>
                ))}
             </div>
@@ -159,10 +157,10 @@ export default function PricingPage() {
         </section>
 
         {/* Book Demo Section */}
-        <section id="book-demo" className="py-24 bg-[#1F2A44] relative overflow-hidden">
+        <section id="book-demo" className="py-24 md:py-32 bg-[#163460] relative overflow-hidden">
            <div className="absolute inset-0 overflow-hidden">
              <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid.svg')] opacity-5"></div>
-             <div className="absolute bottom-0 right-0 w-[50%] h-[50%] rounded-full bg-indigo-500/20 blur-[120px]"></div>
+             
           </div>
           
           <div className="container mx-auto px-6 md:px-12 relative z-10">

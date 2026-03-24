@@ -65,14 +65,14 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F5F5] text-[#1F2A44] overflow-x-hidden">
+    <div className="flex min-h-screen flex-col bg-[#f8fafc] text-[#163460] overflow-x-hidden">
       <Navbar />
 
       <main className="flex-1">
         {/* Header */}
-        <section className="relative pt-40 pb-16 bg-white border-b border-[#F5F5F5]">
+        <section className="relative pt-40 pb-16 bg-white border-b border-[#f8fafc]">
            <div className="container mx-auto px-6 md:px-12 max-w-4xl relative z-10">
-              <Link href="/blog" className="inline-flex items-center text-sm font-semibold text-[#85756F] hover:text-indigo-600 mb-8 transition-colors">
+              <Link href="/blog" className="inline-flex items-center text-sm font-semibold text-[#64748b] hover:text-indigo-600 mb-8 transition-colors">
                 <ArrowLeft className="h-4 w-4 mr-2" /> Back to Blog
               </Link>
               
@@ -80,22 +80,22 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
                 <span>{postInfo.category}</span>
               </div>
 
-              <h1 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight mb-8">
+              <h1 className="font-serif text-3xl md:text-5xl font-bold text-[#163460] leading-tight mb-8">
                 {postInfo.title}
               </h1>
 
-              <div className="flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-[#F5F5F5]">
+              <div className="flex flex-wrap items-center justify-between gap-6 pt-6 border-t border-[#f8fafc]">
                 <div className="flex items-center gap-3">
-                   <div className="h-12 w-12 rounded-full bg-slate-200 flex items-center justify-center text-[#85756F] font-bold text-lg">
+                   <div className="h-12 w-12 rounded-full bg-slate-200 flex items-center justify-center text-[#64748b] font-bold text-lg">
                       {postInfo.author.charAt(0)}
                    </div>
                    <div>
-                     <p className="font-bold text-[#1F2A44]">{postInfo.author}</p>
-                     <p className="text-xs text-[#85756F]">{postInfo.role}</p>
+                     <p className="font-bold text-[#163460]">{postInfo.author}</p>
+                     <p className="text-xs text-[#64748b]">{postInfo.role}</p>
                    </div>
                 </div>
                 
-                <div className="flex items-center gap-6 text-[#85756F] text-sm">
+                <div className="flex items-center gap-6 text-[#64748b] text-sm">
                    <span className="flex items-center gap-2"><Calendar className="h-4 w-4" /> {postInfo.date}</span>
                    <span className="flex items-center gap-2"><Clock className="h-4 w-4" /> {postInfo.readTime}</span>
                 </div>
@@ -104,9 +104,9 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
         </section>
 
         {/* Content */}
-        <section className="py-20 bg-[#F5F5F5]">
+        <section className="py-20 bg-[#f8fafc]">
           <div className="container mx-auto px-6 md:px-12 max-w-3xl">
-            <article className="prose prose-lg prose-slate prose-headings:font-serif prose-headings:font-bold prose-indigo max-w-none bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-[#F5F5F5]">
+            <article className="prose prose-lg prose-slate prose-headings:font-serif prose-headings:font-bold prose-indigo max-w-none bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-[#f8fafc]">
                <div dangerouslySetInnerHTML={{ __html: content }} />
             </article>
 
