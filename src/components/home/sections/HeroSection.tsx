@@ -6,7 +6,7 @@ import { Play, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Spotlight } from "@/components/ui/Spotlight";
 
-import { Highlight } from "@/components/ui/HeroHighlight";
+import { Cover } from "@/components/ui/cover";
 import { ModernBackground } from "@/components/ui/ModernBackground";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { Building, GraduationCap, Shield } from "lucide-react";
@@ -39,9 +39,9 @@ export function HeroSection() {
             className="flex flex-col items-start text-left flex-1 space-y-6 max-w-2xl lg:max-w-none w-full"
           >
 
-            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.1]">
-            Written Output is no Longer Proof of <br className="hidden sm:block" />
-              <Highlight className="text-white mt-2 inline-block"> Understanding.</Highlight>
+            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.2]">
+              Written Output is no Longer Proof of <br className="hidden sm:block" />
+              <Cover className="mt-1 sm:mt-2">Understanding.</Cover>
             </h1>
             
             <p className="text-lg md:text-xl text-[#85756F] leading-relaxed max-w-xl">
