@@ -67,7 +67,7 @@ function SolutionsMenuItem({ item }: { item: NavItem }) {
 
   return (
     <NavigationMenuItem>
-      <NavigationMenuTrigger className="bg-transparent text-sm font-medium text-[#85756F] hover:text-[#F58022] hover:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent">
+      <NavigationMenuTrigger className="bg-transparent px-4 py-2 h-9 rounded-full text-sm font-semibold text-[#85756F] hover:text-[#3370F7] hover:bg-[#EAF1FE]/80 data-[state=open]:bg-[#EAF1FE]/80 data-[state=open]:text-[#3370F7] data-[active]:bg-transparent transition-all duration-300">
         {item.label}
       </NavigationMenuTrigger>
       <NavigationMenuContent>
@@ -81,8 +81,8 @@ function SolutionsMenuItem({ item }: { item: NavItem }) {
                     <Link
                       href={child.href}
                       className={cn(
-                        "flex items-center gap-3 rounded-xl p-3 leading-none no-underline outline-none transition-colors",
-                        hoveredIndex === idx ? "bg-slate-50 text-[#F58022]" : "text-[#85756F] hover:bg-slate-50 hover:text-[#F58022]"
+                        "flex items-center gap-3 rounded-xl p-3 leading-none no-underline outline-none transition-all duration-300",
+                        hoveredIndex === idx ? "bg-[#EAF1FE]/80 text-[#3370F7] shadow-sm" : "text-[#85756F] hover:bg-[#EAF1FE]/50 hover:text-[#3370F7]"
                       )}
                     >
                       {Icon && <Icon className="h-5 w-5" />}
@@ -110,8 +110,8 @@ function SolutionsMenuItem({ item }: { item: NavItem }) {
                   {activeChild.description}
                 </p>
                 <NavigationMenuLink asChild>
-                  <Link href={activeChild.href} className="text-[#3370F7] font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all w-fit">
-                    Learn more <ArrowRight className="h-4 w-4" />
+                  <Link href={activeChild.href} className="text-[#3370F7] font-bold text-sm flex items-center gap-2 group transition-all w-fit mt-auto bg-[#EAF1FE]/80 hover:bg-[#EAF1FE] hover:shadow-sm px-5 py-2.5 rounded-full border border-transparent hover:border-[#3370F7]/20">
+                    Learn more <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </NavigationMenuLink>
               </motion.div>
@@ -186,7 +186,7 @@ export function Navbar() {
                   <NavigationMenuItem key={item.label}>
                     {item.children ? (
                       <>
-                        <NavigationMenuTrigger className="bg-transparent text-sm font-medium text-[#85756F] hover:text-[#F58022] hover:bg-transparent data-[state=open]:bg-transparent data-[active]:bg-transparent">
+                        <NavigationMenuTrigger className="bg-transparent px-4 py-2 h-9 rounded-full text-sm font-semibold text-[#85756F] hover:text-[#3370F7] hover:bg-[#EAF1FE]/80 data-[state=open]:bg-[#EAF1FE]/80 data-[state=open]:text-[#3370F7] data-[active]:bg-transparent transition-all duration-300">
                           {item.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
@@ -194,10 +194,10 @@ export function Navbar() {
                             {item.children.map((child) => (
                               <li key={child.label}>
                                 <NavigationMenuLink asChild>
-                                  <Link
-                                    href={child.href}
-                                    className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-50 hover:text-[#F58022] text-[#85756F] text-sm font-medium"
-                                  >
+                                    <Link
+                                      href={child.href}
+                                      className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-[#EAF1FE]/50 hover:text-[#3370F7] text-[#85756F] text-sm font-medium"
+                                    >
                                     {child.label}
                                   </Link>
                                 </NavigationMenuLink>
@@ -208,7 +208,7 @@ export function Navbar() {
                       </>
                     ) : (
                       <NavigationMenuLink asChild>
-                        <Link href={item.href} className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium text-[#85756F] transition-colors hover:text-[#F58022] focus:outline-none disabled:pointer-events-none disabled:opacity-50">
+                        <Link href={item.href} className="group inline-flex h-9 w-max items-center justify-center rounded-full bg-transparent px-4 py-2 text-sm font-semibold text-[#85756F] transition-all duration-300 hover:bg-[#EAF1FE]/80 hover:text-[#3370F7] focus:outline-none disabled:pointer-events-none disabled:opacity-50">
                           {item.label}
                         </Link>
                       </NavigationMenuLink>
@@ -266,14 +266,14 @@ export function Navbar() {
                           setMobileMenuOpen(false);
                         }
                       }}
-                      className="block font-bold text-[#1F2A44] text-xl hover:text-[#F58022] py-2 w-full"
+                      className="block font-bold text-[#1F2A44] text-xl hover:text-[#3370F7] transition-colors py-2 w-full"
                     >
                       {item.label}
                     </Link>
                     {item.children && (
                       <button 
                         onClick={() => toggleMobileExpand(item.label)}
-                        className="p-2 text-[#85756F] hover:text-[#F58022] bg-[#F5F5F5] rounded-full"
+                        className="p-2 text-[#85756F] hover:text-[#3370F7] bg-[#F5F5F5] hover:bg-[#EAF1FE] rounded-full transition-colors"
                       >
                         <ChevronDown className={cn("w-5 h-5 transition-transform", mobileExpanded === item.label ? "rotate-180" : "")} />
                       </button>
