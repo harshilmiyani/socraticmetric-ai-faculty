@@ -26,13 +26,10 @@ export function TheNewRisk() {
   ];
 
   return (
-    <section className="py-24 bg-[#F5F5F5]/50 relative overflow-hidden">
-      {/* Glass Background Blobs */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-[#EAF1FE] rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-[10%] right-[-5%] w-[500px] h-[500px] bg-[#F58022]/20 rounded-full blur-[120px]"></div>
-      </div>
-
+    <section className="py-24 bg-[#F1F5F9] relative overflow-hidden">
+      {/* Decorative Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-0" />
+      
       <div className="container mx-auto px-4 md:px-12 relative z-10 w-full max-w-7xl">
         <div className="text-center mb-10 space-y-4">
           <span className="text-[#3370F7] font-bold text-xs tracking-widest uppercase">THE NEW RISK</span>

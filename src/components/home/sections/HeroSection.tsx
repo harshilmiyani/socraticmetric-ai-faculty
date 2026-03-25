@@ -24,7 +24,11 @@ export function HeroSection() {
   ];
 
   return (
-    <div className="bg-white pt-24 pb-16 md:pt-28 md:pb-24 lg:pt-32 lg:pb-32 selection:bg-[#F58022]/20 selection:text-[#1F2A44] overflow-hidden">
+    <div className="bg-[#F1F5F9] pt-24 pb-16 md:pt-28 md:pb-24 lg:pt-32 lg:pb-32 selection:bg-[#F58022]/20 selection:text-[#1F2A44] overflow-hidden relative">
+      {/* Subtle glowing orb in background */}
+      <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px] pointer-events-none" />
+
       <div className="container mx-auto px-6 md:px-12 relative z-10 pt-2 lg:pt-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-12 max-w-7xl mx-auto">
           {/* Left Column: Text Content */}

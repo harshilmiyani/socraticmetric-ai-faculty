@@ -13,7 +13,7 @@ const ContactSection = dynamic(() => import("@/components/home/sections/ContactS
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F5F5] text-[#1F2A44] overflow-x-hidden font-sans">
+    <div className="flex min-h-screen flex-col bg-[#F1F5F9] text-[#1F2A44] overflow-x-hidden font-sans">
       <Navbar />
 
       <main className="flex-1">

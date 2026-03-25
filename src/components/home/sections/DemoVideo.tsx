@@ -6,14 +6,14 @@ import Fancybox from "@/components/ui/Fancybox";
 
 export function DemoVideo() {
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-[#F1F5F9]">
       <div className="container mx-auto px-6 md:px-12">
         <Fancybox className="w-full">
           <a 
             href="https://drive.google.com/file/d/1GRS5ZKMtdf8jd1ldQO4XcPo7buWkYRiP/preview" 
             data-fancybox 
             data-type="iframe"
-            className="relative group block w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-sm border border-[#F5F5F5] bg-[#EAF1FE]/50 aspect-video flex items-center justify-center"
+            className="relative group block w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl border border-white bg-[#EAF1FE]/50 aspect-video flex items-center justify-center"
           >
             <div className="text-center p-8">
                <p className="text-slate-400 font-medium mb-4">[Platform UI screenshot or animated demo preview]</p>

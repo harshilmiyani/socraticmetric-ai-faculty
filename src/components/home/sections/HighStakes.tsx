@@ -57,11 +57,10 @@ export function HighStakes() {
   ];
 
   return (
-    <section className="py-24 bg-[#F5F5F5]/50 relative overflow-hidden">
-      {/* Glass Background Blobs */}
+    <section className="py-24 bg-[#F1F5F9] relative overflow-hidden">
+      {/* Subtle Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-[#EAF1FE]/40 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-[10%] left-[10%] w-[500px] h-[500px] bg-[#F58022]/20 rounded-full blur-[100px]"></div>
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
