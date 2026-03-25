@@ -24,7 +24,7 @@ export function HeroSection() {
   ];
 
   return (
-    <div className="bg-[#F1F5F9] pt-24 pb-16 md:pt-28 md:pb-24 lg:pt-32 lg:pb-32 selection:bg-[#F58022]/20 selection:text-[#1F2A44] overflow-hidden relative">
+    <div className="bg-[#F1F5F9] pt-24 pb-8 md:pt-28 md:pb-12 lg:pt-32 lg:pb-16 selection:bg-[#F58022]/20 selection:text-[#1F2A44] overflow-hidden relative">
       {/* Subtle glowing orb in background */}
       <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px] pointer-events-none" />

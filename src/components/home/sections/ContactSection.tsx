@@ -11,7 +11,7 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="relative py-24 md:py-32 lg:py-40 bg-[#1F2A44] text-center overflow-hidden">
+    <section id="contact" className="relative py-16 md:py-24 lg:py-32 bg-[#1F2A44] text-center overflow-hidden">
       <BackgroundBeams />
       
       {/* Decorative gradient overlay */}

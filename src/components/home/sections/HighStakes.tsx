@@ -57,7 +57,7 @@ export function HighStakes() {
   ];
 
   return (
-    <section className="py-24 bg-[#F1F5F9] relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-[#F1F5F9] relative overflow-hidden">
       {/* Subtle Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-[#EAF1FE]/40 rounded-full blur-[100px]"></div>

@@ -6,7 +6,7 @@ import Fancybox from "@/components/ui/Fancybox";
 
 export function DemoVideo() {
   return (
-    <section className="py-12 bg-[#F1F5F9]">
+    <section className="py-8 bg-[#F1F5F9]">
       <div className="container mx-auto px-6 md:px-12">
         <Fancybox className="w-full">
           <a 
