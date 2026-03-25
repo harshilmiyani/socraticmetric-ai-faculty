@@ -44,16 +44,14 @@ export function ContactSection() {
 
           <div className="pt-6 md:pt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
             <Link href="/request-demo" className="w-full sm:w-auto">
-              <Button 
-                size="lg" 
-                className="group relative overflow-hidden w-full sm:w-auto text-base px-10 h-16 rounded-full bg-[#F58022] text-white shadow-xl shadow-orange-500/20 hover:shadow-2xl hover:shadow-orange-500/40 hover:-translate-y-0.5 transition-all duration-300 border border-orange-400/30"
-              >
-                 <span className="relative z-10 flex items-center justify-center gap-2 font-bold tracking-wide">
-                    Request a Demo <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                 </span>
-                 <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent z-0" />
-                 <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </Button>
+              <button className="relative group inline-flex h-16 w-full sm:w-auto items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-2xl shadow-[#3370F7]/40 outline-none transition-all duration-300 hover:shadow-[#3370F7]/60 hover:scale-[1.02] active:scale-95 ring-1 ring-[#3370F7]/20">
+                <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)] opacity-100 group-hover:opacity-100 transition-opacity duration-500" />
+                <span className="relative inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-[#3370F7] px-12 text-lg font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#3370F7] group-hover:to-[#4C8FD6]">
+                  Request a Demo <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+                {/* Subtle inner glow */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              </button>
             </Link>
           </div>
         </div>
