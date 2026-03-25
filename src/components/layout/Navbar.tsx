@@ -148,9 +148,9 @@ export function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
         className={cn(
-          "relative flex items-center justify-between transition-all duration-300 z-50",
+          "relative flex items-center justify-between transition-all duration-500 z-50",
           (scrolled || mobileMenuOpen) 
-            ? "px-6 py-3 rounded-full w-full max-w-6xl bg-white/70 backdrop-blur-xl shadow-lg border border-white/40 ring-1 ring-white/50" 
+            ? "px-6 py-3 rounded-full w-full max-w-6xl bg-white/60 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 ring-1 ring-black/5" 
             : "px-6 md:px-12 py-6 w-full max-w-full rounded-none bg-white/0 border-b border-transparent"
         )}
       >

@@ -58,9 +58,12 @@ export function HighStakes() {
 
   return (
     <section className="py-12 md:py-16 bg-[#F1F5F9] relative overflow-hidden">
-      {/* Subtle Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-[#EAF1FE]/40 rounded-full blur-[100px]"></div>
+      {/* Background UI Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute inset-0 bg-[#F1F5F9] bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.15]" />
+        {/* Glows */}
+        <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-[#EAF1FE]/40 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[20%] left-[-10%] w-[400px] h-[400px] bg-[#3370F7]/5 rounded-full blur-[100px]" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
