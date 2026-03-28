@@ -56,7 +56,7 @@ const navItems: NavItem[] = [
   { label: "Science", href: "#science" },
   { label: "Why it matters", href: "/why-it-matters" },
   { label: "About", href: "#about" },
-  { label: "Patents", href: "#patents" },
+  { label: "Patents", href: "/patents" },
 ];
 
 function SolutionsMenuItem({ item }: { item: NavItem }) {
