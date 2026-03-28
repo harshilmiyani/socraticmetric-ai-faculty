@@ -13,7 +13,7 @@ import { EnterpriseCTA } from "@/components/enterprise/EnterpriseCTA";
 
 export default function EnterprisePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F5F5F5] font-sans text-[#1F2A44] selection:bg-[#F58022]/20 selection:text-[#1F2A44]">
+    <div className="flex min-h-screen flex-col bg-[#F1F5F9] font-sans text-[#1F2A44] selection:bg-[#F58022]/20 selection:text-[#1F2A44] overflow-x-hidden">
       <Navbar />
       <main className="flex-1">
         <EnterpriseHero />

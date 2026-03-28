@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>SM Hero Education — Voice</title>
+<style>
+html,body{margin:0;padding:0;background:#F1F5F9}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;display:flex;align-items:flex-start;justify-content:center;padding:clamp(6px,2vw,12px) clamp(10px,4vw,20px) clamp(10px,2.5vw,14px);min-height:min-content;overflow-x:clip}
+
+.shell{background:#fff;border-radius:clamp(20px,5.5vw,24px);border:1px solid #e2e8f0;overflow:hidden;max-width:min(720px,100%);margin:0 auto;width:100%;box-shadow:0 4px 24px rgba(15,23,42,0.06)}
+
+.titlebar{min-height:34px;background:#fff;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;padding:8px clamp(10px,3vw,14px)}
+.titlebar-dots{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.titlebar-title{margin-left:0;font-size:clamp(9px,2.8vw,11px);color:#888780;line-height:1.3;flex:1;min-width:0;word-break:break-word}
+.titlebar-rec{margin-left:auto;display:flex;align-items:center;gap:5px;flex-shrink:0}
+
+.main-grid{display:grid;grid-template-columns:1fr;align-items:stretch}
+.col-divider{background:#e2e8f0;height:1px;width:100%}
+.col-left,.col-right{padding:clamp(12px,4vw,16px) clamp(14px,5vw,20px);display:flex;flex-direction:column;gap:clamp(10px,2.5vw,12px);max-width:100%;min-width:0;overflow-x:clip}
+.col-left{background:#fff}
+.col-right{background:#F1F5F9}
+
+@media (min-width:560px){
+  .titlebar-title{margin-left:8px}
+  .main-grid{grid-template-columns:1fr 1px 1fr}
+  .col-divider{width:1px;height:auto;min-height:120px}
+}
+
+.section-label{font-size:clamp(8px,2.2vw,9px);font-weight:500;color:#888780;text-transform:uppercase;letter-spacing:.07em}
+
+.card-essay{border-radius:clamp(14px,3.8vw,18px);border:1px solid #e2e8f0;padding:clamp(10px,3vw,12px) clamp(12px,3.2vw,14px);position:relative}
+.card-flag{padding:clamp(8px,2vw,10px) clamp(10px,3vw,12px);background:#FAECE7;border-radius:clamp(12px,3.2vw,16px);border:0.5px solid #F5C4B3;font-size:clamp(9px,2.4vw,10px);color:#712B13;line-height:1.5}
+
+.row-scores{display:flex;flex-direction:column;gap:5px}
+.row-score{display:flex;align-items:center;gap:clamp(6px,2vw,8px)}
+.row-score label{font-size:clamp(8px,2.2vw,9px);color:#5F5E5A;width:clamp(64px,22vw,80px);flex-shrink:0}
+
+.session-card{padding:clamp(10px,3vw,12px) clamp(12px,3.2vw,14px);background:#fff;border-radius:clamp(14px,3.8vw,18px)}
+.session-card.neutral{border:1px solid #e2e8f0}
+.session-card.alert{border:1px solid #E24B4A}
+
+.session-head{display:flex;align-items:flex-start;gap:clamp(6px,2vw,8px);margin-bottom:7px;flex-wrap:wrap}
+.session-head .wave-wrap{margin-left:auto;display:flex;align-items:center;align-content:center;gap:2px;height:20px;flex-shrink:0;min-width:0}
+#smWave,#stuWave{display:flex;align-items:flex-end;gap:2px;flex-wrap:nowrap}
+@media (max-width:559px){
+  .session-head .wave-wrap{margin-left:0;width:100%;max-width:100%;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+
+.quote{font-size:clamp(10px,2.8vw,11px);color:#2c2c2a;line-height:1.55;font-style:italic;padding-left:8px;border-left-width:2px;border-left-style:solid}
+.caption{font-size:clamp(8px,2.2vw,9px);color:#888780;margin-top:6px}
+
+.live-scores{margin-top:0;display:flex;flex-direction:column;gap:5px}
+@media (min-width:560px){
+  .live-scores{margin-top:auto}
+}
+
+.bar-track{flex:1;height:4px;background:#e2e8f0;border-radius:999px;overflow:hidden;min-width:0}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes waveBar{0%{height:3px}100%{height:var(--h,16px)}}
+@keyframes pulseRing{0%{transform:scale(1);opacity:.5}100%{transform:scale(2);opacity:0}}
+@keyframes recBlink{50%{opacity:0}}
+@keyframes barGrow{from{width:0}to{width:var(--w)}}
+.fade{animation:fadeUp .4s ease forwards;opacity:0}
+.wbar{width:3px;border-radius:999px;animation:waveBar var(--d,.6s) ease-in-out infinite alternate;flex-shrink:0}
+.ring1{position:absolute;inset:-8px;border-radius:50%;border:1.5px solid #E24B4A;animation:pulseRing 1.5s ease-out infinite}
+.ring2{position:absolute;inset:-16px;border-radius:50%;border:1px solid #E24B4A;animation:pulseRing 1.5s ease-out infinite .5s}
+.recDot{animation:recBlink .9s step-end infinite}
+.bgrow{height:100%;border-radius:999px;animation:barGrow .8s ease forwards;width:0}
+
+@media (max-width:400px){
+  #smWave .wbar,#stuWave .wbar{transform:scaleY(0.9)}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="titlebar">
+    <div class="titlebar-dots">
+      <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></div>
+      <div style="width:10px;height:10px;border-radius:50%;background:#febc2e"></div>
+      <div style="width:10px;height:10px;border-radius:50%;background:#28c840"></div>
+    </div>
+    <span class="titlebar-title">SocraticMetric™ — education oral session</span>
+    <div class="titlebar-rec">
+      <span class="recDot" style="width:7px;height:7px;border-radius:50%;background:#E24B4A;display:block"></span>
+      <span style="font-size:10px;font-weight:500;color:#E24B4A">REC 1:24</span>
+    </div>
+  </div>
+  <div class="main-grid">
+    <div class="col-left">
+      <div class="section-label">Submitted essay</div>
+      <div class="fade card-essay" style="animation-delay:.1s">
+        <div style="position:absolute;top:-8px;right:clamp(8px,3vw,12px);background:#185FA5;color:#E6F1FB;font-size:8px;font-weight:500;padding:3px 10px;border-radius:999px">AI-generated</div>
+        <div style="font-size:10px;font-weight:500;color:#2c2c2a;margin-bottom:7px;margin-top:2px">The ethics of machine learning bias</div>
+        <div style="display:flex;flex-direction:column;gap:3px;margin-bottom:8px">
+          <div style="height:3px;border-radius:999px;background:#D3D1C7"></div>
+          <div style="height:3px;border-radius:999px;background:#D3D1C7;width:78%"></div>
+          <div style="height:3px;border-radius:999px;background:#D3D1C7"></div>
+          <div style="height:3px;border-radius:999px;background:#D3D1C7;width:62%"></div>
+          <div style="height:3px;border-radius:999px;background:#D3D1C7"></div>
+          <div style="height:3px;border-radius:999px;background:#D3D1C7;width:71%"></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px">
+          <span style="font-size:9px;color:#888780">2,847 words · 11:54 PM</span>
+          <span style="font-size:16px;font-weight:500;color:#3B6D11;background:#EAF3DE;padding:2px 9px;border-radius:10px">A</span>
+        </div>
+      </div>
+      <div class="fade card-flag" style="animation-delay:.25s">Flagged — submission inconsistent with prior coursework. Oral session required.</div>
+      <div style="margin-top:4px">
+        <div style="font-size:9px;color:#888780;margin-bottom:6px">Pre-session scores</div>
+        <div class="row-scores">
+          <div class="row-score"><label>Recall</label><div class="bar-track"></div><span style="font-size:9px;color:#888780">—</span></div>
+          <div class="row-score"><label>Reasoning</label><div class="bar-track"></div><span style="font-size:9px;color:#888780">—</span></div>
+          <div class="row-score"><label>Application</label><div class="bar-track"></div><span style="font-size:9px;color:#888780">—</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-divider" aria-hidden="true"></div>
+    <div class="col-right">
+      <div class="section-label">Live oral session — voice only</div>
+      <div class="fade session-card neutral" style="animation-delay:.3s">
+        <div class="session-head">
+          <div style="width:22px;height:22px;border-radius:50%;background:#EEEDFE;border:0.5px solid #AFA9EC;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:500;color:#3C3489;flex-shrink:0">SM</div>
+          <span style="font-size:9px;font-weight:500;color:#3C3489;flex:1;min-width:0;line-height:1.3">Question 1 — start recording</span>
+          <div class="wave-wrap" id="smWave"></div>
+        </div>
+        <div class="quote" style="border-left-color:#AFA9EC">"Your essay argues bias self-corrects over time. Explain exactly how you think that mechanism works."</div>
+        <div class="caption">Transcription — AI question</div>
+      </div>
+      <div class="fade session-card alert" style="animation-delay:.9s">
+        <div class="session-head">
+          <div style="position:relative;width:28px;height:28px;flex-shrink:0;display:flex;align-items:center;justify-content:center">
+            <div class="ring1"></div><div class="ring2"></div>
+            <div style="width:28px;height:28px;border-radius:50%;background:#E24B4A;display:flex;align-items:center;justify-content:center;position:relative;z-index:1">
+              <svg width="10" height="12" viewBox="0 0 10 12" fill="none"><rect x="3" y="0.5" width="4" height="7" rx="2" fill="white"/><path d="M1 5.5c0 2.21 1.79 4 4 4s4-1.79 4-4" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round"/><line x1="5" y1="9.5" x2="5" y2="11" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;flex-wrap:wrap"><span style="font-size:9px;font-weight:500;color:#993C1D">Student speaking</span><span style="font-size:8px;color:#E24B4A;font-weight:500">● recording</span></div>
+            <div class="wave-wrap" id="stuWave"></div>
+          </div>
+        </div>
+        <div class="quote" style="border-left-color:#E24B4A">"Um... I think as more data gets added the bias kind of... averages out?"</div>
+        <div class="caption">Live transcription — student response</div>
+      </div>
+      <div class="fade session-card neutral" style="animation-delay:1.6s">
+        <div class="session-head">
+          <div style="width:22px;height:22px;border-radius:50%;background:#EEEDFE;border:0.5px solid #AFA9EC;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:500;color:#3C3489;flex-shrink:0">SM</div>
+          <span style="font-size:9px;font-weight:500;color:#3C3489;flex:1;min-width:0;line-height:1.3">Question 2 — start recording</span>
+        </div>
+        <div class="quote" style="border-left-color:#AFA9EC">"Name a real case where more data made the bias worse, not better."</div>
+        <div class="caption">Transcription — adaptive follow-up</div>
+      </div>
+      <div class="live-scores">
+        <div style="font-size:9px;color:#888780;margin-bottom:2px">Comprehension — live scoring</div>
+        <div class="row-score"><label>Recall</label><div class="bar-track"><div class="bgrow" style="--w:34%;background:#E24B4A;animation-delay:2s"></div></div><span style="font-size:9px;font-weight:500;color:#993C1D">34</span></div>
+        <div class="row-score"><label>Reasoning</label><div class="bar-track"><div class="bgrow" style="--w:21%;background:#E24B4A;animation-delay:2.15s"></div></div><span style="font-size:9px;font-weight:500;color:#993C1D">21</span></div>
+        <div class="row-score"><label>Application</label><div class="bar-track"><div class="bgrow" style="--w:18%;background:#E24B4A;animation-delay:2.3s"></div></div><span style="font-size:9px;font-weight:500;color:#993C1D">18</span></div>
+        <div class="fade card-flag" style="animation-delay:2.5s;margin-top:2px;font-weight:500">Gap detected — spoken responses don't match submission quality</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function bw(id,color,h){var el=document.getElementById(id);if(!el)return;h.forEach(function(v,i){var b=document.createElement('div');b.className='wbar';b.style.cssText='--h:'+v+'px;height:'+v+'px;--d:'+(.4+i*.05).toFixed(2)+'s;background:'+color+';animation-delay:'+((i*.06).toFixed(2))+'s';el.appendChild(b);});}
+  bw('smWave','#534AB7',[5,9,14,10,18,13,7,16,11,8,14,10]);
+  bw('stuWave','#E24B4A',[4,8,14,10,20,16,8,22,14,9,18,12,16,8,20]);
+})();
+</script>
+</body>
+</html>

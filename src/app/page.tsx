@@ -9,6 +9,7 @@ const ThePlatform = dynamic(() => import("@/components/home/sections/ThePlatform
 const DemoVideo = dynamic(() => import("@/components/home/sections/DemoVideo").then(mod => mod.DemoVideo));
 const HowItWorks = dynamic(() => import("@/components/home/sections/HowItWorks").then(mod => mod.HowItWorks));
 const HighStakes = dynamic(() => import("@/components/home/sections/HighStakes").then(mod => mod.HighStakes));
+const FaqSection = dynamic(() => import("@/components/home/sections/FaqSection").then(mod => mod.FaqSection));
 const ContactSection = dynamic(() => import("@/components/home/sections/ContactSection").then(mod => mod.ContactSection));
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <DemoVideo />
         <HowItWorks />
         <HighStakes />
+        <FaqSection />
         <ContactSection />
       </main>
 
