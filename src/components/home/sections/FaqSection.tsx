@@ -22,84 +22,129 @@ const INDUSTRIES: { id: IndustryId; label: string; heading: string }[] = [
 const FAQ_BY_INDUSTRY: Record<IndustryId, FaqItem[]> = {
   education: [
     {
-      question: "How does Socratic Metric fit into our LMS or grading workflow?",
-      answer:
-        "Socratic Metric complements written work with structured oral verification. You can align prompts and rubrics with course outcomes, export summaries for the gradebook, and keep a clear record of what the learner could explain versus what was only on the page.",
+      question: "What is Socratic Metric?",
+      answer: "Socratic Metric is an AI-powered oral assessment platform that measures how well students understand course material by asking them to explain, reason, and respond out loud in real time."
     },
     {
-      question: "Can we verify understanding without relying on AI-written essays?",
-      answer:
-        "Yes. The platform is designed for the AI era: it focuses on live dialogue, follow-up questions, and reasoning under light pressure—signals that are hard to fake with a one-shot generated document.",
+      question: "How is this different from discussion questions or written exams?",
+      answer: "Written work can be edited, assisted, or generated. Socratic Metric evaluates thinking as it happens. Students must respond verbally to adaptive questions, which makes it very difficult to rely on outside help."
     },
     {
-      question: "Is the platform suitable for accreditation and integrity reviews?",
-      answer:
-        "You get timestamped session artifacts, structured outcomes, and consistent criteria across sections. Many teams use this as supplemental evidence for integrity programs and quality reviews alongside your existing policies.",
+      question: "Does this replace faculty?",
+      answer: "No. It handles structured questioning and evaluation at scale, while giving faculty deeper insight into how students are thinking. Faculty still define the content, objectives, and grading standards."
     },
     {
-      question: "How do you support students who need accommodations?",
-      answer:
-        "Timing, pacing, and prompt delivery can be adjusted to documented accommodation plans. Work with your accessibility office to map those needs to session settings—we’re happy to walk through options on a demo.",
+      question: "How are questions created?",
+      answer: "Faculty provide curated course materials such as readings, lectures, or case studies. The system generates questions dynamically based on that content and the student’s responses."
     },
     {
-      question: "What evidence do we get if an outcome is challenged?",
-      answer:
-        "You receive defensible documentation of the verification session—what was asked, how the learner responded at a summary level, and evaluator or system scoring aligned to your rubric—so disputes can be reviewed on substance, not guesswork.",
+      question: "Can students retry or improve their answers?",
+      answer: "Yes. Students can refine their responses through multiple attempts or iterations, with feedback guiding them toward stronger reasoning and clearer explanations."
     },
+    {
+      question: "How is grading handled?",
+      answer: "Responses are evaluated against a rubric aligned to learning outcomes. Scores can be automatically transferred into the LMS gradebook."
+    },
+    {
+      question: "Does this integrate with Canvas or other LMS platforms?",
+      answer: "Yes. Socratic Metric integrates with major LMS systems including Canvas, with single sign-on and automated grade transfer."
+    },
+    {
+      question: "How does this address AI cheating?",
+      answer: "Because responses are oral, adaptive, and time-bound, students cannot simply paste in answers. The system measures authentic understanding rather than polished output."
+    },
+    {
+      question: "What kind of courses does this work for?",
+      answer: "It works across disciplines including business, healthcare, law, and technology. Any subject that requires explanation, reasoning, or applied thinking benefits."
+    },
+    {
+      question: "What is the student experience like?",
+      answer: "Students engage in a guided, conversational assessment that feels more like being questioned by a professor than taking a test."
+    }
   ],
   government: [
     {
-      question: "Can Socratic Metric support high-security or controlled environments?",
-      answer:
-        "Deployment models and data handling vary by program. We’ll align with your security team on hosting, access controls, and logging requirements—whether that’s dedicated infrastructure, VPN-only access, or other constraints you specify.",
+      question: "What is Socratic Metric?",
+      answer: "Socratic Metric is an AI-based oral evaluation system that verifies whether individuals can demonstrate understanding, reasoning, and decision-making in real time."
     },
     {
-      question: "How is oral verification used for operators and mission-critical procedures?",
-      answer:
-        "Teams use scenario-based dialogue to confirm that personnel can explain checks, contingencies, and command intent—not just recite a checklist. That reduces “documentation-only” risk before live operations.",
+      question: "What problem does this solve for government agencies?",
+      answer: "It provides a reliable way to confirm that personnel can apply knowledge under pressure, rather than simply complete training modules."
     },
     {
-      question: "Are sessions auditable for compliance and after-action review?",
-      answer:
-        "Yes. Sessions are designed to produce audit-friendly records: who was verified, when, against which standard, and summarized outcomes suitable for oversight without unnecessary exposure of raw sensitive content.",
+      question: "How is this used in training environments?",
+      answer: "Personnel are given mission-relevant material and then evaluated through structured questioning. The system adapts based on responses to test depth of understanding."
     },
     {
-      question: "What does rollout look like across units or agencies?",
-      answer:
-        "We typically start with a pilot cohort, standardize rubrics and scenarios, then expand with training for reviewers and admins. Your demo can cover governance, roles, and how updates propagate to the field.",
+      question: "Can this be used for certification or qualification?",
+      answer: "Yes. It can function as a verification layer to ensure individuals meet required standards before deployment or assignment."
     },
     {
-      question: "Can verification criteria reflect doctrine or local SOPs?",
-      answer:
-        "Criteria and prompts can be tailored to your doctrine, SOPs, and equipment profiles so verification reflects how your organization actually operates—not a generic off-the-shelf quiz.",
+      question: "How does this improve readiness?",
+      answer: "It measures whether individuals can think, explain, and respond in real-world scenarios, not just recall information."
     },
+    {
+      question: "Does this require pre-written scripts or fixed questions?",
+      answer: "No. The system generates questions dynamically based on curated content and adjusts in real time."
+    },
+    {
+      question: "Is this suitable for high-stakes environments?",
+      answer: "Yes. It is designed for situations where decisions, communication, and reasoning must be accurate under pressure."
+    },
+    {
+      question: "How does it ensure consistency and fairness?",
+      answer: "Every participant is evaluated using the same structured framework and rubric, reducing variability found in human-led evaluations."
+    },
+    {
+      question: "Can it be used across different departments or roles?",
+      answer: "Yes. It is adaptable to defense, healthcare, compliance, and administrative functions where knowledge must be applied, not just learned."
+    },
+    {
+      question: "What about data security and control?",
+      answer: "The system can be deployed with enterprise-grade security and configured to meet government requirements for data handling and access control."
+    }
   ],
   enterprise: [
     {
-      question: "How do we prove employees understood policies beyond sign-off sheets?",
-      answer:
-        "Socratic Metric adds oral verification to the compliance story: employees must explain trade-offs, exceptions, and “what would you do if…”—so attestation is backed by evidence of comprehension, not just a checkbox.",
+      question: "What is Socratic Metric?",
+      answer: "Socratic Metric is an AI-driven system that verifies whether employees can explain, apply, and defend knowledge in real-time conversations. It measures readiness, not course completion."
     },
     {
-      question: "Can we integrate with HRIS or learning systems?",
-      answer:
-        "We support patterns your IT team already uses: SSO, exports, webhooks, and API-oriented workflows depending on your stack. On a demo we’ll map your systems and the cleanest path to rostering and completion records.",
+      question: "Is this a training platform or an LMS replacement?",
+      answer: "No. It sits on top of your existing training. It answers a different question: Can your people actually perform when it matters?"
     },
     {
-      question: "Is the platform built for large, distributed workforces?",
-      answer:
-        "Yes. Sessions can be scheduled at scale, routed to qualified reviewers where needed, and standardized so every region uses the same bar—while still allowing localized scenarios where appropriate.",
+      question: "How is this used in hiring?",
+      answer: "Candidates are given unfamiliar material and then questioned in a live, adaptive conversation. The system evaluates how they think, explain, and handle pressure. It measures cognitive competence, not prior knowledge."
     },
     {
-      question: "Can scenarios match our industry, roles, and risk profile?",
-      answer:
-        "Absolutely. Scenarios can mirror real incidents, product lines, and regulatory themes (safety, privacy, financial controls, etc.) so verification feels relevant—not generic training theater.",
+      question: "Do we need to create a large bank of questions?",
+      answer: "No. You provide short source material. The system generates questions dynamically and adapts based on the candidate’s responses."
     },
     {
-      question: "What records do we retain for regulators or litigation?",
-      answer:
-        "You get structured evidence of verification: session metadata, outcome summaries, and rubric alignment. Your legal and compliance teams define retention; we focus on clarity and consistency of what was verified and when.",
+      question: "What does it actually measure?",
+      answer: "It measures comprehension, clarity of explanation, reasoning under pressure, ability to handle objections, and whether someone is guessing or truly understands."
     },
+    {
+      question: "How is this different from interviews or role play?",
+      answer: "Interviews are inconsistent and subjective. Socratic Metric applies structured, repeatable questioning that probes deeper than most interviewers can in a short time."
+    },
+    {
+      question: "How is this used after hiring?",
+      answer: "Once employees are trained, the system verifies product knowledge, messaging accuracy, and readiness before they engage with customers."
+    },
+    {
+      question: "Is this relevant for regulated industries?",
+      answer: "Yes. It is especially valuable in healthcare, pharma, finance, and any environment where incorrect communication creates risk."
+    },
+    {
+      question: "Can it reduce time to competency?",
+      answer: "Yes. It identifies gaps quickly and ensures people are truly ready before moving forward, which shortens ramp time and reduces costly mistakes."
+    },
+    {
+      question: "What does implementation look like?",
+      answer: "It integrates with existing workflows. You define the content and rubric, and the system handles the questioning, evaluation, and reporting."
+    }
   ],
 };
 
@@ -136,15 +181,6 @@ export function FaqSection() {
                 >
                   FAQ
                 </h2>
-                <p className="text-sm text-[#85756F]">
-                  Did we miss a question?{" "}
-                  <Link
-                    href="mailto:hello@socraticmetric.ai"
-                    className="text-[#3370F7] font-semibold hover:underline underline-offset-2"
-                  >
-                    Email us directly
-                  </Link>
-                </p>
               </div>
 
               <div>
