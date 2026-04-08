@@ -5,10 +5,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "studio": "sanity dev",
+    "sanity:schema": "sanity schema validate"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@fancyapps/ui": "^6.1.10",
+    "@portabletext/react": "^6.0.3",
+    "@radix-ui/react-navigation-menu": "^1.2.14",
+    "@sanity/image-url": "^2.1.1",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.35.1",
     "lottie-react": "^2.4.1",
@@ -16,6 +23,7 @@
     "mammoth": "^1.11.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "16.1.6",
+    "next-sanity": "^12.2.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "tailwind-merge": "^3.5.0"
@@ -26,6 +34,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "sanity": "^5.19.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

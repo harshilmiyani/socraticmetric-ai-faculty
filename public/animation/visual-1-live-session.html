@@ -1,0 +1,135 @@
+<!-- Visual 1: Live Session UI — SocraticMetric™ -->
+<!-- Placement: Homepage hero [Platform UI screenshot] area -->
+<!-- Hook: "Prove they know it. Not the document. Them." -->
+<!-- Drop anywhere. Self-contained, no dependencies. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SM Visual 1 — Live Session</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 12px; background: transparent; font-family: system-ui, -apple-system, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+  @media (max-width: 480px) {
+    body { padding: 4px; }
+    .sm-q { font-size: 12px !important; padding: 10px !important; }
+    .sm-fu { font-size: 11px !important; padding: 8px 10px !important; }
+    .sm-tag { font-size: 10px !important; padding: 4px 8px !important; }
+    #sm-wf { min-width: 60px !important; }
+    .main-container { padding: 12px !important; gap: 12px !important; }
+  }
+  @keyframes sm-pulse-ring { 0%{transform:scale(1);opacity:.5} 100%{transform:scale(1.9);opacity:0} }
+  @keyframes sm-wave       { 0%{height:3px} 100%{height:var(--h,18px)} }
+  @keyframes sm-fade-up    { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+  @keyframes sm-fill       { from{width:0} to{width:var(--w,43%)} }
+  @keyframes sm-tag        { 0%{transform:scale(.85);opacity:0} 100%{transform:scale(1);opacity:1} }
+  .sm-ring  { position:absolute;inset:-5px;border-radius:50%;border:1.5px solid #E24B4A;animation:sm-pulse-ring 1.4s ease-out infinite }
+  .sm-ring2 { position:absolute;inset:-11px;border-radius:50%;border:1px solid #E24B4A;animation:sm-pulse-ring 1.4s ease-out infinite .5s }
+  .sm-wbar  { width:3px;border-radius:2px;background:#378ADD;animation:sm-wave var(--d,.7s) ease-in-out infinite alternate }
+  .sm-prog  { height:100%;border-radius:2px;background:#185FA5;animation:sm-fill 3s ease forwards .8s }
+  .sm-tag   { animation:sm-tag .35s ease forwards;opacity:0 }
+  .sm-q     { animation:sm-fade-up .5s ease forwards }
+  .sm-fu    { animation:sm-fade-up .5s ease forwards 1.2s;opacity:0 }
+</style>
+</head>
+<body>
+<div style="background:#fff;border-radius:16px;border:0.5px solid #e0dfd8;overflow:hidden;width:100%;max-width:680px;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,0.05)">
+  <div style="height:36px;background:#f8f8f7;border-bottom:0.5px solid #e0dfd8;display:flex;align-items:center;padding:0 14px;gap:6px">
+    <div style="width:11px;height:11px;border-radius:50%;background:#ff5f57"></div>
+    <div style="width:11px;height:11px;border-radius:50%;background:#febc2e"></div>
+    <div style="width:11px;height:11px;border-radius:50%;background:#28c840"></div>
+    <span style="margin-left:10px;font-size:11px;color:#888780;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60%;">SocraticMetric™ — live oral session</span>
+    <span style="margin-left:auto;font-size:10px;font-weight:500;color:#E24B4A;flex-shrink:0;">● REC 0:42</span>
+  </div>
+  <div class="main-container" style="padding:16px;display:flex;flex-direction:column;gap:16px">
+    <!-- AI question bubble -->
+    <div style="display:flex;gap:12px;align-items:flex-start">
+      <div style="width:28px;height:28px;border-radius:50%;background:#EEEDFE;border:0.5px solid #AFA9EC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:500;color:#3C3489">SM</div>
+      <div class="sm-q" style="background:#f8f8f7;border:0.5px solid #e0dfd8;border-radius:4px 12px 12px 12px;padding:12px 14px;font-size:13px;color:#2c2c2a;line-height:1.55;max-width:100%">
+        You submitted a policy on data retention. Walk me through the reasoning behind the 90-day threshold — why not 60, and why not 180?
+      </div>
+    </div>
+    <!-- Mic + waveform -->
+    <div style="display:flex;align-items:center;gap:10px;padding:12px;background:#f8f8f7;border-radius:10px;border:0.5px solid #D3D1C7;flex-wrap:wrap">
+      <div style="position:relative;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-right:4px;">
+        <div class="sm-ring"></div>
+        <div class="sm-ring2"></div>
+        <div style="width:36px;height:36px;border-radius:50%;background:#E24B4A;display:flex;align-items:center;justify-content:center;z-index:1;position:relative">
+          <svg width="13" height="15" viewBox="0 0 13 15" fill="none">
+            <rect x="4" y="0.5" width="5" height="9" rx="2.5" fill="white"/>
+            <path d="M1 7.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5" stroke="white" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <line x1="6.5" y1="13" x2="6.5" y2="14.5" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div id="sm-wf" style="display:flex;align-items:center;gap:3px;height:28px;flex:1;min-width:100px;overflow:hidden;mask-image:linear-gradient(to right, black 80%, transparent)"></div>
+      <span style="font-size:11px;color:#888780;white-space:nowrap">responding aloud</span>
+    </div>
+    <!-- Dimension tags -->
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:10px;color:#888780;font-weight:500;text-transform:uppercase;letter-spacing:.05em">Probing dimensions</span>
+      <div style="display:flex;gap:6px;flex-wrap:wrap" id="sm-tags"></div>
+    </div>
+    <!-- Progress bar -->
+    <div style="display:flex;flex-direction:column;gap:5px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:11px;color:#888780">Session progress</span>
+        <span style="font-size:11px;color:#444441;font-weight:500">Question 3 of 7</span>
+      </div>
+      <div style="height:5px;background:#f1efe8;border-radius:3px;overflow:hidden">
+        <div class="sm-prog" style="--w:43%"></div>
+      </div>
+    </div>
+    <!-- Adaptive follow-up -->
+    <div class="sm-fu" style="padding:10px 14px;background:#fff;border-radius:8px;border-left:2px solid #AFA9EC">
+      <div style="font-size:10px;color:#534AB7;font-weight:500;margin-bottom:4px">Adaptive follow-up queued</div>
+      <div style="font-size:12px;color:#5F5E5A;font-style:italic;line-height:1.5">What would change about this threshold if the data included health records subject to HIPAA?</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var heights = [6,12,20,16,26,22,14,28,18,12,24,16,20,10,26,18,14,22,8,16,24,14,20];
+  var wf = document.getElementById('sm-wf');
+  heights.forEach(function (h, i) {
+    var b = document.createElement('div');
+    b.className = 'sm-wbar';
+    b.style.cssText = '--h:' + h + 'px;--d:' + ((.45 + i * .04).toFixed(2)) + 's;animation-delay:' + ((i * .05).toFixed(2)) + 's;height:' + h + 'px';
+    wf.appendChild(b);
+  });
+  var tags = [
+    { l: 'Reasoning depth',    a: true  },
+    { l: 'Trade-off awareness',a: true  },
+    { l: 'Regulatory context', a: false },
+    { l: 'Edge cases',         a: false },
+    { l: 'Application',        a: false }
+  ];
+  var row = document.getElementById('sm-tags');
+  tags.forEach(function (t, i) {
+    var e = document.createElement('span');
+    e.className = 'sm-tag';
+    e.style.cssText = 'animation-delay:' + (.3 + i * .12) + 's;font-size:11px;padding:4px 10px;border-radius:10px;font-weight:500;' +
+      (t.a ? 'background:#EEEDFE;color:#3C3489;border:0.5px solid #AFA9EC'
+           : 'background:#fff;color:#5F5E5A;border:0.5px solid #D3D1C7');
+    e.textContent = t.l;
+    row.appendChild(e);
+  });
+  /* Cycle questions every 4s */
+  var qs = [
+    'You submitted a policy on data retention. Walk me through the reasoning behind the 90-day threshold — why not 60, and why not 180?',
+    'What would change about this threshold if the data included health records subject to HIPAA?',
+    'How would you explain this trade-off to a non-technical stakeholder in three sentences?'
+  ];
+  var qi = 0;
+  var qEl = document.querySelector('.sm-q');
+  setInterval(function () {
+    qi = (qi + 1) % qs.length;
+    qEl.style.opacity = '0';
+    setTimeout(function () { qEl.textContent = qs[qi]; qEl.style.transition = 'opacity .4s'; qEl.style.opacity = '1'; }, 300);
+  }, 4000);
+})();
+</script>
+</body>
+</html>

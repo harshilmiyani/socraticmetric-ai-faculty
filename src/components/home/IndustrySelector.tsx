@@ -17,7 +17,7 @@ export function IndustrySelector() {
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4 pt-2 pb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
-      <span className="text-sm font-semibold tracking-wide text-slate-500 uppercase">
+      <span className="text-sm font-semibold tracking-wide text-[#85756F] uppercase">
         Select your industry:
       </span>
       
@@ -32,7 +32,7 @@ export function IndustrySelector() {
                   "relative px-4 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide transition-all duration-200 border border-slate-300",
                   isActive 
                     ? "bg-[#1F2A44] text-white border-[#1F2A44] shadow-md"
-                    : "bg-white text-slate-600 hover:border-[#F58022] hover:text-[#F58022]"
+                    : "bg-white text-[#85756F] hover:border-[#F58022] hover:text-[#F58022]"
                 )}
               >
                 {industry.label.toUpperCase()}

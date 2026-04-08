@@ -9,11 +9,11 @@ export function VerificationGap() {
       title: "AI-generated content passes visual review",
     },
     {
-      icon: <FileSearch className="w-12 h-12 text-blue-500" />, 
+      icon: <FileSearch className="w-12 h-12 text-[#3370F7]" />, 
       title: "Written documentation hides comprehension gaps",
     },
     {
-      icon: <Lightbulb className="w-12 h-12 text-orange-500" />,
+      icon: <Lightbulb className="w-12 h-12 text-[#F58022]" />,
       title: "High-stakes decisions depend on real understanding",
     },
   ];
@@ -25,7 +25,7 @@ export function VerificationGap() {
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">
             The Verification Gap Organizations Face
           </h2>
-          <p className="text-lg text-slate-600 max-w-4xl mx-auto">
+          <p className="text-lg text-[#85756F] max-w-4xl mx-auto">
             AI makes it easy to create convincing documentation. But when the stakes are high, you need to know people actually understand—not just copy what sounds right. Traditional written documentation can't verify real understanding in high-stakes environments.
           </p>
         </div>
@@ -34,9 +34,9 @@ export function VerificationGap() {
           {gaps.map((gap, i) => (
             <div
               key={i}
-              className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col items-center text-center space-y-6 h-full"
+              className="bg-white p-8 rounded-2xl border border-[#EAF1FE] hover:border-slate-300 shadow-sm hover:shadow-lg transition-all duration-300 group flex flex-col items-center text-center space-y-6 h-full"
             >
-              <div className="p-4 bg-slate-50 rounded-full group-hover:scale-110 transition-transform duration-300">
+              <div className="p-4 bg-[#F5F5F5] rounded-full group-hover:scale-110 transition-transform duration-300">
                   {gap.icon}
               </div>
               <h3 className="text-lg font-bold text-[#1F2A44] leading-snug w-full">

@@ -32,7 +32,7 @@ export function WhoNeedsIt() {
               className="flex items-center gap-4 group"
             >
               <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#F58022] group-hover:scale-110 transition-transform duration-300" />
-              <span className="text-lg font-medium text-slate-600 group-hover:text-[#1F2A44] transition-colors duration-300">
+              <span className="text-lg font-medium text-[#85756F] group-hover:text-[#1F2A44] transition-colors duration-300">
                 {role}
               </span>
             </motion.div>

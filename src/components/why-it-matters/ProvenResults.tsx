@@ -17,7 +17,7 @@ export function ProvenResults() {
           <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#F58022]">
             Proven Results from Socratic Metric
           </h2>
-          <p className="text-lg text-slate-600 max-w-4xl mx-auto">
+          <p className="text-lg text-[#85756F] max-w-4xl mx-auto">
             Organizations using Socratic Metric's oral verification platform see measurable improvements in trust, efficiency, and risk reduction.
           </p>
         </div>

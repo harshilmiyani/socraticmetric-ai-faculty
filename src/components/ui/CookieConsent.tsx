@@ -39,7 +39,7 @@ export function CookieConsent() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="fixed bottom-0 left-0 right-0 z-[100] p-4 md:p-6"
         >
-          <div className="mx-auto max-w-5xl rounded-2xl bg-slate-900/95 backdrop-blur-md p-6 shadow-2xl border border-slate-700/50 text-slate-50 flex flex-col md:flex-row gap-6 items-center justify-between">
+          <div className="mx-auto max-w-5xl rounded-2xl bg-[#163460]/95  p-6 shadow-2xl border border-slate-700/50 text-slate-50 flex flex-col md:flex-row gap-6 items-center justify-between">
             <div className="flex-1 space-y-2">
               <h3 className="font-semibold text-white">We value your privacy</h3>
               <p className="text-sm text-slate-300 leading-relaxed max-w-2xl">
