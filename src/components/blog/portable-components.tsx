@@ -1,8 +1,10 @@
 import type { PortableTextComponents } from "@portabletext/react";
+import type { PortableTextBlock } from "@portabletext/types";
 import Image from "next/image";
 import { urlForImage } from "@/lib/sanity/image";
 import type { SanityImageSource } from "@sanity/image-url";
 import { PortableVideoEmbed } from "@/components/blog/PortableVideoEmbed";
+import { blockHeadingId } from "@/lib/blog/toc";
 
 type PortableImageValue = {
   _type?: string;
@@ -31,7 +33,7 @@ function PortableImage({ value }: { value: PortableImageValue }) {
   const dim = asset?.metadata?.dimensions;
   const naturalW = dim?.width ?? 1200;
   const naturalH = dim?.height ?? Math.round(naturalW * 0.56);
-  const displayW = Math.min(naturalW, 1200);
+  const displayW = Math.min(naturalW, 1400);
   const displayH = dim?.width && dim?.height ? Math.round((displayW / dim.width) * dim.height) : naturalH;
 
   return (
@@ -43,7 +45,7 @@ function PortableImage({ value }: { value: PortableImageValue }) {
           width={displayW}
           height={displayH}
           className="w-full h-auto object-cover"
-          sizes="(max-width: 768px) 100vw, 720px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1152px) 90vw, 1152px"
         />
       </div>
       {value.caption?.trim() ? (
@@ -61,28 +63,44 @@ export const blogPortableTextComponents: PortableTextComponents = {
     ),
   },
   block: {
-    h2: ({ children }) => (
-      <h2 className="font-sans text-2xl sm:text-3xl font-bold mt-10 sm:mt-12 mb-4 text-[#1F2A44] tracking-tight">{children}</h2>
+    h2: ({ children, value }) => (
+      <h2
+        id={blockHeadingId(value as PortableTextBlock)}
+        className="font-sans text-2xl sm:text-3xl lg:text-[2rem] font-bold mt-10 sm:mt-12 mb-4 text-[#1F2A44] tracking-tight scroll-mt-28"
+      >
+        {children}
+      </h2>
     ),
-    h3: ({ children }) => (
-      <h3 className="font-sans text-xl sm:text-2xl font-bold mt-8 mb-3 text-[#1F2A44] tracking-tight">{children}</h3>
+    h3: ({ children, value }) => (
+      <h3
+        id={blockHeadingId(value as PortableTextBlock)}
+        className="font-sans text-xl sm:text-2xl lg:text-[1.625rem] font-bold mt-8 mb-3 text-[#1F2A44] tracking-tight scroll-mt-28"
+      >
+        {children}
+      </h3>
     ),
     h4: ({ children }) => (
       <h4 className="font-sans text-lg sm:text-xl font-bold mt-6 mb-2 text-[#1F2A44] tracking-tight">{children}</h4>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-[#3370F7]/40 bg-[#EAF1FE]/40 pl-5 pr-4 py-3 my-8 rounded-r-xl text-[#1F2A44]/90 italic leading-relaxed">
+      <blockquote className="border-l-4 border-[#3370F7]/40 bg-[#EAF1FE]/40 pl-5 sm:pl-6 pr-4 py-4 my-8 rounded-r-xl text-[#1F2A44]/90 text-base lg:text-lg italic leading-relaxed">
         {children}
       </blockquote>
     ),
-    normal: ({ children }) => <p className="mb-5 text-[#85756F] text-base sm:text-lg leading-relaxed">{children}</p>,
+    normal: ({ children }) => (
+      <p className="mb-5 text-[#85756F] text-base sm:text-lg lg:text-[1.125rem] leading-[1.75]">{children}</p>
+    ),
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc pl-6 mb-6 space-y-2 text-[#85756F] marker:text-[#3370F7]">{children}</ul>
+      <ul className="list-disc pl-6 sm:pl-7 mb-6 space-y-2.5 text-[#85756F] text-base lg:text-[1.125rem] leading-[1.75] marker:text-[#3370F7]">
+        {children}
+      </ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal pl-6 mb-6 space-y-2 text-[#85756F] marker:text-[#3370F7] marker:font-semibold">{children}</ol>
+      <ol className="list-decimal pl-6 sm:pl-7 mb-6 space-y-2.5 text-[#85756F] text-base lg:text-[1.125rem] leading-[1.75] marker:text-[#3370F7] marker:font-semibold">
+        {children}
+      </ol>
     ),
   },
   listItem: {

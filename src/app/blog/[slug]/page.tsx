@@ -7,6 +7,9 @@ import { BlogPageShell } from "@/components/blog/BlogPageShell";
 import { BlogPostCTA } from "@/components/blog/BlogPostCTA";
 import { blogPortableTextComponents } from "@/components/blog/portable-components";
 import { getAllBlogSlugs, getBlogPostBySlug } from "@/lib/sanity/posts";
+import { extractTocFromPortableText, enrichFallbackHtmlWithToc } from "@/lib/blog/toc";
+import { BlogTocDrawer } from "@/components/blog/BlogTocDrawer";
+import type { PortableTextBlock } from "@portabletext/types";
 import type { Metadata } from "next";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -27,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const fallbackArticleClass =
-  "prose prose-lg max-w-none prose-headings:font-sans prose-headings:font-bold prose-headings:text-[#1F2A44] prose-p:text-[#85756F] prose-p:leading-relaxed prose-li:text-[#85756F] prose-strong:text-[#1F2A44] prose-a:text-[#3370F7] prose-a:no-underline hover:prose-a:underline prose-ul:marker:text-[#3370F7]";
+  "prose prose-lg lg:prose-xl max-w-none prose-headings:font-sans prose-headings:font-bold prose-headings:text-[#1F2A44] prose-h2:scroll-mt-28 prose-h3:scroll-mt-28 prose-p:text-[#85756F] prose-p:leading-[1.75] prose-li:text-[#85756F] prose-li:leading-relaxed prose-strong:text-[#1F2A44] prose-a:text-[#3370F7] prose-a:no-underline hover:prose-a:underline prose-ul:marker:text-[#3370F7]";
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
@@ -37,13 +40,21 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
+  let tocItems = extractTocFromPortableText(post.body as PortableTextBlock[] | null);
+  let fallbackHtmlWithAnchors: string | null = null;
+  if (!post.body?.length && post.fallbackHtml) {
+    const { html, toc } = enrichFallbackHtmlWithToc(post.fallbackHtml);
+    fallbackHtmlWithAnchors = html;
+    tocItems = toc;
+  }
+
   return (
     <BlogPageShell>
       <div className="relative pt-24 pb-0 md:pt-28 lg:pt-32 overflow-hidden">
         <div className="absolute top-[5%] left-[-8%] w-[420px] h-[420px] bg-[#3370F7]/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute top-[20%] right-[-12%] w-[480px] h-[480px] bg-[#F58022]/6 rounded-full blur-[110px] pointer-events-none" />
 
-        <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-4xl relative z-10 pb-10 md:pb-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 max-w-7xl relative z-10 pb-10 md:pb-12">
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#85756F] hover:text-[#3370F7] mb-8 transition-colors group"
@@ -56,7 +67,7 @@ export default async function BlogPostPage({ params }: Props) {
             <span>{post.category}</span>
           </div>
 
-          <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold text-[#1F2A44] leading-[1.15] tracking-tight mb-8">
+          <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-[#1F2A44] leading-[1.12] tracking-tight mb-8 max-w-5xl">
             {post.title}
           </h1>
 
@@ -86,14 +97,14 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {post.coverImageUrl ? (
-        <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-4xl -mt-2 mb-10 md:mb-12">
-          <div className="relative aspect-[21/9] sm:aspect-[2/1] w-full rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-xl shadow-black/[0.06]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 max-w-7xl -mt-2 mb-10 md:mb-14">
+          <div className="relative aspect-[21/9] sm:aspect-[2/1] w-full rounded-2xl sm:rounded-3xl overflow-hidden ring-1 ring-black/5 shadow-xl shadow-black/[0.06]">
             <Image
               src={post.coverImageUrl}
               alt={`Cover: ${post.title}`}
               fill
               className="object-cover"
-              sizes="(max-width: 896px) 100vw, 896px"
+              sizes="(max-width: 1280px) 100vw, 1280px"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
@@ -104,19 +115,28 @@ export default async function BlogPostPage({ params }: Props) {
       <section className="relative py-10 md:py-14 pb-16 md:pb-24">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_35%,transparent_100%)] pointer-events-none opacity-60" />
 
-        <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-3xl relative z-10">
-          <article className="bg-white rounded-2xl sm:rounded-3xl border border-white shadow-xl shadow-black/[0.04] ring-1 ring-black/5 p-6 sm:p-10 md:p-12">
-            {post.body?.length ? (
-              <div className="[&_h2:first-child]:mt-0 [&_h3:first-child]:mt-0">
-                <PortableText value={post.body} components={blogPortableTextComponents} />
-              </div>
-            ) : post.fallbackHtml ? (
-              <div className={fallbackArticleClass} dangerouslySetInnerHTML={{ __html: post.fallbackHtml }} />
-            ) : null}
-          </article>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 max-w-7xl relative z-10">
+          <div className="max-w-6xl mx-auto w-full">
+            <article className="bg-white rounded-2xl sm:rounded-3xl border border-white shadow-xl shadow-black/[0.04] ring-1 ring-black/5 p-6 sm:p-10 md:p-12 lg:p-14">
+              {post.body?.length ? (
+                <div className="[&_h2:first-child]:mt-0 [&_h3:first-child]:mt-0">
+                  <PortableText value={post.body} components={blogPortableTextComponents} />
+                </div>
+              ) : fallbackHtmlWithAnchors ? (
+                <div
+                  className={fallbackArticleClass}
+                  dangerouslySetInnerHTML={{ __html: fallbackHtmlWithAnchors }}
+                />
+              ) : null}
+            </article>
 
-          <BlogPostCTA />
+            <div className="mt-10 sm:mt-12">
+              <BlogPostCTA />
+            </div>
+          </div>
         </div>
+
+        <BlogTocDrawer items={tocItems} />
       </section>
     </BlogPageShell>
   );

@@ -17,7 +17,8 @@ export function getSanityClient(): SanityClient | null {
     projectId,
     dataset,
     apiVersion,
-    useCdn: true,
+    // Read from the API (not Sanity’s CDN) so each site refresh matches what you just published.
+    useCdn: false,
     token: process.env.SANITY_API_READ_TOKEN || undefined,
   });
 }

@@ -11,7 +11,7 @@ export function BlogPostCTA() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A44] via-transparent to-[#1F2A44]/80 pointer-events-none z-0" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100%,520px)] h-[min(100%,520px)] bg-[#3370F7]/20 rounded-full blur-[100px] pointer-events-none z-0" />
 
-      <div className="relative z-10 px-6 sm:px-10 md:px-12 max-w-2xl mx-auto space-y-6">
+      <div className="relative z-10 px-6 sm:px-10 md:px-12 max-w-3xl mx-auto space-y-6">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(90%,320px)] h-px bg-gradient-to-r from-transparent via-[#F58022]/60 to-transparent" />
 
         <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight pt-2">

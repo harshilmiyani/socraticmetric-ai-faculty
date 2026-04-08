@@ -22,12 +22,12 @@ export function BlogHero() {
       <div className="absolute bottom-[0%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_50%,transparent_100%)] pointer-events-none opacity-80" />
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10 max-w-screen-2xl">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto space-y-5 sm:space-y-6"
+          className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6 lg:space-y-7"
         >
           <div className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-slate-200/80 bg-white/80 px-3 py-1.5 text-[10px] sm:text-xs font-bold tracking-widest text-[#85756F] uppercase shadow-sm backdrop-blur-sm">
             <Link href="/" className="text-[#3370F7] hover:text-[#4C8FD6] transition-colors">
@@ -48,7 +48,7 @@ export function BlogHero() {
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-[#85756F] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-[#85756F] max-w-3xl mx-auto leading-relaxed">
             Exploring oral verification, cognitive science, and what proof of understanding means when written output is no longer enough.
           </p>
         </motion.div>

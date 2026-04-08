@@ -30,6 +30,8 @@ export const postType = defineType({
       title: "Published at",
       type: "datetime",
       initialValue: () => new Date().toISOString(),
+      description:
+        "Shown on the site and used for ordering. After you publish, the public blog refreshes within about a minute.",
     }),
     defineField({
       name: "readTime",

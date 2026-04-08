@@ -8,34 +8,23 @@ import type { BlogPostCard } from "@/lib/sanity/types";
 
 type Props = {
   posts: BlogPostCard[];
-  /** When true and list is empty, show CMS hint instead of generic copy. */
-  sanityConfigured?: boolean;
 };
 
-export function BlogListing({ posts, sanityConfigured = false }: Props) {
+export function BlogListing({ posts }: Props) {
   if (posts.length === 0) {
     return (
-      <div className="max-w-lg mx-auto text-center rounded-2xl border border-white bg-white/90 shadow-xl shadow-black/[0.04] ring-1 ring-black/5 px-8 py-14">
-        <p className="text-lg font-semibold text-[#1F2A44] mb-2">No posts yet</p>
-        <p className="text-sm text-[#85756F] leading-relaxed mb-6">
-          {sanityConfigured
-            ? "Publish a post in Sanity Studio — it will show here within about a minute, or immediately after your revalidation webhook runs."
-            : "Add NEXT_PUBLIC_SANITY_PROJECT_ID to your environment to load posts from Sanity, or publish content in the CMS."}
+      <div className="max-w-xl mx-auto text-center rounded-2xl border border-white bg-white/90 shadow-xl shadow-black/[0.04] ring-1 ring-black/5 px-8 py-14 sm:px-12">
+        <p className="text-lg font-semibold text-[#1F2A44] mb-2">Insights coming soon</p>
+        <p className="text-sm text-[#85756F] leading-relaxed">
+          We don&apos;t have any articles published here yet. New perspectives on oral verification, learning, and
+          assessment will appear when they&apos;re ready — please check back later.
         </p>
-        {sanityConfigured ? (
-          <Link
-            href="/studio"
-            className="inline-flex items-center justify-center rounded-full bg-[#3370F7] text-white text-sm font-bold px-6 py-3 shadow-lg shadow-[#3370F7]/25 hover:bg-[#4C8FD6] transition-colors"
-          >
-            Open Studio
-          </Link>
-        ) : null}
       </div>
     );
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 w-full">
       {posts.map((post, i) => (
         <motion.article
           key={post.slug}
@@ -43,9 +32,9 @@ export function BlogListing({ posts, sanityConfigured = false }: Props) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: i * 0.08 }}
-          className="group flex flex-col bg-white rounded-2xl border border-white shadow-xl shadow-black/[0.04] ring-1 ring-black/5 overflow-hidden hover:shadow-2xl hover:ring-[#3370F7]/10 transition-all duration-300"
+          className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-white shadow-xl shadow-black/[0.04] ring-1 ring-black/5 overflow-hidden hover:shadow-2xl hover:ring-[#3370F7]/10 transition-all duration-300"
         >
-          <Link href={`/blog/${post.slug}`} className="relative block h-48 sm:h-52 w-full overflow-hidden shrink-0">
+          <Link href={`/blog/${post.slug}`} className="relative block h-52 sm:h-56 lg:h-64 w-full overflow-hidden shrink-0">
             <div className={`absolute inset-0 ${post.coverImageUrl ? "" : post.imageClass}`}>
               {post.coverImageUrl ? (
                 <Image
@@ -53,7 +42,7 @@ export function BlogListing({ posts, sanityConfigured = false }: Props) {
                   alt={`Cover: ${post.title}`}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1536px) 50vw, 720px"
                 />
               ) : (
                 <>
@@ -75,7 +64,7 @@ export function BlogListing({ posts, sanityConfigured = false }: Props) {
             <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/20 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Link>
 
-          <div className="p-6 sm:p-8 flex-1 flex flex-col">
+          <div className="p-6 sm:p-8 lg:p-9 flex-1 flex flex-col">
             <div className="flex items-center gap-3 text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-[#3370F7] mb-3 flex-wrap">
               <span>{post.category}</span>
               <span className="text-slate-200 font-normal" aria-hidden>
@@ -87,7 +76,7 @@ export function BlogListing({ posts, sanityConfigured = false }: Props) {
               </span>
             </div>
 
-            <h2 className="text-xl sm:text-2xl font-bold text-[#1F2A44] mb-3 leading-snug group-hover:text-[#3370F7] transition-colors duration-300">
+            <h2 className="text-xl sm:text-2xl lg:text-[1.65rem] font-bold text-[#1F2A44] mb-3 leading-snug group-hover:text-[#3370F7] transition-colors duration-300">
               <Link href={`/blog/${post.slug}`} className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3370F7]/30 focus-visible:rounded-sm">
                 {post.title}
               </Link>
