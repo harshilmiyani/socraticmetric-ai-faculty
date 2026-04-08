@@ -48,9 +48,7 @@ export function BlogHero() {
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-[#85756F] max-w-3xl mx-auto leading-relaxed">
-            Exploring oral verification, cognitive science, and what proof of understanding means when written output is no longer enough.
-          </p>
+       
         </motion.div>
       </div>
     </div>
