@@ -38,7 +38,7 @@ function PortableImage({ value }: { value: PortableImageValue }) {
 
   return (
     <figure className="my-8 sm:my-10 not-prose">
-      <div className="relative w-full overflow-hidden rounded-xl sm:rounded-2xl ring-1 ring-black/5 shadow-lg shadow-black/[0.06] bg-[#F1F5F9]">
+      <div className="relative w-full overflow-hidden rounded-xl bg-[#F1F5F9] shadow-lg shadow-[#1F2A44]/[0.06] ring-1 ring-black/[0.06] sm:rounded-2xl">
         <Image
           src={src}
           alt={value.alt?.trim() ? value.alt : "Blog image"}
@@ -66,7 +66,7 @@ export const blogPortableTextComponents: PortableTextComponents = {
     h2: ({ children, value }) => (
       <h2
         id={blockHeadingId(value as PortableTextBlock)}
-        className="font-sans text-2xl sm:text-3xl lg:text-[2rem] font-bold mt-10 sm:mt-12 mb-4 text-[#1F2A44] tracking-tight scroll-mt-28"
+        className="font-sans text-2xl sm:text-3xl lg:text-[2rem] font-bold mt-10 sm:mt-12 mb-4 border-l-[3px] border-[#3370F7] pl-4 text-[#1F2A44] tracking-tight scroll-mt-28 sm:pl-5"
       >
         {children}
       </h2>
@@ -74,7 +74,7 @@ export const blogPortableTextComponents: PortableTextComponents = {
     h3: ({ children, value }) => (
       <h3
         id={blockHeadingId(value as PortableTextBlock)}
-        className="font-sans text-xl sm:text-2xl lg:text-[1.625rem] font-bold mt-8 mb-3 text-[#1F2A44] tracking-tight scroll-mt-28"
+        className="font-sans text-xl sm:text-2xl lg:text-[1.625rem] font-bold mt-8 mb-3 border-l-2 border-[#F58022]/50 pl-3 text-[#1F2A44] tracking-tight scroll-mt-28 sm:pl-4"
       >
         {children}
       </h3>
@@ -83,7 +83,7 @@ export const blogPortableTextComponents: PortableTextComponents = {
       <h4 className="font-sans text-lg sm:text-xl font-bold mt-6 mb-2 text-[#1F2A44] tracking-tight">{children}</h4>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-[#3370F7]/40 bg-[#EAF1FE]/40 pl-5 sm:pl-6 pr-4 py-4 my-8 rounded-r-xl text-[#1F2A44]/90 text-base lg:text-lg italic leading-relaxed">
+      <blockquote className="my-8 rounded-2xl border border-[#3370F7]/10 bg-gradient-to-br from-[#EAF1FE]/50 to-[#F1F5F9]/40 py-5 pl-5 pr-5 text-base italic leading-relaxed text-[#1F2A44]/90 shadow-sm ring-1 ring-[#3370F7]/5 sm:pl-6 sm:pr-6 lg:text-lg">
         {children}
       </blockquote>
     ),
@@ -116,7 +116,7 @@ export const blogPortableTextComponents: PortableTextComponents = {
           href={href}
           target={target}
           rel={target === "_blank" ? "noopener noreferrer" : undefined}
-          className="text-[#3370F7] font-medium underline underline-offset-2 decoration-[#3370F7]/30 hover:decoration-[#3370F7] hover:text-[#2563eb] transition-colors"
+          className="font-medium text-[#3370F7] underline decoration-[#3370F7]/30 underline-offset-2 transition-colors hover:text-[#4C8FD6] hover:decoration-[#4C8FD6]/50"
         >
           {children}
         </a>

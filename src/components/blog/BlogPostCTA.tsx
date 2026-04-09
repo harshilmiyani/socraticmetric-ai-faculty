@@ -6,7 +6,7 @@ const benefits = ["Oral verification at scale", "Audit-ready records", "Built fo
 
 export function BlogPostCTA() {
   return (
-    <section className="relative mt-12 sm:mt-16 py-14 md:py-20 bg-[#1F2A44] text-center overflow-hidden rounded-2xl sm:rounded-3xl ring-1 ring-white/10">
+    <section className="relative mt-12 sm:mt-16 overflow-hidden rounded-2xl bg-[#1F2A44] py-14 text-center shadow-xl shadow-[#1F2A44]/40 ring-1 ring-white/10 sm:rounded-3xl md:py-20">
       <BackgroundBeams />
       <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A44] via-transparent to-[#1F2A44]/80 pointer-events-none z-0" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100%,520px)] h-[min(100%,520px)] bg-[#3370F7]/20 rounded-full blur-[100px] pointer-events-none z-0" />

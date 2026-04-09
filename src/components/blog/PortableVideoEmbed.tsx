@@ -21,7 +21,7 @@ export function PortableVideoEmbed({ value }: { value: PortableVideoValue }) {
   if (resolved.kind === "iframe") {
     return (
       <figure className="my-8 sm:my-10 not-prose">
-        <div className="relative w-full overflow-hidden rounded-xl sm:rounded-2xl ring-1 ring-black/5 shadow-lg shadow-black/[0.06] bg-[#1F2A44] aspect-video">
+        <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-[#1F2A44] shadow-lg shadow-[#1F2A44]/[0.12] ring-1 ring-black/[0.08] sm:rounded-2xl">
           <iframe
             src={resolved.src}
             title={iframeTitle}
