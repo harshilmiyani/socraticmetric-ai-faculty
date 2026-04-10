@@ -8,7 +8,7 @@ import { BlogPostCTA } from "@/components/blog/BlogPostCTA";
 import { blogPortableTextComponents } from "@/components/blog/portable-components";
 import { getAllBlogSlugs, getBlogPostBySlug } from "@/lib/sanity/posts";
 import { extractTocFromPortableText, enrichFallbackHtmlWithToc } from "@/lib/blog/toc";
-import { BlogPostTocMobile, BlogPostTocSidebar } from "@/components/blog/BlogPostToc";
+import { BlogPostToc } from "@/components/blog/BlogPostToc";
 import type { PortableTextBlock } from "@portabletext/types";
 import type { Metadata } from "next";
 
@@ -147,8 +147,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,#000_30%,transparent_100%)] opacity-70" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 xl:px-14">
-          <div className="mx-auto flex w-full max-w-6xl flex-col items-stretch gap-0 lg:max-w-none lg:flex-row lg:items-start lg:justify-center lg:gap-10 xl:gap-12">
-          <article className="relative min-w-0 w-full max-w-6xl flex-1 overflow-hidden rounded-2xl border border-white bg-white/95 shadow-xl shadow-[#1F2A44]/[0.06] ring-1 ring-black/[0.05] backdrop-blur-sm sm:rounded-3xl lg:mx-0">
+          <article className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-2xl border border-white bg-white/95 shadow-xl shadow-[#1F2A44]/[0.06] ring-1 ring-black/[0.05] backdrop-blur-sm sm:rounded-3xl">
             <div
               className="pointer-events-none absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[#3370F7] via-[#4C8FD6]/80 to-[#F58022]/70 sm:w-1.5 sm:rounded-l-3xl"
               aria-hidden
@@ -180,8 +179,6 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="relative px-5 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 lg:px-14 lg:py-14">
               <div className="pointer-events-none absolute right-6 top-6 hidden h-16 w-16 rounded-2xl bg-gradient-to-br from-[#EAF1FE]/80 to-transparent lg:block" aria-hidden />
 
-              <BlogPostTocMobile items={tocItems} />
-
               {post.body?.length ? (
                 <div className={`${articleInnerClass} [&_h2:first-child]:mt-0 [&_h3:first-child]:mt-0`}>
                   <PortableText value={post.body} components={blogPortableTextComponents} />
@@ -194,8 +191,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </article>
 
-          <BlogPostTocSidebar items={tocItems} />
-          </div>
+          <BlogPostToc items={tocItems} />
 
           <div className="mx-auto mt-10 max-w-6xl sm:mt-14">
             <BlogPostCTA />
