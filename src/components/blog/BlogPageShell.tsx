@@ -7,9 +7,9 @@ import Link from "next/link";
 
 export function BlogPageShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F1F5F9] text-[#1F2A44] overflow-x-hidden font-sans selection:bg-[#F58022]/20 selection:text-[#1F2A44]">
+    <div className="flex min-h-screen flex-col overflow-x-hidden bg-[#F1F5F9] font-sans text-[#1F2A44] selection:bg-[#F58022]/20 selection:text-[#1F2A44]">
       <Navbar />
-      <main className="flex-1">{children}</main>
+      <main className="relative flex-1">{children}</main>
       <Footer />
     </div>
   );
@@ -17,20 +17,20 @@ export function BlogPageShell({ children }: { children: React.ReactNode }) {
 
 export function BlogHero() {
   return (
-    <div className="relative pt-24 pb-10 md:pt-28 md:pb-14 lg:pt-32 lg:pb-16 overflow-hidden">
-      <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[0%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_50%,transparent_100%)] pointer-events-none opacity-80" />
+    <div className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
+      <div className="pointer-events-none absolute left-[-10%] top-[0%] h-[500px] w-[500px] rounded-full bg-[#3370F7]/10 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-[0%] right-[-10%] h-[600px] w-[600px] rounded-full bg-[#F58022]/6 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_50%,transparent_100%)] opacity-80" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10 max-w-screen-2xl">
+      <div className="relative z-10 mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-10 xl:px-14">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6 lg:space-y-7"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto max-w-4xl space-y-5 text-center sm:space-y-6 lg:space-y-7"
         >
-          <div className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-slate-200/80 bg-white/80 px-3 py-1.5 text-[10px] sm:text-xs font-bold tracking-widest text-[#85756F] uppercase shadow-sm backdrop-blur-sm">
-            <Link href="/" className="text-[#3370F7] hover:text-[#4C8FD6] transition-colors">
+          <div className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-slate-200/90 bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#85756F] shadow-sm backdrop-blur-md sm:text-xs">
+            <Link href="/" className="text-[#3370F7] transition-colors hover:text-[#4C8FD6]">
               Home
             </Link>
             <span className="text-slate-300" aria-hidden>
@@ -39,18 +39,28 @@ export function BlogHero() {
             <span className="text-[#1F2A44]">Blog</span>
           </div>
 
-          <p className="text-xs sm:text-sm font-bold tracking-[0.2em] text-[#3370F7] uppercase">Insights</p>
+          <div className="flex flex-col items-center gap-2">
+            <span className="h-px w-12 rounded-full bg-gradient-to-r from-transparent via-[#3370F7]/50 to-transparent" aria-hidden />
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#3370F7] sm:text-sm">Insights</p>
+          </div>
 
-          <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
+          <h1 className="font-sans text-3xl font-bold leading-[1.12] tracking-tight text-[#1F2A44] sm:text-4xl md:text-5xl lg:text-6xl">
             Ideas on assessment, <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3370F7] via-[#4C8FD6] to-[#F58022]">
+            <span className="bg-gradient-to-r from-[#3370F7] via-[#4C8FD6] to-[#F58022] bg-clip-text text-transparent">
               AI-era learning
             </span>
           </h1>
-
-       
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-[#85756F] sm:text-lg md:text-xl">
+            Exploring oral verification, cognitive science, and what proof of understanding means when written output is
+            no longer enough.
+          </p>
         </motion.div>
       </div>
+
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#E8EDF3]/90 via-[#F1F5F9]/40 to-transparent md:h-32"
+        aria-hidden
+      />
     </div>
   );
 }

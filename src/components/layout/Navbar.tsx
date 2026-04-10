@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Button } from "../ui/Button";
 import { Menu, X, ChevronDown, GraduationCap, Building, Shield, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -124,15 +125,26 @@ function SolutionsMenuItem({ item }: { item: NavItem }) {
   );
 }
 
+/** Blog posts (not /blog index) often use a full-bleed hero — keep nav on a solid bar so links stay readable. */
+function isBlogArticlePath(pathname: string | null): boolean {
+  if (!pathname) return false;
+  return /^\/blog\/[^/]+/.test(pathname);
+}
+
 export function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+
+  const blogArticle = isBlogArticlePath(pathname);
+  const useSolidNav = scrolled || mobileMenuOpen || blogArticle;
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -143,16 +155,24 @@ export function Navbar() {
 
 
   return (
-    <div className={cn("fixed top-0 left-0 right-0 z-[60] flex justify-center transition-all duration-300", (scrolled || mobileMenuOpen) ? "pt-4 px-4" : "pt-0 px-0")}>
-      <motion.header 
+    <div
+      className={cn(
+        "fixed left-0 right-0 top-0 z-[60] flex justify-center transition-all duration-300",
+        useSolidNav ? "px-4 pt-4" : "px-0 pt-0",
+      )}
+    >
+      <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
         className={cn(
-          "relative flex items-center justify-between transition-all duration-500 z-50",
-          (scrolled || mobileMenuOpen) 
-            ? "px-6 py-3 rounded-full w-full max-w-6xl bg-white/60 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 ring-1 ring-black/5" 
-            : "px-6 md:px-12 py-6 w-full max-w-full rounded-none bg-white/0 border-b border-transparent"
+          "relative z-50 flex items-center justify-between transition-all duration-500",
+          useSolidNav
+            ? cn(
+                "w-full max-w-6xl rounded-full border border-white/70 bg-white/85 px-5 py-2.5 shadow-[0_8px_32px_rgb(15,23,42,0.08)] ring-1 ring-black/[0.06] backdrop-blur-xl sm:px-6 sm:py-3",
+                blogArticle && "bg-white/92 shadow-[0_12px_40px_rgb(15,23,42,0.12)] ring-black/[0.08]",
+              )
+            : "w-full max-w-full rounded-none border-b border-transparent bg-white/0 px-6 py-6 md:px-12",
         )}
       >
         {/* Logo */}

@@ -43,13 +43,15 @@ export function BlogTocDrawer({ items }: Props) {
         aria-expanded={open}
         aria-controls="blog-toc-drawer-panel"
         className={cn(
-          "fixed z-[70] flex items-center gap-2 rounded-full border border-slate-200/90 bg-white/95 px-4 py-3 text-sm font-bold text-[#1F2A44] shadow-xl shadow-black/[0.08] ring-1 ring-black/5 backdrop-blur-md",
-          "transition-all hover:border-[#3370F7]/30 hover:text-[#3370F7] hover:shadow-[#3370F7]/15 hover:scale-[1.02] active:scale-[0.98]",
+          "fixed z-[70] flex items-center gap-2.5 rounded-full border border-white/90 bg-white/95 px-4 py-3 text-sm font-bold text-[#1F2A44] shadow-xl shadow-[#1F2A44]/[0.1] ring-1 ring-black/[0.06] backdrop-blur-md",
+          "transition-all hover:border-[#3370F7]/25 hover:text-[#3370F7] hover:shadow-2xl hover:shadow-[#3370F7]/12 hover:scale-[1.02] active:scale-[0.98]",
           "bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))]",
           "md:bottom-8 md:right-8",
         )}
       >
-        <ListTree className="h-4 w-4 text-[#3370F7]" aria-hidden />
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EAF1FE] ring-1 ring-[#3370F7]/15">
+          <ListTree className="h-4 w-4 text-[#3370F7]" aria-hidden strokeWidth={2} />
+        </span>
         Contents
       </button>
 
@@ -75,22 +77,24 @@ export function BlogTocDrawer({ items }: Props) {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 320 }}
+              transition={{ type: "spring", damping: 32, stiffness: 340 }}
               className={cn(
                 "fixed top-0 right-0 bottom-0 z-[80] flex w-full max-w-md flex-col",
-                "border-l border-slate-200/80 bg-white shadow-2xl shadow-black/20",
+                "border-l border-slate-200/90 bg-white/98 shadow-2xl shadow-[#1F2A44]/15 backdrop-blur-xl",
                 "pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(1rem,env(safe-area-inset-bottom))]",
               )}
             >
-              <div className="flex items-center justify-between gap-4 border-b border-slate-100 px-5 py-4 shrink-0">
-                <div className="flex items-center gap-2 min-w-0">
-                  <ListTree className="h-5 w-5 text-[#3370F7] shrink-0" aria-hidden />
-                  <h2
-                    id="blog-toc-drawer-title"
-                    className="text-sm font-bold uppercase tracking-[0.15em] text-[#3370F7] truncate"
-                  >
-                    On this page
-                  </h2>
+              <div className="flex shrink-0 items-center justify-between gap-4 border-b border-slate-100/90 bg-gradient-to-r from-[#F8FAFC] to-white px-5 py-4">
+                <div className="flex min-w-0 items-center gap-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#EAF1FE] ring-1 ring-[#3370F7]/12">
+                    <ListTree className="h-4 w-4 text-[#3370F7]" aria-hidden strokeWidth={2} />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#3370F7]">Navigate</p>
+                    <h2 id="blog-toc-drawer-title" className="truncate font-sans text-base font-bold text-[#1F2A44]">
+                      On this page
+                    </h2>
+                  </div>
                 </div>
                 <button
                   type="button"
