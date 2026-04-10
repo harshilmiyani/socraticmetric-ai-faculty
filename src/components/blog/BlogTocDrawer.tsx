@@ -43,10 +43,11 @@ export function BlogTocDrawer({ items }: Props) {
         aria-expanded={open}
         aria-controls="blog-toc-drawer-panel"
         className={cn(
-          "fixed z-[70] flex items-center gap-2.5 rounded-full border border-white/90 bg-white/95 px-4 py-3 text-sm font-bold text-[#1F2A44] shadow-xl shadow-[#1F2A44]/[0.1] ring-1 ring-black/[0.06] backdrop-blur-md",
+          "fixed z-[70] flex items-center gap-2.5 rounded-full border border-white/90 bg-white/95 py-2.5 pl-2.5 pr-4 text-sm font-bold text-[#1F2A44] shadow-xl shadow-[#1F2A44]/[0.1] ring-1 ring-black/[0.06] backdrop-blur-md sm:py-3 sm:pl-3 sm:pr-4",
           "transition-all hover:border-[#3370F7]/25 hover:text-[#3370F7] hover:shadow-2xl hover:shadow-[#3370F7]/12 hover:scale-[1.02] active:scale-[0.98]",
-          "bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))]",
-          "md:bottom-8 md:right-8",
+          // Below fixed navbar (~pt-4 + bar height); clear safe areas on notched devices
+          "left-[max(0.75rem,env(safe-area-inset-left))] top-[max(5.75rem,calc(env(safe-area-inset-top)+4.75rem))]",
+          "sm:left-6 sm:top-[6.25rem] md:left-8 md:top-28",
         )}
       >
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EAF1FE] ring-1 ring-[#3370F7]/15">
@@ -74,14 +75,14 @@ export function BlogTocDrawer({ items }: Props) {
               role="dialog"
               aria-modal="true"
               aria-labelledby="blog-toc-drawer-title"
-              initial={{ x: "100%" }}
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 32, stiffness: 340 }}
               className={cn(
-                "fixed top-0 right-0 bottom-0 z-[80] flex w-full max-w-md flex-col",
-                "border-l border-slate-200/90 bg-white/98 shadow-2xl shadow-[#1F2A44]/15 backdrop-blur-xl",
-                "pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(1rem,env(safe-area-inset-bottom))]",
+                "fixed bottom-0 left-0 top-0 z-[80] flex w-full max-w-md flex-col",
+                "border-r border-slate-200/90 bg-white/98 shadow-2xl shadow-[#1F2A44]/15 backdrop-blur-xl",
+                "pb-[max(1rem,env(safe-area-inset-bottom))] pl-[max(0,env(safe-area-inset-left))] pt-[max(0.75rem,env(safe-area-inset-top))]",
               )}
             >
               <div className="flex shrink-0 items-center justify-between gap-4 border-b border-slate-100/90 bg-gradient-to-r from-[#F8FAFC] to-white px-5 py-4">
