@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { LoadingScreen } from "@/components/ui/LoadingScreen";
+import { TextWidget } from '@livechat/widget-react'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -30,6 +31,7 @@ export default function RootLayout({
         <LoadingScreen />
         <ScrollToTop />
         <CookieConsent />
+        <TextWidget organizationId="9558f832-6dca-4f1f-9a83-a89d99ef7e90" />
       </body>
     </html>
   );
