@@ -6,6 +6,7 @@ import { CookieConsent } from "@/components/ui/CookieConsent";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import { ChatbaseWidget } from "@/components/chatbot/ChatbaseWidget";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -32,6 +33,7 @@ export default function RootLayout({
         <ScrollToTop />
         <CookieConsent />
         <ChatbaseWidget />
+        <GoogleAnalytics />
       </body>
     </html>
   );
