@@ -40,7 +40,7 @@ function AuthorRow({ post }: { post: BlogPostCard }) {
       </div>
       <div className="min-w-0">
         <p className="truncate text-sm font-bold text-[#1F2A44]">{post.author}</p>
-        <p className="truncate text-xs text-[#85756F]">{post.date}</p>
+        <p className="truncate text-xs text-[#64748B]">{post.date}</p>
       </div>
     </div>
   );
@@ -66,7 +66,7 @@ function FeaturedPostCard({ post }: { post: BlogPostCard }) {
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white bg-white shadow-xl shadow-[#1F2A44]/[0.06] ring-1 ring-black/[0.05] transition-shadow duration-300 hover:shadow-2xl hover:ring-[#3370F7]/12"
     >
-      <div className="grid lg:grid-cols-[1.15fr_1fr] lg:gap-0">
+      <div className="grid lg:grid-cols-[1.25fr_1fr] lg:gap-0">
         <Link
           href={`/blog/${post.slug}`}
           className="relative block h-56 sm:h-64 lg:h-full lg:min-h-[320px] w-full overflow-hidden shrink-0"
@@ -92,17 +92,18 @@ function FeaturedPostCard({ post }: { post: BlogPostCard }) {
               </>
             )}
           </div>
+          <div className="absolute inset-0 bg-[#1F2A44]/0 transition-colors duration-500 group-hover:bg-[#1F2A44]/[0.03] pointer-events-none" />
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/35 via-black/10 to-transparent pointer-events-none lg:h-40" />
         </Link>
 
-        <div className="relative flex flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12">
+        <div className="relative flex flex-col justify-center p-6 sm:p-8 lg:p-10 xl:p-12 lg:border-l lg:border-slate-100">
           <div className="absolute right-6 top-6 hidden lg:flex h-10 w-10 items-center justify-center rounded-xl bg-[#F58022]/10 text-[#F58022]">
             <Sparkles className="h-5 w-5" strokeWidth={2} aria-hidden />
           </div>
 
           <PostMeta post={post} className="mb-4" />
 
-          <h2 className="text-2xl sm:text-3xl lg:text-[1.85rem] xl:text-4xl font-bold text-[#1F2A44] leading-[1.2] tracking-tight mb-4 group-hover:text-[#3370F7] transition-colors duration-300">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.5rem] xl:text-[2.75rem] font-bold text-[#1F2A44] leading-[1.15] tracking-tight mb-5 group-hover:text-[#3370F7] transition-colors duration-300">
             <Link
               href={`/blog/${post.slug}`}
               className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3370F7]/30 focus-visible:rounded-sm"
@@ -111,7 +112,7 @@ function FeaturedPostCard({ post }: { post: BlogPostCard }) {
             </Link>
           </h2>
 
-          <p className="text-[#85756F] leading-relaxed text-sm sm:text-base mb-8 line-clamp-3 sm:line-clamp-4 lg:line-clamp-[5]">
+          <p className="text-[#64748B] leading-relaxed text-base sm:text-lg mb-8 line-clamp-3 sm:line-clamp-4 lg:line-clamp-[5]">
             {post.excerpt}
           </p>
 
@@ -170,13 +171,14 @@ function GridPostCard({ post, i }: { post: BlogPostCard; i: number }) {
             </>
           )}
         </div>
+        <div className="absolute inset-0 bg-[#1F2A44]/0 transition-colors duration-500 group-hover:bg-[#1F2A44]/[0.03] pointer-events-none" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/15 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </Link>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6 lg:p-7">
         <PostMeta post={post} className="mb-3" />
 
-        <h2 className="mb-3 text-lg font-bold leading-snug text-[#1F2A44] transition-colors duration-300 group-hover:text-[#3370F7] sm:text-xl">
+        <h2 className="mb-3 font-serif text-xl font-bold leading-tight text-[#1F2A44] transition-colors duration-300 group-hover:text-[#3370F7] sm:text-2xl">
           <Link
             href={`/blog/${post.slug}`}
             className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3370F7]/30 focus-visible:rounded-sm"
@@ -185,7 +187,7 @@ function GridPostCard({ post, i }: { post: BlogPostCard; i: number }) {
           </Link>
         </h2>
 
-        <p className="mb-6 flex-1 text-sm leading-relaxed text-[#85756F] sm:text-[0.9375rem] line-clamp-3">{post.excerpt}</p>
+        <p className="mb-6 flex-1 text-sm leading-relaxed text-[#64748B] sm:text-[0.9375rem] line-clamp-3">{post.excerpt}</p>
 
         <div className="mt-auto flex items-center justify-between gap-4 border-t border-slate-100 pt-5">
           <AuthorRow post={post} />
@@ -225,14 +227,14 @@ export function BlogListing({ posts }: Props) {
 
       {rest.length > 0 ? (
         <div>
-          <div className="mb-6 flex flex-col gap-2 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-6 flex flex-col gap-2 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#3370F7]">Library</p>
-              <h2 className="mt-1 font-sans text-xl font-bold tracking-tight text-[#1F2A44] sm:text-2xl">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#3370F7]">Library</p>
+              <h2 className="mt-2 font-serif text-3xl font-bold tracking-tight text-[#1F2A44] sm:text-4xl">
                 More articles
               </h2>
             </div>
-            <p className="text-sm text-[#85756F]">
+            <p className="text-sm font-medium text-[#85756F]">
               {rest.length} more {rest.length === 1 ? "article" : "articles"} to explore
             </p>
           </div>

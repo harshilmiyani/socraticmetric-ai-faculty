@@ -14,7 +14,7 @@ export function BlogPostCTA() {
       <div className="relative z-10 px-6 sm:px-10 md:px-12 max-w-3xl mx-auto space-y-6">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(90%,320px)] h-px bg-gradient-to-r from-transparent via-[#F58022]/60 to-transparent" />
 
-        <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight pt-2">
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight pt-2">
           Ready to verify <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F58022] to-[#FF9D4D]">real understanding?</span>
         </h2>
 

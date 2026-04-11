@@ -4,7 +4,6 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/sections/HeroSection";
 
 // Lazy load components that are not in the initial viewport
-const TheNewRisk = dynamic(() => import("@/components/home/sections/TheNewRisk").then(mod => mod.TheNewRisk));
 const ThePlatform = dynamic(() => import("@/components/home/sections/ThePlatform").then(mod => mod.ThePlatform));
 const DemoVideo = dynamic(() => import("@/components/home/sections/DemoVideo").then(mod => mod.DemoVideo));
 const HowItWorks = dynamic(() => import("@/components/home/sections/HowItWorks").then(mod => mod.HowItWorks));
@@ -22,11 +21,10 @@ export default function Home() {
         <HeroSection />
 
         {/* Lazy load the rest in order */}
-        <TheNewRisk />
+        <HighStakes />
         <ThePlatform />
         <DemoVideo />
         <HowItWorks />
-        <HighStakes />
         <FaqSection />
         <ContactSection />
       </main>

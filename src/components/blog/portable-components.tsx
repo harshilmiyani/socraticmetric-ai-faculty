@@ -66,7 +66,7 @@ export const blogPortableTextComponents: PortableTextComponents = {
     h2: ({ children, value }) => (
       <h2
         id={blockHeadingId(value as PortableTextBlock)}
-        className="font-sans text-2xl sm:text-3xl lg:text-[2rem] font-bold mt-10 sm:mt-12 mb-4 border-l-[3px] border-[#3370F7] pl-4 text-[#1F2A44] tracking-tight scroll-mt-28 sm:pl-5"
+        className="font-serif text-2xl sm:text-3xl lg:text-[2.25rem] font-bold mt-10 sm:mt-12 mb-4 border-l-[3px] border-[#3370F7] pl-4 text-[#1F2A44] tracking-tight scroll-mt-28 sm:pl-5"
       >
         {children}
       </h2>
@@ -74,13 +74,13 @@ export const blogPortableTextComponents: PortableTextComponents = {
     h3: ({ children, value }) => (
       <h3
         id={blockHeadingId(value as PortableTextBlock)}
-        className="font-sans text-xl sm:text-2xl lg:text-[1.625rem] font-bold mt-8 mb-3 border-l-2 border-[#F58022]/50 pl-3 text-[#1F2A44] tracking-tight scroll-mt-28 sm:pl-4"
+        className="font-serif text-xl sm:text-2xl lg:text-[1.75rem] font-bold mt-8 mb-3 border-l-2 border-[#F58022]/50 pl-3 text-[#1F2A44] tracking-tight scroll-mt-28 sm:pl-4"
       >
         {children}
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="font-sans text-lg sm:text-xl font-bold mt-6 mb-2 text-[#1F2A44] tracking-tight">{children}</h4>
+      <h4 className="font-serif text-lg sm:text-xl font-bold mt-6 mb-2 text-[#1F2A44] tracking-tight">{children}</h4>
     ),
     blockquote: ({ children }) => (
       <blockquote className="my-8 rounded-2xl border border-[#3370F7]/10 bg-gradient-to-br from-[#EAF1FE]/50 to-[#F1F5F9]/40 py-5 pl-5 pr-5 text-base italic leading-relaxed text-[#1F2A44]/90 shadow-sm ring-1 ring-[#3370F7]/5 sm:pl-6 sm:pr-6 lg:text-lg">
@@ -88,17 +88,17 @@ export const blogPortableTextComponents: PortableTextComponents = {
       </blockquote>
     ),
     normal: ({ children }) => (
-      <p className="mb-5 text-[#85756F] text-base sm:text-lg lg:text-[1.125rem] leading-[1.75]">{children}</p>
+      <p className="mb-5 text-[#64748B] text-base sm:text-lg lg:text-[1.125rem] leading-[1.75]">{children}</p>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc pl-6 sm:pl-7 mb-6 space-y-2.5 text-[#85756F] text-base lg:text-[1.125rem] leading-[1.75] marker:text-[#3370F7]">
+      <ul className="list-disc pl-6 sm:pl-7 mb-6 space-y-2.5 text-[#64748B] text-base lg:text-[1.125rem] leading-[1.75] marker:text-[#3370F7]">
         {children}
       </ul>
     ),
     number: ({ children }) => (
-      <ol className="list-decimal pl-6 sm:pl-7 mb-6 space-y-2.5 text-[#85756F] text-base lg:text-[1.125rem] leading-[1.75] marker:text-[#3370F7] marker:font-semibold">
+      <ol className="list-decimal pl-6 sm:pl-7 mb-6 space-y-2.5 text-[#64748B] text-base lg:text-[1.125rem] leading-[1.75] marker:text-[#3370F7] marker:font-semibold">
         {children}
       </ol>
     ),

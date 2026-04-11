@@ -44,13 +44,13 @@ export function BlogHero() {
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#3370F7] sm:text-sm">Insights</p>
           </div>
 
-          <h1 className="font-sans text-3xl font-bold leading-[1.12] tracking-tight text-[#1F2A44] sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#1F2A44] sm:text-5xl md:text-6xl lg:text-[4.5rem]">
             Ideas on assessment, <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-[#3370F7] via-[#4C8FD6] to-[#F58022] bg-clip-text text-transparent">
               AI-era learning
             </span>
           </h1>
-          <p className="mx-auto max-w-2xl text-base leading-relaxed text-[#85756F] sm:text-lg md:text-xl">
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-[#64748B] sm:text-lg md:text-xl">
             Exploring oral verification, cognitive science, and what proof of understanding means when written output is
             no longer enough.
           </p>

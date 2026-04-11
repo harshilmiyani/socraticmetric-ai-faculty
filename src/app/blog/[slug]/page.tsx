@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const fallbackArticleClass =
-  "prose prose-lg lg:prose-xl max-w-none prose-headings:font-sans prose-headings:font-bold prose-headings:text-[#1F2A44] prose-h2:scroll-mt-28 prose-h3:scroll-mt-28 prose-p:text-[#85756F] prose-p:leading-[1.75] prose-li:text-[#85756F] prose-li:leading-relaxed prose-strong:text-[#1F2A44] prose-a:text-[#3370F7] prose-a:no-underline hover:prose-a:underline prose-ul:marker:text-[#3370F7]";
+  "prose prose-lg lg:prose-xl max-w-none prose-headings:font-serif prose-headings:font-bold prose-headings:text-[#1F2A44] prose-h2:scroll-mt-28 prose-h3:scroll-mt-28 prose-p:text-[#64748B] prose-p:leading-[1.75] prose-li:text-[#64748B] prose-li:leading-relaxed prose-strong:text-[#1F2A44] prose-a:text-[#3370F7] prose-a:no-underline hover:prose-a:underline prose-ul:marker:text-[#3370F7]";
 
 const articleInnerClass = "max-w-[46rem] mx-auto w-full";
 
@@ -96,12 +96,12 @@ export default async function BlogPostPage({ params }: Props) {
             </span>
           </div>
 
-          <h1 className="mb-6 max-w-[22ch] font-serif text-[2.125rem] font-bold leading-[1.08] tracking-tight text-white sm:max-w-[28ch] sm:text-4xl md:mb-8 md:text-5xl lg:text-[3.25rem] lg:leading-[1.06]">
+          <h1 className="mb-6 max-w-[22ch] font-serif text-[2.25rem] font-bold leading-[1.08] tracking-tight text-white sm:max-w-[28ch] sm:text-4xl md:mb-8 md:text-5xl lg:text-[4rem] lg:leading-[1.06]">
             {post.title}
           </h1>
 
           {post.excerpt ? (
-            <p className="mb-8 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg md:mb-10">{post.excerpt}</p>
+            <p className="mb-8 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg md:mb-10">{post.excerpt}</p>
           ) : null}
 
           <div className="flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-6">
@@ -111,10 +111,10 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
               <div>
                 <p className="font-semibold text-white">{post.author}</p>
-                {post.role ? <p className="text-sm text-white/55">{post.role}</p> : null}
+                {post.role ? <p className="text-sm text-white/60">{post.role}</p> : null}
               </div>
             </div>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-white/65">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-white/70">
               <span className="inline-flex items-center gap-2">
                 <Calendar className="h-4 w-4 text-[#F58022]" strokeWidth={2} aria-hidden />
                 {post.date}

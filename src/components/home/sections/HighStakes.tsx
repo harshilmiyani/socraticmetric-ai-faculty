@@ -1,21 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { GraduationCap, Building, Shield } from "lucide-react";
+import { GraduationCap, Building, Shield, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export function HighStakes() {
-  const [activeTab, setActiveTab] = useState("higher-ed");
+  const [activeTab, setActiveTab] = useState("education");
 
   const tabs = [
     {
-      id: "higher-ed",
-      label: "Higher Education",
+      id: "education",
+      label: "Education",
       icon: GraduationCap,
+      link: "/education",
       content: {
-        title: "Higher Education",
-        description: "Verify authentic comprehension beyond AI-written submissions. Restore academic integrity through oral verification.",
+        title: "Education",
+        description: "AI can write the essay. Can your student defend it?",
         points: [
           "Academic integrity verification",
           "Oral exam administration",
@@ -28,9 +30,10 @@ export function HighStakes() {
       id: "enterprise",
       label: "Enterprise",
       icon: Building,
+      link: "/enterprise",
       content: {
         title: "Enterprise",
-        description: "Ensure your workforce can articulate and apply critical policies and procedures beyond documentation.",
+        description: "AI can draft the policy. Can your team reason through it?",
         points: [
           "Compliance verification",
           "Training effectiveness",
@@ -41,11 +44,12 @@ export function HighStakes() {
     },
     {
       id: "government",
-      label: "Government & Defense",
+      label: "Government & Aerospace",
       icon: Shield,
+      link: "/government",
       content: {
-        title: "Government & Defense",
-        description: "Verify operator competency under high-stakes conditions with audit-ready verification records.",
+        title: "Government & Aerospace",
+        description: "AI can generate the procedure. Can your operator execute under pressure?",
         points: [
           "Mission-critical verification",
           "Security clearance validation",
@@ -57,22 +61,23 @@ export function HighStakes() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-[#F1F5F9] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#F1F5F9] relative overflow-hidden">
       {/* Background UI Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute inset-0 bg-[#F1F5F9] bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.15]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
         {/* Glows */}
         <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-[#EAF1FE]/40 rounded-full blur-[100px]" />
         <div className="absolute bottom-[20%] left-[-10%] w-[400px] h-[400px] bg-[#3370F7]/5 rounded-full blur-[100px]" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-12">
-          <span className="inline-block py-1 px-3 rounded-full bg-[#EAF1FE] border border-blue-100 text-[#3370F7] font-bold text-xs tracking-widest uppercase mb-6 shadow-sm">
-            Built for High-Stakes Environments
+        <div className="text-center mb-12 md:mb-16 space-y-4">
+          <span className="inline-block py-1 px-3 rounded-full bg-[#EAF1FE] border border-blue-100 text-[#3370F7] font-bold text-xs tracking-widest uppercase shadow-sm">
+            THE NEW RISK
           </span>
-          <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">
-            Adaptable to Your Industry
+          <h2 className="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2A44] leading-tight max-w-3xl mx-auto">
+            When AI Can Write It,<br />
+            Documentation Proves Nothing.
           </h2>
         </div>
 
@@ -117,7 +122,7 @@ export function HighStakes() {
                          <h3 className="text-2xl md:text-3xl font-bold text-[#1F2A44] mb-4 drop-shadow-sm">
                           {tab.content.title}
                         </h3>
-                        <p className="text-base md:text-lg text-[#85756F] leading-relaxed font-medium">
+                        <p className="text-lg md:text-xl text-[#1F2A44] leading-relaxed font-medium">
                           {tab.content.description}
                         </p>
                       </div>
@@ -130,6 +135,16 @@ export function HighStakes() {
                           </li>
                         ))}
                       </ul>
+
+                      <div className="pt-4">
+                        <Link 
+                          href={tab.link}
+                          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3370F7] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#3370F7]/25 transition-all hover:bg-[#4C8FD6] hover:shadow-xl hover:shadow-[#3370F7]/30 group"
+                        >
+                          Learn more
+                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2.5} />
+                        </Link>
+                      </div>
                     </div>
 
                     {/* Right Column: Visualization Placeholder (Glass Card) */}
@@ -138,7 +153,7 @@ export function HighStakes() {
                       
                       {/* Dynamic Abstract Visuals based on Active Tab */}
                       <div className="relative z-10 w-full h-full flex items-center justify-center p-8">
-                        {tab.id === "higher-ed" && (
+                        {tab.id === "education" && (
                           <div className="w-full max-w-sm space-y-4">
                             <div className="h-12 w-3/4 rounded-xl bg-white/80 shadow-sm border border-white flex items-center px-4 gap-3 transform -translate-x-4">
                               <div className="w-8 h-8 rounded-full bg-[#EAF1FE] text-[#3370F7] flex items-center justify-center"><tab.icon className="h-4 w-4" /></div>
@@ -210,8 +225,8 @@ export function HighStakes() {
                 )
               ))}
             </AnimatePresence>
-          </div>
         </div>
+      </div>
     </section>
   );
 }
