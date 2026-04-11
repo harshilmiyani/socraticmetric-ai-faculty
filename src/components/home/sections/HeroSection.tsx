@@ -14,9 +14,53 @@ export function HeroSection() {
 
   return (
     <div className="bg-[#F1F5F9] pt-24 pb-8 md:pt-28 md:pb-12 lg:pt-32 lg:pb-16 selection:bg-[#F58022]/20 selection:text-[#1F2A44] overflow-hidden relative">
-      {/* Subtle glowing orb in background */}
-      <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px] pointer-events-none" />
+      {/* Animated Gradient Background */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Base Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+        
+        {/* Moving Orbs */}
+        <motion.div 
+          animate={{ 
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            duration: 15, 
+            repeat: Infinity,
+            ease: "linear" 
+          }}
+          className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#3370F7]/15 rounded-full blur-[120px]" 
+        />
+        
+        <motion.div 
+          animate={{ 
+            x: [0, -100, 0],
+            y: [0, 50, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ 
+            duration: 20, 
+            repeat: Infinity,
+            ease: "linear" 
+          }}
+          className="absolute bottom-[-10%] right-[-10%] w-[700px] h-[700px] bg-[#F58022]/10 rounded-full blur-[120px]" 
+        />
+
+        <motion.div 
+          animate={{ 
+            x: [0, 50, -50, 0],
+            y: [0, 50, -50, 0],
+          }}
+          transition={{ 
+            duration: 25, 
+            repeat: Infinity,
+            ease: "linear" 
+          }}
+          className="absolute top-[20%] left-[40%] w-[500px] h-[500px] bg-[#4C8FD6]/10 rounded-full blur-[120px]" 
+        />
+      </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 pt-2 lg:pt-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-12 max-w-7xl mx-auto">

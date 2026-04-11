@@ -243,14 +243,9 @@ export function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden md:flex items-center pl-4">
-          <Link href="/request-demo">
-            <button className="relative group inline-flex h-10 items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-md shadow-[#3370F7]/20 outline-none transition-all duration-300 hover:shadow-[#3370F7]/40 hover:scale-[1.02] active:scale-95 ring-1 ring-[#3370F7]/20">
-              <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)] opacity-100 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="relative inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-[#3370F7] px-6 text-sm font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#3370F7] group-hover:to-[#4C8FD6]">
-                Request a Demo
-              </span>
-            </button>
-          </Link>
+                    <Link href="/request-demo" className="group inline-flex h-10 w-max items-center justify-center rounded-full bg-[#3370F7] px-6 py-2 text-sm font-bold text-white shadow-md shadow-[#3370F7]/20 transition-all duration-300 hover:bg-[#4C8FD6] hover:shadow-lg hover:shadow-[#3370F7]/40 hover:-translate-y-0.5 active:scale-95">
+                      Request a Demo
+                    </Link>
         </div>
       </motion.header>
 
@@ -347,11 +342,8 @@ export function Navbar() {
               <div className="p-6 md:p-8 pt-4 bg-white/80 backdrop-blur-lg border-t border-white/50 shrink-0 z-10 w-full">
                 <div className="max-w-sm mx-auto">
                   <Link href="/request-demo" onClick={() => setMobileMenuOpen(false)} className="w-full block">
-                    <button className="relative group inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-lg shadow-[#3370F7]/30 outline-none transition-all duration-300 hover:shadow-[#3370F7]/50 hover:scale-[1.02] active:scale-95 ring-1 ring-[#3370F7]/20">
-                      <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)] opacity-100 group-hover:opacity-100 transition-opacity duration-500" />
-                      <span className="relative inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-[#3370F7] px-8 text-lg font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#3370F7] group-hover:to-[#4C8FD6]">
-                        Request a Demo
-                      </span>
+                    <button className="w-full inline-flex h-12 items-center justify-center rounded-full bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all duration-300 hover:bg-[#4C8FD6] hover:shadow-xl hover:shadow-[#3370F7]/50 active:scale-95">
+                      Request a Demo
                     </button>
                   </Link>
                 </div>
