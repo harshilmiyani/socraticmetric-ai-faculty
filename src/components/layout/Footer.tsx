@@ -51,11 +51,8 @@ export function Footer() {
             </div>
 
             <div className="flex gap-4 pt-4">
-               <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-[#3370F7] hover:text-white hover:border-[#3370F7] transition-all duration-300 shadow-sm hover:shadow-md">
+               <a href="https://www.linkedin.com/company/socratic-metric/" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-[#3370F7] hover:text-white hover:border-[#3370F7] transition-all duration-300 shadow-sm hover:shadow-md">
                   <Linkedin className="w-4 h-4" />
-               </a>
-               <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] transition-all duration-300 shadow-sm hover:shadow-md">
-                  <Twitter className="w-4 h-4" />
                </a>
             </div>
           </div>

@@ -7,7 +7,7 @@ import Script from "next/script";
  * the chatbot ID from: Dashboard → AI Agent → Deploy → Chat Widget → Embed.
  */
 export function ChatbaseWidget() {
-  const botId = process.env.NEXT_PUBLIC_CHATBASE_BOT_ID?.trim();
+  const botId = process.env.NEXT_PUBLIC_CHATBASE_BOT_ID?.trim() ?? "Boj0cxEtUfuEMipZw31jO";
 
   if (!botId) return null;
 
