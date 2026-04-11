@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { GraduationCap, Building, Shield, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { Play, User, ShieldCheck, Shield, FileCheck, Activity, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function HighStakes() {
@@ -13,66 +13,87 @@ export function HighStakes() {
     {
       id: "education",
       label: "Education",
-      icon: GraduationCap,
       link: "/education",
-      content: {
-        title: "Education",
-        description: "AI can write the essay. Can your student defend it?",
-        points: [
-          "Academic integrity verification",
-          "Oral exam administration",
-          "Learning outcome assessment",
-          "Accreditation compliance"
-        ]
+      pill: "Verify whether a student truly understands their essay",
+      theme: "blue",
+      bgGradient: "from-blue-100 via-blue-50 to-white",
+      mockup: {
+        url: "app.socraticmetric.com/session/education",
+        user: { name: "Alex Johnson", role: "HIST 201 - Essay #4" },
+        progress: { label: "Session Progress", step: "Question 3 of 5", percent: 60, color: "bg-blue-600" },
+        status: { label: "Integrity Flag", text: "No AI authorship detected", icon: ShieldCheck, color: "text-green-600" },
+        question: "You argued that economic inequality was the primary cause of the Revolution — but Enlightenment thinkers like Rousseau were also influential. How do you weigh these two forces against each other?",
+        transcript: "\"I think economic inequality created the conditions, but Rousseau gave people the language to demand change. Without the philosophical framework, the anger might not have translated into...\"",
+        scores: [
+          { label: "Recall", value: 84 },
+          { label: "Reasoning", value: 79 },
+          { label: "Defense", value: 76 }
+        ],
+        button: { text: "Authentic comprehension confirmed", color: "bg-blue-600 text-white shadow-blue-600/20" },
+        waveformColor: "bg-blue-500",
+        playColor: "bg-blue-600"
       }
     },
     {
       id: "enterprise",
       label: "Enterprise",
-      icon: Building,
       link: "/enterprise",
-      content: {
-        title: "Enterprise",
-        description: "AI can draft the policy. Can your team reason through it?",
-        points: [
-          "Compliance verification",
-          "Training effectiveness",
-          "Knowledge retention",
-          "Operational readiness"
-        ]
+      pill: "Verify whether an employee can reason through policy",
+      theme: "green",
+      bgGradient: "from-emerald-100 via-emerald-50 to-white",
+      mockup: {
+        url: "app.socraticmetric.com/session/enterprise",
+        user: { name: "T. Chen - Legal", role: "GDPR Compliance 2026" },
+        progress: { label: "Training Status", step: "Question 3 of 5", percent: 60, color: "bg-emerald-500" },
+        status: { label: "Risk Level", text: "Compliance verified", icon: Shield, color: "text-emerald-600" },
+        question: "Under GDPR Article 17, when a customer requests data deletion, what are the three scenarios where your organization can lawfully refuse — and how would you document that refusal?",
+        transcript: "\"The right to erasure can be refused when the data is necessary for legal claims, for public interest tasks, or when it conflicts with freedom of expression. We document refusals by...\"",
+        scores: [
+          { label: "Recall", value: 95 },
+          { label: "Reasoning", value: 91 },
+          { label: "Defense", value: 88 }
+        ],
+        button: { text: "Policy reasoning verified — certified", color: "bg-emerald-700 text-white shadow-emerald-700/20" },
+        waveformColor: "bg-emerald-400",
+        playColor: "bg-emerald-600"
       }
     },
     {
       id: "government",
-      label: "Government & Aerospace",
-      icon: Shield,
+      label: "Government",
       link: "/government",
-      content: {
-        title: "Government & Aerospace",
-        description: "AI can generate the procedure. Can your operator execute under pressure?",
-        points: [
-          "Mission-critical verification",
-          "Security clearance validation",
-          "Doctrine comprehension",
-          "Audit trail compliance"
-        ]
+      pill: "Verify whether an operator can execute under pressure",
+      theme: "red",
+      bgGradient: "from-rose-100 via-rose-50 to-white",
+      mockup: {
+        url: "app.socraticmetric.com/session/government",
+        user: { name: "ID 87122 - Cleared", role: "Mission Critical Ops" },
+        progress: { label: "Readiness Check", step: "Question 3 of 5", percent: 60, color: "bg-rose-600" },
+        status: { label: "Chain of Custody", text: "Identity verified — timestamped", icon: FileCheck, color: "text-emerald-600" },
+        question: "During an emergency depressurization event, after including the backup oxygen protocol, what is the decision threshold for declaring MAYDAY versus PAN-PAN — and who has authority to override?",
+        transcript: "\"MAYDAY is declared when there is immediate threat to life or aircraft — PAN-PAN for urgent but not immediately life-threatening. The Pilot in Command holds override authority, but ground control can...\"",
+        scores: [
+          { label: "Recall", value: 98 },
+          { label: "Reasoning", value: 96 },
+          { label: "Defense", value: 97 }
+        ],
+        button: { text: "Protocol mastery confirmed", color: "bg-rose-600 text-white shadow-rose-600/20" },
+        waveformColor: "bg-rose-400",
+        playColor: "bg-rose-600"
       }
     }
   ];
 
-  return (
-    <section className="py-16 md:py-24 bg-[#F1F5F9] relative overflow-hidden">
-      {/* Background UI Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-        {/* Glows */}
-        <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-[#EAF1FE]/40 rounded-full blur-[100px]" />
-        <div className="absolute bottom-[20%] left-[-10%] w-[400px] h-[400px] bg-[#3370F7]/5 rounded-full blur-[100px]" />
-      </div>
+  const activeTabData = tabs.find(t => t.id === activeTab)!;
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-12 md:mb-16 space-y-4">
-          <span className="inline-block py-1 px-3 rounded-full bg-[#EAF1FE] border border-blue-100 text-[#3370F7] font-bold text-xs tracking-widest uppercase shadow-sm">
+  return (
+    <section className="py-16 md:py-24 relative overflow-hidden transition-colors duration-700">
+      {/* Dynamic Background */}
+      <div className={cn("absolute inset-0 bg-gradient-to-b opacity-60 transition-colors duration-700", activeTabData.bgGradient)} />
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="text-center mb-12 space-y-4">
+          <span className="inline-block py-1 px-3 rounded-full bg-white/60 border border-slate-200 text-slate-600 font-bold text-xs tracking-widest uppercase shadow-sm backdrop-blur-sm">
             THE NEW RISK
           </span>
           <h2 className="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2A44] leading-tight max-w-3xl mx-auto">
@@ -82,149 +103,174 @@ export function HighStakes() {
         </div>
 
         {/* Tab Navigation (Pill Style) */}
-        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-10 md:mb-12 px-2">
-          {tabs.map((tab) => {
-            const Icon = tab.icon;
-            return (
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex bg-white rounded-full p-1 shadow-sm border border-slate-100">
+            {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={cn(
-                  "flex items-center justify-center gap-3 px-6 py-3.5 rounded-full text-sm md:text-base font-semibold transition-all duration-300 border w-full sm:w-auto",
+                  "px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300",
                   activeTab === tab.id
-                    ? "bg-[#1F2A44] text-white border-[#1F2A44] shadow-lg shadow-[#1F2A44]/20 scale-100 sm:scale-105"
-                    : "bg-white/60 text-[#85756F] border-white/80 hover:bg-white hover:text-[#1F2A44] hover:shadow-md hover:border-slate-200"
+                    ? "bg-white text-[#1F2A44] shadow-[0_2px_10px_rgba(0,0,0,0.08)] ring-1 ring-slate-200/50"
+                    : "text-slate-500 hover:text-[#1F2A44] hover:bg-slate-50/50"
                 )}
               >
-                <Icon className={cn("w-5 h-5", activeTab === tab.id ? "text-[#F58022]" : "text-slate-400")} />
                 {tab.label}
               </button>
-            );
-          })}
+            ))}
+          </div>
         </div>
 
-        {/* Tab Content Area (Glass Card) */}
-        <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-[#3370F7]/10 bg-white/80 backdrop-blur-xl border border-white ring-1 ring-black/5 p-6 sm:p-8 md:p-14 min-h-[550px] md:min-h-[480px]">
+        {/* Large Pill Text */}
+        <div className="flex justify-center mb-12">
           <AnimatePresence mode="wait">
-              {tabs.map((tab) => (
-                tab.id === activeTab && (
-                  <motion.div
-                    key={tab.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="grid md:grid-cols-2 gap-8 md:gap-12 items-center h-full"
-                  >
-                    {/* Left Column: Text Content */}
-                    <div className="flex flex-col h-full justify-center space-y-8">
-                      <div>
-                         <h3 className="text-2xl md:text-3xl font-bold text-[#1F2A44] mb-4 drop-shadow-sm">
-                          {tab.content.title}
-                        </h3>
-                        <p className="text-lg md:text-xl text-[#1F2A44] leading-relaxed font-medium">
-                          {tab.content.description}
-                        </p>
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg shadow-slate-200/50 border border-slate-100 text-center"
+            >
+              <h3 className="text-base md:text-xl font-bold text-[#1F2A44]">
+                {activeTabData.pill}
+              </h3>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Browser Mockup */}
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-white rounded-2xl shadow-2xl shadow-slate-300/50 border border-slate-200 overflow-hidden flex flex-col">
+            {/* Browser Header */}
+            <div className="h-12 border-b border-slate-100 flex items-center px-4 gap-4 bg-slate-50/50">
+              <div className="flex gap-1.5 shrink-0">
+                <div className="w-3 h-3 rounded-full bg-rose-400" />
+                <div className="w-3 h-3 rounded-full bg-amber-400" />
+                <div className="w-3 h-3 rounded-full bg-emerald-400" />
+              </div>
+              <div className="flex-1 flex justify-center overflow-hidden">
+                <div className="flex items-center gap-2 text-xs text-slate-400 font-medium bg-white px-4 py-1.5 rounded-md border border-slate-100 shadow-sm truncate max-w-full">
+                  <Activity className="w-3 h-3 shrink-0" />
+                  <span className="truncate">{activeTabData.mockup.url}</span>
+                </div>
+              </div>
+              <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-xs font-semibold shrink-0">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                session active
+              </div>
+            </div>
+
+            {/* Browser Body */}
+            <div className="p-4 md:p-6 lg:p-8 bg-[#F8FAFC] flex-1">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.4 }}
+                  className="grid lg:grid-cols-[300px_1fr] gap-4 md:gap-6"
+                >
+                  {/* Left Column */}
+                  <div className="space-y-4">
+                    {/* User Card */}
+                    <div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-slate-100">
+                      <p className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-3">User</p>
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 shrink-0">
+                          <User className="w-5 h-5" />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="font-bold text-[#1F2A44] text-sm truncate">{activeTabData.mockup.user.name}</p>
+                          <p className="text-xs text-slate-500 truncate">{activeTabData.mockup.user.role}</p>
+                        </div>
                       </div>
-                      
-                      <ul className="space-y-4">
-                        {tab.content.points.map((point, idx) => (
-                          <li key={idx} className="flex items-start gap-3 text-[#85756F] font-medium text-sm md:text-base group">
-                            <span className="mt-1.5 h-2 w-2 rounded-full bg-[#F58022] flex-shrink-0 shadow-sm group-hover:scale-125 transition-transform" />
-                            <span>{point}</span>
-                          </li>
+                    </div>
+
+                    {/* Progress Card */}
+                    <div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-slate-100">
+                      <p className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-3">{activeTabData.mockup.progress.label}</p>
+                      <p className="font-bold text-[#1F2A44] text-sm mb-3">{activeTabData.mockup.progress.step}</p>
+                      <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
+                        <div className={cn("h-full rounded-full transition-all duration-1000", activeTabData.mockup.progress.color)} style={{ width: `${activeTabData.mockup.progress.percent}%` }} />
+                      </div>
+                    </div>
+
+                    {/* Status Card */}
+                    <div className="bg-white p-4 md:p-5 rounded-xl shadow-sm border border-slate-100">
+                      <p className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-3">{activeTabData.mockup.status.label}</p>
+                      <div className={cn("flex items-center gap-2 text-sm font-bold", activeTabData.mockup.status.color)}>
+                        <activeTabData.mockup.status.icon className="w-4 h-4 shrink-0" />
+                        <span className="truncate">{activeTabData.mockup.status.text}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column */}
+                  <div className="flex flex-col gap-4">
+                    {/* Question Card */}
+                    <div className="bg-[#EAF1FE]/50 p-5 md:p-6 rounded-xl border border-blue-100/50">
+                      <p className="text-[#1F2A44] text-sm md:text-base leading-relaxed font-medium">
+                        {activeTabData.mockup.question}
+                      </p>
+                    </div>
+
+                    {/* Response Card */}
+                    <div className="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-slate-100 flex-1 flex flex-col">
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center gap-3">
+                          <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Response</p>
+                          <p className="text-[10px] sm:text-xs font-semibold text-slate-300">— Live Transcript</p>
+                        </div>
+                        <button className={cn("w-8 h-8 rounded-full flex items-center justify-center text-white shadow-sm transition-transform hover:scale-105 shrink-0", activeTabData.mockup.playColor)}>
+                          <Play className="w-4 h-4 ml-0.5" fill="currentColor" />
+                        </button>
+                      </div>
+
+                      {/* Waveform */}
+                      <div className="flex items-center gap-1 mb-6 h-8">
+                        {[4, 6, 8, 5, 3, 7, 10, 16, 24, 12, 8, 5, 4, 6, 3, 2].map((h, i) => (
+                          <div key={i} className={cn("w-1.5 rounded-full opacity-80", activeTabData.mockup.waveformColor)} style={{ height: `${h * 2}px` }} />
                         ))}
-                      </ul>
-
-                      <div className="pt-4">
-                        <Link 
-                          href={tab.link}
-                          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#3370F7] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#3370F7]/25 transition-all hover:bg-[#4C8FD6] hover:shadow-xl hover:shadow-[#3370F7]/30 group"
-                        >
-                          Learn more
-                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2.5} />
-                        </Link>
-                      </div>
-                    </div>
-
-                    {/* Right Column: Visualization Placeholder (Glass Card) */}
-                    <div className="relative h-[300px] md:h-[400px] w-full rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-inner flex items-center justify-center overflow-hidden group">
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-white/20 to-transparent opacity-80" />
-                      
-                      {/* Dynamic Abstract Visuals based on Active Tab */}
-                      <div className="relative z-10 w-full h-full flex items-center justify-center p-8">
-                        {tab.id === "education" && (
-                          <div className="w-full max-w-sm space-y-4">
-                            <div className="h-12 w-3/4 rounded-xl bg-white/80 shadow-sm border border-white flex items-center px-4 gap-3 transform -translate-x-4">
-                              <div className="w-8 h-8 rounded-full bg-[#EAF1FE] text-[#3370F7] flex items-center justify-center"><tab.icon className="h-4 w-4" /></div>
-                              <div className="flex-1 h-3 bg-slate-100 rounded-full overflow-hidden"><div className="h-full bg-[#3370F7] w-3/4 rounded-full" /></div>
-                            </div>
-                            <div className="h-16 w-full rounded-xl bg-white/90 shadow-md border border-white flex items-center px-4 gap-3 z-10 relative transform hover:scale-105 transition-transform">
-                              <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-xs">98%</div>
-                              <div className="flex flex-col gap-1.5 flex-1">
-                                <div className="h-2.5 w-1/2 bg-slate-200 rounded-full" />
-                                <div className="h-2 w-1/3 bg-slate-100 rounded-full" />
-                              </div>
-                              <div className="px-2 py-1 rounded bg-green-50 border border-green-100 text-green-600 text-[10px] font-semibold">Verified</div>
-                            </div>
-                            <div className="h-12 w-5/6 rounded-xl bg-white/60 shadow-sm border border-white flex items-center px-4 gap-3 transform translate-x-4">
-                              <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center" />
-                              <div className="flex-1 h-3 bg-slate-100 rounded-full overflow-hidden"><div className="h-full bg-slate-300 w-1/2 rounded-full" /></div>
-                            </div>
-                          </div>
-                        )}
-
-                        {tab.id === "enterprise" && (
-                          <div className="w-full max-w-sm grid grid-cols-2 gap-4">
-                            <div className="col-span-2 h-20 rounded-2xl bg-white/90 shadow-md border border-white flex items-center justify-between px-6 hover:scale-105 transition-transform">
-                              <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-[#F58022]/10 text-[#F58022] flex items-center justify-center"><tab.icon className="h-5 w-5" /></div>
-                                <div className="flex flex-col gap-1.5">
-                                  <div className="h-3 w-20 bg-slate-200 rounded-full" />
-                                  <div className="h-2 w-12 bg-slate-100 rounded-full" />
-                                </div>
-                              </div>
-                              <div className="w-12 h-12 rounded-full border-4 border-[#F58022] border-t-transparent border-l-transparent rotate-45" />
-                            </div>
-                            <div className="h-28 rounded-2xl bg-white/70 shadow-sm border border-white p-4 flex flex-col justify-end gap-2">
-                              <div className="h-2 w-full bg-[#EAF1FE] rounded-t-sm" />
-                              <div className="h-6 w-full bg-[#3370F7] rounded-t-sm" />
-                              <div className="h-12 w-full bg-[#1F2A44] rounded-t-sm" />
-                            </div>
-                            <div className="h-28 rounded-2xl bg-white/70 shadow-sm border border-white p-4 flex flex-col items-center justify-center text-center gap-2">
-                              <span className="text-2xl font-bold text-[#1F2A44]">10x</span>
-                              <div className="h-2 w-16 bg-slate-200 rounded-full" />
-                            </div>
-                          </div>
-                        )}
-
-                        {tab.id === "government" && (
-                          <div className="relative w-full max-w-sm flex items-center justify-center h-full">
-                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.8)_100%)] z-10" />
-                            <div className="w-48 h-48 rounded-full border border-[#1F2A44]/10 flex items-center justify-center animate-[spin_20s_linear_infinite]">
-                              <div className="w-32 h-32 rounded-full border border-[#3370F7]/20 flex items-center justify-center animation-reverse">
-                                <div className="w-16 h-16 rounded-full border border-[#F58022]/30 flex items-center justify-center" />
-                              </div>
-                            </div>
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-2xl bg-white shadow-xl border border-white/50 flex items-center justify-center z-20 hover:scale-110 transition-transform">
-                              <tab.icon className="h-8 w-8 text-[#1F2A44]" />
-                            </div>
-                            {/* Floating nodes */}
-                            <div className="absolute top-[20%] left-[20%] w-3 h-3 rounded-full bg-[#3370F7] shadow-[0_0_10px_rgba(51,112,247,0.5)] z-20" />
-                            <div className="absolute bottom-[30%] right-[15%] w-4 h-4 rounded-full bg-[#F58022] shadow-[0_0_10px_rgba(245,128,34,0.5)] z-20" />
-                            <div className="absolute bottom-[20%] left-[30%] w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)] z-20" />
-                          </div>
-                        )}
                       </div>
 
-                       {/* Decorative Glow Elements */}
-                       <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#F58022]/10 rounded-full blur-3xl group-hover:bg-[#F58022]/20 transition-colors duration-500" />
-                       <div className="absolute -top-10 -left-10 w-48 h-48 bg-[#3370F7]/10 rounded-full blur-3xl" />
+                      <p className="text-slate-600 text-sm leading-relaxed italic">
+                        {activeTabData.mockup.transcript}
+                      </p>
                     </div>
-                  </motion.div>
-                )
-              ))}
-            </AnimatePresence>
+
+                    {/* Bottom Action Row */}
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-end justify-between gap-4 mt-2">
+                      <div className="flex gap-2 sm:gap-3 w-full sm:w-auto">
+                        {activeTabData.mockup.scores.map((score, i) => (
+                          <div key={i} className="bg-white px-3 py-2 sm:px-4 sm:py-3 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center flex-1 sm:min-w-[80px]">
+                            <p className="text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-1">{score.label}</p>
+                            <p className="text-xl sm:text-2xl font-bold text-[#1F2A44]">{score.value}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <button className={cn("w-full sm:w-auto px-6 py-3.5 rounded-xl font-bold text-sm shadow-lg transition-transform hover:scale-[1.02]", activeTabData.mockup.button.color)}>
+                        {activeTabData.mockup.button.text}
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* CTA Link below mockup */}
+          <div className="mt-10 flex justify-center">
+            <Link 
+              href={activeTabData.link}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-bold text-[#1F2A44] shadow-lg shadow-slate-200/50 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-slate-200/80 border border-slate-100 group"
+            >
+              Learn more about {activeTabData.label}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 text-[#3370F7]" strokeWidth={2.5} />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

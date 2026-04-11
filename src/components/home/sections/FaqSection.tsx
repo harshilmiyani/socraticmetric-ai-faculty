@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Check, Plus } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type IndustryId = "education" | "government" | "enterprise";
@@ -15,8 +14,8 @@ type FaqItem = {
 
 const INDUSTRIES: { id: IndustryId; label: string; heading: string }[] = [
   { id: "education", label: "Education", heading: "Education questions" },
-  { id: "government", label: "Government", heading: "Government questions" },
   { id: "enterprise", label: "Enterprise", heading: "Enterprise questions" },
+  { id: "government", label: "Government", heading: "Government questions" },
 ];
 
 const FAQ_BY_INDUSTRY: Record<IndustryId, FaqItem[]> = {
@@ -162,127 +161,157 @@ export function FaqSection() {
   return (
     <section
       id="faq"
-      className="relative py-12 md:py-20 bg-[#F1F5F9] overflow-hidden"
+      className="relative pt-8 pb-20 md:pt-12 md:pb-32 bg-white overflow-hidden"
       aria-labelledby="faq-heading"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.12]" />
+      {/* Decorative Background */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(51,112,247,0.05)_0%,transparent_50%)]" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-6xl">
-        <div className="rounded-[28px] bg-white border border-slate-200/80 shadow-xl shadow-black/[0.04] ring-1 ring-black/[0.03] p-6 sm:p-8 md:p-10 lg:p-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
-            {/* Left: title + categories */}
-            <div className="lg:col-span-4 flex flex-col gap-8">
-              <div>
-                <h2
-                  id="faq-heading"
-                  className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[#1F2A44] mb-4"
-                >
-                  FAQ
-                </h2>
-              </div>
-
-              <div>
-                <p className="text-xs font-medium text-slate-400 uppercase tracking-wider mb-3">
-                  Select a category
-                </p>
-                <nav className="flex flex-col gap-2" aria-label="FAQ categories">
-                  {INDUSTRIES.map((tab) => {
-                    const isActive = industry === tab.id;
-                    return (
-                      <button
-                        key={tab.id}
-                        type="button"
-                        onClick={() => {
-                          setIndustry(tab.id);
-                          setOpenIndex(0);
-                        }}
-                        className={cn(
-                          "flex items-center justify-between w-full rounded-xl px-4 py-3.5 text-left text-sm font-semibold transition-all duration-200 border",
-                          isActive
-                            ? "bg-[#EAF1FE] border-[#3370F7] text-[#1F2A44] shadow-sm"
-                            : "bg-white border-slate-200 text-[#1F2A44] hover:border-slate-300 hover:bg-slate-50/80"
-                        )}
-                      >
-                        <span>{tab.label}</span>
-                        {isActive ? (
-                          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#3370F7] text-white shrink-0">
-                            <Check className="h-4 w-4" strokeWidth={2.5} />
-                          </span>
-                        ) : (
-                          <span
-                            className="h-7 w-7 shrink-0 rounded-full border border-slate-200 bg-white ring-1 ring-slate-100"
-                            aria-hidden
-                          />
-                        )}
-                      </button>
-                    );
-                  })}
-                </nav>
-              </div>
+      <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          
+          {/* Left Column: Sticky Header & Tabs */}
+          <div className="lg:col-span-4 lg:sticky lg:top-32 space-y-8">
+            <div className="space-y-4">
+              <span className="inline-block py-1 px-3 rounded-full bg-slate-100 border border-slate-200 text-slate-600 font-bold text-xs tracking-widest uppercase shadow-sm">
+                Support
+              </span>
+              <h2
+                id="faq-heading"
+                className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[#1F2A44] leading-tight"
+              >
+                Frequently <br className="hidden lg:block" />
+                Asked <br className="hidden lg:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3370F7] to-[#4C8FD6]">
+                  Questions.
+                </span>
+              </h2>
             </div>
+            
+            <p className="text-lg text-[#64748B] leading-relaxed">
+              Everything you need to know about how Socratic Metric works in your industry.
+            </p>
 
-            {/* Right: accordion */}
-            <div className="lg:col-span-8 min-w-0">
-              <p className="text-xs font-medium text-slate-400 uppercase tracking-wider mb-6">
-                {activeMeta.heading}
-              </p>
-
-              <ul className="divide-y divide-slate-200 border-t border-slate-200">
-                {items.map((item, index) => {
-                  const isOpen = openIndex === index;
+            <div className="pt-4">
+              <nav className="flex flex-col gap-3" aria-label="FAQ categories">
+                {INDUSTRIES.map((tab) => {
+                  const isActive = industry === tab.id;
                   return (
-                    <li key={`${industry}-${index}`} className="py-0">
-                      <button
-                        type="button"
-                        onClick={() => toggle(index)}
-                        className="flex w-full items-start gap-4 py-5 text-left group"
-                        aria-expanded={isOpen}
-                      >
-                        <span className="flex-1 font-bold text-[#1F2A44] text-base sm:text-lg leading-snug pr-2">
-                          {item.question}
-                        </span>
-                        <span
-                          className={cn(
-                            "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors duration-200",
-                            isOpen
-                              ? "bg-[#3370F7] border-[#3370F7] text-white"
-                              : "bg-white border-[#3370F7]/30 text-[#3370F7] group-hover:bg-[#EAF1FE] group-hover:border-[#3370F7]"
-                          )}
-                          aria-hidden
-                        >
-                          <Plus
-                            className={cn(
-                              "h-4 w-4 transition-transform duration-200",
-                              isOpen && "rotate-45"
-                            )}
-                            strokeWidth={2.5}
-                          />
-                        </span>
-                      </button>
-
-                      <AnimatePresence initial={false}>
-                        {isOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-                            className="overflow-hidden"
-                          >
-                            <p className="pb-5 pr-14 text-[#85756F] text-sm sm:text-base leading-relaxed">
-                              {item.answer}
-                            </p>
-                          </motion.div>
+                    <button
+                      key={tab.id}
+                      type="button"
+                      onClick={() => {
+                        setIndustry(tab.id);
+                        setOpenIndex(0);
+                      }}
+                      className={cn(
+                        "relative flex items-center justify-between w-full rounded-2xl px-6 py-4 text-left text-base font-bold transition-all duration-300 overflow-hidden group",
+                        isActive
+                          ? "text-white shadow-lg shadow-[#3370F7]/25"
+                          : "bg-white border border-slate-200 text-[#1F2A44] hover:border-slate-300 hover:shadow-md"
+                      )}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeTab"
+                          className="absolute inset-0 bg-gradient-to-r from-[#3370F7] to-[#4C8FD6]"
+                          initial={false}
+                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                        />
+                      )}
+                      <span className="relative z-10">{tab.label}</span>
+                      <span className="relative z-10">
+                        {isActive ? (
+                          <div className="h-2 w-2 rounded-full bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+                        ) : (
+                          <div className="h-2 w-2 rounded-full bg-slate-300 group-hover:bg-slate-400 transition-colors" />
                         )}
-                      </AnimatePresence>
-                    </li>
+                      </span>
+                    </button>
                   );
                 })}
+              </nav>
+            </div>
+          </div>
+
+          {/* Right Column: FAQ Accordion */}
+          <div className="lg:col-span-8 min-w-0">
+            <div className="bg-white rounded-3xl border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6 sm:p-8 md:p-10">
+              <div className="mb-8 pb-6 border-b border-slate-100">
+                <h3 className="text-xl font-bold text-[#1F2A44]">
+                  {activeMeta.heading}
+                </h3>
+              </div>
+
+              <ul className="divide-y divide-slate-100">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={industry}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {items.map((item, index) => {
+                      const isOpen = openIndex === index;
+                      return (
+                        <li key={`${industry}-${index}`} className="py-2">
+                          <button
+                            type="button"
+                            onClick={() => toggle(index)}
+                            className="flex w-full items-start justify-between gap-6 py-4 text-left group"
+                            aria-expanded={isOpen}
+                          >
+                            <span className={cn(
+                              "flex-1 font-bold text-base sm:text-lg leading-snug transition-colors duration-200",
+                              isOpen ? "text-[#3370F7]" : "text-[#1F2A44] group-hover:text-[#3370F7]"
+                            )}>
+                              {item.question}
+                            </span>
+                            <span
+                              className={cn(
+                                "mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300",
+                                isOpen
+                                  ? "bg-[#EAF1FE] text-[#3370F7] rotate-180"
+                                  : "bg-slate-50 text-slate-400 group-hover:bg-[#EAF1FE] group-hover:text-[#3370F7]"
+                              )}
+                              aria-hidden
+                            >
+                              {isOpen ? (
+                                <Minus className="h-4 w-4" strokeWidth={2.5} />
+                              ) : (
+                                <Plus className="h-4 w-4" strokeWidth={2.5} />
+                              )}
+                            </span>
+                          </button>
+
+                          <AnimatePresence initial={false}>
+                            {isOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                                className="overflow-hidden"
+                              >
+                                <p className="pb-6 pr-12 text-[#64748B] text-base leading-relaxed">
+                                  {item.answer}
+                                </p>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </li>
+                      );
+                    })}
+                  </motion.div>
+                </AnimatePresence>
               </ul>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
