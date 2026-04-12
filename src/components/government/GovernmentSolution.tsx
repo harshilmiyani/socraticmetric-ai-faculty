@@ -5,20 +5,20 @@ import { FileText, BadgeCheck, BarChart3 } from "lucide-react";
 export function GovernmentSolution() {
   const solutions = [
     {
-      icon: <FileText className="w-9 h-9 sm:w-10 sm:h-10 text-[#F58022]" strokeWidth={1.75} />,
-      bg: "bg-[#F58022]/10",
+      icon: <FileText className="w-8 h-8 text-[#F58022]" strokeWidth={1.75} />,
+      bg: "bg-orange-50",
       title: "Mission-critical knowledge validation",
       desc: "Use structured oral scenarios to confirm operators and leaders can explain procedures, contingencies, and decision points in their own words.",
     },
     {
-      icon: <BadgeCheck className="w-9 h-9 sm:w-10 sm:h-10 text-[#3370F7]" strokeWidth={1.75} />,
-      bg: "bg-[#EAF1FE]",
+      icon: <BadgeCheck className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
+      bg: "bg-blue-50",
       title: "Training and certification support",
       desc: "Add oral checkpoints to training, simulations, and recertification so you can validate real understanding before granting critical responsibilities.",
     },
     {
-      icon: <BarChart3 className="w-9 h-9 sm:w-10 sm:h-10 text-[#1F2A44]" strokeWidth={1.75} />,
-      bg: "bg-slate-100",
+      icon: <BarChart3 className="w-8 h-8 text-emerald-600" strokeWidth={1.75} />,
+      bg: "bg-emerald-50",
       title: "Operational alignment",
       desc: "Ensure that teams across operations, safety, and command share a common mental model before executing high-risk missions or procedures.",
     },
@@ -27,35 +27,37 @@ export function GovernmentSolution() {
   return (
     <section
       id="how-it-works"
-      className="relative py-12 md:py-16 lg:py-20 bg-[#F1F5F9] overflow-hidden"
+      className="relative py-20 md:py-32 bg-[#F8FAFC] overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-[20%] right-0 w-[400px] h-[400px] max-w-[80vw] rounded-full bg-[#EAF1FE]/80 blur-[100px]" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10 max-w-7xl">
-        <div className="text-center mb-10 sm:mb-12 md:mb-14 max-w-3xl mx-auto px-1">
-          <span className="text-[#3370F7] font-bold text-xs tracking-[0.2em] uppercase block mb-3">
-            How it works
-          </span>
-          <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl font-bold text-[#1F2A44] leading-tight">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="h-px w-12 bg-[#3370F7]" />
+            <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">How It Works</span>
+            <div className="h-px w-12 bg-[#3370F7]" />
+          </div>
+          <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
             How oral verification strengthens readiness
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {solutions.map((item, i) => (
             <div
               key={i}
-              className="bg-white p-6 sm:p-8 rounded-2xl border border-white shadow-xl shadow-black/[0.04] ring-1 ring-black/5 hover:shadow-2xl hover:ring-[#3370F7]/10 transition-all duration-300 flex flex-col items-center text-center space-y-4 sm:space-y-5 group h-full"
+              className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col items-start space-y-6 h-full"
             >
               <div
-                className={`p-3 sm:p-4 rounded-2xl ${item.bg} ring-1 ring-black/[0.04] group-hover:scale-105 transition-transform duration-300`}
+                className={`w-16 h-16 flex items-center justify-center rounded-2xl ${item.bg} transition-transform duration-300`}
               >
                 {item.icon}
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#1F2A44]">{item.title}</h3>
-              <p className="text-[#85756F] leading-relaxed text-sm sm:text-base flex-grow">
+              <h3 className="text-xl font-bold text-[#1F2A44]">{item.title}</h3>
+              <p className="text-[#64748B] leading-relaxed text-base flex-grow">
                 {item.desc}
               </p>
             </div>

@@ -9,11 +9,11 @@ import { EducationCompliance } from "@/components/education/EducationCompliance"
 import { EducationOutcomes } from "@/components/education/EducationOutcomes";
 import { EducationUseCases } from "@/components/education/EducationUseCases";
 import { EducationTestimonial } from "@/components/education/EducationTestimonial";
-import { EducationCTA } from "@/components/education/EducationCTA";
+import { ContactSection } from "@/components/home/sections/ContactSection";
 
 export default function EducationPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F1F5F9] font-sans text-[#1F2A44] selection:bg-[#F58022]/20 selection:text-[#1F2A44] overflow-x-hidden">
+    <div className="flex min-h-screen flex-col bg-[#F8FAFC] font-sans text-[#1F2A44] selection:bg-[#F58022]/20 selection:text-[#1F2A44] overflow-x-hidden">
       <Navbar />
       <main className="flex-1">
         <EducationHero />
@@ -23,7 +23,7 @@ export default function EducationPage() {
         <EducationOutcomes />
         <EducationUseCases />
         <EducationTestimonial />
-        <EducationCTA />
+        <ContactSection />
       </main>
       <Footer />
     </div>
