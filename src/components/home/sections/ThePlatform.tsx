@@ -8,7 +8,7 @@ export function ThePlatform() {
   const features = [
     {
       title: "Oral question presentation",
-      description: "Socratic Metric uses advanced text-to-speech to present scenarios organically, simulating a real conversation.",
+      description: "Socratic Metric uses advanced speech-to-text to present scenarios organically, simulating a real conversation.",
       icon: <Mic className="h-6 w-6 text-[#3370F7]" />,
       bgClass: "bg-blue-50/50 border-blue-100",
       iconBg: "bg-blue-100"
