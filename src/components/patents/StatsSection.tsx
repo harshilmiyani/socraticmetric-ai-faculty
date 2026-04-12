@@ -24,9 +24,9 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="bg-white py-12 px-6">
+    <section className="bg-white py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -34,12 +34,12 @@ export function StatsSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-[#3370F7] rounded-[20px] p-8 text-center text-white flex flex-col justify-center min-h-[160px] shadow-lg shadow-[#3370F7]/20 border border-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#3370F7]/30"
+              className="bg-white rounded-3xl p-8 text-center flex flex-col justify-center min-h-[200px] shadow-sm border border-slate-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
             >
-              <div className="text-3xl lg:text-4xl font-extrabold mb-2 font-playfair">
+              <div className="text-4xl lg:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-br from-[#3370F7] to-[#4C8FD6] tracking-tight">
                 {stat.value}
               </div>
-              <div className="text-sm lg:text-base font-semibold whitespace-pre-line leading-snug">
+              <div className="text-base font-medium text-[#64748B] whitespace-pre-line leading-relaxed">
                 {stat.description}
               </div>
             </motion.div>

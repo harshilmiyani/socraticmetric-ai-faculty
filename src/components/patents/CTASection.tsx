@@ -1,44 +1,71 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function CTASection() {
+  const benefits = [
+    "Deploy instantly",
+    "Audit-ready records",
+    "Adaptive logic",
+  ];
+
   return (
-    <section className="relative overflow-hidden py-24 px-6 bg-gradient-to-r from-[#A0C4BA] via-[#659BD4] to-[#3370F7]">
-      <div className="max-w-4xl mx-auto text-center space-y-10">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl lg:text-[40px] leading-tight font-bold text-white font-playfair"
-        >
-          Built on Science. Protected by Law.
-        </motion.h2>
+    <section id="contact" className="relative py-24 md:py-32 lg:py-40 bg-[#1F2A44] text-center overflow-hidden">
+      <BackgroundBeams />
+      
+      {/* Decorative gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A44] via-transparent to-[#1F2A44]/80 pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#3370F7]/20 rounded-full blur-[120px] pointer-events-none z-0" />
 
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl shadow-blue-900/10 border border-white flex flex-col items-center max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-5xl mx-auto space-y-8 md:space-y-10 p-8 sm:p-12 md:p-20 rounded-[2.5rem] bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_0_80px_rgba(51,112,247,0.15)] ring-1 ring-white/5 relative overflow-hidden"
         >
-          <p className="text-[#1F2A44] text-[20px] md:text-2xl font-bold leading-relaxed mb-10 text-center">
-            The only oral verification platform backed by four US patents and
-            decades of cognitive research.
-          </p>
+          
+          {/* Inner subtle glows */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-[#F58022] to-transparent opacity-60" />
+          <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#F58022]/20 rounded-full blur-3xl" />
+          <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#3370F7]/20 rounded-full blur-3xl" />
 
-          <Link href="/request-demo">
-            <button className="relative group inline-flex h-14 items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-2xl shadow-[#F58022]/40 outline-none transition-all duration-300 hover:shadow-[#F58022]/60 hover:scale-[1.02] active:scale-95 ring-1 ring-[#F58022]/20">
-              <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFE5D1_0%,#F58022_50%,#FFE5D1_100%)] opacity-100 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="relative inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-[#F58022] px-10 text-lg font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#F58022] group-hover:to-[#f19e59]">
-                Request a Demo
-              </span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            </button>
-          </Link>
+          <div className="relative z-10">
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-6">
+              Built on Science.<br className="hidden sm:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F58022] to-[#FF9D4D]">Protected by Law.</span>
+            </h2>
+            
+            <p className="text-lg md:text-xl lg:text-2xl text-slate-300 leading-relaxed max-w-2xl mx-auto font-medium mb-10">
+              The only oral verification platform backed by four US patents and decades of cognitive research.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12">
+              {benefits.map((benefit, i) => (
+                <div key={i} className="flex items-center gap-2.5 text-sm md:text-base lg:text-lg text-slate-200">
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-[#3370F7]" />
+                  <span>{benefit}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+              <Link href="/request-demo" className="w-full sm:w-auto">
+                <button className="relative group inline-flex h-16 w-full sm:w-auto min-w-[240px] items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-2xl shadow-[#3370F7]/40 outline-none transition-all duration-300 hover:shadow-[#3370F7]/60 hover:scale-[1.02] active:scale-95 ring-1 ring-[#3370F7]/20">
+                  <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)] opacity-100 group-hover:opacity-100 transition-opacity duration-500" />
+                  <span className="relative inline-flex h-full w-full items-center justify-center gap-3 rounded-full bg-[#3370F7] px-12 text-lg font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#3370F7] group-hover:to-[#4C8FD6]">
+                    Request a Demo <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                  {/* Subtle inner glow */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                </button>
+              </Link>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
