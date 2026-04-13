@@ -54,7 +54,7 @@ const navItems: NavItem[] = [
       }
     ]
   },
-  { label: "Science", href: "#science" },
+  { label: "Science", href: "/science" },
   { label: "Why it matters", href: "/why-it-matters" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },

@@ -174,7 +174,7 @@ export default function AboutPage() {
                 </div>
                 <div className="pt-1">
                   <p className="text-[10px] font-bold text-[#3370F7] uppercase tracking-wider mb-2">The Science · 2022</p>
-                  <h3 className="text-2xl font-bold text-[#1F2A44] mb-4">Grounding in Cognitive Research</h3>
+                  <h3 className="text-2xl font-bold text-[#1F2A44] mb-4">Grounding in Cognitive Neuroscience</h3>
                   <p className="text-[#64748B] leading-relaxed mb-6">
                     We partnered with cognitive scientists to understand how real comprehension is tested. The research was unambiguous: oral explanation, adaptive questioning, and real-time reasoning under gentle pressure are the most reliable signals of genuine understanding — not written output, not multiple choice, not rubric scores.
                   </p>
@@ -282,8 +282,8 @@ export default function AboutPage() {
                 <div className="w-32 h-32 rounded-full bg-[#3370F7] flex items-center justify-center text-white text-2xl font-bold mb-6 shadow-lg shadow-[#3370F7]/20">
                   SC
                 </div>
-                <h3 className="text-xl font-bold text-[#1F2A44] mb-1">Sarah Chen</h3>
-                <p className="text-sm text-[#3370F7] font-semibold mb-4">Chief Executive Officer</p>
+                <h3 className="text-xl font-bold text-[#1F2A44] mb-1">Dr. Barry Sandrew</h3>
+                <p className="text-sm text-[#3370F7] font-semibold mb-4">Founder/CEO</p>
                 <p className="text-[#64748B] text-sm leading-relaxed max-w-xs">
                   Dedicated to building systems that ensure human accountability remains at the center of critical decision-making.
                 </p>
@@ -294,8 +294,8 @@ export default function AboutPage() {
                 <div className="w-32 h-32 rounded-full bg-[#1F2A44] flex items-center justify-center text-white text-2xl font-bold mb-6 shadow-lg shadow-[#1F2A44]/20">
                   MW
                 </div>
-                <h3 className="text-xl font-bold text-[#1F2A44] mb-1">Dr. Marcus Webb</h3>
-                <p className="text-sm text-[#3370F7] font-semibold mb-4">Chief Science Officer</p>
+                <h3 className="text-xl font-bold text-[#1F2A44] mb-1">Dr. Huston Pullen</h3>
+                <p className="text-sm text-[#3370F7] font-semibold mb-4">Innovation Deployment</p>
                 <p className="text-[#64748B] text-sm leading-relaxed max-w-xs">
                   Dedicated to building systems that ensure human accountability remains at the center of critical decision-making.
                 </p>
@@ -306,8 +306,8 @@ export default function AboutPage() {
                 <div className="w-32 h-32 rounded-full bg-[#F58022] flex items-center justify-center text-white text-2xl font-bold mb-6 shadow-lg shadow-[#F58022]/20">
                   ER
                 </div>
-                <h3 className="text-xl font-bold text-[#1F2A44] mb-1">Elena Rodriguez</h3>
-                <p className="text-sm text-[#3370F7] font-semibold mb-4">Head of Product</p>
+                <h3 className="text-xl font-bold text-[#1F2A44] mb-1">Aansh Malik</h3>
+                <p className="text-sm text-[#3370F7] font-semibold mb-4">CTO</p>
                 <p className="text-[#64748B] text-sm leading-relaxed max-w-xs">
                   Dedicated to building systems that ensure human accountability remains at the center of critical decision-making.
                 </p>
