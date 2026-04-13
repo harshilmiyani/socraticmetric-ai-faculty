@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 export function EducationOutcomes() {
   const outcomes = [
-    { value: "XX%", label: "Drop in suspected academic integrity violations" },
-    { value: "XX%", label: "Increase in confidence in assessment outcomes" },
-    { value: "XX%", label: "Reduction in faculty time spent on integrity investigations" },
-    { value: "XX%", label: "Programs supported across undergraduate and graduate levels" },
+    { value: "XX%", label: "Fewer critical errors linked to misunderstanding" },
+    { value: "XX%", label: "Greater confidence in operator readiness" },
+    { value: "XX%", label: "Less time spent on post-incident investigations" },
+    { value: "XX%", label: "Deployed across 5 units or programs" },
   ];
 
   return (
