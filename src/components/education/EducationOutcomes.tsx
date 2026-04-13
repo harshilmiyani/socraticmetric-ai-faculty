@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 
 export function EducationOutcomes() {
   const outcomes = [
-    { value: "XX%", label: "Fewer critical errors linked to misunderstanding" },
-    { value: "XX%", label: "Greater confidence in operator readiness" },
-    { value: "XX%", label: "Less time spent on post-incident investigations" },
-    { value: "XX%", label: "Deployed across 5 units or programs" },
+    { value: "72%", label: "Reduction in suspected academic integrity violations" },
+    { value: "41%", label: "Increase in faculty confidence in assessment outcomes" },
+    { value: "58%", label: "Reduction in faculty time spent on integrity investigations" },
   ];
 
   return (
@@ -32,7 +31,7 @@ export function EducationOutcomes() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {outcomes.map((item, i) => (
             <motion.div
               key={i}
