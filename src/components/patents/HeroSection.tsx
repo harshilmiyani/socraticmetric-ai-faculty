@@ -81,40 +81,51 @@ export function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative perspective-1000 flex flex-col items-center"
+            className="relative perspective-1000 flex flex-col items-center w-full group"
           >
-            <div className="w-full bg-white rounded-3xl border border-slate-100 shadow-2xl shadow-[#3370F7]/10 transform transition-transform hover:scale-[1.02] duration-500 overflow-hidden flex flex-col">
+            {/* Animated Glowing Gradient Backdrop */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#3370F7] via-[#F58022] to-[#3370F7] rounded-[2.5rem] blur-xl opacity-40 group-hover:opacity-70 transition duration-1000 bg-[length:200%_auto] animate-[pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
+            
+            {/* Dark Premium Widget Container */}
+            <div className="w-full bg-[#1F2A44]/95 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-2xl shadow-[#3370F7]/30 transform transition-transform duration-500 overflow-hidden flex flex-col relative z-10">
+              
+              {/* Inner glowing background effect */}
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#3370F7]/10 via-transparent to-[#F58022]/10 pointer-events-none" />
+
               {/* Header */}
-              <div className="bg-slate-50 border-b border-slate-100 px-6 py-5 flex items-center justify-between">
+              <div className="bg-white/10 border-b border-white/10 px-6 py-5 flex items-center justify-between relative z-10 backdrop-blur-md">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-blue-50 text-[#3370F7] flex items-center justify-center shadow-sm border border-blue-100">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3370F7] to-[#4C8FD6] text-white flex items-center justify-center shadow-lg shadow-[#3370F7]/30">
                     <Award className="w-5 h-5" />
                   </div>
-                  <span className="font-bold text-[#1F2A44] text-lg">USPTO Issued Patents</span>
+                  <span className="font-bold text-white text-lg tracking-wide">USPTO Issued Patents</span>
                 </div>
                 <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-slate-200"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-200"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-200"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-colors"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-colors"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-colors"></div>
                 </div>
               </div>
               
               {/* List */}
-              <div className="p-6 flex flex-col gap-4 bg-[#F8FAFC]">
+              <div className="p-6 flex flex-col gap-4 relative z-10">
                 {patents.map((patent, idx) => (
-                  <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col gap-3 relative overflow-hidden group hover:border-[#3370F7]/20 transition-colors">
-                    <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#EAF1FE] group-hover:bg-[#3370F7] transition-colors duration-300" />
-                    <h4 className="text-[15px] font-bold text-[#1F2A44] leading-snug pl-3">
+                  <div key={idx} className="bg-white/5 backdrop-blur-md p-5 rounded-2xl border border-white/10 shadow-sm flex flex-col gap-3 relative overflow-hidden hover:bg-white/10 transition-all duration-300 hover:shadow-lg hover:shadow-[#3370F7]/20 hover:-translate-y-0.5">
+                    {/* Hover accent line */}
+                    <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#3370F7] to-[#F58022] opacity-70" />
+                    
+                    <h4 className="text-[15px] font-bold text-white leading-snug pl-3">
                       {patent.title}
                     </h4>
+                    
                     <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 pl-3 mt-1">
-                      <div className="flex items-center gap-2 text-sm text-[#64748B]">
+                      <div className="flex items-center gap-2 text-sm text-slate-300 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
                         <FileText className="w-4 h-4 text-[#F58022]" />
-                        <span className="font-medium">Patent No: <span className="font-bold text-[#1F2A44]">{patent.id}</span></span>
+                        <span className="font-medium">Patent No: <span className="font-bold text-white">{patent.id}</span></span>
                       </div>
-                      <div className="flex items-center gap-2 text-sm text-[#64748B]">
+                      <div className="flex items-center gap-2 text-sm text-slate-300 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
                         <Calendar className="w-4 h-4 text-[#3370F7]" />
-                        <span className="font-medium">Issue Date: <span className="text-[#1F2A44]">{patent.date}</span></span>
+                        <span className="font-medium">Issue Date: <span className="text-white">{patent.date}</span></span>
                       </div>
                     </div>
                   </div>

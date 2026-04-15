@@ -54,11 +54,6 @@ export function CognitiveScienceSection() {
               patterns during production vs. passive reception.
             </p>
 
-            <div className="mt-auto pt-4">
-              <span className="inline-block bg-slate-50 text-[#64748B] text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-full border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer">
-                [Citation link placeholder]
-              </span>
-            </div>
             </div>
           </motion.div>
 
