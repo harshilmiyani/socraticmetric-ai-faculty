@@ -1,5 +1,5 @@
 import { getSanityClient, isSanityConfigured } from "./client";
-import { postBySlugQuery, postSlugsQuery, postsListQuery } from "./queries";
+import { postBySlugQuery, postSlugsQuery, postsListQuery, postsSitemapQuery } from "./queries";
 import { urlForImage } from "./image";
 import { fallbackBlogHtml, fallbackBlogPosts } from "./fallback-posts";
 import type { BlogPostCard, BlogPostPageData, SanityPostDetailGroq, SanityPostListGroq } from "./types";
@@ -93,6 +93,31 @@ export async function getAllBlogSlugs(): Promise<string[]> {
     return [...merged];
   } catch {
     return fromFallback;
+  }
+}
+
+export type BlogSitemapEntry = { slug: string; lastModified?: Date };
+
+/** Merged blog slugs with optional `lastModified` from Sanity when available. */
+export async function getBlogEntriesForSitemap(): Promise<BlogSitemapEntry[]> {
+  const slugs = await getAllBlogSlugs();
+  const client = getSanityClient();
+  if (!client) {
+    return slugs.map((slug) => ({ slug }));
+  }
+
+  try {
+    const rows = await client.fetch<{ slug: string; lastModified: string | null }[]>(postsSitemapQuery);
+    const bySlug = new Map((rows ?? []).map((r) => [r.slug, r.lastModified]));
+    return slugs.map((slug) => {
+      const raw = bySlug.get(slug);
+      if (!raw) return { slug };
+      const d = new Date(raw);
+      if (Number.isNaN(d.getTime())) return { slug };
+      return { slug, lastModified: d };
+    });
+  } catch {
+    return slugs.map((slug) => ({ slug }));
   }
 }
 

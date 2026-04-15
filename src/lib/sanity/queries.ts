@@ -55,3 +55,11 @@ export const postBySlugQuery = groq`
 export const postSlugsQuery = groq`
   *[${publishedPostFilter}].slug.current
 `;
+
+/** Slug + timestamps for sitemap `lastmod` (published when set, else last doc update). */
+export const postsSitemapQuery = groq`
+  *[${publishedPostFilter}]{
+    "slug": slug.current,
+    "lastModified": coalesce(publishedAt, _updatedAt)
+  }
+`;
