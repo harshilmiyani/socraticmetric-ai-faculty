@@ -3,7 +3,6 @@ import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/patents/HeroSection';
 import { StatsSection } from '@/components/patents/StatsSection';
 import { ScienceSection } from '@/components/patents/ScienceSection';
-import { PatentListSection } from '@/components/patents/PatentListSection';
 import { CognitiveScienceSection } from '@/components/patents/CognitiveScienceSection';
 import { CTASection } from '@/components/patents/CTASection';
 
@@ -19,7 +18,6 @@ export default function PatentsPage() {
       <div className="flex-1">
         <HeroSection />
         <StatsSection />
-        <PatentListSection />
         <ScienceSection />
         <CognitiveScienceSection />
         <CTASection />
