@@ -19,8 +19,8 @@ export default function PatentsPage() {
       <div className="flex-1">
         <HeroSection />
         <StatsSection />
-        <ScienceSection />
         <PatentListSection />
+        <ScienceSection />
         <CognitiveScienceSection />
         <CTASection />
       </div>
