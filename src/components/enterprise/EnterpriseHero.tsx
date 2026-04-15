@@ -1,10 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export function EnterpriseHero() {
+  const [iframeHeightPx, setIframeHeightPx] = useState<number | null>(null);
+
+  useEffect(() => {
+    function onMessage(e: MessageEvent) {
+      if (e.origin !== window.location.origin) return;
+      const data = e.data as { type?: string; height?: number } | null;
+      if (data?.type === "sm-ent-hero" && typeof data.height === "number" && data.height > 0) {
+        setIframeHeightPx(Math.min(Math.max(Math.round(data.height), 240), 2400));
+      }
+    }
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -36,7 +50,7 @@ export function EnterpriseHero() {
 
             <p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
               AI-generated documents, policies, and reports can look polished without reflecting real understanding.
-              Oral verification helps you confirm that employees and leaders can reason through what they're approving and acting on.
+              Oral verification helps you confirm that employees and leaders can reason through what they&apos;re approving and acting on.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -72,10 +86,14 @@ export function EnterpriseHero() {
               Policy oral check preview
             </motion.div>
 
-            <div className="w-full max-w-full mx-auto transform transition-transform hover:scale-[1.02] duration-500 rounded-2xl overflow-hidden bg-white shadow-2xl shadow-[#3370F7]/10 border border-slate-100 [isolation:isolate]">
+            <div className="w-full max-w-full mx-auto">
               <iframe
                 src="/animation/hero-enterprise-voice.html"
-                className="w-full block border-0 min-h-[620px] h-[min(78vh,820px)] sm:min-h-[600px] md:min-h-[640px]"
+                className="w-full block border-0 bg-transparent"
+                style={{
+                  height: iframeHeightPx != null ? `${iframeHeightPx}px` : undefined,
+                  minHeight: iframeHeightPx == null ? "min(52vh, 480px)" : undefined,
+                }}
                 title="SocraticMetric enterprise policy oral check — live preview"
                 scrolling="no"
               />

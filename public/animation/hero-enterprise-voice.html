@@ -1,176 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>SM Hero Enterprise — Voice</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>SocraticMetric — Enterprise decision risk preview</title>
 <style>
-html,body{margin:0;padding:0;background:#F1F5F9}
+:root{
+  --brand:#3370F7;
+  --brand-dark:#1d5fd6;
+  --brand-soft:#EAF1FE;
+  --ink:#1F2A44;
+  --muted:#64748B;
+  --line:#E2E8F0;
+  --panel:#F1F5F9;
+  --white:#fff;
+  --orange:#EA580C;
+  --orange-bg:#FFF7ED;
+  --rose:#FEF2F2;
+  --rose-border:#FECACA;
+  --rose-ink:#991B1B;
+  --badge-warn-bg:#FFEDD5;
+  --badge-warn-text:#9A3412;
+}
+html,body{margin:0;padding:0;background:transparent}
 *{box-sizing:border-box}
-body{font-family:system-ui,-apple-system,sans-serif;display:flex;align-items:flex-start;justify-content:center;padding:clamp(6px,2vw,12px) clamp(10px,4vw,20px) clamp(10px,2.5vw,14px);min-height:min-content;overflow-x:clip}
-
-.shell{background:#fff;border-radius:clamp(20px,5.5vw,24px);border:1px solid #e2e8f0;overflow:hidden;max-width:min(720px,100%);margin:0 auto;width:100%;box-shadow:0 4px 24px rgba(15,23,42,0.06)}
-
-.titlebar{min-height:34px;background:#fff;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;padding:8px clamp(10px,3vw,14px)}
-.titlebar-dots{display:flex;align-items:center;gap:6px;flex-shrink:0}
-.titlebar-title{margin-left:0;font-size:clamp(9px,2.8vw,11px);color:#888780;line-height:1.3;flex:1;min-width:0;word-break:break-word}
-.titlebar-meta{margin-left:auto;font-size:clamp(9px,2.4vw,10px);color:#888780;flex-shrink:0}
-
-.main-grid{display:grid;grid-template-columns:1fr;align-items:stretch}
-.col-divider{background:#e2e8f0;height:1px;width:100%}
-.col-left,.col-right{padding:clamp(12px,4vw,16px) clamp(14px,5vw,20px);display:flex;flex-direction:column;gap:clamp(10px,2.5vw,12px);max-width:100%;min-width:0;overflow-x:clip}
-.col-left{background:#fff}
-.col-right{background:#F1F5F9}
-
-@media (min-width:560px){
-  .titlebar-title{margin-left:8px}
-  .main-grid{grid-template-columns:1fr 1px 1fr}
-  .col-divider{width:1px;height:auto;min-height:120px}
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  display:block;width:100%;padding:0;
+  min-height:min-content;overflow-x:clip;
+  color:var(--ink);-webkit-font-smoothing:antialiased;
+}
+.preview-root{width:100%;max-width:100%;margin:0;background:transparent}
+.tab-shell{
+  width:100%;max-width:min(640px,100%);margin:0 auto;
+  background:var(--white);border:1px solid var(--line);
+  border-radius:clamp(16px,4vw,22px);
+  box-shadow:0 4px 24px rgba(15,23,42,.07);
+  overflow:hidden;
+  padding:clamp(10px,2.5vw,16px) clamp(10px,3vw,18px) clamp(12px,2.5vw,18px);
 }
 
-.section-label{font-size:clamp(8px,2.2vw,9px);font-weight:500;color:#888780;text-transform:uppercase;letter-spacing:.07em}
-
-.card-policy{border-radius:clamp(14px,3.8vw,18px);border:1px solid #e2e8f0;overflow:hidden}
-.card-policy-hd{padding:clamp(9px,2.5vw,10px) clamp(10px,3vw,12px);border-bottom:1px solid #e2e8f0;display:flex;align-items:flex-start;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.card-policy-body{padding:clamp(9px,2.5vw,10px) clamp(10px,3vw,12px);display:flex;flex-direction:column;gap:3px}
-.card-policy-ft{padding:8px 12px;border-top:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px}
-
-.card-chain{padding:clamp(9px,2.5vw,10px) clamp(10px,3vw,12px);border-radius:clamp(14px,3.8vw,18px);border:1px solid #e2e8f0;background:#fff}
-.card-amber{padding:clamp(8px,2vw,10px) clamp(10px,3vw,12px);background:#FAEEDA;border-radius:clamp(12px,3.2vw,16px);border:0.5px solid #FAC775;font-size:clamp(9px,2.4vw,10px);color:#633806;line-height:1.5}
-
-.session-card{padding:clamp(10px,3vw,12px) clamp(12px,3.2vw,14px);background:#fff;border-radius:clamp(14px,3.8vw,18px)}
-.session-card.neutral{border:1px solid #e2e8f0}
-.session-card.alert{border:1px solid #E24B4A}
-
-.session-head{display:flex;align-items:flex-start;gap:clamp(6px,2vw,8px);margin-bottom:7px;flex-wrap:wrap}
-.session-head .wave-wrap{margin-left:auto;display:flex;align-items:flex-end;gap:2px;height:20px;flex-shrink:0;min-width:0}
-#smWave2,#apWave2{display:flex;align-items:flex-end;gap:2px;flex-wrap:nowrap}
-@media (max-width:559px){
-  .session-head .wave-wrap{margin-left:0;width:100%;max-width:100%;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tabs{display:flex;justify-content:center;padding:0 0 clamp(10px,2.5vw,14px)}
+.tabs-inner{
+  display:flex;background:#F1F5F9;border-radius:999px;padding:3px;gap:2px;
+  width:100%;max-width:min(100%,420px);
+}
+.tab{
+  flex:1;min-width:0;border:0;cursor:pointer;
+  font-size:clamp(9px,2.8vw,12px);font-weight:600;
+  padding:clamp(8px,2.2vw,10px) clamp(4px,1.5vw,8px);
+  border-radius:999px;background:transparent;color:var(--muted);
+  transition:background .2s,color .2s,box-shadow .2s;font-family:inherit;
+  line-height:1.2;text-align:center;
+}
+.tab[aria-selected="true"]{
+  background:var(--white);color:var(--brand);
+  box-shadow:0 1px 4px rgba(15,23,42,.08);
 }
 
-.quote{font-size:clamp(10px,2.8vw,11px);color:#2c2c2a;line-height:1.55;font-style:italic;padding-left:8px;border-left-width:2px;border-left-style:solid}
-.caption{font-size:clamp(8px,2.2vw,9px);color:#888780;margin-top:6px}
-
-.live-scores{margin-top:0;display:flex;flex-direction:column;gap:5px}
-@media (min-width:560px){
-  .live-scores{margin-top:auto}
+.panel{display:none;animation:fadeIn .35s ease}
+.panel.is-active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.panel-inner{
+  padding:clamp(10px,3vw,18px) clamp(0px,2vw,6px) clamp(14px,3vw,22px);
+}
+@media (min-width:480px){
+  .panel-inner{padding-left:clamp(4px,2vw,12px);padding-right:clamp(4px,2vw,12px)}
 }
 
-.row-score{display:flex;align-items:center;gap:clamp(6px,2vw,8px)}
-.row-score .lbl{font-size:clamp(8px,2.2vw,9px);color:#5F5E5A;width:clamp(88px,28vw,104px);flex-shrink:0}
-.bar-track{flex:1;height:4px;background:#e2e8f0;border-radius:999px;overflow:hidden;min-width:0}
-
-.skel{height:3px;border-radius:999px;background:#D3D1C7}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@keyframes waveBar{0%{height:3px}100%{height:var(--h,16px)}}
-@keyframes pulseRing{0%{transform:scale(1);opacity:.5}100%{transform:scale(2);opacity:0}}
-@keyframes barGrow{from{width:0}to{width:var(--w)}}
-@keyframes sigDraw{from{stroke-dashoffset:120}to{stroke-dashoffset:0}}
-.fade{animation:fadeUp .4s ease forwards;opacity:0}
-.wbar{width:3px;border-radius:999px;animation:waveBar var(--d,.6s) ease-in-out infinite alternate;flex-shrink:0}
-.ring1{position:absolute;inset:-8px;border-radius:50%;border:1.5px solid #E24B4A;animation:pulseRing 1.5s ease-out infinite}
-.ring2{position:absolute;inset:-16px;border-radius:50%;border:1px solid #E24B4A;animation:pulseRing 1.5s ease-out infinite .5s}
-.bgrow{height:100%;border-radius:999px;animation:barGrow .8s ease forwards;width:0}
-.sig{stroke-dasharray:120;animation:sigDraw .8s ease forwards .8s;stroke-dashoffset:120}
-
-@media (max-width:400px){
-  #smWave2 .wbar,#apWave2 .wbar{transform:scaleY(0.9)}
+.risk-title{
+  text-align:center;font-size:clamp(1.2rem,4.2vw,1.55rem);
+  font-weight:700;letter-spacing:-.02em;margin:0 0 8px;color:var(--ink);
 }
+.risk-sub{
+  text-align:center;font-size:clamp(11px,2.8vw,13px);
+  color:var(--muted);line-height:1.45;margin:0 0 clamp(18px,4vw,24px);
+}
+
+.risk-flow{
+  position:relative;
+  padding-left:clamp(22px,5vw,30px);
+  margin:0 auto;
+  max-width:100%;
+}
+.risk-flow::before{
+  content:"";position:absolute;left:clamp(10px,2.5vw,14px);
+  top:clamp(18px,4vw,26px);bottom:clamp(36px,8vw,52px);
+  width:2px;background:var(--line);border-radius:2px;
+}
+.risk-card{
+  position:relative;margin-bottom:clamp(10px,2.5vw,12px);
+  border-radius:14px;padding:clamp(12px,3vw,14px) clamp(12px,3vw,14px);
+  border:1px solid var(--line);
+  display:flex;align-items:flex-start;gap:12px;
+}
+.risk-card:last-of-type{margin-bottom:0}
+.risk-card--blue{background:var(--brand-soft);border-color:#C7D9FB}
+.risk-card--rose{background:var(--rose);border-color:var(--rose-border)}
+.risk-card--indent{
+  margin-left:clamp(12px,4vw,20px);
+  margin-top:clamp(4px,1vw,8px);
+  background:#FFF5F5;border-color:#FECACA;
+  color:var(--rose-ink);
+  font-size:clamp(11px,2.8vw,12px);
+  font-weight:600;line-height:1.45;
+}
+.risk-card-ic{
+  flex-shrink:0;width:36px;height:36px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--white);border:1px solid rgba(51,112,247,.25);
+}
+.risk-card--rose .risk-card-ic{
+  background:#FEE2E2;border-color:#FCA5A5;
+}
+.risk-card-body{flex:1;min-width:0}
+.risk-card-body p{
+  margin:0;font-size:clamp(12px,3vw,13px);font-weight:600;
+  color:var(--ink);line-height:1.4;
+}
+.risk-card--indent .risk-card-body p{color:var(--rose-ink)}
+.risk-row-top{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:8px;
+  flex-wrap:wrap;width:100%;
+}
+.badge-gap{
+  flex-shrink:0;font-size:clamp(9px,2.2vw,10px);font-weight:700;
+  padding:4px 8px;border-radius:8px;
+  background:var(--badge-warn-bg);color:var(--badge-warn-text);
+}
+
+.cta-enterprise{display:flex;justify-content:center;margin-top:clamp(18px,4vw,24px)}
+.cta-enterprise button{
+  border:0;cursor:pointer;font-family:inherit;font-weight:700;
+  font-size:clamp(11px,3.2vw,13px);color:var(--white);background:var(--brand);
+  padding:clamp(12px,3vw,14px) clamp(16px,4vw,22px);
+  border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
+  gap:8px;width:100%;max-width:min(100%,380px);
+  box-shadow:0 4px 14px rgba(51,112,247,.35);
+  transition:transform .15s,background .15s;
+}
+.cta-enterprise button:hover{background:var(--brand-dark);transform:translateY(-1px)}
+@media (min-width:480px){
+  .cta-enterprise button{width:auto;max-width:none}
+}
+
+.sol-head{text-align:center;margin-bottom:clamp(12px,3vw,16px)}
+.sol-head h2{
+  margin:0 0 6px;font-size:clamp(1.1rem,4vw,1.45rem);
+  font-weight:700;color:var(--ink);letter-spacing:-.02em;
+}
+.sol-head p{
+  margin:0;font-size:clamp(11px,2.8vw,13px);color:var(--muted);line-height:1.45;
+}
+
+.session-label-out{
+  font-size:10px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:8px;
+}
+.session-shell{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+}
+.session-top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 12px;background:#E8EDF3;border-bottom:1px solid var(--line);
+}
+.session-dots{display:flex;gap:5px}
+.session-dots span{width:8px;height:8px;border-radius:50%;background:#CBD5E1}
+.session-rec{
+  display:flex;align-items:center;gap:5px;
+  font-size:10px;font-weight:700;color:#DC2626;
+}
+.session-rec .dot{
+  width:7px;height:7px;border-radius:50%;background:#DC2626;
+  animation:recBlink .9s step-end infinite;
+}
+@keyframes recBlink{50%{opacity:.35}}
+
+.session-body{padding:clamp(10px,2.5vw,12px) clamp(10px,3vw,14px) clamp(12px,3vw,14px);
+  display:flex;flex-direction:column;gap:10px;
+}
+.q-card{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:12px;padding:12px 14px;
+}
+.q-badge{
+  display:inline-block;font-size:9px;font-weight:800;color:var(--white);
+  background:var(--brand);padding:3px 8px;border-radius:6px;margin-bottom:6px;
+}
+.q-meta{font-size:10px;color:var(--muted);margin-bottom:6px}
+.q-text{
+  font-size:clamp(11px,2.8vw,13px);font-weight:700;color:var(--ink);
+  line-height:1.45;
+}
+
+.wave-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px}
+@media (max-width:420px){
+  .wave-row{
+    display:grid;grid-template-columns:auto 1fr;
+    grid-template-areas:"play meta" "wave wave";
+    gap:8px 10px;align-items:center;
+  }
+  .play-btn{grid-area:play}
+  .wave-meta{grid-area:meta;margin-left:0;justify-self:end}
+  .wave-wrap{grid-area:wave;width:100%;min-width:0;height:24px}
+}
+.wave-meta{display:flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0}
+.wave-user{font-size:11px;font-weight:600;color:var(--muted)}
+.play-btn{
+  width:36px;height:36px;border-radius:50%;background:var(--brand);border:0;
+  cursor:default;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;box-shadow:0 2px 8px rgba(51,112,247,.35);
+}
+.play-btn svg{margin-left:2px}
+.wave-wrap{
+  display:flex;align-items:flex-end;gap:2px;flex:1;
+  min-width:100px;height:22px;overflow:hidden;
+}
+.wbar{
+  width:3px;border-radius:999px;flex-shrink:0;
+  animation:waveBar var(--d,.55s) ease-in-out infinite alternate;
+}
+@keyframes waveBar{0%{height:4px}100%{height:var(--h,18px)}}
+.time{font-size:11px;font-weight:600;color:var(--muted);flex-shrink:0}
+
+.trans-card{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:12px;padding:10px 14px;
+}
+.trans-label{font-size:10px;color:var(--muted);margin-bottom:4px}
+.trans-quote{
+  font-size:clamp(11px,2.8vw,12px);font-style:italic;color:var(--muted);
+  line-height:1.5;
+}
+.gap-bar{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  background:var(--orange-bg);border:1px solid #FDBA74;
+  border-radius:10px;padding:10px 12px;margin-top:2px;
+}
+.gap-bar span{
+  font-size:clamp(10px,2.8vw,12px);font-weight:600;color:var(--orange);
+  line-height:1.35;
+}
+
+.back-row{text-align:center;margin-top:clamp(14px,3vw,18px)}
+.back-row button{
+  border:0;background:none;cursor:pointer;font-family:inherit;
+  font-size:12px;font-weight:600;color:var(--muted);
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 10px;border-radius:8px;
+  transition:color .15s,background .15s;
+}
+.back-row button:hover{color:var(--ink);background:#F1F5F9}
 </style>
 </head>
 <body>
-<div class="shell">
-  <div class="titlebar">
-    <div class="titlebar-dots">
-      <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></div>
-      <div style="width:10px;height:10px;border-radius:50%;background:#febc2e"></div>
-      <div style="width:10px;height:10px;border-radius:50%;background:#28c840"></div>
+<div class="preview-root">
+  <div class="tab-shell">
+    <div class="tabs" role="tablist" aria-label="Enterprise preview">
+      <div class="tabs-inner">
+        <button type="button" class="tab" role="tab" id="tab-risk" aria-selected="true" aria-controls="panel-risk-ent">1. The Risk</button>
+        <button type="button" class="tab" role="tab" id="tab-solution" aria-selected="false" aria-controls="panel-solution-ent">2. Socratic Metric Solution</button>
+      </div>
     </div>
-    <span class="titlebar-title">SocraticMetric™ — enterprise policy oral check</span>
-    <span class="titlebar-meta">Mar 20, 2026 · 09:14</span>
-  </div>
-  <div class="main-grid">
-    <div class="col-left">
-      <div class="section-label">Policy awaiting sign-off</div>
-      <div class="fade card-policy" style="animation-delay:.1s">
-        <div class="card-policy-hd">
-          <div>
-            <div style="font-size:10px;font-weight:500;color:#2c2c2a">Vendor Data Processing Policy v3.1</div>
-            <div style="font-size:9px;color:#888780;margin-top:2px">AI-drafted · Legal reviewed</div>
+
+    <div id="panel-risk-ent" class="panel is-active" role="tabpanel" aria-labelledby="tab-risk">
+      <div class="panel-inner">
+        <h1 class="risk-title">How Decision Risk Accumulates</h1>
+        <p class="risk-sub">The hidden danger in polished, AI-generated documents.</p>
+
+        <div class="risk-flow">
+          <div class="risk-card risk-card--blue">
+            <div class="risk-card-ic" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div class="risk-card-body">
+              <p>AI drafts policy — polished, plausible</p>
+            </div>
           </div>
-          <span style="font-size:8px;padding:2px 8px;border-radius:999px;background:#FAEEDA;color:#633806;font-weight:500;white-space:nowrap;border:0.5px solid #FAC775">Pending</span>
+          <div class="risk-card risk-card--blue">
+            <div class="risk-card-ic" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="risk-card-body">
+              <div class="risk-row-top">
+                <p>Leader scans, signs off</p>
+                <span class="badge-gap">Gap hidden</span>
+              </div>
+            </div>
+          </div>
+          <div class="risk-card risk-card--rose">
+            <div class="risk-card-ic" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2.2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="risk-card-body">
+              <p>Decision made — understanding unknown</p>
+            </div>
+          </div>
+          <div class="risk-card risk-card--rose risk-card--indent">
+            <div class="risk-card-body">
+              <p>Compliance finding — rework — investigation</p>
+            </div>
+          </div>
         </div>
-        <div class="card-policy-body">
-          <div class="skel"></div>
-          <div class="skel" style="width:76%"></div>
-          <div class="skel"></div>
-          <div class="skel" style="width:63%"></div>
-          <div class="skel"></div>
-        </div>
-        <div class="card-policy-ft">
-          <span style="font-size:9px;color:#888780">Approver: J. Harmon, VP Compliance</span>
-          <svg viewBox="0 0 58 18" width="58" height="18" fill="none" style="flex-shrink:0"><path class="sig" d="M3 12 Q10 4 14 10 Q18 16 24 8 Q30 2 34 11 Q38 16 44 10 Q50 4 55 12" stroke="#2c2c2a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+        <div class="cta-enterprise">
+          <button type="button" id="btn-to-solution-ent">
+            See how Socratic Metric solves this
+            <span aria-hidden="true">→</span>
+          </button>
         </div>
       </div>
-      <div class="fade card-chain" style="animation-delay:.25s">
-        <div style="font-size:9px;font-weight:500;color:#2c2c2a;margin-bottom:7px">Approval chain</div>
-        <div style="display:flex;flex-direction:column;gap:5px">
-          <div style="display:flex;align-items:center;gap:8px"><div style="width:18px;height:18px;border-radius:50%;background:#E1F5EE;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 3L3 5L7 1" stroke="#085041" stroke-width="1.3" stroke-linecap="round"/></svg></div><span style="font-size:9px;color:#5F5E5A">Legal — approved</span></div>
-          <div style="display:flex;align-items:center;gap:8px"><div style="width:18px;height:18px;border-radius:50%;background:#E1F5EE;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 3L3 5L7 1" stroke="#085041" stroke-width="1.3" stroke-linecap="round"/></svg></div><span style="font-size:9px;color:#5F5E5A">Risk — approved</span></div>
-          <div style="display:flex;align-items:center;gap:8px"><div style="width:18px;height:18px;border-radius:50%;background:#fff;border:0.5px solid #D3D1C7;display:flex;align-items:center;justify-content:center;font-size:9px;color:#888780">?</div><span style="font-size:9px;color:#888780">VP Compliance — oral check required</span></div>
-        </div>
-      </div>
-      <div class="fade card-amber" style="animation-delay:.4s">Sign-off gated — approver must complete oral verification before policy goes live.</div>
     </div>
-    <div class="col-divider" aria-hidden="true"></div>
-    <div class="col-right">
-      <div class="section-label">Approver oral check — voice only</div>
-      <div class="fade session-card neutral" style="animation-delay:.4s">
-        <div class="session-head">
-          <div style="width:22px;height:22px;border-radius:50%;background:#EEEDFE;border:0.5px solid #AFA9EC;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:500;color:#3C3489;flex-shrink:0">SM</div>
-          <span style="font-size:9px;font-weight:500;color:#3C3489;flex:1;min-width:0;line-height:1.3">Question 1 — start recording</span>
-          <div class="wave-wrap" id="smWave2"></div>
+
+    <div id="panel-solution-ent" class="panel" role="tabpanel" aria-labelledby="tab-solution">
+      <div class="panel-inner">
+        <div class="sol-head">
+          <h2>The Socratic Metric Solution</h2>
+          <p>Oral sessions ensure leaders understand the trade-offs.</p>
         </div>
-        <div class="quote" style="border-left-color:#AFA9EC">"Section 4.2 limits vendor retention to 90 days. Walk me through the reasoning — what risk does a longer window create?"</div>
-        <div class="caption">Transcription — AI question</div>
-      </div>
-      <div class="fade session-card alert" style="animation-delay:1s">
-        <div class="session-head">
-          <div style="position:relative;width:28px;height:28px;flex-shrink:0;display:flex;align-items:center;justify-content:center">
-            <div class="ring1"></div><div class="ring2"></div>
-            <div style="width:28px;height:28px;border-radius:50%;background:#E24B4A;display:flex;align-items:center;justify-content:center;position:relative;z-index:1"><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><rect x="3" y="0.5" width="4" height="7" rx="2" fill="white"/><path d="M1 5.5c0 2.21 1.79 4 4 4s4-1.79 4-4" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round"/><line x1="5" y1="9.5" x2="5" y2="11" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+
+        <div class="session-label-out">Oral Session — VP Compliance</div>
+        <div class="session-shell">
+          <div class="session-top">
+            <div class="session-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="session-rec"><span class="dot"></span>REC</div>
           </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;flex-wrap:wrap"><span style="font-size:9px;font-weight:500;color:#993C1D">J. Harmon speaking</span><span style="font-size:8px;color:#E24B4A;font-weight:500">● recording</span></div>
-            <div class="wave-wrap" id="apWave2"></div>
+          <div class="session-body">
+            <div class="q-card">
+              <span class="q-badge">Q1</span>
+              <div class="q-meta">Question 1 — start recording</div>
+              <p class="q-text">Section 4.2 limits vendor retention to 90 days. Walk me through the risk a longer window creates.</p>
+              <div class="wave-row">
+                <button type="button" class="play-btn" aria-hidden="true" tabindex="-1">
+                  <svg width="12" height="14" viewBox="0 0 12 14" fill="white"><path d="M0 0v14l12-7L0 0z"/></svg>
+                </button>
+                <div class="wave-wrap" id="waveEnt"></div>
+                <div class="wave-meta">
+                  <span class="time">0:09</span>
+                  <span class="wave-user">J. Harmon, VP Compliance</span>
+                </div>
+              </div>
+            </div>
+            <div class="trans-card">
+              <div class="trans-label">Transcript</div>
+              <p class="trans-quote">“I believe it’s a regulatory requirement… GDPR-related, I think.”</p>
+            </div>
+            <div class="gap-bar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span>Sign-off blocked — trade-off awareness: 28/100</span>
+            </div>
           </div>
         </div>
-        <div class="quote" style="border-left-color:#E24B4A">"I believe it's a GDPR requirement... some kind of regulatory thing?"</div>
-        <div class="caption">Live transcription — approver response</div>
-      </div>
-      <div class="fade session-card neutral" style="animation-delay:1.7s">
-        <div class="session-head">
-          <div style="width:22px;height:22px;border-radius:50%;background:#EEEDFE;border:0.5px solid #AFA9EC;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:500;color:#3C3489;flex-shrink:0">SM</div>
-          <span style="font-size:9px;font-weight:500;color:#3C3489;flex:1;min-width:0;line-height:1.3">Question 2 — start recording</span>
+
+        <div class="back-row">
+          <button type="button" id="btn-back-risk-ent">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to risks
+          </button>
         </div>
-        <div class="quote" style="border-left-color:#AFA9EC">"Which article specifically — and how does it interact with the indemnification clause in Section 7?"</div>
-        <div class="caption">Transcription — adaptive follow-up</div>
-      </div>
-      <div class="live-scores">
-        <div style="font-size:9px;color:#888780;margin-bottom:2px">Verification score — emerging</div>
-        <div class="row-score"><span class="lbl">Policy understanding</span><div class="bar-track"><div class="bgrow" style="--w:42%;background:#BA7517;animation-delay:2s"></div></div><span style="font-size:9px;font-weight:500;color:#854F0B">42</span></div>
-        <div class="row-score"><span class="lbl">Trade-off awareness</span><div class="bar-track"><div class="bgrow" style="--w:28%;background:#E24B4A;animation-delay:2.15s"></div></div><span style="font-size:9px;font-weight:500;color:#993C1D">28</span></div>
-        <div class="fade card-amber" style="animation-delay:2.4s;margin-top:2px;font-weight:500">Sign-off blocked — approver cannot verbally reason through key controls</div>
       </div>
     </div>
   </div>
 </div>
+
 <script>
 (function(){
-  function bw(id,color,h){var el=document.getElementById(id);if(!el)return;h.forEach(function(v,i){var b=document.createElement('div');b.className='wbar';b.style.cssText='--h:'+v+'px;height:'+v+'px;--d:'+(.4+i*.05).toFixed(2)+'s;background:'+color+';animation-delay:'+((i*.06).toFixed(2))+'s';el.appendChild(b);});}
-  bw('smWave2','#534AB7',[5,9,13,8,16,11,6,14,9,7,12,8]);
-  bw('apWave2','#E24B4A',[4,7,12,9,18,14,7,20,12,8,16,10,14,7,18]);
+  var tabRisk=document.getElementById("tab-risk");
+  var tabSol=document.getElementById("tab-solution");
+  var panelRisk=document.getElementById("panel-risk-ent");
+  var panelSol=document.getElementById("panel-solution-ent");
+  var btnTo=document.getElementById("btn-to-solution-ent");
+  var btnBack=document.getElementById("btn-back-risk-ent");
+
+  function postHeight(){
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        var shell=document.querySelector(".tab-shell");
+        var tabs=document.querySelector(".tabs");
+        if(!shell||!panelRisk||!panelSol)return;
+        var riskActive=panelRisk.classList.contains("is-active");
+        var w=Math.max(shell.offsetWidth||0,280);
+        panelRisk.style.cssText="position:absolute;left:-9999px;top:0;width:"+w+"px;display:block!important;visibility:hidden;pointer-events:none";
+        var hr=panelRisk.offsetHeight;
+        panelRisk.style.cssText="";
+        panelSol.style.cssText="position:absolute;left:-9999px;top:0;width:"+w+"px;display:block!important;visibility:hidden;pointer-events:none";
+        var hs=panelSol.offsetHeight;
+        panelSol.style.cssText="";
+        panelRisk.classList.toggle("is-active",riskActive);
+        panelSol.classList.toggle("is-active",!riskActive);
+        var cs=getComputedStyle(shell);
+        var shellPadY=(parseFloat(cs.paddingTop)||0)+(parseFloat(cs.paddingBottom)||0);
+        var h=Math.ceil((tabs?tabs.offsetHeight:0)+Math.max(hr,hs)+4+shellPadY);
+        if(window.parent&&window.parent!==window){
+          try{window.parent.postMessage({type:"sm-ent-hero",height:h},"*");}catch(e){}
+        }
+      });
+    });
+  }
+
+  function show(which){
+    var risk=which==="risk";
+    tabRisk.setAttribute("aria-selected",risk?"true":"false");
+    tabSol.setAttribute("aria-selected",risk?"false":"true");
+    panelRisk.classList.toggle("is-active",risk);
+    panelSol.classList.toggle("is-active",!risk);
+    panelRisk.setAttribute("aria-hidden",risk?"false":"true");
+    panelSol.setAttribute("aria-hidden",risk?"true":"false");
+    postHeight();
+  }
+
+  tabRisk.addEventListener("click",function(){show("risk");});
+  tabSol.addEventListener("click",function(){show("solution");});
+  btnTo.addEventListener("click",function(){show("solution");tabSol.focus();});
+  btnBack.addEventListener("click",function(){show("risk");tabRisk.focus();});
+  show("risk");
+
+  window.addEventListener("load",postHeight);
+  window.addEventListener("resize",function(){clearTimeout(window.__smRe);window.__smRe=setTimeout(postHeight,100);});
+  if(typeof ResizeObserver!=="undefined"){
+    var se=document.querySelector(".tab-shell");
+    if(se)new ResizeObserver(postHeight).observe(se);
+  }
+
+  function buildWave(id,color,playedColor,heights){
+    var el=document.getElementById(id);
+    if(!el)return;
+    heights.forEach(function(h,i){
+      var b=document.createElement("div");
+      b.className="wbar";
+      var c=i<7?playedColor:color;
+      b.style.cssText="--h:"+h+"px;height:"+h+"px;--d:"+(.42+i*.04).toFixed(2)+"s;background:"+c+";opacity:"+(i<7?"1":".35")+";animation-delay:"+(i*.05).toFixed(2)+"s";
+      el.appendChild(b);
+    });
+  }
+  buildWave("waveEnt","#94A3B8","#3370F7",[5,10,16,11,18,14,8,20,12,9,15,11,7,14]);
 })();
 </script>
 </body>

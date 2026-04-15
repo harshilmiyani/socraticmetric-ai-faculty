@@ -1,177 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>SM Hero Government — Voice</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>SocraticMetric — Government readiness preview</title>
 <style>
-html,body{margin:0;padding:0;background:#F1F5F9}
+:root{
+  --green:#059669;
+  --green-dark:#047857;
+  --green-soft:#ECFDF5;
+  --green-mid:#6EE7B7;
+  --green-light:#D1FAE5;
+  --ink:#111827;
+  --muted:#6B7280;
+  --line:#E5E7EB;
+  --panel:#F4F7F6;
+  --white:#fff;
+  --red:#EF4444;
+  --rose-bg:#FEF2F2;
+  --rose-border:#FECACA;
+}
+html,body{margin:0;padding:0;background:transparent}
 *{box-sizing:border-box}
-body{font-family:system-ui,-apple-system,sans-serif;display:flex;align-items:flex-start;justify-content:center;padding:clamp(6px,2vw,12px) clamp(10px,4vw,20px) clamp(10px,2.5vw,14px);min-height:min-content;overflow-x:clip}
-
-.shell{background:#fff;border-radius:clamp(20px,5.5vw,24px);border:1px solid #e2e8f0;overflow:hidden;max-width:min(720px,100%);margin:0 auto;width:100%;box-shadow:0 4px 24px rgba(15,23,42,0.06)}
-
-.titlebar{min-height:34px;background:#fff;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;padding:8px clamp(10px,3vw,14px)}
-.titlebar-dots{display:flex;align-items:center;gap:6px;flex-shrink:0}
-.titlebar-title{margin-left:0;font-size:clamp(9px,2.8vw,11px);color:#888780;line-height:1.3;flex:1;min-width:0;word-break:break-word}
-.titlebar-secure{margin-left:auto;display:flex;align-items:center;gap:5px;flex-shrink:0}
-
-.main-grid{display:grid;grid-template-columns:1fr;align-items:stretch}
-.col-divider{background:#e2e8f0;height:1px;width:100%}
-.col-left,.col-right{padding:clamp(12px,4vw,16px) clamp(14px,5vw,20px);display:flex;flex-direction:column;gap:clamp(10px,2.5vw,12px);max-width:100%;min-width:0;overflow-x:clip}
-.col-left{background:#fff}
-.col-right{background:#F1F5F9}
-
-@media (min-width:560px){
-  .titlebar-title{margin-left:8px}
-  .main-grid{grid-template-columns:1fr 1px 1fr}
-  .col-divider{width:1px;height:auto;min-height:120px}
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  display:block;width:100%;padding:0;
+  min-height:min-content;overflow-x:clip;
+  color:var(--ink);-webkit-font-smoothing:antialiased;
+}
+.preview-root{width:100%;max-width:100%;margin:0;background:transparent}
+.tab-shell{
+  width:100%;max-width:min(640px,100%);margin:0 auto;
+  background:var(--white);border:1px solid var(--line);
+  border-radius:clamp(16px,4vw,22px);
+  box-shadow:0 4px 24px rgba(15,23,42,.07);
+  overflow:hidden;
+  padding:clamp(10px,2.5vw,16px) clamp(10px,3vw,18px) clamp(12px,2.5vw,18px);
 }
 
-.section-label{font-size:clamp(8px,2.2vw,9px);font-weight:500;color:#888780;text-transform:uppercase;letter-spacing:.07em}
-
-.card-mission{border-radius:clamp(14px,3.8vw,18px);border:1px solid #e2e8f0;overflow:hidden}
-.card-mission-hd{padding:clamp(9px,2.5vw,10px) clamp(10px,3vw,12px);border-bottom:1px solid #e2e8f0;display:flex;align-items:flex-start;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.card-mission-body{padding:clamp(9px,2.5vw,10px) clamp(10px,3vw,12px);display:flex;flex-direction:column;gap:7px}
-
-.card-cert{padding:clamp(9px,2.5vw,10px) clamp(10px,3vw,12px);border-radius:clamp(14px,3.8vw,18px);border:1px solid #e2e8f0;background:#fff}
-.card-gate{padding:clamp(8px,2vw,10px) clamp(10px,3vw,12px);background:#EAF3DE;border-radius:clamp(12px,3.2vw,16px);border:0.5px solid #C0DD97;font-size:clamp(9px,2.4vw,10px);color:#27500A;line-height:1.5}
-
-.session-card{padding:clamp(10px,3vw,12px) clamp(12px,3.2vw,14px);background:#fff;border-radius:clamp(14px,3.8vw,18px)}
-.session-card.neutral{border:1px solid #e2e8f0}
-.session-card.alert{border:1px solid #1D9E75}
-
-.session-head{display:flex;align-items:flex-start;gap:clamp(6px,2vw,8px);margin-bottom:7px;flex-wrap:wrap}
-.session-head .wave-wrap{margin-left:auto;display:flex;align-items:flex-end;gap:2px;height:20px;flex-shrink:0;min-width:0}
-#smWave3,#opWave3{display:flex;align-items:flex-end;gap:2px;flex-wrap:nowrap}
-@media (max-width:559px){
-  .session-head .wave-wrap{margin-left:0;width:100%;max-width:100%;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tabs{display:flex;justify-content:center;padding:0 0 clamp(10px,2.5vw,14px)}
+.tabs-inner{
+  display:flex;background:#F3F4F6;border-radius:999px;padding:3px;gap:2px;
+  width:100%;max-width:min(100%,420px);
+}
+.tab{
+  flex:1;min-width:0;border:0;cursor:pointer;
+  font-size:clamp(9px,2.8vw,12px);font-weight:600;
+  padding:clamp(8px,2.2vw,10px) clamp(4px,1.5vw,8px);
+  border-radius:999px;background:transparent;color:var(--muted);
+  transition:background .2s,color .2s,box-shadow .2s;font-family:inherit;
+  line-height:1.2;text-align:center;
+}
+.tab[aria-selected="true"]{
+  background:var(--white);color:var(--green);
+  box-shadow:0 1px 4px rgba(15,23,42,.08);
 }
 
-.quote{font-size:clamp(10px,2.8vw,11px);color:#2c2c2a;line-height:1.55;font-style:italic;padding-left:8px;border-left-width:2px;border-left-style:solid}
-.caption{font-size:clamp(8px,2.2vw,9px);color:#888780;margin-top:6px}
-
-.live-scores{margin-top:0;display:flex;flex-direction:column;gap:5px}
-@media (min-width:560px){
-  .live-scores{margin-top:auto}
+.panel{display:none;animation:fadeIn .35s ease}
+.panel.is-active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.panel-inner{
+  padding:clamp(10px,3vw,18px) clamp(0px,2vw,6px) clamp(14px,3vw,22px);
+}
+@media (min-width:480px){
+  .panel-inner{padding-left:clamp(4px,2vw,12px);padding-right:clamp(4px,2vw,12px)}
 }
 
-.row-score{display:flex;align-items:center;gap:clamp(6px,2vw,8px)}
-.row-score .lbl{font-size:clamp(8px,2.2vw,9px);color:#5F5E5A;width:clamp(88px,32vw,120px);flex-shrink:0}
-.bar-track{flex:1;height:4px;background:#e2e8f0;border-radius:999px;overflow:hidden;min-width:0}
-
-.step-row{display:flex;gap:8px;align-items:flex-start}
-.step-num{width:17px;height:17px;border-radius:50%;background:#fff;border:0.5px solid #D3D1C7;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:500;color:#5F5E5A;flex-shrink:0}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@keyframes waveBar{0%{height:3px}100%{height:var(--h,16px)}}
-@keyframes pulseRingG{0%{transform:scale(1);opacity:.5}100%{transform:scale(2);opacity:0}}
-@keyframes barGrowG{from{width:0}to{width:var(--w)}}
-@keyframes clearPopG{0%{transform:scale(.8);opacity:0}80%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
-.fade{animation:fadeUp .4s ease forwards;opacity:0}
-.wbar{width:3px;border-radius:999px;animation:waveBar var(--d,.6s) ease-in-out infinite alternate;flex-shrink:0}
-.ring1g{position:absolute;inset:-8px;border-radius:50%;border:1.5px solid #1D9E75;animation:pulseRingG 1.5s ease-out infinite}
-.ring2g{position:absolute;inset:-16px;border-radius:50%;border:1px solid #1D9E75;animation:pulseRingG 1.5s ease-out infinite .5s}
-.bgrowg{height:100%;border-radius:999px;animation:barGrowG .8s ease forwards;width:0}
-.clearg{animation:clearPopG .45s cubic-bezier(.17,.67,.35,1.3) forwards;opacity:0}
-
-@media (max-width:400px){
-  #smWave3 .wbar,#opWave3 .wbar{transform:scaleY(0.9)}
+.risk-title{
+  text-align:center;font-size:clamp(1.2rem,4.2vw,1.55rem);
+  font-weight:700;letter-spacing:-.02em;margin:0 0 8px;color:var(--ink);
 }
+.risk-sub{
+  text-align:center;font-size:clamp(11px,2.8vw,13px);
+  color:var(--muted);line-height:1.45;margin:0 0 clamp(16px,4vw,22px);
+}
+
+.meter-card{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:14px;padding:clamp(12px,3vw,14px) clamp(12px,3vw,16px);
+  margin-bottom:clamp(14px,3vw,18px);
+}
+.meter-labels{
+  display:flex;justify-content:space-between;font-size:clamp(9px,2.2vw,10px);
+  font-weight:600;color:var(--muted);margin-bottom:8px;
+}
+.meter-track{
+  height:clamp(10px,2.5vw,12px);border-radius:999px;width:100%;
+  background:linear-gradient(90deg,#EF4444 0%,#F97316 22%,#EAB308 48%,#84CC16 72%,#22C55E 100%);
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.06);
+}
+.meter-endpoints{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  margin-top:10px;gap:8px;flex-wrap:wrap;
+}
+.meter-low{
+  display:flex;align-items:center;gap:6px;font-size:clamp(11px,2.8vw,12px);
+  font-weight:700;color:var(--red);
+}
+.meter-high{
+  display:flex;align-items:center;gap:6px;font-size:clamp(11px,2.8vw,12px);
+  font-weight:700;color:var(--green);margin-left:auto;
+}
+
+.risk-list{display:flex;flex-direction:column;gap:10px}
+.risk-item{
+  display:flex;align-items:flex-start;gap:10px;
+  background:var(--rose-bg);border:1px solid var(--rose-border);
+  border-radius:12px;padding:clamp(11px,2.8vw,13px) clamp(12px,3vw,14px);
+}
+.risk-item .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--red);
+  flex-shrink:0;margin-top:5px;
+}
+.risk-item p{
+  margin:0;font-size:clamp(11px,2.8vw,12.5px);font-weight:600;
+  color:#374151;line-height:1.45;
+}
+
+.cta-gov{display:flex;justify-content:center;margin-top:clamp(18px,4vw,24px)}
+.cta-gov button{
+  border:0;cursor:pointer;font-family:inherit;font-weight:700;
+  font-size:clamp(11px,3.2vw,13px);color:var(--white);background:var(--green);
+  padding:clamp(12px,3vw,14px) clamp(16px,4vw,22px);
+  border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
+  gap:8px;width:100%;max-width:min(100%,380px);
+  box-shadow:0 4px 14px rgba(5,150,105,.35);
+  transition:transform .15s,background .15s;
+}
+.cta-gov button:hover{background:var(--green-dark);transform:translateY(-1px)}
+@media (min-width:480px){
+  .cta-gov button{width:auto;max-width:none}
+}
+
+.sol-head{text-align:center;margin-bottom:clamp(12px,3vw,16px)}
+.sol-head h2{
+  margin:0 0 6px;font-size:clamp(1.1rem,4vw,1.45rem);
+  font-weight:700;color:#1F2A44;letter-spacing:-.02em;
+}
+.sol-head p{
+  margin:0;font-size:clamp(11px,2.8vw,13px);color:var(--muted);line-height:1.45;
+}
+
+.session-label-out{
+  font-size:10px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:8px;
+}
+.session-shell{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+}
+.session-top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 12px;background:#E8EEEC;border-bottom:1px solid var(--line);
+}
+.session-dots{display:flex;gap:5px}
+.session-dots span{width:8px;height:8px;border-radius:50%;background:#CBD5E1}
+.secure-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:9px;font-weight:800;letter-spacing:.04em;
+  color:var(--white);background:var(--green);
+  padding:4px 9px;border-radius:999px;
+  text-transform:uppercase;
+}
+
+.session-body{padding:clamp(10px,2.5vw,12px) clamp(10px,3vw,14px) clamp(12px,3vw,14px);
+  display:flex;flex-direction:column;gap:10px;
+}
+.q-card{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:12px;padding:12px 14px;
+}
+.q-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.q-badge{
+  font-size:9px;font-weight:800;color:var(--white);background:var(--green);
+  padding:3px 7px;border-radius:6px;
+}
+.q-meta{font-size:10px;color:var(--muted)}
+.q-text{
+  font-size:clamp(11px,2.8vw,13px);font-weight:700;color:var(--ink);
+  line-height:1.45;margin:0;
+}
+
+.wave-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px}
+@media (max-width:420px){
+  .wave-row{
+    display:grid;grid-template-columns:auto 1fr;
+    grid-template-areas:"play meta" "wave wave";
+    gap:8px 10px;align-items:center;
+  }
+  .play-btn{grid-area:play}
+  .wave-meta{
+    grid-area:meta;margin-left:0;justify-self:end;
+    flex-direction:column;align-items:flex-end;gap:4px;
+  }
+  .wave-wrap{grid-area:wave;width:100%;min-width:0;height:24px}
+}
+.wave-meta{
+  display:flex;align-items:center;justify-content:flex-end;gap:10px;
+  margin-left:auto;flex-shrink:0;flex-wrap:wrap;
+}
+.wave-user{font-size:10px;font-weight:600;color:var(--muted)}
+.time{font-size:11px;font-weight:700;color:var(--green)}
+.play-btn{
+  width:36px;height:36px;border-radius:50%;background:var(--green);border:0;
+  cursor:default;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;box-shadow:0 2px 8px rgba(5,150,105,.35);
+}
+.play-btn svg{margin-left:2px}
+.wave-wrap{
+  display:flex;align-items:flex-end;gap:2px;flex:1;
+  min-width:100px;height:22px;overflow:hidden;
+}
+.wbar{
+  width:3px;border-radius:999px;flex-shrink:0;
+  animation:waveBar var(--d,.55s) ease-in-out infinite alternate;
+}
+@keyframes waveBar{0%{height:4px}100%{height:var(--h,18px)}}
+
+.trans-card{
+  background:var(--white);border:1px solid var(--line);
+  border-radius:12px;padding:10px 14px;
+}
+.trans-label{font-size:10px;color:var(--muted);margin-bottom:4px}
+.trans-quote{
+  font-size:clamp(11px,2.8vw,12px);font-style:italic;color:var(--muted);
+  line-height:1.5;margin:0;
+}
+
+.success-bar{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  background:var(--green-light);border:1px solid #6EE7B7;
+  border-radius:10px;padding:10px 12px;margin-top:2px;
+}
+.success-bar span{
+  font-size:clamp(10px,2.8vw,12px);font-weight:700;color:var(--green-dark);
+  line-height:1.35;
+}
+
+.back-row{text-align:center;margin-top:clamp(14px,3vw,18px)}
+.back-row button{
+  border:0;background:none;cursor:pointer;font-family:inherit;
+  font-size:12px;font-weight:600;color:var(--muted);
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 10px;border-radius:8px;
+  transition:color .15s,background .15s;
+}
+.back-row button:hover{color:var(--ink);background:#F3F4F6}
 </style>
 </head>
 <body>
-<div class="shell">
-  <div class="titlebar">
-    <div class="titlebar-dots">
-      <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></div>
-      <div style="width:10px;height:10px;border-radius:50%;background:#febc2e"></div>
-      <div style="width:10px;height:10px;border-radius:50%;background:#28c840"></div>
+<div class="preview-root">
+  <div class="tab-shell">
+    <div class="tabs" role="tablist" aria-label="Government preview">
+      <div class="tabs-inner">
+        <button type="button" class="tab" role="tab" id="tab-risk-gov" aria-selected="true" aria-controls="panel-risk-gov">1. The Risk</button>
+        <button type="button" class="tab" role="tab" id="tab-solution-gov" aria-selected="false" aria-controls="panel-solution-gov">2. Socratic Metric Solution</button>
+      </div>
     </div>
-    <span class="titlebar-title">SocraticMetric™ — government pre-mission oral check</span>
-    <div class="titlebar-secure">
-      <div style="width:7px;height:7px;border-radius:50%;background:#639922"></div>
-      <span style="font-size:10px;font-weight:500;color:#3B6D11">Secure session</span>
-    </div>
-  </div>
-  <div class="main-grid">
-    <div class="col-left">
-      <div class="section-label">Mission procedure — OP-447-B</div>
-      <div class="fade card-mission" style="animation-delay:.1s">
-        <div class="card-mission-hd">
-          <div>
-            <div style="font-size:10px;font-weight:500;color:#2c2c2a">Emergency protocol — Section 6</div>
-            <div style="font-size:9px;color:#888780;margin-top:2px">AI-generated · Pending oral verification</div>
+
+    <div id="panel-risk-gov" class="panel is-active" role="tabpanel" aria-labelledby="tab-risk-gov">
+      <div class="panel-inner">
+        <h1 class="risk-title">The Readiness Illusion</h1>
+        <p class="risk-sub">Documentation doesn&apos;t equal operational capability.</p>
+
+        <div class="meter-card">
+          <div class="meter-labels">
+            <span>Documented only</span>
+            <span>Verified &amp; ready</span>
           </div>
-          <span style="font-size:8px;padding:2px 8px;border-radius:999px;background:#FAEEDA;color:#633806;font-weight:500;white-space:nowrap;border:0.5px solid #FAC775">Unverified</span>
-        </div>
-        <div class="card-mission-body">
-          <div class="step-row"><div class="step-num">1</div><span style="font-size:9px;color:#5F5E5A;line-height:1.4">Isolate subsystem and verify redundancy failover state</span></div>
-          <div class="step-row"><div class="step-num">2</div><span style="font-size:9px;color:#5F5E5A;line-height:1.4">Initiate communication blackout per COMMS-12</span></div>
-          <div class="step-row"><div class="step-num">3</div><span style="font-size:9px;color:#5F5E5A;line-height:1.4">Execute rollback, confirm with command</span></div>
-        </div>
-      </div>
-      <div class="fade card-cert" style="animation-delay:.25s">
-        <div style="font-size:9px;font-weight:500;color:#2c2c2a;margin-bottom:7px">Operator R. Chen — certification</div>
-        <div style="display:flex;flex-direction:column;gap:5px">
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px"><span style="font-size:9px;color:#5F5E5A">Written assessment</span><span style="font-size:8px;padding:2px 8px;border-radius:999px;background:#E1F5EE;color:#085041;font-weight:500">Pass</span></div>
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px"><span style="font-size:9px;color:#5F5E5A">Simulation drill</span><span style="font-size:8px;padding:2px 8px;border-radius:999px;background:#E1F5EE;color:#085041;font-weight:500">Pass</span></div>
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px"><span style="font-size:9px;color:#5F5E5A">Oral verification</span><span style="font-size:8px;padding:2px 8px;border-radius:999px;background:#FAEEDA;color:#633806;font-weight:500">In progress</span></div>
-        </div>
-      </div>
-      <div class="fade card-gate" style="animation-delay:.4s">Mission launch gated — oral verification must pass before deployment.</div>
-    </div>
-    <div class="col-divider" aria-hidden="true"></div>
-    <div class="col-right">
-      <div class="section-label">Pre-mission oral check — voice only</div>
-      <div class="fade session-card neutral" style="animation-delay:.4s">
-        <div class="session-head">
-          <div style="width:22px;height:22px;border-radius:50%;background:#EEEDFE;border:0.5px solid #AFA9EC;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:500;color:#3C3489;flex-shrink:0">SM</div>
-          <span style="font-size:9px;font-weight:500;color:#3C3489;flex:1;min-width:0;line-height:1.3">Question 1 — start recording</span>
-          <div class="wave-wrap" id="smWave3"></div>
-        </div>
-        <div class="quote" style="border-left-color:#AFA9EC">"Step 2 calls for COMMS-12 blackout before the rollback. Why that order — not after?"</div>
-        <div class="caption">Transcription — AI question</div>
-      </div>
-      <div class="fade session-card alert" style="animation-delay:1s">
-        <div class="session-head">
-          <div style="position:relative;width:28px;height:28px;flex-shrink:0;display:flex;align-items:center;justify-content:center">
-            <div class="ring1g"></div><div class="ring2g"></div>
-            <div style="width:28px;height:28px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;position:relative;z-index:1"><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><rect x="3" y="0.5" width="4" height="7" rx="2" fill="white"/><path d="M1 5.5c0 2.21 1.79 4 4 4s4-1.79 4-4" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round"/><line x1="5" y1="9.5" x2="5" y2="11" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg></div>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;flex-wrap:wrap"><span style="font-size:9px;font-weight:500;color:#3B6D11">Operator R. Chen speaking</span><span style="font-size:8px;color:#1D9E75;font-weight:500">● recording</span></div>
-            <div class="wave-wrap" id="opWave3"></div>
+          <div class="meter-track" role="presentation" aria-hidden="true"></div>
+          <div class="meter-endpoints">
+            <div class="meter-low">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              High risk
+            </div>
+            <div class="meter-high">
+              Defensible
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
           </div>
         </div>
-        <div class="quote" style="border-left-color:#1D9E75">"Blackout first prevents external interference — command retains full control during rollback."</div>
-        <div class="caption">Live transcription — operator response</div>
-      </div>
-      <div class="fade session-card neutral" style="animation-delay:1.7s">
-        <div class="session-head">
-          <div style="width:22px;height:22px;border-radius:50%;background:#EEEDFE;border:0.5px solid #AFA9EC;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:500;color:#3C3489;flex-shrink:0">SM</div>
-          <span style="font-size:9px;font-weight:500;color:#3C3489;flex:1;min-width:0;line-height:1.3">Question 2 — start recording</span>
+
+        <div class="risk-list">
+          <div class="risk-item">
+            <span class="dot" aria-hidden="true"></span>
+            <p>Operators following AI-generated procedures they haven&apos;t internalized</p>
+          </div>
+          <div class="risk-item">
+            <span class="dot" aria-hidden="true"></span>
+            <p>Gap between documented protocol and real-world execution</p>
+          </div>
+          <div class="risk-item">
+            <span class="dot" aria-hidden="true"></span>
+            <p>No defensible evidence of individual readiness for oversight reviews</p>
+          </div>
         </div>
-        <div class="quote" style="border-left-color:#AFA9EC">"If the failover in step 1 fails to confirm — do you proceed or abort?"</div>
-        <div class="caption">Transcription — adaptive follow-up</div>
+
+        <div class="cta-gov">
+          <button type="button" id="btn-to-solution-gov">
+            See how Socratic Metric solves this
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
       </div>
-      <div class="live-scores">
-        <div style="font-size:9px;color:#888780;margin-bottom:2px">Readiness score — live</div>
-        <div class="row-score"><span class="lbl">Procedure reasoning</span><div class="bar-track"><div class="bgrowg" style="--w:88%;background:#1D9E75;animation-delay:2s"></div></div><span style="font-size:9px;font-weight:500;color:#3B6D11">88</span></div>
-        <div class="row-score"><span class="lbl">Decision under pressure</span><div class="bar-track"><div class="bgrowg" style="--w:91%;background:#1D9E75;animation-delay:2.15s"></div></div><span style="font-size:9px;font-weight:500;color:#3B6D11">91</span></div>
-        <div class="row-score"><span class="lbl">Contingency awareness</span><div class="bar-track"><div class="bgrowg" style="--w:84%;background:#1D9E75;animation-delay:2.3s"></div></div><span style="font-size:9px;font-weight:500;color:#3B6D11">84</span></div>
-        <div class="clearg fade" style="animation-delay:2.6s;margin-top:2px;padding:8px 10px;background:#E1F5EE;border-radius:clamp(10px,2.5vw,14px);border:0.5px solid #9FE1CB;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-          <svg width="12" height="9" viewBox="0 0 12 9" fill="none" style="flex-shrink:0"><path d="M1 4.5L4 7.5L11 1" stroke="#085041" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span style="font-size:10px;color:#085041;font-weight:500;text-align:left">Operator cleared — mission launch authorized</span>
+    </div>
+
+    <div id="panel-solution-gov" class="panel" role="tabpanel" aria-labelledby="tab-solution-gov">
+      <div class="panel-inner">
+        <div class="sol-head">
+          <h2>The Socratic Metric Solution</h2>
+          <p>Pre-mission oral checks verify true operator readiness.</p>
+        </div>
+
+        <div class="session-label-out">Pre-mission Oral Check — R. Chen</div>
+        <div class="session-shell">
+          <div class="session-top">
+            <div class="session-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="secure-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              SECURE
+            </div>
+          </div>
+          <div class="session-body">
+            <div class="q-card">
+              <div class="q-head">
+                <span class="q-badge">Q1</span>
+                <span class="q-meta">Question 1 — start recording</span>
+              </div>
+              <p class="q-text">Step 2 initiates COMMS-12 blackout before the rollback. Why that order — not after?</p>
+              <div class="wave-row">
+                <button type="button" class="play-btn" aria-hidden="true" tabindex="-1">
+                  <svg width="12" height="14" viewBox="0 0 12 14" fill="white"><path d="M0 0v14l12-7L0 0z"/></svg>
+                </button>
+                <div class="wave-wrap" id="waveGov"></div>
+                <div class="wave-meta">
+                  <span class="wave-user">Operator R. Chen</span>
+                  <span class="time" aria-hidden="true">0:11</span>
+                </div>
+              </div>
+            </div>
+            <div class="trans-card">
+              <div class="trans-label">Transcript</div>
+              <p class="trans-quote">&ldquo;To prevent external interference — so command retains full control of the sequence.&rdquo;</p>
+            </div>
+            <div class="success-bar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-dark)" stroke-width="2.2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Operator cleared — readiness score: 89/100</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="back-row">
+          <button type="button" id="btn-back-risk-gov">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to risks
+          </button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <script>
 (function(){
-  function bw(id,color,h){var el=document.getElementById(id);if(!el)return;h.forEach(function(v,i){var b=document.createElement('div');b.className='wbar';b.style.cssText='--h:'+v+'px;height:'+v+'px;--d:'+(.4+i*.05).toFixed(2)+'s;background:'+color+';animation-delay:'+((i*.06).toFixed(2))+'s';el.appendChild(b);});}
-  bw('smWave3','#534AB7',[5,9,13,8,16,11,6,14,9,7,12,8]);
-  bw('opWave3','#1D9E75',[5,10,18,13,22,16,9,20,14,10,18,12,16,9,20]);
+  var tabRisk=document.getElementById("tab-risk-gov");
+  var tabSol=document.getElementById("tab-solution-gov");
+  var panelRisk=document.getElementById("panel-risk-gov");
+  var panelSol=document.getElementById("panel-solution-gov");
+  var btnTo=document.getElementById("btn-to-solution-gov");
+  var btnBack=document.getElementById("btn-back-risk-gov");
+
+  function postHeight(){
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        var shell=document.querySelector(".tab-shell");
+        var tabs=document.querySelector(".tabs");
+        if(!shell||!panelRisk||!panelSol)return;
+        var riskActive=panelRisk.classList.contains("is-active");
+        var w=Math.max(shell.offsetWidth||0,280);
+        panelRisk.style.cssText="position:absolute;left:-9999px;top:0;width:"+w+"px;display:block!important;visibility:hidden;pointer-events:none";
+        var hr=panelRisk.offsetHeight;
+        panelRisk.style.cssText="";
+        panelSol.style.cssText="position:absolute;left:-9999px;top:0;width:"+w+"px;display:block!important;visibility:hidden;pointer-events:none";
+        var hs=panelSol.offsetHeight;
+        panelSol.style.cssText="";
+        panelRisk.classList.toggle("is-active",riskActive);
+        panelSol.classList.toggle("is-active",!riskActive);
+        var cs=getComputedStyle(shell);
+        var shellPadY=(parseFloat(cs.paddingTop)||0)+(parseFloat(cs.paddingBottom)||0);
+        var h=Math.ceil((tabs?tabs.offsetHeight:0)+Math.max(hr,hs)+4+shellPadY);
+        if(window.parent&&window.parent!==window){
+          try{window.parent.postMessage({type:"sm-gov-hero",height:h},"*");}catch(e){}
+        }
+      });
+    });
+  }
+
+  function show(which){
+    var risk=which==="risk";
+    tabRisk.setAttribute("aria-selected",risk?"true":"false");
+    tabSol.setAttribute("aria-selected",risk?"false":"true");
+    panelRisk.classList.toggle("is-active",risk);
+    panelSol.classList.toggle("is-active",!risk);
+    panelRisk.setAttribute("aria-hidden",risk?"false":"true");
+    panelSol.setAttribute("aria-hidden",risk?"true":"false");
+    postHeight();
+  }
+
+  tabRisk.addEventListener("click",function(){show("risk");});
+  tabSol.addEventListener("click",function(){show("solution");});
+  btnTo.addEventListener("click",function(){show("solution");tabSol.focus();});
+  btnBack.addEventListener("click",function(){show("risk");tabRisk.focus();});
+  show("risk");
+
+  window.addEventListener("load",postHeight);
+  window.addEventListener("resize",function(){clearTimeout(window.__smRg);window.__smRg=setTimeout(postHeight,100);});
+  if(typeof ResizeObserver!=="undefined"){
+    var se=document.querySelector(".tab-shell");
+    if(se)new ResizeObserver(postHeight).observe(se);
+  }
+
+  function buildWave(id,played,rest,heights){
+    var el=document.getElementById(id);
+    if(!el)return;
+    heights.forEach(function(h,i){
+      var b=document.createElement("div");
+      b.className="wbar";
+      var c=i<8?played:rest;
+      b.style.cssText="--h:"+h+"px;height:"+h+"px;--d:"+(.42+i*.04).toFixed(2)+"s;background:"+c+";opacity:"+(i<8?"1":".45")+";animation-delay:"+(i*.05).toFixed(2)+"s";
+      el.appendChild(b);
+    });
+  }
+  buildWave("waveGov","#059669","#6EE7B7",[5,11,17,12,19,15,9,21,13,10,16,12,8,15]);
 })();
 </script>
 </body>
