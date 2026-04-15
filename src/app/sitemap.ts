@@ -1,19 +1,9 @@
 import type { MetadataRoute } from "next";
 import { getBlogEntriesForSitemap } from "@/lib/sanity/posts";
+import { getSiteUrl } from "@/lib/site-url";
 
 /** Regenerate sitemap periodically so new Sanity posts are included without redeploying. */
 export const revalidate = 3600;
-
-function getSiteUrl(): string {
-  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
-  if (fromEnv) return fromEnv;
-  const vercel = process.env.VERCEL_URL?.trim();
-  if (vercel) {
-    const host = vercel.replace(/^https?:\/\//, "").replace(/\/$/, "");
-    return `https://${host}`;
-  }
-  return "http://localhost:3000";
-}
 
 const STATIC_ROUTES: Array<{
   path: string;
