@@ -9,7 +9,6 @@ const industries = [
   { id: "all", label: "All", href: "/" },
   { id: "education", label: "Education", href: "/education" },
   { id: "government", label: "Government", href: "/government" },
-  { id: "business", label: "Business", href: "/business" },
 ];
 
 export function IndustrySelector() {
