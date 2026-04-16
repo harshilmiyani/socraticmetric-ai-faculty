@@ -46,7 +46,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-sm text-[#85756F]">
                 <Mail className="w-4 h-4 text-[#3370F7]" />
-                <a href="mailto:hello@socraticmetric.com" className="hover:text-[#3370F7] transition-colors">hello@socraticmetric.com</a>
+                <a href="mailto:support@socraticmetric.ai" className="hover:text-[#3370F7] transition-colors">support@socraticmetric.ai</a>
               </div>
             </div>
 

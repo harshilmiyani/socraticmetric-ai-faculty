@@ -18,7 +18,7 @@ export function HighStakes() {
       theme: "blue",
       bgGradient: "from-blue-100 via-blue-50 to-white",
       mockup: {
-        url: "app.socraticmetric.com/session/education",
+        url: "app.socraticmetric.ai/session/education",
         user: { name: "Alex Johnson", role: "HIST 201 - Essay #4" },
         progress: { label: "Session Progress", step: "Question 3 of 5", percent: 60, color: "bg-blue-600" },
         status: { label: "Integrity Flag", text: "No AI authorship detected", icon: ShieldCheck, color: "text-green-600" },
@@ -42,7 +42,7 @@ export function HighStakes() {
       theme: "green",
       bgGradient: "from-emerald-100 via-emerald-50 to-white",
       mockup: {
-        url: "app.socraticmetric.com/session/enterprise",
+        url: "app.socraticmetric.ai/session/enterprise",
         user: { name: "T. Chen - Legal", role: "GDPR Compliance 2026" },
         progress: { label: "Training Status", step: "Question 3 of 5", percent: 60, color: "bg-emerald-500" },
         status: { label: "Risk Level", text: "Compliance verified", icon: Shield, color: "text-emerald-600" },
@@ -66,7 +66,7 @@ export function HighStakes() {
       theme: "red",
       bgGradient: "from-rose-100 via-rose-50 to-white",
       mockup: {
-        url: "app.socraticmetric.com/session/government",
+        url: "app.socraticmetric.ai/session/government",
         user: { name: "ID 87122 - Cleared", role: "Mission Critical Ops" },
         progress: { label: "Readiness Check", step: "Question 3 of 5", percent: 60, color: "bg-rose-600" },
         status: { label: "Chain of Custody", text: "Identity verified — timestamped", icon: FileCheck, color: "text-emerald-600" },
