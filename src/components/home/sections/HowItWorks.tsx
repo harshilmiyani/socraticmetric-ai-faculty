@@ -1,8 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export function HowItWorks() {
+  const [visualIframeHeightPx, setVisualIframeHeightPx] = useState<number | null>(null);
+
+  useEffect(() => {
+    function onMessage(e: MessageEvent) {
+      if (e.origin !== window.location.origin) return;
+      const data = e.data as { type?: string; height?: number } | null;
+      if (data?.type === "sm-home-visual4" && typeof data.height === "number" && data.height > 0) {
+        setVisualIframeHeightPx(Math.min(Math.max(Math.round(data.height), 220), 2400));
+      }
+    }
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
   return (
     <section id="how-it-works" className="pt-8 pb-8 md:pt-12 md:pb-12 bg-white relative overflow-hidden">
       {/* Decorative Background */}
@@ -28,11 +42,15 @@ export function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="w-full flex justify-center items-center relative"
         >
-          <iframe 
-            src="/animation/visual-4-how-it-works.html" 
-            className="w-full max-w-[880px] h-[750px] sm:h-[850px] md:h-[580px] lg:h-[600px] border-none block"
+          <iframe
+            src="/animation/visual-4-how-it-works.html"
+            className="w-full max-w-[880px] border-0 block bg-transparent"
+            style={{
+              height: visualIframeHeightPx != null ? `${visualIframeHeightPx}px` : undefined,
+              minHeight: visualIframeHeightPx == null ? "min(52vh, 640px)" : undefined,
+            }}
             title="How SocraticMetric Works"
-            scrolling="no" 
+            scrolling="no"
           />
         </motion.div>
       </div>
