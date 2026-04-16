@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -53,16 +54,16 @@ export function CTASection() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
-              <Link href="/request-demo" className="w-full sm:w-auto">
-                <button className="relative group inline-flex h-16 w-full sm:w-auto min-w-[240px] items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-2xl shadow-[#3370F7]/40 outline-none transition-all duration-300 hover:shadow-[#3370F7]/60 hover:scale-[1.02] active:scale-95 ring-1 ring-[#3370F7]/20">
-                  <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)] opacity-100 group-hover:opacity-100 transition-opacity duration-500" />
-                  <span className="relative inline-flex h-full w-full items-center justify-center gap-3 rounded-full bg-[#3370F7] px-12 text-lg font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#3370F7] group-hover:to-[#4C8FD6]">
-                    Request a Demo <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                  {/* Subtle inner glow */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                </button>
+            <div className="flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link
+                href={REQUEST_DEMO_BOOKING_HREF}
+                className="relative group inline-flex h-16 w-full min-w-[240px] items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-2xl shadow-[#3370F7]/40 outline-none ring-1 ring-[#3370F7]/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-[#3370F7]/60 active:scale-95 sm:w-auto"
+              >
+                <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)] opacity-100 transition-opacity duration-500 group-hover:opacity-100" />
+                <span className="relative inline-flex h-full w-full items-center justify-center gap-3 rounded-full bg-[#3370F7] px-12 text-lg font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#3370F7] group-hover:to-[#4C8FD6]">
+                  Request a Demo <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+                <span className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </Link>
             </div>
           </div>

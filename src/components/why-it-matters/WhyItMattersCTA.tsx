@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
+import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
 import { motion } from "framer-motion";
 
 export function WhyItMattersCTA() {
@@ -24,13 +24,11 @@ export function WhyItMattersCTA() {
           </div>
           
           <div className="flex flex-col gap-6 items-center md:items-end">
-            <Link href="#contact">
-              <Button
-                size="lg"
-                className="bg-[#F58022] text-white hover:bg-[#D16D1A] shadow-xl shadow-orange-500/20 px-10 h-14 text-lg rounded-lg font-bold transition-all hover:scale-105"
-              >
-                Request a Demo
-              </Button>
+            <Link
+              href={REQUEST_DEMO_BOOKING_HREF}
+              className="inline-flex h-14 items-center justify-center rounded-lg bg-[#F58022] px-10 text-lg font-bold text-white shadow-xl shadow-orange-500/20 transition-all hover:scale-105 hover:bg-[#D16D1A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2"
+            >
+              Request a Demo
             </Link>
           </div>
         </motion.div>

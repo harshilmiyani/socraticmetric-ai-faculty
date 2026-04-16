@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import { Cover } from "@/components/ui/cover";
+import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
 
 export function HeroSection() {
   const [visualIframeHeightPx, setVisualIframeHeightPx] = useState<number | null>(null);
@@ -96,21 +97,22 @@ export function HeroSection() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full pt-6">
-              <Link href="/request-demo" className="w-full sm:w-auto">
-                <button className="relative group inline-flex h-14 w-full sm:w-auto min-w-[220px] items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-xl shadow-[#3370F7]/30 outline-none transition-all duration-300 hover:shadow-2xl hover:shadow-[#3370F7]/50 hover:scale-[1.02] active:scale-95 ring-1 ring-[#3370F7]/20">
-                  <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)] opacity-100 group-hover:opacity-100 transition-opacity duration-500" />
-                  <span className="relative inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-[#3370F7] px-8 text-base font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#3370F7] group-hover:to-[#4C8FD6]">
-                    Request a Demo <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
-                  </span>
-                  {/* Subtle inner glow */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                </button>
+              <Link
+                href={REQUEST_DEMO_BOOKING_HREF}
+                className="relative group inline-flex h-14 w-full min-w-[220px] items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-xl shadow-[#3370F7]/30 outline-none transition-all duration-300 hover:shadow-2xl hover:shadow-[#3370F7]/50 hover:scale-[1.02] active:scale-95 ring-1 ring-[#3370F7]/20 sm:w-auto"
+              >
+                <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)] opacity-100 group-hover:opacity-100 transition-opacity duration-500" />
+                <span className="relative inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-[#3370F7] px-8 text-base font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#3370F7] group-hover:to-[#4C8FD6]">
+                  Request a Demo <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
+                </span>
+                <span className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </Link>
-              
-              <Link href="#how-it-works" className="w-full sm:w-auto">
-                <button className="inline-flex h-14 w-full sm:w-auto min-w-[180px] items-center justify-center gap-2 rounded-full bg-white border border-slate-200 px-8 text-base font-bold text-[#1F2A44] shadow-sm transition-all duration-300 hover:bg-slate-50 hover:border-slate-300 hover:shadow-md hover:-translate-y-0.5 active:scale-95">
-                  See How It Works
-                </button>
+
+              <Link
+                href="#how-it-works"
+                className="inline-flex h-14 w-full min-w-[180px] items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 text-base font-bold text-[#1F2A44] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50 hover:shadow-md active:scale-95 sm:w-auto"
+              >
+                See How It Works
               </Link>
             </div>
           </motion.div>

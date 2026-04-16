@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Button } from "../ui/Button";
 import { Menu, X, ChevronDown, GraduationCap, Building, Shield, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   SolutionsNavSideVisual,
@@ -148,6 +149,7 @@ export function Navbar() {
 
   const blogArticle = isBlogArticlePath(pathname);
   const useSolidNav = scrolled || mobileMenuOpen || blogArticle;
+  const hideRequestDemoNavCta = pathname === "/request-demo";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -250,12 +252,16 @@ export function Navbar() {
           </NavigationMenu>
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden md:flex items-center pl-4">
-                    <Link href="/request-demo" className="group inline-flex h-10 w-max items-center justify-center rounded-full bg-[#3370F7] px-6 py-2 text-sm font-bold text-white shadow-md shadow-[#3370F7]/20 transition-all duration-300 hover:bg-[#4C8FD6] hover:shadow-lg hover:shadow-[#3370F7]/40 hover:-translate-y-0.5 active:scale-95">
-                      Request a Demo
-                    </Link>
-        </div>
+        {!hideRequestDemoNavCta && (
+          <div className="hidden md:flex items-center pl-4">
+            <Link
+              href={REQUEST_DEMO_BOOKING_HREF}
+              className="group inline-flex h-10 w-max items-center justify-center rounded-full bg-[#3370F7] px-6 py-2 text-sm font-bold text-white shadow-md shadow-[#3370F7]/20 transition-all duration-300 hover:bg-[#4C8FD6] hover:shadow-lg hover:shadow-[#3370F7]/40 hover:-translate-y-0.5 active:scale-95"
+            >
+              Request a Demo
+            </Link>
+          </div>
+        )}
       </motion.header>
 
       {/* Mobile Menu Overlay */}
@@ -348,15 +354,19 @@ export function Navbar() {
                 </div>
               ))}
               </div>
-              <div className="p-6 md:p-8 pt-4 bg-white/80 backdrop-blur-lg border-t border-white/50 shrink-0 z-10 w-full">
-                <div className="max-w-sm mx-auto">
-                  <Link href="/request-demo" onClick={() => setMobileMenuOpen(false)} className="w-full block">
-                    <button className="w-full inline-flex h-12 items-center justify-center rounded-full bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all duration-300 hover:bg-[#4C8FD6] hover:shadow-xl hover:shadow-[#3370F7]/50 active:scale-95">
+              {!hideRequestDemoNavCta && (
+                <div className="p-6 md:p-8 pt-4 bg-white/80 backdrop-blur-lg border-t border-white/50 shrink-0 z-10 w-full">
+                  <div className="max-w-sm mx-auto">
+                    <Link
+                      href={REQUEST_DEMO_BOOKING_HREF}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex w-full h-12 items-center justify-center rounded-full bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all duration-300 hover:bg-[#4C8FD6] hover:shadow-xl hover:shadow-[#3370F7]/50 active:scale-95"
+                    >
                       Request a Demo
-                    </button>
-                  </Link>
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              )}
             </motion.div>
           </>
         )}

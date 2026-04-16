@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
 import Image from "next/image";
 import { Linkedin, Twitter, Mail, MapPin } from "lucide-react";
 
@@ -89,7 +90,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-[#85756F] font-medium">
               <li><Link href="/about" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">About Us</Link></li>
               <li><Link href="/about" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Careers</Link></li>
-              <li><Link href="/request-demo" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Contact</Link></li>
+              <li><Link href={REQUEST_DEMO_BOOKING_HREF} className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Contact</Link></li>
             </ul>
           </div>
         </div>

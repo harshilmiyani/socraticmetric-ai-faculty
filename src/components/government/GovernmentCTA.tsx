@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
 import { Download, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -37,18 +38,16 @@ export function GovernmentCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-stretch sm:items-center pt-2">
-            <Link href="/request-demo" className="w-full sm:w-auto">
-              <button
-                type="button"
-                className="relative group inline-flex h-14 w-full sm:w-auto min-h-[48px] items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-2xl shadow-[#3370F7]/35 outline-none transition-all duration-300 hover:shadow-[#3370F7]/55 hover:scale-[1.02] active:scale-[0.98] ring-1 ring-[#3370F7]/25"
-              >
-                <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)] opacity-100 transition-opacity duration-500" />
-                <span className="relative inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-[#3370F7] px-8 sm:px-10 text-sm sm:text-base font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#3370F7] group-hover:to-[#4C8FD6]">
-                  Schedule a consultation
-                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
-                </span>
-                <span className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/0 via-white/15 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              </button>
+            <Link
+              href={REQUEST_DEMO_BOOKING_HREF}
+              className="relative group inline-flex h-14 min-h-[48px] w-full items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-2xl shadow-[#3370F7]/35 outline-none ring-1 ring-[#3370F7]/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-[#3370F7]/55 active:scale-[0.98] sm:w-auto"
+            >
+              <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)] opacity-100 transition-opacity duration-500" />
+              <span className="relative inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-[#3370F7] px-8 text-sm font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#3370F7] group-hover:to-[#4C8FD6] sm:px-10 sm:text-base">
+                Schedule a consultation
+                <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5" />
+              </span>
+              <span className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-tr from-white/0 via-white/15 to-white/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             </Link>
             <Link
               href="#"

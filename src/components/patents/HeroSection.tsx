@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
 import { motion } from "framer-motion";
 import { Award, FileText, Calendar } from "lucide-react";
 
@@ -67,11 +68,12 @@ export function HeroSection() {
               validated.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="/request-demo">
-                <button className="inline-flex h-14 w-full sm:w-auto items-center justify-center rounded-xl bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all hover:bg-[#4C8FD6] hover:shadow-xl hover:-translate-y-0.5 active:scale-95">
-                  Talk to our team
-                </button>
+            <div className="flex flex-col gap-4 pt-4 sm:flex-row">
+              <Link
+                href={REQUEST_DEMO_BOOKING_HREF}
+                className="inline-flex h-14 w-full items-center justify-center rounded-xl bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all hover:-translate-y-0.5 hover:bg-[#4C8FD6] hover:shadow-xl active:scale-95 sm:w-auto"
+              >
+                Talk to our team
               </Link>
             </div>
           </motion.div>

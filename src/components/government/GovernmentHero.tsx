@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -53,16 +54,18 @@ export function GovernmentHero() {
               Oral verification helps you confirm that operators and teams can execute when the stakes are highest.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="#contact">
-                <button className="inline-flex h-14 w-full sm:w-auto items-center justify-center rounded-xl bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all hover:bg-[#4C8FD6] hover:shadow-xl hover:-translate-y-0.5 active:scale-95">
-                  Talk to our team
-                </button>
+            <div className="flex flex-col gap-4 pt-4 sm:flex-row">
+              <Link
+                href={REQUEST_DEMO_BOOKING_HREF}
+                className="inline-flex h-14 w-full items-center justify-center rounded-xl bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all hover:-translate-y-0.5 hover:bg-[#4C8FD6] hover:shadow-xl active:scale-95 sm:w-auto"
+              >
+                Talk to our team
               </Link>
-              <Link href="#how-it-works">
-                <button className="inline-flex h-14 w-full sm:w-auto items-center justify-center rounded-xl bg-white border border-slate-200 px-8 text-base font-bold text-[#1F2A44] shadow-sm transition-all hover:border-[#3370F7]/30 hover:bg-[#EAF1FE]/50 hover:text-[#3370F7] hover:-translate-y-0.5 active:scale-95">
-                  See how it works
-                </button>
+              <Link
+                href="#how-it-works"
+                className="inline-flex h-14 w-full items-center justify-center rounded-xl border border-slate-200 bg-white px-8 text-base font-bold text-[#1F2A44] shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#3370F7]/30 hover:bg-[#EAF1FE]/50 hover:text-[#3370F7] active:scale-95 sm:w-auto"
+              >
+                See how it works
               </Link>
             </div>
           </motion.div>

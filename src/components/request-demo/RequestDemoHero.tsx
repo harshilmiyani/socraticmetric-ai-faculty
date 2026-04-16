@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { CheckCircle2, Play } from "lucide-react";
 import { motion } from "framer-motion";
 import { SparklesCore } from "@/components/ui/sparkles";
@@ -118,18 +119,22 @@ export function RequestDemoHero() {
                <div className="flex-1 flex flex-col items-center justify-center p-8 relative z-10 bg-gradient-to-b from-transparent to-white/40">
                  
                  {/* Floating Play Button */}
-                 <div className="relative mb-8 group/play cursor-pointer">
-                    <div className="absolute inset-0 bg-[#3370F7] rounded-full blur-xl opacity-30 group-hover/play:opacity-60 transition-opacity duration-300 animate-pulse"></div>
-                    
-                    <button className="relative inline-flex h-24 w-24 items-center justify-center overflow-hidden rounded-full p-[2px] shadow-xl shadow-[#3370F7]/20 outline-none transition-all duration-300 hover:scale-[1.05] active:scale-95">
+                 <Link
+                   href="#book-demo"
+                   scroll
+                   className="group/play relative mb-8 inline-flex cursor-pointer flex-col items-center outline-none"
+                 >
+                    <span className="absolute inset-0 rounded-full bg-[#3370F7] opacity-30 blur-xl transition-opacity duration-300 animate-pulse group-hover/play:opacity-60" aria-hidden />
+                    <span className="relative inline-flex h-24 w-24 items-center justify-center overflow-hidden rounded-full p-[2px] shadow-xl shadow-[#3370F7]/20 outline-none transition-all duration-300 hover:scale-[1.05] active:scale-95 focus-visible:ring-2 focus-visible:ring-[#3370F7] focus-visible:ring-offset-2">
                       <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)] opacity-100 transition-opacity duration-500" />
                       <span className="relative inline-flex h-full w-full items-center justify-center rounded-full bg-white transition-all duration-300 group-hover/play:bg-slate-50">
-                        <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-[#3370F7] to-[#4C8FD6] flex items-center justify-center pl-2 shadow-inner">
-                          <Play className="w-8 h-8 text-white fill-current drop-shadow-md" />
-                        </div>
+                        <span className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-tr from-[#3370F7] to-[#4C8FD6] pl-2 shadow-inner">
+                          <Play className="h-8 w-8 fill-current text-white drop-shadow-md" aria-hidden />
+                        </span>
                       </span>
-                    </button>
-                 </div>
+                    </span>
+                    <span className="sr-only">Jump to live scheduling</span>
+                 </Link>
 
                  <h3 className="text-[#1F2A44] font-serif font-bold text-3xl mb-3 text-center tracking-tight">Interactive Platform Demo</h3>
                  <p className="text-[#64748B] text-lg text-center max-w-sm">
