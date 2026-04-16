@@ -8,6 +8,10 @@ import { Button } from "../ui/Button";
 import { Menu, X, ChevronDown, GraduationCap, Building, Shield, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  SolutionsNavSideVisual,
+  type SolutionsNavSideVariant,
+} from "@/components/layout/SolutionsNavSideVisual";
 
 import {
   NavigationMenu,
@@ -21,11 +25,12 @@ import {
 type NavItem = {
   label: string;
   href: string;
-  children?: { 
-    label: string; 
+  children?: {
+    label: string;
     href: string;
     description?: string;
     icon?: React.ElementType;
+    sideKey?: SolutionsNavSideVariant;
   }[];
 };
 
@@ -34,24 +39,27 @@ const navItems: NavItem[] = [
     label: "Solutions", 
     href: "#solutions",
     children: [
-      { 
-        label: "Education", 
+      {
+        label: "Education",
         href: "/education",
         description: "Verify authentic comprehension beyond AI-written submissions.",
         icon: GraduationCap,
+        sideKey: "education",
       },
-      { 
-        label: "Enterprise", 
+      {
+        label: "Enterprise",
         href: "/enterprise",
         description: "Ensure your workforce can articulate critical policies and procedures.",
         icon: Building,
+        sideKey: "enterprise",
       },
-      { 
-        label: "Government", 
+      {
+        label: "Government",
         href: "/government",
         description: "Verify operator competency under high-stakes conditions.",
         icon: Shield,
-      }
+        sideKey: "government",
+      },
     ]
   },
   { label: "Science", href: "/science" },
@@ -65,7 +73,7 @@ function SolutionsMenuItem({ item }: { item: NavItem }) {
   const [hoveredIndex, setHoveredIndex] = useState(0);
   const children = item.children || [];
   const activeChild = children[hoveredIndex];
-  const ActiveIcon = activeChild?.icon;
+  const sideVariant: SolutionsNavSideVariant = activeChild?.sideKey ?? "education";
 
   return (
     <NavigationMenuItem>
@@ -73,7 +81,7 @@ function SolutionsMenuItem({ item }: { item: NavItem }) {
         {item.label}
       </NavigationMenuTrigger>
       <NavigationMenuContent>
-        <div className="flex w-[600px] p-4 bg-white/90 backdrop-blur-xl border border-white/40 ring-1 ring-white/50 rounded-2xl shadow-xl">
+        <div className="flex w-[640px] p-4 bg-white/90 backdrop-blur-xl border border-white/40 ring-1 ring-white/50 rounded-2xl shadow-xl">
           <ul className="w-1/2 space-y-2 border-r border-slate-100 pr-4">
             {children.map((child, idx) => {
               const Icon = child.icon;
@@ -95,24 +103,25 @@ function SolutionsMenuItem({ item }: { item: NavItem }) {
               );
             })}
           </ul>
-          <div className="w-1/2 pl-6 flex flex-col justify-center">
+          <div className="w-1/2 pl-5 flex flex-col justify-center min-w-0">
             {activeChild && (
-              <motion.div 
+              <motion.div
                 key={activeChild.label}
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.2 }}
-                className="flex flex-col"
+                className="flex flex-col gap-4"
               >
-                <div className="h-10 w-10 rounded-lg bg-[#EAF1FE]/80 flex items-center justify-center text-[#3370F7] mb-4">
-                  {ActiveIcon && <ActiveIcon className="h-5 w-5" />}
+                <SolutionsNavSideVisual variant={sideVariant} />
+                <div>
+                  <h4 className="text-base font-bold text-[#1F2A44] mb-2">{activeChild.label}</h4>
+                  <p className="text-sm text-[#85756F] leading-relaxed">{activeChild.description}</p>
                 </div>
-                <h4 className="text-base font-bold text-[#1F2A44] mb-2">{activeChild.label}</h4>
-                <p className="text-sm text-[#85756F] leading-relaxed mb-6">
-                  {activeChild.description}
-                </p>
                 <NavigationMenuLink asChild>
-                  <Link href={activeChild.href} className="text-[#3370F7] font-bold text-sm flex items-center gap-2 group transition-all w-fit mt-auto bg-[#EAF1FE]/80 hover:bg-[#EAF1FE] hover:shadow-sm px-5 py-2.5 rounded-full border border-transparent hover:border-[#3370F7]/20">
+                  <Link
+                    href={activeChild.href}
+                    className="text-[#3370F7] font-bold text-sm flex items-center gap-2 group transition-all w-fit bg-[#EAF1FE]/80 hover:bg-[#EAF1FE] hover:shadow-sm px-5 py-2.5 rounded-full border border-transparent hover:border-[#3370F7]/20"
+                  >
                     Learn more <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </NavigationMenuLink>
