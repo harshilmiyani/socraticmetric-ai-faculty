@@ -10,7 +10,15 @@
 <title>SM Visual 1 — Live Session</title>
 <style>
   * { box-sizing: border-box; }
-  body { margin: 0; padding: 12px; background: transparent; font-family: system-ui, -apple-system, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+  html, body { margin: 0; background: transparent; }
+  body {
+    padding: clamp(4px, 2vw, 12px);
+    font-family: system-ui, -apple-system, sans-serif;
+    display: block;
+    width: 100%;
+    min-height: min-content;
+    overflow-x: clip;
+  }
   @media (max-width: 480px) {
     body { padding: 4px; }
     .sm-q { font-size: 12px !important; padding: 10px !important; }
@@ -29,12 +37,13 @@
   .sm-wbar  { width:3px;border-radius:2px;background:#378ADD;animation:sm-wave var(--d,.7s) ease-in-out infinite alternate }
   .sm-prog  { height:100%;border-radius:2px;background:#185FA5;animation:sm-fill 3s ease forwards .8s }
   .sm-tag   { animation:sm-tag .35s ease forwards;opacity:0 }
-  .sm-q     { animation:sm-fade-up .5s ease forwards }
+  /* Reserve vertical space so shorter prompts don’t collapse the column when copy rotates */
+  .sm-q     { animation:sm-fade-up .5s ease forwards;flex:1;min-width:0;min-height:calc(1.55em * 4.25) }
   .sm-fu    { animation:sm-fade-up .5s ease forwards 1.2s;opacity:0 }
 </style>
 </head>
 <body>
-<div style="background:#fff;border-radius:16px;border:0.5px solid #e0dfd8;overflow:hidden;width:100%;max-width:680px;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,0.05)">
+<div id="sm-visual-root" style="background:#fff;border-radius:16px;border:0.5px solid #e0dfd8;overflow:hidden;width:100%;max-width:680px;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,0.05)">
   <div style="height:36px;background:#f8f8f7;border-bottom:0.5px solid #e0dfd8;display:flex;align-items:center;padding:0 14px;gap:6px">
     <div style="width:11px;height:11px;border-radius:50%;background:#ff5f57"></div>
     <div style="width:11px;height:11px;border-radius:50%;background:#febc2e"></div>
@@ -44,9 +53,9 @@
   </div>
   <div class="main-container" style="padding:16px;display:flex;flex-direction:column;gap:16px">
     <!-- AI question bubble -->
-    <div style="display:flex;gap:12px;align-items:flex-start">
+    <div style="display:flex;gap:12px;align-items:flex-start;min-width:0">
       <div style="width:28px;height:28px;border-radius:50%;background:#EEEDFE;border:0.5px solid #AFA9EC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:500;color:#3C3489">SM</div>
-      <div class="sm-q" style="background:#f8f8f7;border:0.5px solid #e0dfd8;border-radius:4px 12px 12px 12px;padding:12px 14px;font-size:13px;color:#2c2c2a;line-height:1.55;max-width:100%">
+      <div class="sm-q" style="background:#f8f8f7;border:0.5px solid #e0dfd8;border-radius:4px 12px 12px 12px;padding:12px 14px;font-size:13px;color:#2c2c2a;line-height:1.55;word-wrap:break-word;overflow-wrap:anywhere">
         You submitted a policy on data retention. Walk me through the reasoning behind the 90-day threshold — why not 60, and why not 180?
       </div>
     </div>
@@ -124,11 +133,65 @@
   ];
   var qi = 0;
   var qEl = document.querySelector('.sm-q');
+  function measureDocHeight() {
+    var doc = document.documentElement;
+    var bod = document.body;
+    var root = document.getElementById('sm-visual-root');
+    var rects = root ? root.getBoundingClientRect() : null;
+    var fromRoot = rects ? Math.ceil(rects.height) : 0;
+    var fromDoc = Math.ceil(Math.max(
+      doc.scrollHeight,
+      bod.scrollHeight,
+      doc.offsetHeight,
+      bod.offsetHeight
+    ));
+    var h = Math.max(fromRoot, fromDoc);
+    if (h < 160) h = 160;
+    return h;
+  }
+  function postHeight() {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        var h = measureDocHeight();
+        if (window.parent && window.parent !== window) {
+          try { window.parent.postMessage({ type: 'sm-home-visual1', height: h }, '*'); } catch (e) {}
+        }
+      });
+    });
+  }
+  function postHeightSoon() {
+    postHeight();
+    setTimeout(postHeight, 80);
+    setTimeout(postHeight, 240);
+    setTimeout(postHeight, 600);
+  }
+  window.addEventListener('load', postHeightSoon);
+  window.addEventListener('resize', function () {
+    clearTimeout(window.__smV1rh);
+    window.__smV1rh = setTimeout(postHeightSoon, 120);
+  });
+  if (typeof ResizeObserver !== 'undefined') {
+    var root = document.getElementById('sm-visual-root');
+    if (root) {
+      var roT;
+      new ResizeObserver(function () {
+        clearTimeout(roT);
+        roT = setTimeout(postHeight, 100);
+      }).observe(root);
+    }
+  }
   setInterval(function () {
     qi = (qi + 1) % qs.length;
     qEl.style.opacity = '0';
-    setTimeout(function () { qEl.textContent = qs[qi]; qEl.style.transition = 'opacity .4s'; qEl.style.opacity = '1'; }, 300);
+    setTimeout(function () {
+      qEl.textContent = qs[qi];
+      qEl.style.transition = 'opacity .4s';
+      qEl.style.opacity = '1';
+      postHeightSoon();
+      setTimeout(postHeightSoon, 420);
+    }, 300);
   }, 4000);
+  postHeightSoon();
 })();
 </script>
 </body>

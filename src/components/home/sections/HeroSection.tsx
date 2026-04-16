@@ -3,10 +3,24 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 import { Cover } from "@/components/ui/cover";
 
 export function HeroSection() {
+  const [visualIframeHeightPx, setVisualIframeHeightPx] = useState<number | null>(null);
+
+  useEffect(() => {
+    function onMessage(e: MessageEvent) {
+      if (e.origin !== window.location.origin) return;
+      const data = e.data as { type?: string; height?: number } | null;
+      if (data?.type === "sm-home-visual1" && typeof data.height === "number" && data.height > 0) {
+        setVisualIframeHeightPx(Math.min(Math.max(Math.round(data.height), 180), 2000));
+      }
+    }
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -121,12 +135,16 @@ export function HeroSection() {
               AI-Era Cognitive Verification
             </motion.div>
 
-            <div className="w-full overflow-hidden transform transition-transform hover:scale-[1.02] duration-500">
-              <iframe 
-                src="/animation/visual-1-live-session.html" 
-                className="w-full h-[580px] sm:h-[500px] md:h-[520px] border-none"
+            <div className="w-full transform transition-transform hover:scale-[1.02] duration-500">
+              <iframe
+                src="/animation/visual-1-live-session.html"
+                className="block w-full border-0 bg-transparent"
+                style={{
+                  height: visualIframeHeightPx != null ? `${visualIframeHeightPx}px` : undefined,
+                  minHeight: visualIframeHeightPx == null ? "min(48vh, 440px)" : undefined,
+                }}
                 title="SocraticMetric Live Session Simulation"
-                scrolling="no" 
+                scrolling="no"
               />
             </div>
           </motion.div>
