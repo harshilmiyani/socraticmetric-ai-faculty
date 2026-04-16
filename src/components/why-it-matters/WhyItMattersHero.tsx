@@ -2,65 +2,172 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Cover } from "@/components/ui/cover";
+import { Check, FileText, Mic } from "lucide-react";
+
+const waveHeights = [4, 10, 6, 14, 8, 16, 10, 18, 7, 12, 9, 15, 6, 11, 8, 14, 5, 12];
+
+function Waveform() {
+  return (
+    <div className="flex h-11 flex-1 items-end justify-center gap-px sm:gap-0.5" aria-hidden>
+      {waveHeights.map((h, i) => (
+        <div
+          key={i}
+          className="w-[3px] shrink-0 rounded-full bg-[#3370F7]/90 sm:w-1"
+          style={{ height: `${Math.min(h, 18)}px`, opacity: 0.35 + (i / waveHeights.length) * 0.55 }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function VerificationJourneyVisual() {
+  return (
+    <div className="mx-auto w-full max-w-md rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xl shadow-slate-300/25 sm:max-w-lg sm:p-6">
+      {/* Unverified documentation */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.15 }}
+        className="rounded-xl border border-slate-100 bg-slate-50/90 p-4 sm:p-5"
+      >
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex min-w-0 flex-1 items-start gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EAF1FE] text-[#3370F7]">
+              <FileText className="h-5 w-5" strokeWidth={2} />
+            </div>
+            <div className="min-w-0">
+              <p className="font-bold text-[#1F2A44]">Documentation</p>
+              <p className="text-sm text-[#64748B]">AI-generated report</p>
+            </div>
+          </div>
+          <span className="shrink-0 rounded-full border border-amber-300 bg-amber-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-amber-700 sm:text-xs">
+            Unverified
+          </span>
+        </div>
+        <div className="mt-4 space-y-2.5">
+          <div className="h-2 rounded-full bg-slate-200" />
+          <div className="h-2 w-[92%] rounded-full bg-slate-200" />
+          <div className="h-2 w-[78%] rounded-full bg-slate-200" />
+        </div>
+      </motion.div>
+
+      {/* Mic + waveform bridge */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.45, delay: 0.35 }}
+        className="flex items-center gap-3 py-4 sm:gap-4 sm:py-5"
+      >
+        <div className="relative flex h-[4.5rem] w-14 shrink-0 justify-center sm:h-[5rem] sm:w-16">
+          <div className="absolute left-1/2 top-0 h-full w-0 -translate-x-1/2 border-l-2 border-dashed border-slate-300" />
+          <div className="relative z-10 my-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#3370F7] shadow-lg shadow-[#3370F7]/35 ring-4 ring-white sm:h-14 sm:w-14">
+            <Mic className="h-5 w-5 text-white sm:h-6 sm:w-6" strokeWidth={2} />
+          </div>
+        </div>
+        <Waveform />
+      </motion.div>
+
+      {/* Verified understanding */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="overflow-hidden rounded-xl border border-slate-100 bg-slate-50/90"
+      >
+        <div className="h-1 w-full bg-gradient-to-r from-emerald-500 via-teal-400 to-[#3370F7]" />
+        <div className="p-4 sm:p-5">
+          <div className="flex items-start justify-between gap-3">
+            <div className="flex min-w-0 flex-1 items-start gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 ring-1 ring-emerald-200/80">
+                <Check className="h-5 w-5" strokeWidth={2.5} />
+              </div>
+              <div className="min-w-0">
+                <p className="font-bold text-[#1F2A44]">Understanding Verified</p>
+                <p className="text-sm text-[#64748B]">Oral defense completed successfully</p>
+              </div>
+            </div>
+            <span className="shrink-0 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-emerald-700 sm:text-xs">
+              Verified
+            </span>
+          </div>
+
+          <div className="mt-5 space-y-3.5">
+            {[
+              { label: "Comprehension", value: 92, color: "bg-emerald-500" },
+              { label: "Reasoning", value: 88, color: "bg-[#3370F7]" },
+              { label: "Defense", value: 95, color: "bg-emerald-500" },
+            ].map((row) => (
+              <div key={row.label} className="flex items-center gap-3">
+                <span className="w-[7.5rem] shrink-0 text-xs font-medium text-[#64748B] sm:text-sm">{row.label}</span>
+                <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full bg-slate-100">
+                  <motion.div
+                    className={`h-full rounded-full ${row.color}`}
+                    initial={{ width: 0 }}
+                    animate={{ width: `${row.value}%` }}
+                    transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                </div>
+                <span className="w-7 shrink-0 text-right text-sm font-bold tabular-nums text-[#1F2A44]">{row.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
 
 export function WhyItMattersHero() {
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC]">
-      <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px] pointer-events-none" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC] pb-20 pt-32 md:pb-32 md:pt-40">
+      <div className="pointer-events-none absolute left-[-10%] top-[0%] h-[500px] w-[500px] rounded-full bg-[#3370F7]/10 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-[10%] right-[-10%] h-[600px] w-[600px] rounded-full bg-[#F58022]/5 blur-[120px]" />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
-          {/* Left Column: Content */}
+      <div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="space-y-6 max-w-2xl"
+            className="max-w-2xl space-y-6"
           >
             <div className="flex items-center gap-4">
               <div className="h-px w-8 bg-[#3370F7]" />
-              <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Why Socratic Metric Matters</span>
+              <span className="text-sm font-bold uppercase tracking-widest text-[#3370F7]">Why Socratic Metric Matters</span>
               <div className="h-px w-8 bg-[#3370F7]" />
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
+            <h1 className="font-serif text-4xl font-bold leading-[1.15] tracking-tight text-[#1F2A44] sm:text-5xl md:text-6xl">
               Verify Real Understanding When <br />
               <span className="text-[#3370F7]">AI Can Write It</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[#64748B] leading-relaxed">
-              Socratic Metric is the oral verification platform that confirms people can explain, reason through, and defend high-stakes work. Don't let AI-generated documentation hide comprehension gaps—get defensible proof before grades, decisions, or operations go live.
+            <p className="text-lg leading-relaxed text-[#64748B] md:text-xl">
+              Socratic Metric is the oral verification platform that confirms people can explain, reason through, and defend high-stakes work.
+              Don&apos;t let AI-generated documentation hide comprehension gaps—get defensible proof before grades, decisions, or operations go live.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col gap-4 pt-4 sm:flex-row">
               <Link href="#contact">
-                <button className="inline-flex h-14 w-full sm:w-auto items-center justify-center rounded-xl bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all hover:bg-[#4C8FD6] hover:shadow-xl hover:-translate-y-0.5 active:scale-95">
+                <button className="inline-flex h-14 w-full items-center justify-center rounded-xl bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all hover:bg-[#4C8FD6] hover:shadow-xl hover:-translate-y-0.5 active:scale-95 sm:w-auto">
                   Talk to our team
                 </button>
               </Link>
             </div>
           </motion.div>
 
-          {/* Right Column: Placeholder Card */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative perspective-1000 flex flex-col items-center"
+            className="relative flex w-full flex-col items-center lg:items-end"
           >
-            <div className="w-full aspect-[4/3] bg-white rounded-2xl border border-slate-100 flex items-center justify-center shadow-2xl shadow-[#3370F7]/10 transform transition-transform hover:scale-[1.02] duration-500">
-              <span className="text-[#64748B] font-semibold text-sm">
-                [Video/Image Placeholder]
-              </span>
-            </div>
+            <VerificationJourneyVisual />
           </motion.div>
         </div>
       </div>
