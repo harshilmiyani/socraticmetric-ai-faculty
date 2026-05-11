@@ -8,28 +8,32 @@ export function ThePlatform() {
   const features = [
     {
       title: "Oral question presentation",
-      description: "Socratic Metric uses advanced speech-to-text to present scenarios organically, simulating a real conversation.",
+      description:
+        "Engages visual-motor-auditory integration to anchor attention through embodied focus, simulating an organic, high-stakes conversation.",
       icon: <Mic className="h-6 w-6 text-[#3370F7]" />,
       bgClass: "bg-blue-50/50 border-blue-100",
       iconBg: "bg-blue-100"
     },
     {
       title: "Adaptive real-time questioning",
-      description: "The AI listens to the response and asks targeted follow-ups to probe the depth of understanding.",
+      description:
+        "The AI probes conceptual alignment and depth of reasoning, asking targeted follow-ups that respond dynamically to the user's voice.",
       icon: <RefreshCw className="h-6 w-6 text-[#F58022]" />,
       bgClass: "bg-orange-50/50 border-orange-100",
       iconBg: "bg-orange-100"
     },
     {
       title: "Iterative feedback loop",
-      description: "Immediate feedback allows users to correct misconceptions and refine their reasoning on the spot.",
+      description:
+        "Immediate AI guidance allows users to correct misconceptions on the spot, leveraging the Production Effect to strengthen memory and comprehension.",
       icon: <Repeat className="h-6 w-6 text-[#4C8FD6]" />,
       bgClass: "bg-sky-50/50 border-sky-100",
       iconBg: "bg-sky-100"
     },
     {
       title: "Identity-verified audit records",
-      description: "Every session generates an immutable, transcript-backed record of verified competency.",
+      description:
+        "Integrated voice authentication and transcript-backed records provide an immutable, FERPA-compliant audit trail of verified human competency.",
       icon: <ShieldCheck className="h-6 w-6 text-emerald-600" />,
       bgClass: "bg-emerald-50/50 border-emerald-100",
       iconBg: "bg-emerald-100"
@@ -59,13 +63,13 @@ export function ThePlatform() {
             </div>
             
             <p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg font-medium">
-              Socratic Metric uses AI-moderated adaptive dialogue to verify that people can articulate, refine, and defend understanding aloud — in real time.
+              Socratic Metric uses AI-moderated adaptive dialogue to verify that people can articulate, refine, and defend understanding aloud—moving beyond silent processing to verify true mastery.
             </p>
             
             <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 shadow-inner">
               <p className="text-xl font-serif italic text-[#1F2A44] leading-relaxed">
-                "It does not grade documents. <br />
-                <span className="font-bold text-[#3370F7]">It evaluates live cognition.</span>"
+                “It does not grade documents.{" "}
+                <span className="font-bold not-italic text-[#3370F7]">It evaluates live cognition.</span>”
               </p>
             </div>
           </div>

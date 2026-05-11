@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 
 export function ContactSection() {
   const benefits = [
-    "Deploy instantly",
-    "Audit-ready records",
-    "Adaptive logic",
+    "Deploy instantly (LMS & Enterprise Integrated)",
+    "Audit-ready records (Identity Verified)",
+    "Adaptive logic (Patented Socratic AI)",
   ];
 
   return (
@@ -42,7 +42,7 @@ export function ContactSection() {
             </h2>
             
             <p className="text-lg md:text-xl lg:text-2xl text-slate-300 leading-relaxed max-w-2xl mx-auto font-medium mb-10">
-              See how Socratic Metric™ transforms compliance, learning, and operational readiness.
+              In the AI era, confidence must be earned in real time. See how our patented AI system transforms compliance, learning, and operational readiness.
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12">

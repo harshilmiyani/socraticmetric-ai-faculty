@@ -14,15 +14,15 @@ export function HighStakes() {
       id: "education",
       label: "Education",
       link: "/education",
-      pill: "Verify whether a student truly understands their essay",
+      pill: "Safeguard the value of your degree with AI-resistant assessments.",
       theme: "blue",
       bgGradient: "from-blue-100 via-blue-50 to-white",
       mockup: {
         url: "app.socraticmetric.ai/session/education",
-        user: { name: "Alex Johnson", role: "HIST 201 - Essay #4" },
-        progress: { label: "Session Progress", step: "Question 3 of 5", percent: 60, color: "bg-blue-600" },
+        user: { name: "Alex Johnson — HIST 201 - Essay #4", role: "" },
+        progress: { label: "Session Progress", step: "Question 3 of 5 (60%)", percent: 60, color: "bg-blue-600" },
         status: { label: "Integrity Flag", text: "No AI authorship detected", icon: ShieldCheck, color: "text-green-600" },
-        question: "You argued that economic inequality was the primary cause of the Revolution — but Enlightenment thinkers like Rousseau were also influential. How do you weigh these two forces against each other?",
+        question: "You argued that economic inequality was the primary cause of the Revolution—but Enlightenment thinkers like Rousseau were also influential. How do you weigh these two forces against each other?",
         transcript: "\"I think economic inequality created the conditions, but Rousseau gave people the language to demand change. Without the philosophical framework, the anger might not have translated into...\"",
         scores: [
           { label: "Recall", value: 84 },
@@ -38,16 +38,16 @@ export function HighStakes() {
       id: "enterprise",
       label: "Enterprise",
       link: "/enterprise",
-      pill: "Verify whether an employee can reason through policy",
+      pill: "Verify leadership reasoning depth and compliance readiness.",
       theme: "green",
       bgGradient: "from-emerald-100 via-emerald-50 to-white",
       mockup: {
         url: "app.socraticmetric.ai/session/enterprise",
-        user: { name: "T. Chen - Legal", role: "GDPR Compliance 2026" },
+        user: { name: "T. Chen - Legal · GDPR Compliance 2026", role: "" },
         progress: { label: "Training Status", step: "Question 3 of 5", percent: 60, color: "bg-emerald-500" },
-        status: { label: "Risk Level", text: "Compliance verified", icon: Shield, color: "text-emerald-600" },
-        question: "Under GDPR Article 17, when a customer requests data deletion, what are the three scenarios where your organization can lawfully refuse — and how would you document that refusal?",
-        transcript: "\"The right to erasure can be refused when the data is necessary for legal claims, for public interest tasks, or when it conflicts with freedom of expression. We document refusals by...\"",
+        status: { label: "Risk Level", text: "Compliance verified — Regulatory alignment confirmed", icon: Shield, color: "text-emerald-600" },
+        question: "Under GDPR Article 17, describe three specific scenarios where a 'right to erasure' request can be legally refused. How does this impact our current data retention policy?",
+        transcript: "\"The request can be refused if the data is necessary for exercising the right of freedom of expression, or for compliance with a legal obligation. In our case, that means...\"",
         scores: [
           { label: "Recall", value: 95 },
           { label: "Reasoning", value: 91 },
@@ -62,16 +62,16 @@ export function HighStakes() {
       id: "government",
       label: "Government",
       link: "/government",
-      pill: "Verify whether an operator can execute under pressure",
+      pill: "Mission-critical readiness assurance for high-stakes operations.",
       theme: "red",
       bgGradient: "from-rose-100 via-rose-50 to-white",
       mockup: {
         url: "app.socraticmetric.ai/session/government",
-        user: { name: "ID 87122 - Cleared", role: "Mission Critical Ops" },
+        user: { name: "ID 87122 - Cleared · Mission Critical Ops", role: "" },
         progress: { label: "Readiness Check", step: "Question 3 of 5", percent: 60, color: "bg-rose-600" },
-        status: { label: "Chain of Custody", text: "Identity verified — timestamped", icon: FileCheck, color: "text-emerald-600" },
-        question: "During an emergency depressurization event, after including the backup oxygen protocol, what is the decision threshold for declaring MAYDAY versus PAN-PAN — and who has authority to override?",
-        transcript: "\"MAYDAY is declared when there is immediate threat to life or aircraft — PAN-PAN for urgent but not immediately life-threatening. The Pilot in Command holds override authority, but ground control can...\"",
+        status: { label: "Chain of Custody", text: "Identity verified — Voice authenticated", icon: FileCheck, color: "text-emerald-600" },
+        question: "Contrast the authorization protocols for MAYDAY vs PAN-PAN. Who holds final override authority during a failure cascade in the propulsion subsystem?",
+        transcript: "\"MAYDAY indicates immediate danger to life or the vessel, while PAN-PAN is for urgent but not life-threatening situations. The lead systems engineer holds override authority unless...\"",
         scores: [
           { label: "Recall", value: 98 },
           { label: "Reasoning", value: 96 },
@@ -184,7 +184,9 @@ export function HighStakes() {
                         </div>
                         <div className="min-w-0">
                           <p className="font-bold text-[#1F2A44] text-sm truncate">{activeTabData.mockup.user.name}</p>
-                          <p className="text-xs text-slate-500 truncate">{activeTabData.mockup.user.role}</p>
+                          {activeTabData.mockup.user.role ? (
+                            <p className="text-xs text-slate-500 truncate">{activeTabData.mockup.user.role}</p>
+                          ) : null}
                         </div>
                       </div>
                     </div>

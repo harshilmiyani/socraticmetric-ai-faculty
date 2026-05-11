@@ -88,12 +88,12 @@ export function HeroSection() {
           >
 
             <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold tracking-tight text-[#1F2A44] leading-[1.1] lg:leading-[1.05]">
-              Written Output is no Longer Proof of <br className="hidden sm:block" />
+              Written Output is No Longer Proof of <br className="hidden sm:block" />
               <Cover className="mt-2 sm:mt-3">Understanding.</Cover>
             </h1>
             
             <p className="text-lg md:text-xl lg:text-2xl text-[#64748B] leading-relaxed max-w-xl font-medium">
-              Socratic Metric™ verifies whether your people can articulate, defend, and reason — in real time, simulating real-world high-stakes scenarios.
+              Socratic Metric™ is the first AI-moderated oral assessment and cognitive verification platform designed to verify whether your people can articulate, defend, and reason in real time—evaluating live cognition, not just documents.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full pt-6">

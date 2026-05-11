@@ -51,7 +51,7 @@ export function DemoVideo() {
             See it in action
           </span>
           <h2 className="font-serif text-2xl font-bold leading-tight text-[#1F2A44] sm:text-3xl md:text-4xl lg:text-5xl">
-            Watch Socratic Metric <br className="hidden sm:block" />
+            Watch Socratic Metric{" "}
             <span className="bg-gradient-to-r from-[#3370F7] to-[#4C8FD6] text-transparent bg-clip-text">
               Evaluate Live
             </span>
