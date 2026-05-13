@@ -8,6 +8,7 @@ import { EducationSolution } from "@/components/education/EducationSolution";
 import { EducationCompliance } from "@/components/education/EducationCompliance";
 import { EducationOutcomes } from "@/components/education/EducationOutcomes";
 import { EducationUseCases } from "@/components/education/EducationUseCases";
+import { EducationWalkthroughVideos } from "@/components/education/EducationWalkthroughVideos";
 import { EducationTestimonial } from "@/components/education/EducationTestimonial";
 import { ContactSection } from "@/components/home/sections/ContactSection";
 
@@ -19,6 +20,7 @@ export default function EducationPage() {
         <EducationHero />
         <EducationRisk />
         <EducationSolution />
+        <EducationWalkthroughVideos />
         <EducationCompliance />
         <EducationOutcomes />
         <EducationUseCases />

@@ -44,13 +44,14 @@ export function EducationHero() {
             </div>
 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
-              When AI can write the essay, <br />
-              <span className="text-[#3370F7]">can your student defend it?</span>
+              When AI Can Write the Essay,{" "}
+              <span className="text-[#3370F7]">Can Your Student Defend It?</span>
             </h1>
 
             <p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
-              AI-written assignments make it harder to know who actually understands the material.
-              Oral verification helps you confirm real learning in high-stakes education environments.
+              In an era where AI-written assignments create a false assurance of competence, Socratic
+              Metric™ verifies authentic learning through AI-moderated oral assessment. Confirm that
+              your students can articulate, refine, and defend their reasoning aloud in real time.
             </p>
 
             <div className="flex flex-col gap-4 pt-4 sm:flex-row">

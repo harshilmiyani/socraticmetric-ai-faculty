@@ -5,9 +5,18 @@ import { motion } from "framer-motion";
 
 export function EducationCompliance() {
   const points = [
-    "Evidence of authentic student work for audits and reviews",
-    "Configurable workflows aligned to academic integrity policies",
-    "Repeatable processes you can document in accreditation reports",
+    {
+      title: "FERPA-Compliant Audit Records",
+      body: "Transcript-backed evidence of authentic student engagement for accreditation and review.",
+    },
+    {
+      title: "Voice-Verified Identity",
+      body: "Integrated authentication ensures the right student is performing the assessment, safeguarding session integrity.",
+    },
+    {
+      title: "Evidence of Original Authorship",
+      body: "Align oral reading and spoken responses with written submissions to detect non-authentic authorship.",
+    },
   ];
 
   return (
@@ -24,11 +33,11 @@ export function EducationCompliance() {
               <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Compliance</span>
             </div>
             <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-              Support policy, compliance, <br className="hidden sm:block" />
-              and accreditation
+              Support Policy, Compliance, and Accreditation
             </h2>
             <p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
-              Oral verification gives institutions a concrete way to show that grades, credits, and credentials are based on verified student learning.
+              Socratic Metric gives institutions an identity-verified audit trail, moving beyond silent
+              processing to prove that credits are awarded based on verified human cognition.
             </p>
           </div>
 
@@ -50,7 +59,8 @@ export function EducationCompliance() {
                       <CheckCircle2 className="w-5 h-5 text-[#3370F7]" />
                     </div>
                     <span className="text-[#1F2A44] font-medium text-lg leading-snug">
-                      {point}
+                      <span className="font-bold">{point.title}: </span>
+                      {point.body}
                     </span>
                   </motion.div>
                 ))}

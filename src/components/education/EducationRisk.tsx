@@ -7,22 +7,26 @@ export function EducationRisk() {
     {
       icon: <FileText className="w-8 h-8 text-amber-600" strokeWidth={1.75} />,
       bg: "bg-amber-50",
-      title: "Undetected AI-generated essays and assignments",
+      title: "Undetected AI Shortcuts",
+      desc: "Sophisticated AI-generated responses that mask gaps in real student understanding.",
     },
     {
       icon: <BookOpen className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
       bg: "bg-[#EAF1FE]",
-      title: "Limited visibility into individual student understanding",
+      title: "Limited Cognitive Visibility",
+      desc: "Silent reading and writing offer no way to know if a student actually processed the entire material.",
     },
     {
       icon: <Award className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
       bg: "bg-[#EAF1FE]",
-      title: "Difficulty proving academic integrity to accreditors",
+      title: "Credential Devaluation",
+      desc: "If institutions do not modernize assessment, degrees lose their long-term meaning and value.",
     },
     {
       icon: <Hourglass className="w-8 h-8 text-[#F58022]" strokeWidth={1.75} />,
       bg: "bg-[#F58022]/10",
-      title: "Faculty time consumed by suspected cheating investigations",
+      title: "Investigative Fatigue",
+      desc: "Faculty time is increasingly consumed by the impossible task of proving AI misconduct in written work.",
     },
   ];
 
@@ -36,11 +40,12 @@ export function EducationRisk() {
             <div className="h-px w-12 bg-[#F58022]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            The new risk in higher education
+            The False Assurance of Competence in Higher Education
           </h2>
           <p className="text-lg md:text-xl text-[#64748B] max-w-3xl mx-auto leading-relaxed">
-            AI tools make it easy for students to submit polished work that may not reflect their own thinking.
-            Grading written documentation alone no longer proves authentic comprehension.
+            Generative AI tools allow students to submit polished written work that bypasses genuine
+            comprehension. When linguistic fluency no longer equals competence, grading written
+            documentation alone puts the credibility of academic work and degrees at risk.
           </p>
         </div>
 
@@ -48,7 +53,7 @@ export function EducationRisk() {
           {risks.map((risk, i) => (
             <div
               key={i}
-              className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center space-y-6"
+              className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center space-y-4"
             >
               <div
                 className={`w-16 h-16 flex items-center justify-center rounded-2xl ${risk.bg} transition-transform duration-300`}
@@ -58,6 +63,7 @@ export function EducationRisk() {
               <h3 className="text-lg font-bold text-[#1F2A44] leading-snug">
                 {risk.title}
               </h3>
+              <p className="text-sm text-[#64748B] leading-relaxed">{risk.desc}</p>
             </div>
           ))}
         </div>

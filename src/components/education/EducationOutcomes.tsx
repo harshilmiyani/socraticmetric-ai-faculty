@@ -24,10 +24,11 @@ export function EducationOutcomes() {
             <div className="h-px w-12 bg-[#F58022]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            Outcomes for education partners
+            Restoring Confidence in Educational Standards
           </h2>
           <p className="text-lg md:text-xl text-[#64748B] max-w-3xl mx-auto leading-relaxed">
-            Institutions use oral verification to restore confidence in grades and protect the value of their degrees.
+            Our platform transforms assignments into interactive learning conversations, ensuring
+            students are truly educated, not just credentialed.
           </p>
         </div>
 

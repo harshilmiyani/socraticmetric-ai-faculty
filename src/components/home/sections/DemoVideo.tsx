@@ -5,37 +5,23 @@ import Image from "next/image";
 import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { youtubeEmbedSrc, youtubeThumbnailUrl } from "@/lib/youtubeEmbed";
+
 const YOUTUBE_VIDEO_ID = "B1LGkF_4vHA";
-
-const YOUTUBE_EMBED_PARAMS = new URLSearchParams({
-  autoplay: "1",
-  rel: "0",
-  modestbranding: "1",
-  playsinline: "1",
-  enablejsapi: "1",
-});
-
-function youtubeThumbUrl(id: string, quality: "maxresdefault" | "hqdefault" | "mqdefault") {
-  return `https://img.youtube.com/vi/${id}/${quality}.jpg`;
-}
-
-function embedSrc(id: string) {
-  return `https://www.youtube.com/embed/${id}?${YOUTUBE_EMBED_PARAMS.toString()}`;
-}
 
 export function DemoVideo() {
   const [playing, setPlaying] = useState(false);
   const [thumbSrc, setThumbSrc] = useState(() =>
-    youtubeThumbUrl(YOUTUBE_VIDEO_ID, "maxresdefault"),
+    youtubeThumbnailUrl(YOUTUBE_VIDEO_ID, "maxresdefault"),
   );
 
   function onThumbError() {
     setThumbSrc((prev) => {
       if (prev.includes("maxresdefault")) {
-        return youtubeThumbUrl(YOUTUBE_VIDEO_ID, "hqdefault");
+        return youtubeThumbnailUrl(YOUTUBE_VIDEO_ID, "hqdefault");
       }
       if (prev.includes("hqdefault")) {
-        return youtubeThumbUrl(YOUTUBE_VIDEO_ID, "mqdefault");
+        return youtubeThumbnailUrl(YOUTUBE_VIDEO_ID, "mqdefault");
       }
       return prev;
     });
@@ -71,7 +57,7 @@ export function DemoVideo() {
           <div className="relative isolate aspect-video w-full max-w-full overflow-hidden rounded-xl border border-slate-200/90 bg-black shadow-2xl shadow-slate-200/80 sm:rounded-2xl md:rounded-3xl">
             {playing ? (
               <iframe
-                src={embedSrc(YOUTUBE_VIDEO_ID)}
+                src={youtubeEmbedSrc(YOUTUBE_VIDEO_ID)}
                 title="Socratic Metric — Evaluate Live demo on YouTube"
                 className="absolute inset-0 h-full w-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

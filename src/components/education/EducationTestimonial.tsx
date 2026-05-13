@@ -19,7 +19,7 @@ export function EducationTestimonial() {
             <div className="h-px w-12 bg-[#3370F7]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44]">
-            What educators are saying
+            What Educators are Saying
           </h2>
         </div>
 
@@ -38,7 +38,10 @@ export function EducationTestimonial() {
             />
 
             <blockquote className="font-serif text-2xl md:text-3xl font-medium text-[#1F2A44] leading-relaxed mb-10 relative z-10">
-              "Oral verification has transformed how we assess learning. Students can't just submit AI-written work—they have to truly understand and defend their ideas. It's brought back the confidence we need in our grading."
+              &ldquo;Socratic Metric empowers students to move beyond surface-level thinking.
+              It&rsquo;s like giving every student a co-pilot for critical thinking—ensuring they
+              don&rsquo;t just submit work, but truly understand and defend their ideas. It has
+              restored the confidence we need in our grading.&rdquo;
             </blockquote>
 
             <div className="flex flex-col items-center justify-center gap-4">

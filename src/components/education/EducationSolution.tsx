@@ -7,20 +7,20 @@ export function EducationSolution() {
     {
       icon: <ShieldCheck className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
       bg: "bg-blue-50",
-      title: "Academic integrity verification",
-      desc: "Use structured oral assessments to confirm students can explain and defend their work in their own words.",
+      title: "Academic Integrity Verification",
+      desc: "Use patented AI-moderated dialogue to ensure students can explain and defend their submissions in their own voice.",
     },
     {
       icon: <Mic2 className="w-8 h-8 text-[#F58022]" strokeWidth={1.75} />,
       bg: "bg-orange-50",
-      title: "Scalable oral exam administration",
-      desc: "Standardize questions, timing, and scoring so instructors can run consistent oral exams across large cohorts.",
+      title: "Scalable Socratic Assessment",
+      desc: "Standardize oral exams across large cohorts with an AI \"co-pilot\" that conducts structured, adaptive sessions to probe for deep understanding.",
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-emerald-600" strokeWidth={1.75} />,
       bg: "bg-emerald-50",
-      title: "Learning outcome assessment",
-      desc: "Measure reasoning, explanation, and problem-solving skills that can't be validated by written documentation alone.",
+      title: "Cognitive Learning Accelerator",
+      desc: "Leverage the Production Effect—where speaking aloud activates multiple neural systems—to reinforce memory and verify reasoning that written text cannot prove.",
     },
   ];
 
@@ -41,8 +41,7 @@ export function EducationSolution() {
             <div className="h-px w-12 bg-[#3370F7]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            How oral verification restores <br className="hidden sm:block" />
-            academic integrity
+            Verifying Authentic Comprehension Through Dialogue
           </h2>
         </div>
 

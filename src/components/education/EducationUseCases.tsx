@@ -6,23 +6,23 @@ export function EducationUseCases() {
   const cases = [
     {
       id: "1",
-      title: "Oral defenses for capstone and thesis projects",
-      desc: "Ensure original work and deep understanding.",
+      title: "Capstone & Thesis Defenses",
+      desc: "Ensure deep understanding and original work through identity-verified oral reasoning.",
     },
     {
       id: "2",
-      title: "High-stakes oral exams in professional and graduate programs",
-      desc: "Prepare students for real-world scenarios.",
+      title: "Professional Readiness Orals",
+      desc: "Prepare students for high-stakes scenarios by testing their ability to reason under pressure without a script.",
     },
     {
       id: "3",
-      title: "Spot-check orals for high-risk written assignments",
-      desc: "Deter misconduct and verify authorship.",
+      title: "High-Risk Assignment Spot-Checks",
+      desc: "Deter AI-driven shortcuts by requiring a live verbal defense of critical written submissions.",
     },
     {
       id: "4",
-      title: "Group project debriefs to verify individual contribution",
-      desc: "Ensure fair grading for collaborative work.",
+      title: "Verified Collaborative Debriefs",
+      desc: "Confirm individual contribution and conceptual alignment in group projects through structured AI dialogues.",
     },
   ];
 
@@ -40,7 +40,7 @@ export function EducationUseCases() {
             <div className="h-px w-12 bg-[#3370F7]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44]">
-            Education use cases
+            Strategic Cognitive Verification
           </h2>
         </div>
 
