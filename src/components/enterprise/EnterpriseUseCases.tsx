@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 export function EnterpriseUseCases() {
   const cases = [
-    { id: "1", title: "Policy and standard operating procedure approvals" },
-    { id: "2", title: "Risk, compliance, and control owner assessments" },
-    { id: "3", title: "Sales, success, and support enablement on complex offerings" },
-    { id: "4", title: "Executive reviews for high-impact initiatives and investments" },
+    { id: "1", title: "Policy comprehension validation and regulatory framework defense" },
+    { id: "2", title: "Identity-verified oral certification for compliance and risk environments" },
+    { id: "3", title: "Model risk understanding and ethical decision frameworks" },
+    { id: "4", title: "Cybersecurity readiness checks and operational doctrine defense" },
   ];
 
   return (
@@ -24,7 +24,7 @@ export function EnterpriseUseCases() {
             <div className="h-px w-12 bg-[#3370F7]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44]">
-            Enterprise use cases
+            Enterprise readiness and compliance applications
           </h2>
         </div>
 

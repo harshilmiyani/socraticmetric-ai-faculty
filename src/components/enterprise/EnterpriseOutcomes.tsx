@@ -25,10 +25,12 @@ export function EnterpriseOutcomes() {
             <div className="h-px w-12 bg-[#F58022]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            Outcomes for enterprise customers
+            Verified cognitive alignment for the enterprise
           </h2>
           <p className="text-lg md:text-xl text-[#64748B] max-w-3xl mx-auto leading-relaxed">
-            Enterprises use oral verification to reduce risk and increase confidence in high-stakes decisions.
+            Organizations use Socratic Metric to move beyond silent processing and establish a new
+            enterprise trust layer, ensuring readiness and confidence where failure carries
+            financial or legal consequences.
           </p>
         </div>
 

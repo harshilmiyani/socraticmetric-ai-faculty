@@ -45,14 +45,24 @@ export function EnterpriseHero() {
             </div>
 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
-              When AI can draft the policy, <br />
-              <span className="text-[#3370F7]">can your team reason through it?</span>
+              Written output is no longer reliable proof of{" "}
+              <span className="text-[#3370F7]">understanding.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
-              AI-generated documents, policies, and reports can look polished without reflecting real understanding.
-              Oral verification helps you confirm that employees and leaders can reason through what they&apos;re approving and acting on.
-            </p>
+            <div className="space-y-4 text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
+              <p>
+                Generative AI can draft flawless policy memos, regulatory responses, and technical
+                documentation in seconds.
+              </p>
+              <p>
+                But when polished, AI-assisted output masks gaps in understanding, it creates a
+                dangerous false assurance of competence.
+              </p>
+              <p>
+                Socratic Metric™ evaluates live cognition, confirming your leaders and employees can
+                articulate, reason, and defend their decisions under pressure.
+              </p>
+            </div>
 
             <div className="flex flex-col gap-4 pt-4 sm:flex-row">
               <Link

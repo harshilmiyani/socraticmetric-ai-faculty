@@ -1,26 +1,26 @@
 "use client";
 
-import { FileCheck, BadgeCheck, Network } from "lucide-react";
+import { RefreshCw, Repeat, ShieldCheck } from "lucide-react";
 
 export function EnterpriseSolution() {
   const solutions = [
     {
-      icon: <FileCheck className="w-8 h-8 text-[#F58022]" strokeWidth={1.75} />,
+      icon: <RefreshCw className="w-8 h-8 text-[#F58022]" strokeWidth={1.75} />,
       bg: "bg-orange-50",
-      title: "Critical policy and decision verification",
-      desc: "Use structured oral reviews to ensure owners and approvers can explain key policies, trade-offs, and implications in their own words.",
+      title: "AI-moderated adaptive dialogue",
+      desc: "The platform listens to oral responses and generates targeted follow-up questions in real time to verify policy alignment under pressure and probe the depth of reasoning.",
     },
     {
-      icon: <BadgeCheck className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
+      icon: <Repeat className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
       bg: "bg-blue-50",
-      title: "Scalable training and enablement checks",
-      desc: "Run standardized oral check-ins after trainings, playbook rollouts, or policy changes to confirm employees truly understand how to apply them.",
+      title: "Iterative feedback loop",
+      desc: "Rather than testing memory, the system evaluates reasoning in motion, providing immediate feedback that allows users to correct misconceptions and refine their logic on the spot.",
     },
     {
-      icon: <Network className="w-8 h-8 text-emerald-600" strokeWidth={1.75} />,
+      icon: <ShieldCheck className="w-8 h-8 text-emerald-600" strokeWidth={1.75} />,
       bg: "bg-emerald-50",
-      title: "Cross-functional alignment",
-      desc: "Validate that stakeholders across legal, compliance, operations, and leadership share a common understanding before high-stakes decisions go live.",
+      title: "Identity-verified audit records",
+      desc: "Generate an immutable, transcript-backed record of verified competency, utilizing secure voice authentication to produce proof of authentic human engagement.",
     },
   ];
 
@@ -41,7 +41,7 @@ export function EnterpriseSolution() {
             <div className="h-px w-12 bg-[#3370F7]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            How oral verification lowers enterprise risk
+            Cognition in motion: creating a new enterprise trust layer
           </h2>
         </div>
 

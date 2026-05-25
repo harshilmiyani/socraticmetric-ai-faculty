@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export function EnterpriseCompliance() {
   const points = [
-    "Evidence that policy owners understand and can explain key controls",
-    "Repeatable workflows aligned to internal governance frameworks",
-    "Improved audit readiness with documented verification steps",
+    "Identity-verified, audit-ready confirmation that individuals can reason beyond what AI can write",
+    "Repeatable workflows for verifying regulatory framework comprehension and policy alignment",
+    "Immutable, transcript-backed records of authentic human engagement",
   ];
 
   return (
@@ -24,12 +24,18 @@ export function EnterpriseCompliance() {
               <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Governance</span>
             </div>
             <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-              Support compliance and <br className="hidden sm:block" />
-              governance programs
+              AI-era leadership and compliance readiness infrastructure
             </h2>
-            <p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
-              Oral verification gives enterprises a concrete way to show that people responsible for policies and processes can actually reason through them.
-            </p>
+            <div className="space-y-4 text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
+              <p>
+                In the AI era, governance depends not on documentation alone, but on verified
+                cognitive alignment.
+              </p>
+              <p>
+                Socratic Metric provides a secure, FERPA-aligned infrastructure to prove your team
+                understands the regulatory frameworks and risk controls they operate within.
+              </p>
+            </div>
           </div>
 
           <div className="relative group">

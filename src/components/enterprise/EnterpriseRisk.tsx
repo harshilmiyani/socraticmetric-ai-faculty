@@ -7,22 +7,22 @@ export function EnterpriseRisk() {
     {
       icon: <Search className="w-8 h-8 text-[#F58022]" strokeWidth={1.75} />,
       iconBg: "bg-orange-50",
-      title: "AI-drafted policies approved without deep review",
+      title: "Leadership submitting strategic rationale they cannot defend aloud",
     },
     {
       icon: <PenTool className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
       iconBg: "bg-blue-50",
-      title: "Leaders signing off on documentation they can't fully explain",
+      title: "Compliance officers approving documentation without reasoning through exposure",
     },
     {
       icon: <ClipboardList className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
       iconBg: "bg-blue-50",
-      title: "Hidden gaps in understanding across distributed teams",
+      title: "Client-facing teams presenting solutions they cannot adapt in real time",
     },
     {
       icon: <AlertCircle className="w-8 h-8 text-amber-600" strokeWidth={1.75} />,
       iconBg: "bg-amber-50",
-      title: "Operational, legal, and reputational risk from poor decisions",
+      title: "Hidden gaps in technical solution fluency and AI-assisted output authenticity",
     },
   ];
 
@@ -36,11 +36,13 @@ export function EnterpriseRisk() {
             <div className="h-px w-12 bg-[#F58022]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            The new risk in enterprise organizations
+            The false assurance of competence in the AI era
           </h2>
           <p className="text-lg md:text-xl text-[#64748B] max-w-3xl mx-auto leading-relaxed">
-            Knowledge-work teams can now rely on AI to draft policies, procedures, and analyses.
-            When decisions are made on documents no one fully understands, risk increases across the business.
+            In regulated, revenue-facing, and governance-sensitive environments, polished AI
+            documentation introduces a serious vulnerability. When leadership decisions and
+            compliance approvals are based on documents no one fully comprehends, operational and
+            reputational risk increases across the business.
           </p>
         </div>
 
