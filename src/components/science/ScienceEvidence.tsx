@@ -7,15 +7,18 @@ export function ScienceEvidence() {
   const studies = [
     {
       author: "Hale et al. (2007)",
-      finding: "Found students who read passages aloud demonstrated significantly higher comprehension scores than those reading silently. The researchers acknowledged a fundamental limitation in silent reading research: \"when students read silently, the examiner had no way of knowing if the student was actually reading and/or read the entire passage.\""
+      finding:
+        'Found students reading aloud demonstrated significantly higher comprehension than those reading silently, noting a critical limitation of silent reading: "the examiner had no way of knowing if the student was actually reading and/or read the entire passage."',
     },
     {
       author: "Schiavo et al. (2021)",
-      finding: "Demonstrated approximately 24% improvement in comprehension among students with reading disabilities when using attention-driven read-aloud technology."
+      finding:
+        "Demonstrated approximately a 24% improvement in comprehension among students with reading disabilities when utilizing attention-driven read-aloud technology.",
     },
     {
       author: "Forrin & MacLeod (2018)",
-      finding: "Confirmed the memory advantage is particularly strong when learners hear their own voices, demonstrating that self-generated vocal production creates the most distinctive encoding."
+      finding:
+        "Confirmed the memory advantage is particularly strong when learners hear their own voices, demonstrating that self-generated vocal production creates the most distinctive memory encoding.",
     }
   ];
 
@@ -32,7 +35,7 @@ export function ScienceEvidence() {
               Evidence of Impact
             </h2>
             <p className="text-lg text-[#64748B] leading-relaxed mb-10">
-              Multiple peer-reviewed studies support oral engagement's advantages.
+              Multiple peer-reviewed studies support the distinct advantages of oral engagement and the production effect.
             </p>
 
             <div className="space-y-8">
@@ -68,13 +71,13 @@ export function ScienceEvidence() {
             </h3>
             <div className="space-y-4 text-[#64748B] leading-relaxed">
               <p>
-                Research shows that highly fluent readers can achieve comparable comprehension through silent reading under optimal conditions. This doesn't refute oral assessment's value; it clarifies its purpose.
+                Research shows that highly fluent readers can achieve comparable comprehension through silent reading under optimal conditions. This does not refute the value of oral assessment; it clarifies its purpose.
               </p>
               <p>
-                Silent reading optimizes efficiency for proficient readers in low-stakes information processing. Oral reading ensures verifiable comprehension, creates distinctive memory traces, and produces observable evidence of understanding.
+                Silent reading optimizes efficiency for low-stakes information processing. Oral reading ensures verifiable comprehension, creates distinctive memory traces, and produces observable evidence of understanding.
               </p>
               <p className="font-medium text-[#1F2A44]">
-                The Socratic Metric occupies the domain where authenticity and demonstrable learning are priorities, precisely where traditional assessment increasingly fails in the age of AI-generated content.
+                Socratic Metric occupies the domain where verifiable authenticity and demonstrable learning are absolute priorities—precisely where traditional assessment fails in the AI age.
               </p>
             </div>
           </motion.div>

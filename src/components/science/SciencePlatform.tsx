@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 export function SciencePlatform() {
   const steps = [
-    "Oral question presentation engages visual-motor-auditory integration and anchors attention through embodied focus",
-    "Oral response generation activates production effects and multimodal encoding pathways",
-    "Iterative feedback provides immediate, adaptive guidance after each response, mirroring the brain's natural learning cycle",
-    "Authenticity verification ensures that even when students consult AI during preparation, articulating responses forces genuine semantic encoding"
+    "Oral question presentation — Engages visual-motor-auditory integration and anchors attention through embodied focus.",
+    "Oral response — Activates the production effect and multimodal encoding pathways, forcing genuine semantic encoding.",
+    "Iterative feedback — Provides immediate, adaptive AI-moderated guidance after each response, mirroring the brain's natural learning cycle.",
+    "Authenticity verification — Even if users consult AI during preparation, articulating responses in their own voice forces true comprehension and provides identity-verified proof of learning.",
   ];
 
   return (
@@ -28,7 +28,7 @@ export function SciencePlatform() {
               Applied Neuroscience at Scale
             </h2>
             <p className="text-lg text-slate-300 leading-relaxed mb-10">
-              The Socratic Metric translates neuroscientific principles into practical educational technology.
+              Socratic Metric translates core neuroscientific principles into practical, scalable cognitive verification technology.
             </p>
 
             <div className="space-y-6">
@@ -56,7 +56,9 @@ export function SciencePlatform() {
               className="mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
             >
               <p className="text-slate-300 leading-relaxed">
-                The platform has been successfully deployed with over <strong className="text-white">3,000 simultaneous users</strong>, demonstrating that oral engagement's cognitive benefits can scale to institutional levels without compromising quality.
+                Deployed with over <strong className="text-white">3,000 simultaneous users</strong>,
+                proving that the cognitive benefits of oral engagement can scale securely to the
+                institutional level.
               </p>
             </motion.div>
           </div>
@@ -72,13 +74,13 @@ export function SciencePlatform() {
                 Accessibility and Implementation
               </h3>
               <p className="text-slate-300 leading-relaxed mb-4">
-                The platform's speech recognition accommodates diverse speech patterns, including strong accents and varied articulation styles.
+                The platform&apos;s advanced speech recognition accommodates diverse speech patterns and strong accents.
               </p>
               <p className="text-slate-300 leading-relaxed mb-4">
-                Institutions with predominantly international student populations (80%+ non-native English speakers) report marked improvements in students' communication skills through regular platform use.
+                Institutions with heavily international cohorts (over 80% non-native speakers) report marked improvements in communication skills.
               </p>
               <p className="text-slate-300 leading-relaxed">
-                The untimed format eliminates time-pressure anxiety, allowing all students to engage fully with material at their own pace.
+                The untimed, conversational format eliminates traditional testing time-pressure, allowing individuals to engage fully with the material at their own pace.
               </p>
             </motion.div>
           </div>

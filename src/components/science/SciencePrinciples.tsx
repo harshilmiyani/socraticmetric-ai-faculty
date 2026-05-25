@@ -9,19 +9,19 @@ export function SciencePrinciples() {
       icon: <Brain className="w-8 h-8 text-[#F58022]" />,
       bg: "bg-orange-50",
       title: "The Production Effect",
-      desc: "Speaking information aloud creates significantly stronger memory traces than reading silently. When students vocalize content, the brain encodes it through multiple pathways: visual recognition, motor planning for articulation, auditory processing of self-generated speech, and semantic integration. This multimodal encoding creates redundant neural pathways that enhance both immediate comprehension and long-term retention. MacLeod and colleagues' research (2010, 2012, 2018) consistently demonstrates this advantage across diverse populations and testing conditions."
+      desc: 'Speaking information aloud creates significantly stronger memory traces than reading silently. Vocalizing content encodes it through multiple pathways—visual, motor, auditory, and semantic—creating redundant neural connections that enhance immediate comprehension and long-term retention (MacLeod et al., 2010, 2012, 2018).',
     },
     {
       icon: <Focus className="w-8 h-8 text-[#3370F7]" />,
       bg: "bg-blue-50",
       title: "Attention Anchoring Through Embodiment",
-      desc: "Silent reading relies entirely on internal attention control, which the mind easily abandons. Oral reading anchors attention through the physical act of vocal production. Students must synchronize visual processing, motor execution, and auditory monitoring, creating what neuroscientists call \"temporal coupling.\" This coordination leaves minimal cognitive bandwidth for distraction, transforming divided attention into embodied focus. The motor involvement actually enhances sustained attention rather than adding cognitive burden."
+      desc: 'Silent reading relies entirely on internal attention control, which the mind easily abandons. Oral reading anchors attention through the physical act of vocal production, requiring "temporal coupling" of visual, motor, and auditory systems. This coordination transforms divided attention into embodied focus.',
     },
     {
       icon: <Ear className="w-8 h-8 text-emerald-600" />,
       bg: "bg-emerald-50",
       title: "Real-Time Self-Monitoring and Error Correction",
-      desc: "Speaking activates the brain's auditory feedback loop, the same system used in natural conversation. Students hear themselves articulate concepts, detect misunderstandings as they speak, and correct errors in real time. This \"internal teacher\" effect operates continuously during oral engagement. Silent readers lack this external feedback mechanism; they cannot identify comprehension gaps until explicitly tested. Oral readers literally hear what they understand and what they don't yet grasp."
+      desc: 'Speaking activates the brain\'s auditory feedback loop. Individuals hear themselves articulate concepts, detect misunderstandings as they speak, and correct errors in real time—functioning as an "internal teacher." Silent readers lack this external feedback mechanism to identify comprehension gaps until explicitly tested.',
     }
   ];
 
@@ -38,7 +38,7 @@ export function SciencePrinciples() {
             The Science Behind Oral Learning
           </h2>
           <p className="text-lg text-[#64748B] leading-relaxed">
-            Three converging principles from cognitive neuroscience support oral assessment.
+            Three converging principles from cognitive neuroscience support the Socratic Metric methodology.
           </p>
         </div>
 

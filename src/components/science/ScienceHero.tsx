@@ -32,7 +32,7 @@ export function ScienceHero() {
           </h1>
 
           <p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-3xl mx-auto">
-            The Socratic Metric addresses the challenge of AI-generated content by requiring students to read questions aloud and respond orally—an approach grounded in decades of cognitive neuroscience research.
+            Socratic Metric™ addresses the profound challenge of AI-generated content by evaluating live cognition. By requiring users to read questions aloud and respond orally, the platform leverages decades of cognitive neuroscience research to measure genuine comprehension, not just written output.
           </p>
         </motion.div>
       </div>
