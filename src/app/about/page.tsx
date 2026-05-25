@@ -5,8 +5,6 @@ import { Footer } from "@/components/layout/Footer";
 import { ContactSection } from "@/components/home/sections/ContactSection";
 import { motion } from "framer-motion";
 import { CheckCircle2, Clock, ShieldCheck, Upload, Check, Activity } from "lucide-react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
 
 export default function AboutPage() {
   const fadeIn = {
@@ -38,13 +36,17 @@ export default function AboutPage() {
                 
                 <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
                   Bringing <br />
-                  <span className="text-[#3370F7]">Accountability</span> <br />
+                  <span className="text-[#3370F7]">Verified Cognition</span> <br />
                   to the Age of AI
                 </h1>
                 
-                <p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
-                  Socratic Metric was founded on a simple belief: if someone signs off on high-stakes work, they should be able to explain it. We built the platform that makes that provable.
-                </p>
+                <div className="space-y-4 text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
+                  <p>
+                    Socratic Metric™ was founded on a critical insight: when AI can generate flawless
+                    documentation, written output is no longer reliable proof of understanding.
+                  </p>
+                  <p>We built the platform to prove genuine human comprehension.</p>
+                </div>
               </motion.div>
 
               {/* Right: UI Mockup */}
@@ -78,7 +80,10 @@ export default function AboutPage() {
                       <div>
                         <p className="text-[10px] font-bold text-[#3370F7] uppercase tracking-wider mb-1">Step 01</p>
                         <h4 className="font-bold text-[#1F2A44] text-lg mb-2">Curate Content</h4>
-                        <p className="text-sm text-[#64748B] leading-relaxed">Upload materials, policies, or operational doctrine. The platform builds adaptive question sets automatically.</p>
+                        <p className="text-sm text-[#64748B] leading-relaxed">
+                          Upload course materials, policies, engineering frameworks, or operational
+                          doctrine to automatically build adaptive question sets.
+                        </p>
                       </div>
                     </div>
 
@@ -91,7 +96,10 @@ export default function AboutPage() {
                       <div>
                         <p className="text-[10px] font-bold text-[#F58022] uppercase tracking-wider mb-1">Step 02</p>
                         <h4 className="font-bold text-[#1F2A44] text-lg mb-2">Conduct Oral Session</h4>
-                        <p className="text-sm text-[#64748B] leading-relaxed mb-3">AI moderates real-time dialogue. Respondents articulate and defend their understanding aloud.</p>
+                        <p className="text-sm text-[#64748B] leading-relaxed mb-3">
+                          AI moderates real-time dialogue, requiring respondents to articulate, refine,
+                          and defend their reasoning aloud.
+                        </p>
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-xs font-semibold">
                           <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                           Session in progress
@@ -107,7 +115,10 @@ export default function AboutPage() {
                       <div>
                         <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-wider mb-1">Step 03</p>
                         <h4 className="font-bold text-[#1F2A44] text-lg mb-2">Verify & Score</h4>
-                        <p className="text-sm text-[#64748B] leading-relaxed">Platform evaluates reasoning depth and produces timestamped, audit-ready records that withstand scrutiny.</p>
+                        <p className="text-sm text-[#64748B] leading-relaxed">
+                          The platform evaluates live cognition and produces timestamped,
+                          identity-verified audit records that withstand scrutiny.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -115,12 +126,12 @@ export default function AboutPage() {
                   {/* Footer Stats */}
                   <div className="grid grid-cols-3 border-t border-slate-100 bg-slate-50/50 p-6 text-center divide-x divide-slate-200">
                     <div>
-                      <p className="text-xl font-bold text-[#3370F7]">3K+</p>
+                      <p className="text-xl font-bold text-[#3370F7]">3,000+</p>
                       <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">Concurrent users</p>
                     </div>
                     <div>
                       <p className="text-xl font-bold text-[#3370F7]">4</p>
-                      <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">US Patents</p>
+                      <p className="text-[10px] text-slate-500 uppercase tracking-wider mt-1">US AI Patents</p>
                     </div>
                     <div>
                       <p className="text-xl font-bold text-[#3370F7]">99.9%</p>
@@ -142,7 +153,7 @@ export default function AboutPage() {
                 <div className="h-px w-12 bg-[#F58022]" />
               </div>
               <h2 className="font-sans text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-                From a single question <br />
+                From a fundamental risk <br />
                 <span className="text-[#3370F7]">to a new standard of proof.</span>
               </h2>
             </div>
@@ -156,10 +167,18 @@ export default function AboutPage() {
                 </div>
                 <div className="pt-1">
                   <p className="text-[10px] font-bold text-[#3370F7] uppercase tracking-wider mb-2">The Problem · 2021</p>
-                  <h3 className="text-2xl font-bold text-[#1F2A44] mb-4">AI Can Write It. Can You Defend It?</h3>
-                  <p className="text-[#64748B] leading-relaxed mb-6">
-                    Our founders watched a pattern emerge across healthcare audits, engineering sign-offs, and university assessments: polished AI-generated documents were being accepted as proof of genuine understanding. Nobody was asking the harder question — does the person signing this actually know what it says?
-                  </p>
+                  <h3 className="text-2xl font-bold text-[#1F2A44] mb-4">The False Assurance of Competence</h3>
+                  <div className="text-[#64748B] leading-relaxed mb-6 space-y-4">
+                    <p>
+                      As generative AI began producing polished reports and technical briefs in
+                      seconds, a dangerous pattern emerged: linguistic fluency was being mistaken for
+                      true competence.
+                    </p>
+                    <p>
+                      The core risk became clear—when AI writes the document, how do we know the human
+                      behind it actually understands the work?
+                    </p>
+                  </div>
                   <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-[#3370F7] text-xs font-semibold">
                     The insight that started everything
                   </span>
@@ -175,9 +194,18 @@ export default function AboutPage() {
                 <div className="pt-1">
                   <p className="text-[10px] font-bold text-[#3370F7] uppercase tracking-wider mb-2">The Science · 2022</p>
                   <h3 className="text-2xl font-bold text-[#1F2A44] mb-4">Grounding in Cognitive Neuroscience</h3>
-                  <p className="text-[#64748B] leading-relaxed mb-6">
-                    We partnered with cognitive scientists to understand how real comprehension is tested. The research was unambiguous: oral explanation, adaptive questioning, and real-time reasoning under gentle pressure are the most reliable signals of genuine understanding — not written output, not multiple choice, not rubric scores.
-                  </p>
+                  <div className="text-[#64748B] leading-relaxed mb-6 space-y-4">
+                    <p>
+                      We turned to established cognitive science, specifically the &ldquo;Production
+                      Effect&rdquo; and &ldquo;Generation Effect,&rdquo; which show that speaking
+                      information aloud creates significantly stronger memory traces than reading
+                      silently.
+                    </p>
+                    <p>
+                      The research proved that coordinating biological cognition through oral
+                      explanation is the most reliable signal of genuine understanding.
+                    </p>
+                  </div>
                   <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-[#3370F7] text-xs font-semibold">
                     Backed by peer-reviewed science
                   </span>
@@ -192,12 +220,22 @@ export default function AboutPage() {
                 </div>
                 <div className="pt-1">
                   <p className="text-[10px] font-bold text-[#3370F7] uppercase tracking-wider mb-2">The Platform · 2023</p>
-                  <h3 className="text-2xl font-bold text-[#1F2A44] mb-4">Building What Didn't Exist</h3>
-                  <p className="text-[#64748B] leading-relaxed mb-6">
-                    We built Socratic Metric from the ground up: an AI-moderated oral verification platform that doesn't grade documents — it evaluates live cognition. Every session produces a tamper-evident, timestamped audit record. Four US patents were issued covering the core methodology.
-                  </p>
+                  <h3 className="text-2xl font-bold text-[#1F2A44] mb-4">Building Cognition in Motion</h3>
+                  <div className="text-[#64748B] leading-relaxed mb-6 space-y-4">
+                    <p>
+                      We built Socratic Metric from the ground up: an AI-moderated oral verification
+                      platform that doesn&apos;t grade documents—it evaluates live cognition.
+                    </p>
+                    <p>
+                      The platform analyzes coherence and depth of reasoning while producing immutable,
+                      identity-verified audit records.
+                    </p>
+                    <p>
+                      Our core methodology is now protected by four issued U.S. AI patents.
+                    </p>
+                  </div>
                   <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-[#3370F7] text-xs font-semibold">
-                    4 issued US patents
+                    4 issued US AI patents
                   </span>
                 </div>
               </div>
@@ -210,9 +248,16 @@ export default function AboutPage() {
                 <div className="pt-1">
                   <p className="text-[10px] font-bold text-[#3370F7] uppercase tracking-wider mb-2">Today · 2026</p>
                   <h3 className="text-2xl font-bold text-[#1F2A44] mb-4">A New Standard for High-Stakes Environments</h3>
-                  <p className="text-[#64748B] leading-relaxed mb-6">
-                    Socratic Metric is now trusted across higher education, enterprise compliance, and government operations. Over 3,000 concurrent users rely on the platform to prove — not just assume — that the right people truly understand the work they're accountable for.
-                  </p>
+                  <div className="text-[#64748B] leading-relaxed mb-6 space-y-4">
+                    <p>
+                      Today, Socratic Metric provides the cognitive readiness infrastructure trusted across
+                      higher education, enterprise compliance, and government operations.
+                    </p>
+                    <p>
+                      With over 3,000 simultaneous users, the platform scales securely to prove that the
+                      right people truly understand the critical decisions they make.
+                    </p>
+                  </div>
                   <span className="inline-block px-4 py-1.5 rounded-full bg-orange-50 text-[#F58022] text-xs font-semibold">
                     3,000+ verified users today
                   </span>
@@ -225,11 +270,22 @@ export default function AboutPage() {
         {/* 3. Why We Exist */}
         <section className="py-20 md:py-32 bg-[#F8FAFC]">
           <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44] mb-6">Why We Exist</h2>
-              <p className="text-lg text-[#64748B] leading-relaxed">
-                AI has made it effortless to generate polished documentation, reports, and analyses. But polished output doesn't mean real understanding. In high-stakes environments — healthcare, engineering, compliance, education — the gap between what's written and what's understood creates real risk. Socratic Metric closes that gap.
-              </p>
+            <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
+              <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">Why We Exist</h2>
+              <div className="text-lg text-[#64748B] leading-relaxed space-y-4">
+                <p>
+                  Artificial intelligence has made it effortless to generate polished compliance
+                  documentation, engineering analyses, and academic essays.
+                </p>
+                <p>
+                  But in high-stakes environments, this creates a profound vulnerability: the false assurance
+                  of competence.
+                </p>
+                <p>
+                  Socratic Metric exists to close the gap between polished output and genuine human
+                  readiness.
+                </p>
+              </div>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -240,7 +296,8 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold text-[#1F2A44] mb-4">Verification Over Documentation</h3>
                 <p className="text-[#64748B] leading-relaxed">
-                  Written records show what was produced. Oral verification proves what was understood.
+                  Written records show what was produced; Socratic Metric verifies what the human
+                  actually comprehends. Comprehension has a voice.
                 </p>
               </div>
 
@@ -251,7 +308,8 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold text-[#1F2A44] mb-4">Science-Backed Rigor</h3>
                 <p className="text-[#64748B] leading-relaxed">
-                  Our approach is grounded in peer review cognitive science and research, protected by four issued US patents.
+                  Our approach leverages the neurological advantages of vocalization and multimodal encoding,
+                  fully protected by four U.S. AI patents issued in under two years.
                 </p>
               </div>
 
@@ -262,7 +320,8 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold text-[#1F2A44] mb-4">Defensible Proof</h3>
                 <p className="text-[#64748B] leading-relaxed">
-                  Every verification session creates an auditable, timestamped record that stands up to scrutiny.
+                  Every AI-moderated session generates an identity-verified, transcript-backed audit record
+                  of authentic human engagement that stands up to the highest regulatory scrutiny.
                 </p>
               </div>
             </div>

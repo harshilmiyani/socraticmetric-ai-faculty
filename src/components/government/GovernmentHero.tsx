@@ -45,14 +45,22 @@ export function GovernmentHero() {
             </div>
 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
-              When AI can generate the procedure, <br />
-              <span className="text-[#3370F7]">can your operator execute under pressure?</span>
+              When AI can generate the procedure,{" "}
+              <span className="text-[#3370F7]">
+                written output no longer guarantees operational readiness.
+              </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
-              AI-generated procedures, checklists, and reports can look correct while hiding gaps in real readiness.
-              Oral verification helps you confirm that operators and teams can execute when the stakes are highest.
-            </p>
+            <div className="space-y-4 text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
+              <p>
+                Generative AI can produce flawless mission plans, safety analyses, and operational
+                procedures, creating a dangerous false assurance of competence.
+              </p>
+              <p>
+                Socratic Metric™ evaluates live cognition, verifying that your operators can reason
+                through cascading failures, articulate redundancy logic, and execute under pressure.
+              </p>
+            </div>
 
             <div className="flex flex-col gap-4 pt-4 sm:flex-row">
               <Link

@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export function GovernmentCompliance() {
   const points = [
-    "Documented verification that key roles grasp policies and procedures",
-    "Repeatable workflows aligned to internal oversight and audit requirements",
-    "Support for demonstrating readiness and compliance to external reviewers",
+    "Identity-verified documentation that key roles grasp autonomous system oversight and contingency planning",
+    "Repeatable workflows for verifying regulatory and safety doctrine alignment",
+    "Immutable proof of readiness to demonstrate compliance to external reviewers and command",
   ];
 
   return (
@@ -24,11 +24,13 @@ export function GovernmentCompliance() {
               <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Oversight</span>
             </div>
             <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-              Support policy, compliance, <br className="hidden sm:block" />
-              and oversight
+              Defensible evidence for safety doctrine and oversight
             </h2>
             <p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
-              Oral verification gives agencies defensible evidence that personnel responsible for critical tasks understand the protocols they rely on.
+              In environments where failure carries national or human consequences, Socratic Metric
+              provides structured cognitive verification, giving agencies defensible proof that
+              personnel truly understand the regulatory frameworks and safety doctrines they operate
+              within.
             </p>
           </div>
 

@@ -38,7 +38,9 @@ export function GovernmentTestimonial() {
             />
 
             <blockquote className="font-serif text-2xl md:text-3xl font-medium text-[#1F2A44] leading-relaxed mb-10 relative z-10">
-              "We can now verify that operators truly understand the procedures they're responsible for, not just repeat what's on the page."
+              &ldquo;When AI can generate procedures, Socratic Metric verifies human understanding. We can
+              now confirm that the operators responsible for mission-critical systems genuinely
+              comprehend them before authorization.&rdquo;
             </blockquote>
 
             <div className="flex flex-col items-center justify-center gap-4">

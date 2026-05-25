@@ -25,10 +25,11 @@ export function GovernmentOutcomes() {
             <div className="h-px w-12 bg-[#F58022]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            Outcomes for government partners
+            Verified cognitive readiness for government partners
           </h2>
           <p className="text-lg md:text-xl text-[#64748B] max-w-3xl mx-auto leading-relaxed">
-            Agencies and operators use oral verification to improve readiness and reduce mission risk.
+            Agencies and aerospace leaders use Socratic Metric to eliminate the false assurance of
+            competence, improving genuine readiness and reducing mission risk.
           </p>
         </div>
 

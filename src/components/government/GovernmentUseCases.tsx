@@ -4,10 +4,22 @@ import { motion } from "framer-motion";
 
 export function GovernmentUseCases() {
   const cases = [
-    { id: "1", title: "Pre-mission oral briefings to verify understanding of plans and contingencies" },
-    { id: "2", title: "Oral checks for operators executing complex or safety-critical procedures" },
-    { id: "3", title: "Certification and re-certification assessments for critical roles" },
-    { id: "4", title: "Readiness checks before introducing new or updated protocols" },
+    {
+      id: "1",
+      title: "Pre-launch readiness confirmation and failure cascade articulation",
+    },
+    {
+      id: "2",
+      title: "Systems engineering comprehension and tradeoff defense",
+    },
+    {
+      id: "3",
+      title: "Simulation-based certification and re-certification assessments",
+    },
+    {
+      id: "4",
+      title: "Autonomous system oversight and anomaly response strategy verification",
+    },
   ];
 
   return (
@@ -24,7 +36,7 @@ export function GovernmentUseCases() {
             <div className="h-px w-12 bg-[#3370F7]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44]">
-            Government use cases
+            Government and aerospace mission applications
           </h2>
         </div>
 

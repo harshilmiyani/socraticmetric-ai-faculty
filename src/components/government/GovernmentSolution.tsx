@@ -1,26 +1,26 @@
 "use client";
 
-import { FileText, BadgeCheck, BarChart3 } from "lucide-react";
+import { RefreshCw, ClipboardCheck, ShieldCheck } from "lucide-react";
 
 export function GovernmentSolution() {
   const solutions = [
     {
-      icon: <FileText className="w-8 h-8 text-[#F58022]" strokeWidth={1.75} />,
+      icon: <RefreshCw className="w-8 h-8 text-[#F58022]" strokeWidth={1.75} />,
       bg: "bg-orange-50",
-      title: "Mission-critical knowledge validation",
-      desc: "Use structured oral scenarios to confirm operators and leaders can explain procedures, contingencies, and decision points in their own words.",
+      title: "AI-moderated adaptive dialogue",
+      desc: "Present complex operational scenarios organically and use targeted follow-up questions to verify operators can articulate and defend mission-critical reasoning aloud.",
     },
     {
-      icon: <BadgeCheck className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
+      icon: <ClipboardCheck className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
       bg: "bg-blue-50",
-      title: "Training and certification support",
-      desc: "Add oral checkpoints to training, simulations, and recertification so you can validate real understanding before granting critical responsibilities.",
+      title: "Cognitive readiness evaluation",
+      desc: "Go beyond memory tests by evaluating reasoning in motion during simulations, recertification, and pre-launch readiness checks, ensuring true comprehension under pressure.",
     },
     {
-      icon: <BarChart3 className="w-8 h-8 text-emerald-600" strokeWidth={1.75} />,
+      icon: <ShieldCheck className="w-8 h-8 text-emerald-600" strokeWidth={1.75} />,
       bg: "bg-emerald-50",
-      title: "Operational alignment",
-      desc: "Ensure that teams across operations, safety, and command share a common mental model before executing high-risk missions or procedures.",
+      title: "Identity-verified audit records",
+      desc: "Generate an immutable, transcript-backed record of genuine human engagement, bridging the gap between static documentation and operational authorization.",
     },
   ];
 
@@ -41,7 +41,7 @@ export function GovernmentSolution() {
             <div className="h-px w-12 bg-[#3370F7]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            How oral verification strengthens readiness
+            Cognition in motion: the new readiness layer for critical operations
           </h2>
         </div>
 

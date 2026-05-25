@@ -7,22 +7,23 @@ export function GovernmentRisk() {
     {
       icon: <HelpCircle className="w-8 h-8 text-[#F58022]" strokeWidth={1.75} />,
       iconBg: "bg-orange-50",
-      title: "Operators following AI-generated procedures they don't fully understand",
+      title: "Operators relying on AI-generated mission plans they cannot independently defend",
     },
     {
       icon: <Cog className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
       iconBg: "bg-blue-50",
-      title: "Gaps between documented protocols and real-world execution",
+      title: "Hidden gaps in technical fluency and system redundancy logic",
     },
     {
       icon: <Eye className="w-8 h-8 text-[#3370F7]" strokeWidth={1.75} />,
       iconBg: "bg-blue-50",
-      title: "Limited visibility into individual readiness and decision-making",
+      title: "Inability to articulate failure cascades and real-time anomaly response strategies",
     },
     {
       icon: <AlertTriangle className="w-8 h-8 text-amber-600" strokeWidth={1.75} />,
       iconBg: "bg-amber-50",
-      title: "Operational, safety, and compliance exposure in high-stakes environments",
+      title:
+        "Operational and safety exposure from a reliance on written output over true comprehension",
     },
   ];
 
@@ -36,11 +37,13 @@ export function GovernmentRisk() {
             <div className="h-px w-12 bg-[#F58022]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            The new risk in government & aerospace operations
+            The false assurance of competence in high-stakes operations
           </h2>
           <p className="text-lg md:text-xl text-[#64748B] max-w-3xl mx-auto leading-relaxed">
-            AI can draft procedures, mission plans, and after-action reports. If teams rely on documentation they
-            can't fully reason through, mission performance and public safety are at risk.
+            Generative AI has fundamentally altered how safety doctrine and operational procedures are
+            produced.             When mission-critical systems and decisions rely on polished documentation the
+            operator cannot fully reason through, mission performance and public safety face
+            unprecedented exposure.
           </p>
         </div>
 
