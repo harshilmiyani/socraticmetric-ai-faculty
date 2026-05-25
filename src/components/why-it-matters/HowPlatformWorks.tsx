@@ -7,27 +7,27 @@ export function HowPlatformWorks() {
     {
       icon: <ShieldCheck className="w-8 h-8 text-[#3370F7]" />,
       bg: "bg-blue-50",
-      title: "Oral Verification at Scale",
-      desc: "Standardized workflows confirm people can explain their work in their own words."
+      title: "AI-Moderated Adaptive Dialogue",
+      desc: "Standardized, real-time workflows force users to articulate, refine, and defend their reasoning aloud under gentle pressure.",
     },
     {
       icon: <Eye className="w-8 h-8 text-[#3370F7]" />,
       bg: "bg-blue-50",
-      title: "Defensible Evidence",
-      desc: "Documented, repeatable proof of comprehension for audits, accreditation, or oversight."
+      title: "Identity-Verified Audit Records",
+      desc: "Generate immutable, transcript-backed proof of authentic human comprehension for compliance, accreditation, or internal oversight.",
     },
     {
       icon: <Target className="w-8 h-8 text-[#F58022]" />,
       bg: "bg-orange-50",
-      title: "High-Stakes Confidence",
-      desc: "Know grades, decisions, and operations reflect real understanding, not just paperwork."
+      title: "Cognitive Readiness Assurance",
+      desc: "Move beyond paperwork to guarantee that your high-stakes decisions, grades, and operations reflect genuine understanding.",
     },
     {
       icon: <PlayCircle className="w-8 h-8 text-teal-600" />,
       bg: "bg-teal-50",
-      title: "Simple to Deploy",
-      desc: "Configure assessments, automate scheduling, centralize scoring—no heavy training required."
-    }
+      title: "Seamless Institutional Deployment",
+      desc: "Effortlessly configure assessments, automate adaptive follow-up questioning, and secure objective cognitive scoring at scale.",
+    },
   ];
 
   return (
@@ -36,11 +36,14 @@ export function HowPlatformWorks() {
         <div className="text-center mb-16 space-y-4">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-12 bg-[#3370F7]" />
-            <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Platform</span>
+            <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">The Platform</span>
             <div className="h-px w-12 bg-[#3370F7]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            How Socratic Metric's Oral Verification <br className="hidden sm:block" /> Platform Works
+            How Socratic Metric Evaluates <br className="hidden sm:block" />
+            <span className="bg-gradient-to-r from-[#3370F7] via-[#4C8FD6] to-[#F58022] bg-clip-text text-transparent">
+              Cognition In Motion
+            </span>
           </h2>
         </div>
 

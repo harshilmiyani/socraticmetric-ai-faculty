@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 export function WhoNeedsIt() {
   const roles = [
-    "Academic leaders protecting credential value",
-    "Training and enablement programs",
-    "Risk and compliance teams reducing exposure",
-    "Policy and governance functions",
-    "Operations leaders ensuring operational readiness",
-    "High-stakes assessment coordinators"
+    "Higher education leadership protecting long-term degree value",
+    "Aerospace and defense operators ensuring mission readiness",
+    "Enterprise compliance officers verifying regulatory framework alignment",
+    "Advanced technology teams validating model risk and ethical frameworks",
+    "Operational commanders requiring failure cascade articulation",
+    "High-stakes certification and licensure coordinators",
   ];
 
   return (
@@ -18,11 +18,11 @@ export function WhoNeedsIt() {
         <div className="text-center mb-16 space-y-4">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-12 bg-[#3370F7]" />
-            <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Who Needs It</span>
+            <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Critical Applications</span>
             <div className="h-px w-12 bg-[#3370F7]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            Who Needs Oral Verification Most
+            Environments Where Documentation Cannot Be Trusted
           </h2>
         </div>
 

@@ -83,7 +83,7 @@ function VerificationJourneyVisual() {
                 <Check className="h-5 w-5" strokeWidth={2.5} />
               </div>
               <div className="min-w-0">
-                <p className="font-bold text-[#1F2A44]">Understanding Verified</p>
+                <p className="font-bold text-[#1F2A44]">Authentic Cognition Verified</p>
                 <p className="text-sm text-[#64748B]">Oral defense completed successfully</p>
               </div>
             </div>
@@ -139,18 +139,20 @@ export function WhyItMattersHero() {
           >
             <div className="flex items-center gap-4">
               <div className="h-px w-8 bg-[#3370F7]" />
-              <span className="text-sm font-bold uppercase tracking-widest text-[#3370F7]">Why Socratic Metric Matters</span>
+              <span className="text-sm font-bold uppercase tracking-widest text-[#3370F7]">The Threat of False Assurance</span>
               <div className="h-px w-8 bg-[#3370F7]" />
             </div>
 
             <h1 className="font-serif text-4xl font-bold leading-[1.15] tracking-tight text-[#1F2A44] sm:text-5xl md:text-6xl">
-              Verify Real Understanding When <br />
-              <span className="text-[#3370F7]">AI Can Write It</span>
+              Verify True Comprehension When <br />
+              <span className="text-[#3370F7]">AI Can Generate the Output</span>
             </h1>
 
             <p className="text-lg leading-relaxed text-[#64748B] md:text-xl">
-              Socratic Metric is the oral verification platform that confirms people can explain, reason through, and defend high-stakes work.
-              Don&apos;t let AI-generated documentation hide comprehension gaps—get defensible proof before grades, decisions, or operations go live.
+              Generative AI creates a dangerous false assurance of competence by producing flawless
+              documentation. Socratic Metric™ evaluates live cognition, providing defensible,
+              identity-verified proof that your team can articulate, refine, and defend high-stakes
+              decisions before operations go live.
             </p>
 
             <div className="flex flex-col gap-4 pt-4 sm:flex-row">

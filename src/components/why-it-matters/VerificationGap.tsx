@@ -6,15 +6,15 @@ export function VerificationGap() {
   const gaps = [
     {
       icon: <ClipboardCheck className="w-8 h-8 text-teal-600" />,
-      title: "AI-generated content passes visual review",
+      title: "Linguistic fluency mimics genuine understanding",
     },
     {
-      icon: <FileSearch className="w-8 h-8 text-[#3370F7]" />, 
-      title: "Written documentation hides comprehension gaps",
+      icon: <FileSearch className="w-8 h-8 text-[#3370F7]" />,
+      title: "AI-assisted documentation masks critical comprehension gaps",
     },
     {
       icon: <Lightbulb className="w-8 h-8 text-[#F58022]" />,
-      title: "High-stakes decisions depend on real understanding",
+      title: "Operational readiness requires live cognitive verification",
     },
   ];
 
@@ -28,10 +28,13 @@ export function VerificationGap() {
             <div className="h-px w-12 bg-[#F58022]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            The Verification Gap Organizations Face
+            The False Assurance of Competence
           </h2>
           <p className="text-lg md:text-xl text-[#64748B] max-w-4xl mx-auto leading-relaxed">
-            AI makes it easy to create convincing documentation. But when the stakes are high, you need to know people actually understand—not just copy what sounds right. Traditional written documentation can't verify real understanding in high-stakes environments.
+            Artificial intelligence easily generates polished reports, proposals, and code. In
+            high-stakes environments, linguistic fluency does not equal true competence. When
+            decisions rely on written documentation alone, organizations face critical operational,
+            academic, and compliance exposure.
           </p>
         </div>
 

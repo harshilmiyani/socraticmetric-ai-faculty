@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 export function ProvenResults() {
   const results = [
-    { value: "XX%", label: "Increase in confidence in high-stakes outcomes" },
-    { value: "XX%", label: "Reduction in time investigating questionable work" },
-    { value: "XX%", label: "Drop in undetected comprehension gaps" },
-    { value: "XX%", label: "Organizations actively using the platform" },
+    { value: "XX%", label: "Increase in confidence in high-stakes operational outcomes" },
+    { value: "XX%", label: "Reduction in time investigating questionable or AI-generated work" },
+    { value: "XX%", label: "Drop in undetected cognitive gaps during critical operations" },
+    { value: "XX%", label: "Organizations actively deploying identity-verified oral assessments" },
   ];
 
   return (
@@ -16,14 +16,16 @@ export function ProvenResults() {
         <div className="text-center mb-16 space-y-4">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-12 bg-[#F58022]" />
-            <span className="text-[#F58022] font-bold text-sm tracking-widest uppercase">Results</span>
+            <span className="text-[#F58022] font-bold text-sm tracking-widest uppercase">Verified Outcomes</span>
             <div className="h-px w-12 bg-[#F58022]" />
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
-            Proven Results from Socratic Metric
+            A New Standard for Cognitive Verification
           </h2>
           <p className="text-lg md:text-xl text-[#64748B] max-w-4xl mx-auto leading-relaxed">
-            Organizations using Socratic Metric's oral verification platform see measurable improvements in trust, efficiency, and risk reduction.
+            Organizations utilizing Socratic Metric&apos;s live cognitive evaluation platform establish
+            a secure trust layer, achieving measurable improvements in compliance defensibility,
+            operational readiness, and academic integrity.
           </p>
         </div>
 
