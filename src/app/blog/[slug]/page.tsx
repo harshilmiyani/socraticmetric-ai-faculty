@@ -9,6 +9,8 @@ import { blogPortableTextComponents } from "@/components/blog/portable-component
 import { getAllBlogSlugs, getBlogPostBySlug } from "@/lib/sanity/posts";
 import { extractTocFromPortableText, enrichFallbackHtmlWithToc } from "@/lib/blog/toc";
 import { BlogPostToc } from "@/components/blog/BlogPostToc";
+import { BlogPostJsonLd } from "@/components/seo/BlogPostJsonLd";
+import { createBlogPostMetadata } from "@/lib/site-metadata";
 import type { PortableTextBlock } from "@portabletext/types";
 import type { Metadata } from "next";
 
@@ -23,10 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
   if (!post) return { title: "Post not found" };
-  return {
-    title: `${post.title} | SocraticMetric Blog`,
+  return createBlogPostMetadata({
+    title: post.title,
     description: post.excerpt,
-  };
+    slug,
+  });
 }
 
 const fallbackArticleClass =
@@ -54,6 +57,13 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <BlogPageShell>
+      <BlogPostJsonLd
+        title={post.title}
+        description={post.excerpt}
+        slug={slug}
+        author={post.author}
+        coverImageUrl={post.coverImageUrl}
+      />
       {/* Masthead: typography on deep navy — image never sits behind text */}
       <header className="relative isolate overflow-hidden bg-[#1F2A44] pt-24 text-white md:pt-28 lg:pt-32">
         <div

@@ -2,6 +2,15 @@ import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/sections/HeroSection";
+import { createPageMetadata } from "@/lib/site-metadata";
+
+export const metadata = createPageMetadata({
+  title: "SocraticMetric AI | Verify Authentic Understanding in the AI Era",
+  description:
+    "Written output is no longer proof of understanding. Socratic Metric™ verifies live cognition through oral assessment for education, enterprise, and government.",
+  path: "/",
+  absoluteTitle: true,
+});
 
 // Lazy load components that are not in the initial viewport
 const ThePlatform = dynamic(() => import("@/components/home/sections/ThePlatform").then(mod => mod.ThePlatform));

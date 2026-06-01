@@ -7,11 +7,14 @@ import { ScienceEvidence } from "@/components/science/ScienceEvidence";
 import { SciencePlatform } from "@/components/science/SciencePlatform";
 import { ScienceAIReplication } from "@/components/science/ScienceAIReplication";
 import { ContactSection } from "@/components/home/sections/ContactSection";
+import { createPageMetadata } from "@/lib/site-metadata";
 
-export const metadata = {
-  title: 'Science | SocraticMetric AI',
-  description: 'The cognitive neuroscience behind SocraticMetric’s oral verification platform.',
-};
+export const metadata = createPageMetadata({
+  title: "Science",
+  description:
+    "Oral assessment in the age of AI. Explore the cognitive neuroscience and research behind Socratic Metric's live verification platform.",
+  path: "/science",
+});
 
 export default function SciencePage() {
   return (

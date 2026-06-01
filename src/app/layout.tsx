@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -7,14 +6,13 @@ import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import { ChatbaseWidget } from "@/components/chatbot/ChatbaseWidget";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
+import { rootMetadata } from "@/lib/site-metadata";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
-export const metadata: Metadata = {
-  title: "SocraticMetric AI | Authentic Assessment Platform",
-  description: "Secure, oral-assessment platform for the AI era. Verify student understanding through real-time verbal discussion and feedback.",
-};
+export const metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -28,6 +26,7 @@ export default function RootLayout({
         inter.variable,
         playfair.variable
       )}>
+        <SiteJsonLd />
         {children}
         <LoadingScreen />
         <ScrollToTop />

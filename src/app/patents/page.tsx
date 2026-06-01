@@ -5,11 +5,14 @@ import { StatsSection } from '@/components/patents/StatsSection';
 import { ScienceSection } from '@/components/patents/ScienceSection';
 import { CognitiveScienceSection } from '@/components/patents/CognitiveScienceSection';
 import { CTASection } from '@/components/patents/CTASection';
+import { createPageMetadata } from '@/lib/site-metadata';
 
-export const metadata = {
-  title: 'Patents | SocraticMetric AI',
-  description: 'The science and IP behind SocraticMetric’s oral verification platform. Backed by extensive cognitive research and issued US patents.',
-};
+export const metadata = createPageMetadata({
+  title: "Patents",
+  description:
+    "The science and IP behind Socratic Metric. Backed by extensive cognitive research and issued US patents in oral verification.",
+  path: "/patents",
+});
 
 export default function PatentsPage() {
   return (
