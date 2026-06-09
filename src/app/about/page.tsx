@@ -13,12 +13,12 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#1F2A44] overflow-x-hidden font-sans">
+    <div className="flex min-h-screen flex-col bg-[#F0F6FF] text-[#1F2A44] overflow-x-hidden font-sans">
       <Navbar />
 
       <main className="flex-1">
         {/* 1. Hero / Our Story */}
-        <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC]">
+        <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
           <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Left: Text */}
@@ -28,10 +28,10 @@ export default function AboutPage() {
                 variants={fadeIn}
                 className="space-y-6 max-w-2xl"
               >
-                <div className="flex items-center gap-4">
-                  <div className="h-px w-8 bg-[#3370F7]" />
-                  <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Our Story</span>
-                  <div className="h-px w-8 bg-[#3370F7]" />
+                <div className="mb-4">
+                  <span className="inline-block py-1.5 px-4 rounded-full bg-[#EAF1FE] border border-[#3370F7]/20 text-[#3370F7] font-bold text-xs tracking-widest uppercase">
+                    Our Story
+                  </span>
                 </div>
                 
                 <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
@@ -56,7 +56,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <div className="bg-white rounded-2xl shadow-2xl shadow-[#3370F7]/10 border border-slate-100 overflow-hidden flex flex-col">
+                <div className="bg-white rounded-2xl shadow-2xl shadow-[#3370F7]/10 border border-blue-100 overflow-hidden flex flex-col">
                   {/* Browser Header */}
                   <div className="h-12 border-b border-slate-100 flex items-center px-4 gap-4 bg-slate-50/50">
                     <div className="flex gap-1.5 shrink-0">
@@ -145,12 +145,13 @@ export default function AboutPage() {
         </section>
 
         {/* 2. How We Got Here (Timeline) */}
-        <section className="py-20 md:py-32 bg-white">
+        <section className="py-20 md:py-32">
           <div className="container mx-auto px-6 md:px-12 max-w-4xl">
             <div className="mb-16">
-              <div className="flex items-center gap-4 mb-4">
-                <span className="text-[#F58022] font-bold text-sm tracking-widest uppercase">How We Got Here</span>
-                <div className="h-px w-12 bg-[#F58022]" />
+              <div className="mb-6">
+                <span className="inline-block py-1.5 px-4 rounded-full bg-orange-50 border border-orange-200 text-[#F58022] font-bold text-xs tracking-widest uppercase">
+                  How We Got Here
+                </span>
               </div>
               <h2 className="font-sans text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
                 From a fundamental risk <br />
@@ -268,7 +269,7 @@ export default function AboutPage() {
         </section>
 
         {/* 3. Why We Exist */}
-        <section className="py-20 md:py-32 bg-[#F8FAFC]">
+        <section className="py-20 md:py-32">
           <div className="container mx-auto px-6 md:px-12 max-w-6xl">
             <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
               <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">Why We Exist</h2>
@@ -290,7 +291,7 @@ export default function AboutPage() {
             
             <div className="grid md:grid-cols-3 gap-8">
               {/* Card 1 */}
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 transition-all hover:shadow-md hover:-translate-y-1">
+              <div className="bg-white rounded-3xl p-8 shadow-md border border-slate-200 transition-all hover:shadow-lg hover:border-slate-300 hover:-translate-y-1">
                 <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#3370F7] mb-6">
                   <CheckCircle2 className="w-6 h-6" />
                 </div>
@@ -302,7 +303,7 @@ export default function AboutPage() {
               </div>
 
               {/* Card 2 */}
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 transition-all hover:shadow-md hover:-translate-y-1">
+              <div className="bg-white rounded-3xl p-8 shadow-md border border-slate-200 transition-all hover:shadow-lg hover:border-slate-300 hover:-translate-y-1">
                 <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-[#F58022] mb-6">
                   <Clock className="w-6 h-6" />
                 </div>
@@ -314,7 +315,7 @@ export default function AboutPage() {
               </div>
 
               {/* Card 3 */}
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 transition-all hover:shadow-md hover:-translate-y-1">
+              <div className="bg-white rounded-3xl p-8 shadow-md border border-slate-200 transition-all hover:shadow-lg hover:border-slate-300 hover:-translate-y-1">
                 <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-6">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
@@ -329,7 +330,7 @@ export default function AboutPage() {
         </section>
 
         {/* 4. The Team */}
-        <section className="py-20 md:py-32 bg-[#F0F4F8]">
+        <section className="py-20 md:py-32">
           <div className="container mx-auto px-6 md:px-12 max-w-6xl">
             <div className="text-center mb-16">
               <h2 className="font-sans text-3xl md:text-4xl font-bold text-[#1F2A44]">The Team</h2>

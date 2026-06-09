@@ -9,7 +9,7 @@ export function ScienceHero() {
   };
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC]">
+    <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 overflow-hidden">
       <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -20,10 +20,10 @@ export function ScienceHero() {
           variants={fadeIn}
           className="space-y-6"
         >
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-12 bg-[#3370F7]" />
-            <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Executive Summary</span>
-            <div className="h-px w-12 bg-[#3370F7]" />
+          <div className="mb-6">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-[#EAF1FE] border border-[#3370F7]/20 text-[#3370F7] font-bold text-xs tracking-widest uppercase">
+              Executive Summary
+            </span>
           </div>
 
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">

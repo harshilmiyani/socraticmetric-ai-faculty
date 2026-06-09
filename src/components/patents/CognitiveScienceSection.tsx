@@ -11,12 +11,13 @@ export function CognitiveScienceSection() {
   ];
 
   return (
-    <section className="bg-white py-20 px-6 md:px-12">
+    <section className="py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-16 flex flex-col items-start">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-px w-12 bg-[#F58022]" />
-            <span className="text-[#F58022] font-bold text-sm tracking-widest uppercase">Cognitive Science</span>
+          <div className="mb-6">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-orange-50 border border-orange-200 text-[#F58022] font-bold text-xs tracking-widest uppercase">
+              Cognitive Science
+            </span>
           </div>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1F2A44] mb-6 font-serif leading-tight">
             Why Oral Verification Works
@@ -35,7 +36,7 @@ export function CognitiveScienceSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="group bg-white border border-slate-100 rounded-3xl p-8 md:p-12 shadow-sm relative h-full flex flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+            className="group bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-md relative h-full flex flex-col hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-500 overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[100px] opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">

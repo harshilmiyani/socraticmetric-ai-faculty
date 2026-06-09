@@ -23,22 +23,23 @@ export function ScienceEvidence() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-white relative overflow-hidden">
+    <section className="py-10 md:py-12 relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
           <div>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="h-px w-12 bg-[#3370F7]" />
-              <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Research</span>
+            <div className="mb-6">
+              <span className="inline-block py-1.5 px-4 rounded-full bg-[#EAF1FE] border border-[#3370F7]/20 text-[#3370F7] font-bold text-xs tracking-widest uppercase">
+                Research
+              </span>
             </div>
             <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight mb-6">
               Evidence of Impact
             </h2>
-            <p className="text-lg text-[#64748B] leading-relaxed mb-10">
+            <p className="text-lg text-[#64748B] leading-relaxed mb-6">
               Multiple peer-reviewed studies support the distinct advantages of oral engagement and the production effect.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               {studies.map((study, i) => (
                 <motion.div
                   key={i}
@@ -64,7 +65,7 @@ export function ScienceEvidence() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-[#F8FAFC] rounded-3xl p-8 md:p-12 border border-slate-100"
+            className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-md"
           >
             <h3 className="font-serif text-2xl font-bold text-[#1F2A44] mb-6">
               Addressing the Counter Evidence

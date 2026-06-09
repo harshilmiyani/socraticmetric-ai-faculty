@@ -4,64 +4,35 @@ import { motion } from "framer-motion";
 import { Brain, Focus, Ear } from "lucide-react";
 
 export function SciencePrinciples() {
-  const principles = [
-    {
-      icon: <Brain className="w-8 h-8 text-[#F58022]" />,
-      bg: "bg-orange-50",
-      title: "The Production Effect",
-      desc: 'Speaking information aloud creates significantly stronger memory traces than reading silently. Vocalizing content encodes it through multiple pathways—visual, motor, auditory, and semantic—creating redundant neural connections that enhance immediate comprehension and long-term retention (MacLeod et al., 2010, 2012, 2018).',
-    },
-    {
-      icon: <Focus className="w-8 h-8 text-[#3370F7]" />,
-      bg: "bg-blue-50",
-      title: "Attention Anchoring Through Embodiment",
-      desc: 'Silent reading relies entirely on internal attention control, which the mind easily abandons. Oral reading anchors attention through the physical act of vocal production, requiring "temporal coupling" of visual, motor, and auditory systems. This coordination transforms divided attention into embodied focus.',
-    },
-    {
-      icon: <Ear className="w-8 h-8 text-emerald-600" />,
-      bg: "bg-emerald-50",
-      title: "Real-Time Self-Monitoring and Error Correction",
-      desc: 'Speaking activates the brain\'s auditory feedback loop. Individuals hear themselves articulate concepts, detect misunderstandings as they speak, and correct errors in real time—functioning as an "internal teacher." Silent readers lack this external feedback mechanism to identify comprehension gaps until explicitly tested.',
-    }
-  ];
+
 
   return (
-    <section className="py-20 md:py-32 bg-[#F8FAFC] relative overflow-hidden">
+    <section className="py-10 md:py-12 relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-12 bg-[#F58022]" />
-            <span className="text-[#F58022] font-bold text-sm tracking-widest uppercase">Cognitive Neuroscience</span>
-            <div className="h-px w-12 bg-[#F58022]" />
+        <div className="text-center mb-10 max-w-3xl mx-auto">
+          <div className="mb-6">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-orange-50 border border-orange-200 text-[#F58022] font-bold text-xs tracking-widest uppercase">
+              Cognitive Neuroscience
+            </span>
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight mb-6">
             The Science Behind Oral Learning
           </h2>
-          <p className="text-lg text-[#64748B] leading-relaxed">
-            Three converging principles from cognitive neuroscience support the Socratic Metric methodology.
-          </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {principles.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-white p-8 md:p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className={`w-16 h-16 flex items-center justify-center rounded-2xl ${item.bg} mb-8`}>
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-bold text-[#1F2A44] mb-4 leading-snug">{item.title}</h3>
-              <p className="text-[#64748B] leading-relaxed text-base">
-                {item.desc}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-orange-900/5 border border-slate-100 bg-white"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/img/sciencepage/oral-learning.png" 
+            alt="The Science Behind Oral Learning"
+            className="w-full h-auto block"
+          />
+        </motion.div>
       </div>
     </section>
   );

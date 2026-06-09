@@ -11,23 +11,24 @@ export function SciencePlatform() {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-[#1F2A44] relative overflow-hidden text-white">
+    <section className="py-10 md:py-12 bg-[#1F2A44] relative overflow-hidden text-white">
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-0 right-0 w-[min(100vw,600px)] h-[min(100vw,600px)] bg-[#3370F7]/20 rounded-full blur-[120px] translate-x-1/4 -translate-y-1/4" />
         <div className="absolute bottom-0 left-0 w-[min(90vw,500px)] h-[min(90vw,500px)] bg-[#F58022]/10 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/4" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="h-px w-12 bg-[#4C8FD6]" />
-              <span className="text-[#4C8FD6] font-bold text-sm tracking-widest uppercase">The Platform</span>
+            <div className="mb-6">
+              <span className="inline-block py-1.5 px-4 rounded-full bg-[#3370F7]/20 border border-[#4C8FD6]/30 text-[#4C8FD6] font-bold text-xs tracking-widest uppercase">
+                The Platform
+              </span>
             </div>
             <h2 className="font-serif text-3xl md:text-5xl font-bold leading-tight mb-6">
               Applied Neuroscience at Scale
             </h2>
-            <p className="text-lg text-slate-300 leading-relaxed mb-10">
+            <p className="text-lg text-slate-300 leading-relaxed mb-6">
               Socratic Metric translates core neuroscientific principles into practical, scalable cognitive verification technology.
             </p>
 
@@ -53,7 +54,7 @@ export function SciencePlatform() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
+              className="mt-8 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
             >
               <p className="text-slate-300 leading-relaxed">
                 Deployed with over <strong className="text-white">3,000 simultaneous users</strong>,
@@ -63,12 +64,12 @@ export function SciencePlatform() {
             </motion.div>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-10 border border-white/10"
+              className="bg-white/10 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/10"
             >
               <h3 className="font-serif text-2xl font-bold mb-4 text-[#F58022]">
                 Accessibility and Implementation

@@ -5,40 +5,35 @@ import { AlertTriangle, Lightbulb } from "lucide-react";
 
 export function ScienceChallengeSolution() {
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-10 md:py-12 relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-[#F8FAFC] rounded-3xl p-8 md:p-12 border border-slate-100"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6">
-              <AlertTriangle className="w-7 h-7" />
-            </div>
-            <h2 className="font-serif text-3xl font-bold text-[#1F2A44] mb-4">The Challenge</h2>
-            <p className="text-[#64748B] text-lg leading-relaxed">
-              Traditional written assessments and static documentation increasingly fail to measure authentic understanding. Generative AI tools can now produce sophisticated, flawless written responses that bypass genuine comprehension entirely, creating a dangerous false assurance of competence. It is nearly impossible to verify whether an individual actually understands the material or simply submitted AI-assisted output. Higher education and high-stakes environments need assessment methods that capture real learning, not linguistic output.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="bg-blue-50 rounded-3xl p-8 md:p-12 border border-blue-100"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-white text-[#3370F7] flex items-center justify-center mb-6 shadow-sm">
-              <Lightbulb className="w-7 h-7" />
-            </div>
-            <h2 className="font-serif text-3xl font-bold text-[#1F2A44] mb-4">The Solution</h2>
-            <p className="text-[#64748B] text-lg leading-relaxed">
-              Socratic Metric solves this by replacing silent written submissions with AI-moderated oral evaluation. This approach is grounded in decades of cognitive neuroscience research demonstrating that oral engagement—reading aloud and speaking answers—produces measurably stronger memory traces, deeper comprehension, and verifiable proof of learning than silent reading alone.
-            </p>
-          </motion.div>
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="mb-6">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-[#EAF1FE] border border-[#3370F7]/20 text-[#3370F7] font-bold text-xs tracking-widest uppercase">
+              The Fundamental Shift
+            </span>
+          </div>
+          <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight mb-6">
+            From Static Output to Verified Cognition
+          </h2>
+          <p className="text-lg text-[#64748B] leading-relaxed">
+            Generative AI has fundamentally broken traditional written assessments. To truly verify comprehension in high-stakes environments, we must move from silent reading to AI-moderated oral evaluation.
+          </p>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/5 border border-slate-100 bg-white"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src="/img/sciencepage/challenge-solution.png" 
+            alt="The Challenge vs The Solution: Moving from static output to verified cognition"
+            className="w-full h-auto block"
+          />
+        </motion.div>
       </div>
     </section>
   );

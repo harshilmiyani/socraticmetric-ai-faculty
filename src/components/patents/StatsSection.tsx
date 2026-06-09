@@ -39,7 +39,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="relative overflow-x-clip bg-gradient-to-b from-white via-[#F8FAFC] to-white py-16 sm:py-20 md:py-28 lg:py-32">
+    <section className="relative overflow-x-clip py-16 sm:py-20 md:py-28 lg:py-32">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-1/2 top-1/2 h-[min(100vw,720px)] w-[min(100vw,720px)] max-w-none -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3370F7]/[0.06] blur-[80px] sm:blur-[100px]" />
         <div className="absolute -right-[30%] top-0 h-[min(55vw,280px)] w-[min(55vw,280px)] rounded-full bg-[#F58022]/[0.07] blur-[70px] sm:-right-[20%] sm:h-[min(45vw,360px)] sm:w-[min(45vw,360px)] sm:blur-[90px] md:-right-[15%] md:h-[400px] md:w-[400px] md:blur-[100px]" />
@@ -48,12 +48,10 @@ export function StatsSection() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-12">
         <div className="mb-10 text-center sm:mb-12 md:mb-14 lg:mb-16">
-          <div className="mb-3 flex flex-wrap items-center justify-center gap-2 sm:mb-4 sm:gap-3 md:gap-4">
-            <div className="hidden h-px min-[360px]:block w-6 shrink-0 bg-[#3370F7] sm:w-10 md:w-12" />
-            <span className="max-w-[min(100%,20rem)] text-center text-[0.65rem] font-bold uppercase leading-snug tracking-[0.12em] text-[#3370F7] min-[360px]:text-xs sm:text-sm sm:tracking-widest">
+          <div className="mb-6">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-[#EAF1FE] border border-[#3370F7]/20 text-[#3370F7] font-bold text-xs tracking-widest uppercase">
               Portfolio snapshot
             </span>
-            <div className="hidden h-px min-[360px]:block w-6 shrink-0 bg-[#3370F7] sm:w-10 md:w-12" />
           </div>
           <h2 className="font-serif text-xl font-bold leading-tight tracking-tight text-[#1F2A44] min-[380px]:text-2xl sm:text-[1.625rem] md:text-3xl lg:text-4xl">
             IP at a glance
@@ -80,7 +78,7 @@ export function StatsSection() {
                 <div
                   className={`pointer-events-none absolute -inset-px rounded-[1.25rem] bg-gradient-to-br opacity-0 blur-[1px] transition-opacity duration-500 [@media(hover:hover)_and_(pointer:fine)]:group-hover:opacity-100 sm:rounded-[1.35rem] ${stat.accent}`}
                 />
-                <div className="relative flex min-h-0 flex-col justify-between gap-5 rounded-2xl border border-slate-100/80 bg-white/90 p-5 text-left shadow-[0_4px_24px_rgba(15,23,42,0.06)] backdrop-blur-sm transition-[transform,box-shadow,border-color] duration-500 min-[480px]:min-h-[200px] sm:rounded-3xl sm:p-6 sm:min-h-[210px] md:gap-6 md:p-8 md:min-h-[220px] [@media(hover:hover)_and_(pointer:fine)]:group-hover:-translate-y-1 [@media(hover:hover)_and_(pointer:fine)]:group-hover:border-slate-200 [@media(hover:hover)_and_(pointer:fine)]:group-hover:shadow-[0_20px_50px_rgba(51,112,247,0.12)] active:scale-[0.99] motion-reduce:transition-none [@media(hover:hover)_and_(pointer:fine)]:motion-reduce:transform-none">
+                <div className="relative flex min-h-0 flex-col justify-between gap-5 rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-md transition-[transform,box-shadow,border-color] duration-500 min-[480px]:min-h-[200px] sm:rounded-3xl sm:p-6 sm:min-h-[210px] md:gap-6 md:p-8 md:min-h-[220px] [@media(hover:hover)_and_(pointer:fine)]:group-hover:-translate-y-1 [@media(hover:hover)_and_(pointer:fine)]:group-hover:border-slate-300 [@media(hover:hover)_and_(pointer:fine)]:group-hover:shadow-lg active:scale-[0.99] motion-reduce:transition-none [@media(hover:hover)_and_(pointer:fine)]:motion-reduce:transform-none">
                   <div className="flex items-start justify-between gap-2 sm:gap-3">
                     <div
                       className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-black/[0.04] shadow-sm transition-transform duration-500 [@media(hover:hover)_and_(pointer:fine)]:group-hover:scale-105 sm:h-12 sm:w-12 sm:rounded-2xl ${stat.iconBg}`}

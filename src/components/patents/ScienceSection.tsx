@@ -27,13 +27,13 @@ export function ScienceSection() {
   ];
 
   return (
-    <section className="bg-white py-20 px-6 md:px-12">
+    <section className="py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto space-y-16">
         <div className="text-center max-w-3xl mx-auto">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-12 bg-[#3370F7]" />
-            <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Core Principles</span>
-            <div className="h-px w-12 bg-[#3370F7]" />
+          <div className="mb-6">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-[#EAF1FE] border border-[#3370F7]/20 text-[#3370F7] font-bold text-xs tracking-widest uppercase">
+              Core Principles
+            </span>
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
             The Science Behind Socratic Metric
@@ -50,7 +50,7 @@ export function ScienceSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-[#F8FAFC] rounded-3xl p-8 md:p-10 border border-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:bg-white flex flex-col items-start min-h-[240px]"
+                className="group bg-white rounded-3xl p-8 md:p-10 border border-blue-100 shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-lg hover:border-blue-200 flex flex-col items-start min-h-[240px]"
               >
                 <div className="w-16 h-16 rounded-2xl bg-[#F58022]/10 text-[#F58022] flex items-center justify-center mb-6 group-hover:bg-[#F58022] group-hover:text-white transition-colors duration-500">
                   <Icon className="w-8 h-8 stroke-[2]" />
