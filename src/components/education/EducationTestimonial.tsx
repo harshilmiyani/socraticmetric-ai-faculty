@@ -1,7 +1,50 @@
 "use client";
 
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import { motion } from "framer-motion";
+
+const testimonials = [
+  {
+    quote:
+      "Socratic Metric empowers students to move beyond surface-level thinking. It's like giving every student a co-pilot for critical thinking—ensuring they don't just submit work, but truly understand and defend their ideas. It has restored the confidence we need in our grading.",
+    name: "Dr. Sarah Mitchell",
+    title: "Professor of Computer Science",
+    org: "State University",
+    initials: "SM",
+    color: "from-[#3370F7] to-[#4C8FD6]",
+    rating: 5,
+  },
+  {
+    quote:
+      "Academic integrity in the AI era cannot be solved with plagiarism detectors. Socratic Metric's oral verification is the only method we've found that reliably measures actual human reasoning at scale.",
+    name: "Dr. Arthur Vance",
+    title: "Director of Honor Systems",
+    org: "Ivy League College",
+    initials: "AV",
+    color: "from-[#F58022] to-[#D16D1A]",
+    rating: 5,
+  },
+  {
+    quote:
+      "My students actually enjoy the conversational nature of Socratic Metric. It reduces traditional exam anxiety while ensuring that they aren't copy-pasting from Large Language Models.",
+    name: "Prof. Elena Rostova",
+    title: "Chair of Humanities",
+    org: "Western Institute",
+    initials: "ER",
+    color: "from-violet-500 to-purple-500",
+    rating: 5,
+  },
+];
+
+function StarRating({ count }: { count: number }) {
+  return (
+    <div className="flex items-center gap-0.5">
+      {Array.from({ length: count }).map((_, i) => (
+        <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+      ))}
+    </div>
+  );
+}
 
 export function EducationTestimonial() {
   return (
@@ -23,40 +66,48 @@ export function EducationTestimonial() {
           </h2>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
-        >
-          <div className="relative rounded-3xl p-6 md:p-10 bg-white border border-slate-200/60 shadow-md shadow-blue-900/5 text-center overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#F58022] to-transparent" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+          {testimonials.map((t, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative flex flex-col bg-white border border-slate-200/60 rounded-3xl p-6 md:p-8 shadow-md shadow-blue-900/5 hover:shadow-lg hover:border-slate-200 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+            >
+              {/* Top accent bar */}
+              <div className={`absolute top-0 inset-x-0 h-[4px] bg-gradient-to-r ${t.color}`} />
 
-            <Quote
-              className="w-12 h-12 text-[#F58022]/20 mx-auto mb-8"
-              strokeWidth={1.5}
-            />
-
-            <blockquote className="font-serif text-2xl md:text-3xl font-medium text-[#1F2A44] leading-relaxed mb-10 relative z-10">
-              &ldquo;Socratic Metric empowers students to move beyond surface-level thinking.
-              It&rsquo;s like giving every student a co-pilot for critical thinking—ensuring they
-              don&rsquo;t just submit work, but truly understand and defend their ideas. It has
-              restored the confidence we need in our grading.&rdquo;
-            </blockquote>
-
-            <div className="flex flex-col items-center justify-center gap-4">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#F58022] to-[#D16D1A] flex items-center justify-center text-white font-bold text-xl shadow-lg ring-4 ring-white">
-                SM
+              {/* Quote icon */}
+              <div className="mb-4">
+                <Quote className="w-8 h-8 text-slate-200 fill-slate-100" />
               </div>
-              <div className="text-center">
-                <div className="font-bold text-lg text-[#1F2A44]">Dr. Sarah Mitchell</div>
-                <div className="text-sm font-medium text-[#64748B] mt-1">
-                  Professor of Computer Science, State University
+
+              {/* Star rating */}
+              <div className="mb-3">
+                <StarRating count={t.rating} />
+              </div>
+
+              {/* Quote text */}
+              <blockquote className="text-[#64748B] text-base leading-relaxed flex-grow italic">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+
+              {/* Author */}
+              <div className="flex items-center gap-3 mt-6 pt-4 border-t border-slate-100 shrink-0">
+                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-white font-bold text-sm shrink-0 shadow-sm`}>
+                  {t.initials}
+                </div>
+                <div className="min-w-0">
+                  <cite className="font-bold text-[#1F2A44] text-sm not-italic block truncate">{t.name}</cite>
+                  <span className="text-slate-400 text-xs block truncate">{t.title}</span>
+                  <span className="text-slate-400 text-xs block truncate font-medium">{t.org}</span>
                 </div>
               </div>
-            </div>
-          </div>
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
