@@ -1,4 +1,4 @@
-import { Inter, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { CookieConsent } from "@/components/ui/CookieConsent";
@@ -9,8 +9,17 @@ import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
 import { rootMetadata } from "@/lib/site-metadata";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
+const quicksand = localFont({
+  src: [
+    {
+      path: "./fonts/Quicksand/Quicksand-VariableFont_wght.ttf",
+      weight: "300 700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-quicksand",
+  display: "swap",
+});
 
 export const metadata = rootMetadata;
 
@@ -22,9 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={cn(
-        "min-h-screen bg-[#F5F5F5] font-sans antialiased selection:bg-[#F58022]/20 selection:text-[#1F2A44]",
-        inter.variable,
-        playfair.variable
+        "min-h-screen bg-[#F5F5F5] antialiased selection:bg-[#F58022]/20 selection:text-[#1F2A44]",
+        quicksand.variable,
+        quicksand.className
       )}>
         <SiteJsonLd />
         {children}

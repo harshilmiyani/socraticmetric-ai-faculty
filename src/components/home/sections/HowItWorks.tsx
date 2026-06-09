@@ -1,24 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 export function HowItWorks() {
-  const [visualIframeHeightPx, setVisualIframeHeightPx] = useState<number | null>(null);
-
-  useEffect(() => {
-    function onMessage(e: MessageEvent) {
-      if (e.origin !== window.location.origin) return;
-      const data = e.data as { type?: string; height?: number } | null;
-      if (data?.type === "sm-home-visual4" && typeof data.height === "number" && data.height > 0) {
-        setVisualIframeHeightPx(Math.min(Math.max(Math.round(data.height), 220), 2400));
-      }
-    }
-    window.addEventListener("message", onMessage);
-    return () => window.removeEventListener("message", onMessage);
-  }, []);
   return (
-    <section id="how-it-works" className="pt-8 pb-8 md:pt-12 md:pb-12 bg-white relative overflow-hidden">
+    <section id="how-it-works" aria-labelledby="how-it-works-heading" className="pt-8 pb-8 md:pt-12 md:pb-12 bg-white relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(245,128,34,0.05)_0%,transparent_70%)] pointer-events-none" />
       
@@ -27,7 +13,7 @@ export function HowItWorks() {
           <span className="inline-block py-1 px-3 rounded-full bg-orange-50 border border-orange-100 text-[#F58022] font-bold text-xs tracking-widest uppercase shadow-sm">
             The Process
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2A44] leading-tight">
+          <h2 id="how-it-works-heading" className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2A44] leading-tight">
             How Socratic Metric Works
           </h2>
           <p className="text-lg text-[#64748B] leading-relaxed max-w-2xl mx-auto">
@@ -42,18 +28,18 @@ export function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="w-full flex justify-center items-center relative"
         >
-          <iframe
-            src="/animation/visual-4-how-it-works.html"
-            className="w-full max-w-[880px] border-0 block bg-transparent"
-            style={{
-              height: visualIframeHeightPx != null ? `${visualIframeHeightPx}px` : undefined,
-              minHeight: visualIframeHeightPx == null ? "min(52vh, 640px)" : undefined,
-            }}
-            title="How SocraticMetric Works"
-            scrolling="no"
+          <img
+            src="/img/homepage/smhome-1.png"
+            alt="How Socratic Metric Works — step-by-step AI oral assessment workflow diagram"
+            width={1000}
+            height={600}
+            loading="lazy"
+            decoding="async"
+            className="w-full max-w-[1000px] h-auto rounded-xl shadow-md border border-slate-100 object-contain"
           />
         </motion.div>
       </div>
     </section>
   );
 }
+
