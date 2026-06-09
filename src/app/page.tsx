@@ -26,7 +26,7 @@ const ValueComparison = dynamic(() => import("@/components/home/sections/ValueCo
 const IndustryShortcuts = dynamic(() => import("@/components/home/sections/IndustryShortcuts").then(mod => mod.IndustryShortcuts));
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F1F5F9] text-[#1F2A44] overflow-x-hidden font-sans">
+    <div className="flex min-h-screen flex-col bg-[#F0F6FF] text-[#1F2A44] overflow-x-hidden font-sans">
       <Navbar />
 
       <main className="flex-1">
@@ -39,11 +39,12 @@ export default function Home() {
         {/* Load Hero immediately for LCP (Largest Contentful Paint) */}
         <HeroSection />
 
+        {/* Lazy load the rest in order */}
+        <IndustryShortcuts />
+
         {/* Logo Cloud — social proof */}
         <LogoClouds />
 
-        {/* Lazy load the rest in order */}
-        <IndustryShortcuts />
         <ValueComparison />
         <ThePlatform />
         <TheProcess />

@@ -81,12 +81,10 @@ export function Testimonials() {
     <section
       id="testimonials"
       aria-labelledby="testimonials-heading"
-      className="py-14 md:py-20 bg-white relative overflow-hidden"
+      className="py-14 md:py-20 relative overflow-hidden"
     >
       {/* Subtle background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#EAF1FE]/40 rounded-full blur-[120px]" />
       </div>
 
@@ -116,8 +114,8 @@ export function Testimonials() {
         {/* Infinite Marquee section */}
         <div className="relative overflow-hidden w-full pb-12 pt-4 -mx-4 px-4 md:-mx-8 md:px-8">
           {/* Fading edges for smooth enter/exit */}
-          <div className="absolute top-0 bottom-0 left-0 w-12 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute top-0 bottom-0 right-0 w-12 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 left-0 w-12 md:w-32 bg-gradient-to-r from-[#F0F6FF] to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-12 md:w-32 bg-gradient-to-l from-[#F0F6FF] to-transparent z-10 pointer-events-none" />
           
           <div
             className="flex gap-6 w-max animate-scroll hover:[animation-play-state:paused]"

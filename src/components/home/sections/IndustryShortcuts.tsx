@@ -65,7 +65,7 @@ export function IndustryShortcuts() {
     <section
       id="solutions"
       aria-labelledby="solutions-heading"
-      className="py-16 md:py-24 bg-[#F1F5F9] relative overflow-hidden"
+      className="py-16 md:py-24 relative overflow-hidden"
     >
       {/* Animated Particle Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">

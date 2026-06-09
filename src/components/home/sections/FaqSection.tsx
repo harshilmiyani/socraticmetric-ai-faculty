@@ -161,13 +161,12 @@ export function FaqSection() {
   return (
     <section
       id="faq"
-      className="relative pt-8 pb-20 md:pt-12 md:pb-32 bg-white overflow-hidden"
+      className="relative pt-8 pb-20 md:pt-12 md:pb-32 overflow-hidden"
       aria-labelledby="faq-heading"
     >
       {/* Decorative Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(51,112,247,0.05)_0%,transparent_50%)]" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">

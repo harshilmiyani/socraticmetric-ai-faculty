@@ -10,7 +10,7 @@ export function ThePlatform() {
     <section
       id="platform"
       aria-labelledby="platform-heading"
-      className="pt-12 pb-6 md:pt-14 md:pb-8 bg-[#F8FAFC] relative overflow-hidden"
+      className="pt-12 pb-6 md:pt-14 md:pb-8 relative overflow-hidden"
     >
       {/* Subtle grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none z-0" />
@@ -51,7 +51,7 @@ export function ThePlatform() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5">
           {/* Card 01: Oral Question Presentation */}
           <WobbleCard
-            containerClassName="col-span-1 lg:col-span-2 h-full bg-blue-50/60 border border-blue-100/50 shadow-sm"
+            containerClassName="col-span-1 lg:col-span-2 h-full bg-indigo-50 border border-indigo-200 shadow-md"
             className="relative flex flex-col justify-center h-full p-6 lg:p-8"
           >
             <div className="max-w-3xl space-y-4 z-10">
@@ -73,7 +73,7 @@ export function ThePlatform() {
 
           {/* Card 02: Adaptive Real-Time Questioning */}
           <WobbleCard
-            containerClassName="col-span-1 bg-orange-50/60 border border-orange-100/50 shadow-sm"
+            containerClassName="col-span-1 bg-orange-50 border border-orange-200 shadow-md"
             className="relative flex flex-col justify-between h-full p-6 lg:p-8"
           >
             <div className="space-y-4 z-10">
@@ -104,7 +104,7 @@ export function ThePlatform() {
 
           {/* Card 03: Iterative Feedback Loop */}
           <WobbleCard
-            containerClassName="col-span-1 bg-sky-50/60 border border-sky-100/50 shadow-sm"
+            containerClassName="col-span-1 bg-sky-50 border border-sky-200 shadow-md"
             className="relative flex flex-col justify-between h-full p-6 lg:p-8"
           >
             <div className="space-y-4 z-10">
@@ -135,7 +135,7 @@ export function ThePlatform() {
 
           {/* Card 04: Identity-Verified Audit Records */}
           <WobbleCard
-            containerClassName="col-span-1 lg:col-span-2 h-full bg-emerald-50/60 border border-emerald-100/50 shadow-sm"
+            containerClassName="col-span-1 lg:col-span-2 h-full bg-emerald-50 border border-emerald-200 shadow-md"
             className="relative flex flex-col justify-center h-full p-6 lg:p-8"
           >
             <div className="max-w-3xl space-y-4 z-10">

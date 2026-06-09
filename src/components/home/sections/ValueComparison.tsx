@@ -41,12 +41,10 @@ export function ValueComparison() {
     <section
       id="value-shift"
       aria-labelledby="value-shift-heading"
-      className="py-14 md:py-20 bg-[#F8FAFC] relative overflow-hidden"
+      className="py-14 md:py-20 relative overflow-hidden"
     >
       {/* Subtle background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#EAF1FE]/50 rounded-full blur-[100px]" />
       </div>
 

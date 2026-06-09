@@ -19,15 +19,12 @@ export function LogoClouds({
     <section
       id="trusted-by"
       aria-label="Trusted by leading organizations"
-      className={cn("py-12 md:py-16 bg-white relative overflow-hidden", className)}
+      className={cn("py-8 md:py-10 relative overflow-hidden", className)}
     >
-      {/* Subtle top/bottom borders */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
 
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-8 space-y-3">
+        <div className="text-center mb-6 space-y-3">
           <span className="inline-block py-1.5 px-4 rounded-full bg-[#EAF1FE] border border-[#3370F7]/20 text-[#3370F7] font-bold text-xs tracking-widest uppercase">
             Trusted By
           </span>

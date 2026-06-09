@@ -22,7 +22,7 @@ export function HeroSection() {
   };
 
   return (
-    <div className="bg-[#F1F5F9] pt-24 pb-8 md:pt-28 md:pb-12 lg:pt-32 lg:pb-16 selection:bg-[#F58022]/20 selection:text-[#1F2A44] overflow-hidden relative">
+    <div className="pt-24 pb-8 md:pt-28 md:pb-12 lg:pt-32 lg:pb-16 selection:bg-[#F58022]/20 selection:text-[#1F2A44] overflow-hidden relative">
       {/* Animated Particle Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Base Grid */}

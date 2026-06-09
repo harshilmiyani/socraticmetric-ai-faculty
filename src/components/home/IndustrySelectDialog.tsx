@@ -91,7 +91,7 @@ export function IndustrySelectDialog() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 40 }}
               transition={{ duration: 0.4, type: "spring", stiffness: 110, damping: 18 }}
-              className="pointer-events-auto w-full sm:max-w-xl md:max-w-2xl bg-white sm:rounded-3xl rounded-t-3xl shadow-2xl shadow-black/25 border border-slate-100 overflow-hidden"
+              className="pointer-events-auto w-full sm:max-w-xl md:max-w-2xl bg-[#F0F6FF] sm:rounded-3xl rounded-t-3xl shadow-2xl shadow-black/25 border border-[#3370F7]/10 overflow-hidden"
             >
               {/* Header */}
               <div className="relative px-5 sm:px-8 pt-5 sm:pt-8 pb-4 sm:pb-6 text-center">
