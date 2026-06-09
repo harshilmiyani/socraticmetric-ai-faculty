@@ -99,13 +99,13 @@ export function EducationWalkthroughVideos() {
   return (
     <section
       id="platform-walkthrough"
-      className="relative overflow-hidden bg-white py-16 md:py-24"
+      className="relative overflow-hidden bg-transparent py-10 md:py-12"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(51,112,247,0.06)_0%,transparent_70%)]" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-12">
-        <div className="mx-auto mb-12 max-w-3xl space-y-4 text-center md:mb-14">
-          <span className="inline-block rounded-full border border-blue-100 bg-[#EAF1FE] px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#3370F7] shadow-sm">
+        <div className="mx-auto mb-8 max-w-3xl space-y-3 text-center">
+          <span className="inline-block rounded-full border border-[#3370F7]/20 bg-[#EAF1FE] px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#3370F7] shadow-sm">
             Platform walkthroughs
           </span>
           <h2 className="font-serif text-2xl font-bold leading-tight text-[#1F2A44] sm:text-3xl md:text-4xl lg:text-[2.65rem]">

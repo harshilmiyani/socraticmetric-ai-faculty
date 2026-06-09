@@ -31,13 +31,13 @@ export function EducationRisk() {
   ];
 
   return (
-    <section className="relative py-20 md:py-32 bg-white overflow-hidden">
+    <section className="relative py-10 md:py-12 bg-transparent overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
-        <div className="text-center mb-16 space-y-4">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-12 bg-[#F58022]" />
-            <span className="text-[#F58022] font-bold text-sm tracking-widest uppercase">The New Risk</span>
-            <div className="h-px w-12 bg-[#F58022]" />
+        <div className="text-center mb-10 space-y-4">
+          <div className="mb-4">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-orange-50 border border-orange-200 text-[#F58022] font-bold text-xs tracking-widest uppercase">
+              The New Risk
+            </span>
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44] leading-tight">
             The False Assurance of Competence in Higher Education
@@ -53,7 +53,7 @@ export function EducationRisk() {
           {risks.map((risk, i) => (
             <div
               key={i}
-              className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center space-y-4"
+              className="bg-white p-8 rounded-3xl border border-slate-200/60 shadow-md shadow-blue-900/5 hover:shadow-lg hover:border-slate-200 transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center space-y-4"
             >
               <div
                 className={`w-16 h-16 flex items-center justify-center rounded-2xl ${risk.bg} transition-transform duration-300`}

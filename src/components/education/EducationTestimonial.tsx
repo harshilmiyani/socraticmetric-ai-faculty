@@ -5,18 +5,18 @@ import { motion } from "framer-motion";
 
 export function EducationTestimonial() {
   return (
-    <section className="relative py-20 md:py-32 bg-[#F0F4F8] overflow-hidden">
+    <section className="relative py-10 md:py-12 bg-transparent overflow-hidden">
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-0 right-0 w-[min(100vw,600px)] h-[min(100vw,600px)] bg-[#3370F7]/10 rounded-full blur-[120px] translate-x-1/4 -translate-y-1/4" />
         <div className="absolute bottom-0 left-0 w-[min(90vw,500px)] h-[min(90vw,500px)] bg-[#F58022]/5 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/4" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-12 bg-[#3370F7]" />
-            <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Voices</span>
-            <div className="h-px w-12 bg-[#3370F7]" />
+        <div className="text-center mb-10">
+          <div className="mb-4">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-[#EAF1FE] border border-[#3370F7]/20 text-[#3370F7] font-bold text-xs tracking-widest uppercase">
+              Voices
+            </span>
           </div>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1F2A44]">
             What Educators are Saying
@@ -29,7 +29,7 @@ export function EducationTestimonial() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <div className="relative rounded-3xl p-8 md:p-16 bg-white border border-slate-100 shadow-xl shadow-[#3370F7]/5 text-center overflow-hidden">
+          <div className="relative rounded-3xl p-6 md:p-10 bg-white border border-slate-200/60 shadow-md shadow-blue-900/5 text-center overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#F58022] to-transparent" />
 
             <Quote
