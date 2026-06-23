@@ -6,7 +6,6 @@ import { EnterpriseHero } from "@/components/enterprise/EnterpriseHero";
 import { EnterpriseRisk } from "@/components/enterprise/EnterpriseRisk";
 import { EnterpriseSolution } from "@/components/enterprise/EnterpriseSolution";
 import { EnterpriseCompliance } from "@/components/enterprise/EnterpriseCompliance";
-import { EnterpriseOutcomes } from "@/components/enterprise/EnterpriseOutcomes";
 import { EnterpriseUseCases } from "@/components/enterprise/EnterpriseUseCases";
 import { EnterpriseTestimonial } from "@/components/enterprise/EnterpriseTestimonial";
 import { ContactSection } from "@/components/home/sections/ContactSection";
@@ -20,7 +19,6 @@ export default function EnterprisePage() {
         <EnterpriseRisk />
         <EnterpriseSolution />
         <EnterpriseCompliance />
-        <EnterpriseOutcomes />
         <EnterpriseUseCases />
         <EnterpriseTestimonial />
         <ContactSection />

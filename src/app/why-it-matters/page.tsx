@@ -5,7 +5,6 @@ import { Footer } from "@/components/layout/Footer";
 import { WhyItMattersHero } from "@/components/why-it-matters/WhyItMattersHero";
 import { VerificationGap } from "@/components/why-it-matters/VerificationGap";
 import { HowPlatformWorks } from "@/components/why-it-matters/HowPlatformWorks";
-import { ProvenResults } from "@/components/why-it-matters/ProvenResults";
 import { WhoNeedsIt } from "@/components/why-it-matters/WhoNeedsIt";
 import { ContactSection } from "@/components/home/sections/ContactSection";
 
@@ -17,7 +16,6 @@ export default function WhyItMattersPage() {
         <WhyItMattersHero />
         <VerificationGap />
         <HowPlatformWorks />
-        <ProvenResults />
         <WhoNeedsIt />
         <ContactSection />
       </main>

@@ -6,7 +6,6 @@ import { GovernmentHero } from "@/components/government/GovernmentHero";
 import { GovernmentRisk } from "@/components/government/GovernmentRisk";
 import { GovernmentSolution } from "@/components/government/GovernmentSolution";
 import { GovernmentCompliance } from "@/components/government/GovernmentCompliance";
-import { GovernmentOutcomes } from "@/components/government/GovernmentOutcomes";
 import { GovernmentUseCases } from "@/components/government/GovernmentUseCases";
 import { GovernmentTestimonial } from "@/components/government/GovernmentTestimonial";
 import { ContactSection } from "@/components/home/sections/ContactSection";
@@ -20,7 +19,6 @@ export default function GovernmentPage() {
         <GovernmentRisk />
         <GovernmentSolution />
         <GovernmentCompliance />
-        <GovernmentOutcomes />
         <GovernmentUseCases />
         <GovernmentTestimonial />
         <ContactSection />
