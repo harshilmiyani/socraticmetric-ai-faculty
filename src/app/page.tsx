@@ -33,7 +33,7 @@ export default function Home() {
         {/* Structured data schemas for rich snippets (FAQ, Video, Software) */}
         <HomeJsonLd />
 
-        {/* Industry selector dialog — shows on every visit */}
+        {/* Industry selector dialog — first homepage visit only */}
         <IndustrySelectDialog />
 
         {/* Load Hero immediately for LCP (Largest Contentful Paint) */}

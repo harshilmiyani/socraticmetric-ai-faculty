@@ -50,21 +50,40 @@ const industries = [
   },
 ];
 
+const STORAGE_KEY = "sm-industry-dialog-seen";
+
 export function IndustrySelectDialog() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
+    try {
+      if (localStorage.getItem(STORAGE_KEY)) return;
+    } catch {
+      // localStorage unavailable — skip dialog
+      return;
+    }
+
     const timer = setTimeout(() => setOpen(true), 700);
     return () => clearTimeout(timer);
   }, []);
 
+  function markSeen() {
+    try {
+      localStorage.setItem(STORAGE_KEY, "1");
+    } catch {
+      // ignore write failures
+    }
+  }
+
   function handleSelect(href: string) {
+    markSeen();
     setOpen(false);
     setTimeout(() => router.push(href), 200);
   }
 
   function handleDismiss() {
+    markSeen();
     setOpen(false);
   }
 
