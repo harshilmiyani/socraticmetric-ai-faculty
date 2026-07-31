@@ -110,7 +110,7 @@ export function HomeJsonLd() {
           name: "Socratic Metric — Evaluate Live Cognition Demo",
           description:
             "See how Socratic Metric's AI-moderated oral assessment platform verifies authentic human understanding in real time. Watch the platform in action for education, enterprise, and government use cases.",
-          thumbnailUrl: `${siteUrl}/img/homepage/homepage-video-1-thubnail.png`,
+          thumbnailUrl: `${siteUrl}/img/homepage/whatissmai.png`,
           uploadDate: "2024-01-01",
           embedUrl: `https://www.youtube.com/embed/B1LGkF_4vHA`,
           contentUrl: `https://www.youtube.com/watch?v=B1LGkF_4vHA`,
