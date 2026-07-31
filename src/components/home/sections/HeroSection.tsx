@@ -9,7 +9,6 @@ import { useState } from "react";
 import { Cover } from "@/components/ui/cover";
 import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
 import { youtubeEmbedSrc } from "@/lib/youtubeEmbed";
-import { ParticleNetwork } from "@/components/home/ParticleNetwork";
 
 export function HeroSection() {
   const YOUTUBE_VIDEO_ID = "B1LGkF_4vHA";
@@ -40,7 +39,6 @@ export function HeroSection() {
         <div className="pointer-events-none absolute left-1/2 top-[-12%] h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[#3370F7]/12 blur-[110px]" />
         <div className="pointer-events-none absolute left-[8%] top-[38%] h-[320px] w-[320px] rounded-full bg-[#F58022]/10 blur-[90px]" />
         <div className="pointer-events-none absolute right-[6%] top-[42%] h-[280px] w-[280px] rounded-full bg-[#4C8FD6]/10 blur-[80px]" />
-        <ParticleNetwork />
       </div>
 
       <div className="container relative z-10 mx-auto px-6 md:px-12">
