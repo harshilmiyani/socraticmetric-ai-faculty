@@ -75,7 +75,7 @@ export function HeroSection() {
               className="mt-5 max-w-2xl text-lg font-medium leading-relaxed text-[#64748B] sm:mt-6 sm:text-xl md:text-2xl"
             >
               Where True Understanding Is{" "}
-              <Cover className="mt-1">Spoken, Not Submitted.</Cover>
+              <Cover className="mt-1">Spoken, Not Just Submitted.</Cover>
             </motion.div>
 
             <motion.div

@@ -23,7 +23,7 @@ const LogoClouds = dynamic(() => import("@/components/home/sections/LogoClouds")
 const FaqSection = dynamic(() => import("@/components/home/sections/FaqSection").then(mod => mod.FaqSection));
 const ContactSection = dynamic(() => import("@/components/home/sections/ContactSection").then(mod => mod.ContactSection));
 const ValueComparison = dynamic(() => import("@/components/home/sections/ValueComparison").then(mod => mod.ValueComparison));
-const IndustryShortcuts = dynamic(() => import("@/components/home/sections/IndustryShortcuts").then(mod => mod.IndustryShortcuts));
+// const IndustryShortcuts = dynamic(() => import("@/components/home/sections/IndustryShortcuts").then(mod => mod.IndustryShortcuts));
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-[#F0F6FF] text-[#1F2A44] overflow-x-hidden font-sans">
@@ -40,7 +40,8 @@ export default function Home() {
         <HeroSection />
 
         {/* Lazy load the rest in order */}
-        <IndustryShortcuts />
+        {/* Built for Every Sector — temporarily hidden */}
+        {/* <IndustryShortcuts /> */}
 
         {/* Logo Cloud — social proof */}
         <LogoClouds />

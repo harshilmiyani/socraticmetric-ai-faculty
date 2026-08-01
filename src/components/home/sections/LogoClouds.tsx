@@ -35,13 +35,13 @@ export function LogoClouds({
 
         {/* Center Logo Presentation */}
         <div className="flex justify-center items-center">
-          <div className="bg-slate-50/50 hover:bg-slate-50/80 border border-slate-100/80 hover:border-slate-200/60 rounded-2xl py-6 px-12 transition-all duration-300 hover:shadow-md hover:shadow-blue-500/5 group">
+          <div className="rounded-2xl border border-slate-100/80 bg-slate-50/50 px-12 py-6">
             <Image
               src={logos[0].src}
               alt={logos[0].name}
               width={logos[0].width}
               height={logos[0].height}
-              className="h-12 md:h-16 w-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-300 grayscale group-hover:grayscale-0"
+              className="h-12 w-auto object-contain md:h-16"
             />
           </div>
         </div>
