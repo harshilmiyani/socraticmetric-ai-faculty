@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function HomeMission() {
   return (
@@ -111,6 +112,16 @@ export function HomeMission() {
                 </p>
               </div>
             </div>
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <Link
+              href="/request-demo"
+              className="group inline-flex h-14 items-center justify-center rounded-lg bg-[#F58022] px-8 text-base font-medium text-white shadow-md shadow-orange-200 transition-all duration-200 hover:bg-[#D16D1A] hover:shadow-lg hover:shadow-orange-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.98]"
+            >
+              Request a Demo
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
         </motion.div>
       </div>
