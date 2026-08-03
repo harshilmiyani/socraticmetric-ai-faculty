@@ -19,7 +19,7 @@ export function LogoClouds({
     <section
       id="trusted-by"
       aria-label="Trusted by leading organizations"
-      className={cn("py-8 md:py-10 relative overflow-hidden", className)}
+      className={cn("pt-4 pb-8 md:pt-6 md:pb-10 relative overflow-hidden", className)}
     >
 
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">

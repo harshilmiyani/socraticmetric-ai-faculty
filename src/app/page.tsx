@@ -23,6 +23,8 @@ const LogoClouds = dynamic(() => import("@/components/home/sections/LogoClouds")
 const FaqSection = dynamic(() => import("@/components/home/sections/FaqSection").then(mod => mod.FaqSection));
 const ContactSection = dynamic(() => import("@/components/home/sections/ContactSection").then(mod => mod.ContactSection));
 const ValueComparison = dynamic(() => import("@/components/home/sections/ValueComparison").then(mod => mod.ValueComparison));
+const HowItWorks = dynamic(() => import("@/components/home/sections/HowItWorks").then(mod => mod.HowItWorks));
+const HomePullQuote = dynamic(() => import("@/components/home/sections/HomePullQuote").then(mod => mod.HomePullQuote));
 // const IndustryShortcuts = dynamic(() => import("@/components/home/sections/IndustryShortcuts").then(mod => mod.IndustryShortcuts));
 export default function Home() {
   return (
@@ -39,16 +41,24 @@ export default function Home() {
         {/* Load Hero immediately for LCP (Largest Contentful Paint) */}
         <HeroSection />
 
+        {/* How It Works — linked from hero "See How It Works" (#how-it-works) */}
+        <HowItWorks />
+
         {/* Lazy load the rest in order */}
         {/* Built for Every Sector — temporarily hidden */}
         {/* <IndustryShortcuts /> */}
 
+        {/* Highlight Quote */}
+        <HomePullQuote />
+
         {/* Logo Cloud — social proof */}
         <LogoClouds />
 
-        <ValueComparison />
-        <ThePlatform />
-        <TheProcess />
+        {/* Temporarily hidden sections */}
+        {/* <ValueComparison /> */}
+        {/* <ThePlatform /> */}
+        {/* <TheProcess /> */}
+        
         <Testimonials />
         <FaqSection />
         <ContactSection />
