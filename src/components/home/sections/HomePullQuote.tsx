@@ -4,8 +4,13 @@ import { motion } from "framer-motion";
 
 export function HomePullQuote() {
   return (
-    <section className="relative z-10 px-6 pt-12 pb-4 md:pt-16 md:pb-6">
-      <div className="container mx-auto max-w-4xl">
+    <section className="relative z-10 px-6 pt-12 pb-4 md:pt-16 md:pb-6 overflow-hidden">
+      {/* Ambient background accent */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div className="absolute left-1/2 top-1/2 h-[320px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3370F7]/6 blur-[100px]" />
+      </div>
+
+      <div className="container relative mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +26,7 @@ export function HomePullQuote() {
             >
               &ldquo;
             </span>
-            <div className="mt-4 w-[2px] flex-1 rounded-full bg-[#3370F7] opacity-80" />
+            <div className="mt-4 w-[2px] flex-1 rounded-full bg-gradient-to-b from-[#3370F7] via-[#3370F7]/70 to-[#3370F7]/10" />
           </div>
 
           {/* Quote text */}

@@ -258,7 +258,7 @@ export function Navbar() {
               href={REQUEST_DEMO_BOOKING_HREF}
               className="group inline-flex h-10 w-max items-center justify-center rounded-full bg-[#3370F7] px-6 py-2 text-sm font-bold text-white shadow-md shadow-[#3370F7]/20 transition-all duration-300 hover:bg-[#4C8FD6] hover:shadow-lg hover:shadow-[#3370F7]/40 hover:-translate-y-0.5 active:scale-95"
             >
-              Request a Demo
+              Book a demo
             </Link>
           </div>
         )}
@@ -362,7 +362,7 @@ export function Navbar() {
                       onClick={() => setMobileMenuOpen(false)}
                       className="flex w-full h-12 items-center justify-center rounded-full bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all duration-300 hover:bg-[#4C8FD6] hover:shadow-xl hover:shadow-[#3370F7]/50 active:scale-95"
                     >
-                      Request a Demo
+                      Book a demo
                     </Link>
                   </div>
                 </div>

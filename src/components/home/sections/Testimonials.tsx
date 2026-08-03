@@ -164,6 +164,10 @@ export function Testimonials() {
 
         {/* Carousel Container */}
         <div className="relative -mx-6 px-6 md:-mx-12 md:px-12">
+          {/* Edge fades */}
+          <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-6 bg-gradient-to-r from-[#F0F6FF] to-transparent md:w-16" />
+          <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-6 bg-gradient-to-l from-[#F0F6FF] to-transparent md:w-16" />
+
           <div
             ref={scrollRef}
             onPointerDown={handlePointerDown}

@@ -43,7 +43,7 @@ export function ContactSection() {
               href={REQUEST_DEMO_BOOKING_HREF}
               className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-[#3370F7] transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.6)] hover:scale-105 active:scale-95"
             >
-              Get a demo
+              Book a demo
             </Link>
           </div>
         </motion.div>

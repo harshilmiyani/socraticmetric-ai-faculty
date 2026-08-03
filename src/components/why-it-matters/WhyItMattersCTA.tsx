@@ -28,7 +28,7 @@ export function WhyItMattersCTA() {
               href={REQUEST_DEMO_BOOKING_HREF}
               className="inline-flex h-14 items-center justify-center rounded-lg bg-[#F58022] px-10 text-lg font-bold text-white shadow-xl shadow-orange-500/20 transition-all hover:scale-105 hover:bg-[#D16D1A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2"
             >
-              Request a Demo
+              Book a demo
             </Link>
           </div>
         </motion.div>

@@ -39,7 +39,7 @@ export default function NotFound() {
             </Link>
             <Link href="/request-demo">
               <Button variant="outline" size="lg" className="gap-2 text-base">
-                Request a Demo
+                Book a demo
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>

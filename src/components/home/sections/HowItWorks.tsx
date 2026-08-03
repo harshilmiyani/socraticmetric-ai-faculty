@@ -7,7 +7,9 @@ import {
   Mic,
   LayoutDashboard,
   CheckCircle2,
+  ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const steps = [
   {
@@ -139,13 +141,13 @@ export function HowItWorks() {
           </div>
         </div>
 
-        {/* Bottom trust indicator */}
+        {/* Bottom trust indicator & CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-10 flex justify-center md:mt-14"
+          className="mt-10 flex flex-col items-center justify-center gap-6 md:mt-14 md:flex-row md:gap-8"
         >
           <div className="inline-flex items-center gap-3 rounded-full border border-slate-200/60 bg-white px-5 py-2.5 shadow-sm">
             <CheckCircle2 className="h-5 w-5 text-emerald-500" strokeWidth={2.5} />
@@ -153,6 +155,14 @@ export function HowItWorks() {
               Seamless LMS Integration Available
             </span>
           </div>
+
+          <Link
+            href="/education"
+            className="group flex items-center justify-center gap-2 rounded-full border border-[#3370F7]/20 bg-white px-6 py-2.5 text-sm font-semibold text-[#1F2A44] shadow-sm transition-all hover:border-[#3370F7] hover:bg-[#F0F6FF] hover:text-[#3370F7] hover:shadow-md active:scale-95"
+          >
+            Learn more about education solutions
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2.5} />
+          </Link>
         </motion.div>
       </div>
     </section>
