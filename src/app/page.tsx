@@ -25,6 +25,7 @@ const ContactSection = dynamic(() => import("@/components/home/sections/ContactS
 const ValueComparison = dynamic(() => import("@/components/home/sections/ValueComparison").then(mod => mod.ValueComparison));
 const HowItWorks = dynamic(() => import("@/components/home/sections/HowItWorks").then(mod => mod.HowItWorks));
 const HomePullQuote = dynamic(() => import("@/components/home/sections/HomePullQuote").then(mod => mod.HomePullQuote));
+const HomeMission = dynamic(() => import("@/components/home/sections/HomeMission").then(mod => mod.HomeMission));
 // const IndustryShortcuts = dynamic(() => import("@/components/home/sections/IndustryShortcuts").then(mod => mod.IndustryShortcuts));
 export default function Home() {
   return (
@@ -53,6 +54,9 @@ export default function Home() {
 
         {/* Logo Cloud — social proof */}
         <LogoClouds />
+
+        {/* Mission Statement */}
+        <HomeMission />
 
         {/* Temporarily hidden sections */}
         {/* <ValueComparison /> */}
