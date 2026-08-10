@@ -186,35 +186,41 @@ export function Testimonials() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 key={idx}
-                className="group relative flex w-[280px] shrink-0 snap-center snap-always flex-col overflow-hidden rounded-[20px] border border-slate-200/60 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-slate-200/80 sm:w-[320px]"
+                className="group relative flex w-[280px] shrink-0 snap-center snap-always flex-col sm:w-[320px]"
               >
-                {/* Accent Top Line */}
-                <div
-                  className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r opacity-80 transition-opacity group-hover:opacity-100 ${t.color}`}
-                />
+                {/* Speech bubble */}
+                <div className="relative flex flex-1 flex-col rounded-3xl rounded-bl-md bg-white p-6 shadow-[0_4px_20px_rgb(0,0,0,0.05)] ring-1 ring-slate-900/5 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_16px_40px_rgb(0,0,0,0.10)]">
+                  {/* Large decorative quote mark */}
+                  <Quote
+                    className={`absolute -top-3 right-6 h-8 w-8 rotate-180 rounded-full bg-gradient-to-br p-1.5 text-white shadow-md ${t.color}`}
+                    strokeWidth={0}
+                    fill="currentColor"
+                  />
 
-                {/* Rating & Icon */}
-                <div className="mb-4 flex items-center justify-between">
                   <StarRating count={t.rating} />
-                  <Quote className="h-6 w-6 text-slate-100 transition-colors group-hover:text-slate-200" />
+
+                  <p className="mt-4 flex-1 text-[14px] font-medium leading-relaxed text-slate-600 sm:text-[15px]">
+                    {t.quote}
+                  </p>
+
+                  {/* Bubble tail */}
+                  <span
+                    className="absolute -bottom-2 left-8 h-4 w-4 rotate-45 rounded-sm bg-white ring-1 ring-slate-900/5 [clip-path:polygon(0_100%,100%_100%,100%_0)]"
+                    aria-hidden
+                  />
                 </div>
 
-                {/* Quote Text */}
-                <p className="flex-1 text-[14px] font-medium leading-relaxed text-slate-600 sm:text-[15px]">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-
-                {/* Author Info */}
-                <div className="mt-6 flex items-center gap-3 pt-5 border-t border-slate-100">
-                  <div
-                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br text-xs font-bold text-white shadow-sm ${t.color}`}
-                  >
-                    {t.initials}
+                {/* Author outside the bubble */}
+                <div className="mt-5 flex items-center gap-3 pl-5">
+                  <div className={`rounded-full bg-gradient-to-br p-[2px] ${t.color}`}>
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-xs font-bold text-[#1F2A44]">
+                      {t.initials}
+                    </div>
                   </div>
                   <div className="min-w-0">
                     <p className="truncate text-sm font-bold text-[#1F2A44]">{t.name}</p>
-                    <p className="truncate text-[11px] font-semibold tracking-wide text-slate-400 uppercase">
-                      {t.title}
+                    <p className="truncate text-xs font-medium text-slate-400">
+                      {t.title} · {t.org}
                     </p>
                   </div>
                 </div>

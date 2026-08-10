@@ -158,10 +158,17 @@ export function HowItWorks() {
 
           <Link
             href="/education"
-            className="group flex items-center justify-center gap-2 rounded-full border border-[#3370F7]/20 bg-white px-6 py-2.5 text-sm font-semibold text-[#1F2A44] shadow-sm transition-all hover:border-[#3370F7] hover:bg-[#F0F6FF] hover:text-[#3370F7] hover:shadow-md active:scale-95"
+            className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#3370F7] to-[#4C8FD6] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#3370F7]/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#3370F7]/40 active:scale-95"
           >
-            Learn more about education solutions
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2.5} />
+            {/* Shine sweep on hover */}
+            <span
+              className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+              aria-hidden
+            />
+            <span className="relative">Learn more about education solutions</span>
+            <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-all duration-300 group-hover:bg-white group-hover:text-[#3370F7]">
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={2.5} />
+            </span>
           </Link>
         </motion.div>
       </div>

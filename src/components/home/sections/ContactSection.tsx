@@ -1,49 +1,58 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 import { motion } from "framer-motion";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="relative py-24 md:py-32 bg-[#1F2A44] text-left overflow-hidden">
-      <BackgroundBeams />
-      
+    <section id="contact" className="relative overflow-hidden bg-[#101728] py-24 md:py-36">
       {/* Subtle ambient glows */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A44] via-transparent to-[#1F2A44]/80 pointer-events-none z-0" />
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#3370F7]/15 rounded-full blur-[120px] pointer-events-none z-0" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#F58022]/10 rounded-full blur-[100px] pointer-events-none z-0" />
+      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
+        <div className="absolute -left-[15%] top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#3370F7]/10 blur-[130px]" />
+        <div className="absolute -right-[10%] bottom-0 h-[400px] w-[400px] rounded-full bg-[#F58022]/6 blur-[120px]" />
+      </div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
-        <motion.div 
+      <div className="container relative z-10 mx-auto px-6 md:px-12">
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 p-8 sm:p-12 md:p-16 rounded-[2rem] bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)] relative overflow-hidden"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-12 md:flex-row md:items-center md:gap-16"
         >
-          {/* Subtle top edge highlight */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50" />
-
-          {/* Left Text */}
-          <div className="flex-1 space-y-4">
-            <h2 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
-              Ready to verify true <br className="hidden lg:block" />
-              understanding?
+          {/* Left: headline + supporting copy */}
+          <div className="max-w-xl">
+            <h2 className="font-serif text-4xl font-medium leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+              Start with one
+              <br />
+              session.
+              <br />
+              <em className="font-serif italic text-[#8FB0F5]">
+                See the proof for yourself.
+              </em>
             </h2>
-            <p className="text-slate-400 text-lg md:text-xl font-medium">
-              Stop relying on documents. Start evaluating live cognition.
+
+            <p className="mt-8 max-w-md text-[15px] leading-relaxed text-slate-400 sm:text-base">
+              Whether you&apos;re assessing students, employees, or personnel,
+              most organizations begin with a single pilot. We handle the
+              questioning, capture, and evaluation — you keep full control over
+              standards, rubrics, and final decisions.
             </p>
           </div>
 
-          {/* Right Button */}
-          <div className="shrink-0 w-full md:w-auto flex justify-start md:justify-end">
+          {/* Right: CTA button */}
+          <div className="w-full shrink-0 md:w-auto">
             <Link
               href={REQUEST_DEMO_BOOKING_HREF}
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-[#3370F7] transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:shadow-[0_0_50px_rgba(255,255,255,0.6)] hover:scale-105 active:scale-95"
+              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#3370F7] px-7 py-3.5 text-[15px] font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4C8FD6] hover:shadow-xl hover:shadow-[#3370F7]/40 active:scale-95"
             >
               Book a demo
+              <ArrowRight
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                strokeWidth={2.5}
+              />
             </Link>
           </div>
         </motion.div>

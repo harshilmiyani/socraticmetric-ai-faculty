@@ -26,6 +26,7 @@ const ValueComparison = dynamic(() => import("@/components/home/sections/ValueCo
 const HowItWorks = dynamic(() => import("@/components/home/sections/HowItWorks").then(mod => mod.HowItWorks));
 const HomePullQuote = dynamic(() => import("@/components/home/sections/HomePullQuote").then(mod => mod.HomePullQuote));
 const HomeMission = dynamic(() => import("@/components/home/sections/HomeMission").then(mod => mod.HomeMission));
+const HomePatents = dynamic(() => import("@/components/home/sections/HomePatents").then(mod => mod.HomePatents));
 // const IndustryShortcuts = dynamic(() => import("@/components/home/sections/IndustryShortcuts").then(mod => mod.IndustryShortcuts));
 export default function Home() {
   return (
@@ -57,6 +58,9 @@ export default function Home() {
 
         {/* Mission Statement */}
         <HomeMission />
+
+        {/* Patents — issued US patents showcase */}
+        <HomePatents />
 
         {/* Temporarily hidden sections */}
         {/* <ValueComparison /> */}
