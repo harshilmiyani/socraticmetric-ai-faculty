@@ -67,7 +67,6 @@ const navItems: NavItem[] = [
   { label: "Why it matters", href: "/why-it-matters" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
-  { label: "Patents", href: "/patents" },
 ];
 
 function SolutionsMenuItem({ item }: { item: NavItem }) {

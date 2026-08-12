@@ -17,7 +17,6 @@ const STATIC_ROUTES: Array<{
   { path: "/government", changeFrequency: "monthly", priority: 0.85 },
   { path: "/science", changeFrequency: "monthly", priority: 0.85 },
   { path: "/why-it-matters", changeFrequency: "monthly", priority: 0.85 },
-  { path: "/patents", changeFrequency: "monthly", priority: 0.8 },
   { path: "/request-demo", changeFrequency: "monthly", priority: 0.9 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.85 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },

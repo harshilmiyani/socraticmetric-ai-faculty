@@ -1,12 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Award,
   FileText,
   Calendar,
-  ArrowRight,
   ShieldCheck,
   Globe2,
   CalendarRange,
@@ -216,13 +214,13 @@ export function HomePatents() {
               ))}
             </div>
 
-            {/* Bottom CTA */}
+            {/* Bottom trust badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-10 flex flex-col items-center justify-center gap-6 md:mt-12 md:flex-row md:gap-8"
+              className="mt-10 flex justify-center md:mt-12"
             >
               <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.06] px-5 py-2.5 backdrop-blur-md">
                 <ShieldCheck className="h-5 w-5 text-emerald-300" strokeWidth={2.5} />
@@ -230,20 +228,6 @@ export function HomePatents() {
                   Proprietary Oral Verification Technology
                 </span>
               </div>
-
-              <Link
-                href="/patents"
-                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#3370F7] to-[#4C8FD6] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#3370F7]/40 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#3370F7]/50 active:scale-95"
-              >
-                <span
-                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
-                  aria-hidden
-                />
-                <span className="relative">Explore the science &amp; IP</span>
-                <span className="relative flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-all duration-300 group-hover:bg-white group-hover:text-[#3370F7]">
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={2.5} />
-                </span>
-              </Link>
             </motion.div>
           </div>
         </div>
