@@ -20,7 +20,8 @@ const steps = [
     icon: Settings2,
     accent: "from-blue-500 to-[#3370F7]",
     shadow: "shadow-blue-500/20",
-    bg: "bg-blue-50/50",
+    ring: "hover:ring-blue-200",
+    numColor: "text-blue-500",
   },
   {
     number: "02",
@@ -30,7 +31,8 @@ const steps = [
     icon: Share2,
     accent: "from-indigo-500 to-indigo-600",
     shadow: "shadow-indigo-500/20",
-    bg: "bg-indigo-50/50",
+    ring: "hover:ring-indigo-200",
+    numColor: "text-indigo-500",
   },
   {
     number: "03",
@@ -40,7 +42,8 @@ const steps = [
     icon: Mic,
     accent: "from-orange-400 to-[#F58022]",
     shadow: "shadow-orange-500/20",
-    bg: "bg-orange-50/50",
+    ring: "hover:ring-orange-200",
+    numColor: "text-[#F58022]",
   },
   {
     number: "04",
@@ -50,7 +53,8 @@ const steps = [
     icon: LayoutDashboard,
     accent: "from-emerald-500 to-emerald-600",
     shadow: "shadow-emerald-500/20",
-    bg: "bg-emerald-50/50",
+    ring: "hover:ring-emerald-200",
+    numColor: "text-emerald-500",
   },
 ];
 
@@ -59,13 +63,18 @@ export function HowItWorks() {
     <section
       id="how-it-works"
       aria-labelledby="how-it-works-heading"
-      className="relative scroll-mt-24 overflow-hidden bg-[#F8FAFC] py-12 md:scroll-mt-28 md:py-16 lg:py-20"
+      className="relative scroll-mt-24 overflow-hidden py-12 md:scroll-mt-28 md:py-16 lg:py-20"
     >
-      {/* Decorative background elements */}
+      {/* Light aurora background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-        <div className="absolute -left-[10%] top-[20%] h-[600px] w-[600px] rounded-full bg-[#3370F7]/5 blur-[120px]" />
-        <div className="absolute -right-[10%] bottom-[10%] h-[600px] w-[600px] rounded-full bg-[#F58022]/5 blur-[120px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+        {/* Soft vertical wash from white into the page tint */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F6FAFF] to-[#EFF5FF]" />
+        {/* Aurora color washes */}
+        <div className="absolute -top-[20%] left-[8%] h-[520px] w-[680px] rotate-[-12deg] rounded-full bg-gradient-to-r from-[#3370F7]/10 via-[#4C8FD6]/6 to-transparent blur-[90px]" />
+        <div className="absolute -bottom-[25%] right-[5%] h-[480px] w-[640px] rotate-[10deg] rounded-full bg-gradient-to-l from-[#F58022]/9 via-[#FFB347]/5 to-transparent blur-[90px]" />
+        <div className="absolute left-1/2 top-[30%] h-[380px] w-[380px] -translate-x-1/2 rounded-full bg-[#8FB0F5]/8 blur-[100px]" />
+        {/* Dotted texture */}
+        <div className="absolute inset-0 bg-[radial-gradient(#3370F71a_1px,transparent_1px)] bg-[size:22px_22px] [mask-image:radial-gradient(ellipse_65%_55%_at_50%_45%,#000_50%,transparent_100%)]" />
       </div>
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
@@ -95,8 +104,17 @@ export function HowItWorks() {
         </motion.div>
 
         <div className="relative">
-          {/* Connection line for desktop */}
-          <div className="absolute left-[50px] top-[52px] hidden h-0.5 w-[calc(100%-100px)] bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 lg:block" />
+          {/* Dashed connection line for desktop */}
+          <div
+            className="absolute left-[50px] top-[52px] hidden h-px w-[calc(100%-100px)] lg:block"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, #94a3b8 40%, transparent 40%)",
+              backgroundSize: "12px 1px",
+              backgroundRepeat: "repeat-x",
+            }}
+            aria-hidden
+          />
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8">
             {steps.map((step, index) => {
@@ -110,17 +128,27 @@ export function HowItWorks() {
                   transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
                   className="group relative"
                 >
-                  <div className={`relative z-10 flex h-full flex-col overflow-hidden rounded-[2rem] border border-white bg-white/60 p-8 shadow-lg shadow-slate-200/50 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200 ${step.bg}`}>
-                    {/* Top Section with Icon and Number */}
-                    <div className="mb-8 flex items-start justify-between">
-                      <div
-                        className={`relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${step.accent} text-white shadow-lg ${step.shadow} transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}
-                      >
-                        <span className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                        <Icon className="relative z-10 h-7 w-7" strokeWidth={2} />
+                  <div
+                    className={`relative z-10 flex h-full flex-col rounded-[1.75rem] bg-white p-8 shadow-[0_2px_12px_rgb(15,23,42,0.04),0_12px_32px_-12px_rgb(15,23,42,0.08)] ring-1 ring-slate-900/5 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_4px_16px_rgb(15,23,42,0.05),0_24px_48px_-12px_rgb(15,23,42,0.14)] hover:ring-2 ${step.ring}`}
+                  >
+                    {/* Top Section with Icon and Step pill */}
+                    <div className="mb-7 flex items-start justify-between">
+                      <div className="relative">
+                        {/* Icon glow */}
+                        <div
+                          className={`absolute -inset-2 rounded-3xl bg-gradient-to-br opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-30 ${step.accent}`}
+                          aria-hidden
+                        />
+                        <div
+                          className={`relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${step.accent} text-white shadow-lg ${step.shadow} transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}
+                        >
+                          <Icon className="h-7 w-7" strokeWidth={2} />
+                        </div>
                       </div>
-                      <span className="font-serif text-5xl font-bold tracking-tighter text-[#1F2A44]/5 transition-colors duration-500 group-hover:text-[#1F2A44]/10">
-                        {step.number}
+                      <span
+                        className={`rounded-full bg-slate-50 px-3 py-1 font-mono text-[11px] font-bold tracking-widest ring-1 ring-slate-100 transition-colors duration-300 ${step.numColor}`}
+                      >
+                        STEP {step.number}
                       </span>
                     </div>
 
@@ -131,9 +159,6 @@ export function HowItWorks() {
                     <p className="flex-1 text-[15px] font-medium leading-relaxed text-[#64748B]">
                       {step.description}
                     </p>
-
-                    {/* Decorative bottom fade */}
-                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   </div>
                 </motion.div>
               );
