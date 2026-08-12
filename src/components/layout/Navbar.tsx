@@ -78,7 +78,7 @@ function SolutionsMenuItem({ item }: { item: NavItem }) {
 
   return (
     <NavigationMenuItem>
-      <NavigationMenuTrigger className="bg-transparent px-4 py-2 h-9 rounded-full text-sm font-semibold text-[#85756F] hover:text-[#3370F7] hover:bg-[#EAF1FE]/80 data-[state=open]:bg-[#EAF1FE]/80 data-[state=open]:text-[#3370F7] data-[active]:bg-transparent transition-all duration-300">
+      <NavigationMenuTrigger className="bg-transparent px-4 py-2 h-9 rounded-full text-sm font-semibold text-[#3D4A63] hover:text-[#3370F7] hover:bg-[#EAF1FE]/80 data-[state=open]:bg-[#EAF1FE]/80 data-[state=open]:text-[#3370F7] data-[active]:bg-transparent transition-all duration-300">
         {item.label}
       </NavigationMenuTrigger>
       <NavigationMenuContent>
@@ -93,7 +93,7 @@ function SolutionsMenuItem({ item }: { item: NavItem }) {
                       href={child.href}
                       className={cn(
                         "flex items-center gap-3 rounded-xl p-3 leading-none no-underline outline-none transition-all duration-300",
-                        hoveredIndex === idx ? "bg-[#EAF1FE]/80 text-[#3370F7] shadow-sm" : "text-[#85756F] hover:bg-[#EAF1FE]/50 hover:text-[#3370F7]"
+                        hoveredIndex === idx ? "bg-[#EAF1FE]/80 text-[#3370F7] shadow-sm" : "text-[#3D4A63] hover:bg-[#EAF1FE]/50 hover:text-[#3370F7]"
                       )}
                     >
                       {Icon && <Icon className="h-5 w-5" />}
@@ -218,7 +218,7 @@ export function Navbar() {
                   <NavigationMenuItem key={item.label}>
                     {item.children ? (
                       <>
-                        <NavigationMenuTrigger className="bg-transparent px-4 py-2 h-9 rounded-full text-sm font-semibold text-[#85756F] hover:text-[#3370F7] hover:bg-[#EAF1FE]/80 data-[state=open]:bg-[#EAF1FE]/80 data-[state=open]:text-[#3370F7] data-[active]:bg-transparent transition-all duration-300">
+                        <NavigationMenuTrigger className="bg-transparent px-4 py-2 h-9 rounded-full text-sm font-semibold text-[#3D4A63] hover:text-[#3370F7] hover:bg-[#EAF1FE]/80 data-[state=open]:bg-[#EAF1FE]/80 data-[state=open]:text-[#3370F7] data-[active]:bg-transparent transition-all duration-300">
                           {item.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
@@ -228,7 +228,7 @@ export function Navbar() {
                                 <NavigationMenuLink asChild>
                                     <Link
                                       href={child.href}
-                                      className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-[#EAF1FE]/50 hover:text-[#3370F7] text-[#85756F] text-sm font-medium"
+                                      className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-[#EAF1FE]/50 hover:text-[#3370F7] text-[#3D4A63] text-sm font-medium"
                                     >
                                     {child.label}
                                   </Link>
@@ -240,7 +240,7 @@ export function Navbar() {
                       </>
                     ) : (
                       <NavigationMenuLink asChild>
-                        <Link href={item.href} className="group inline-flex h-9 w-max items-center justify-center rounded-full bg-transparent px-4 py-2 text-sm font-semibold text-[#85756F] transition-all duration-300 hover:bg-[#EAF1FE]/80 hover:text-[#3370F7] focus:outline-none disabled:pointer-events-none disabled:opacity-50">
+                        <Link href={item.href} className="group inline-flex h-9 w-max items-center justify-center rounded-full bg-transparent px-4 py-2 text-sm font-semibold text-[#3D4A63] transition-all duration-300 hover:bg-[#EAF1FE]/80 hover:text-[#3370F7] focus:outline-none disabled:pointer-events-none disabled:opacity-50">
                           {item.label}
                         </Link>
                       </NavigationMenuLink>
