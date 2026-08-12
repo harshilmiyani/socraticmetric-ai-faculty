@@ -3,6 +3,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import { ChatbaseWidget } from "@/components/chatbot/ChatbaseWidget";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
@@ -36,6 +37,7 @@ export default function RootLayout({
       )}>
         <SiteJsonLd />
         {children}
+        <LoadingScreen />
         <ScrollToTop />
         <CookieConsent />
         <ChatbaseWidget />

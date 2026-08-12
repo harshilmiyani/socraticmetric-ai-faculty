@@ -64,8 +64,7 @@ export function IndustrySelectDialog() {
       return;
     }
 
-    // Wait a bit so the dialog doesn't compete with initial render/hydration on mobile
-    const timer = setTimeout(() => setOpen(true), 2500);
+    const timer = setTimeout(() => setOpen(true), 700);
     return () => clearTimeout(timer);
   }, []);
 
