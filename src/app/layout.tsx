@@ -3,7 +3,6 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
-import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import { ChatbaseWidget } from "@/components/chatbot/ChatbaseWidget";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
@@ -12,7 +11,7 @@ import { rootMetadata } from "@/lib/site-metadata";
 const quicksand = localFont({
   src: [
     {
-      path: "./fonts/Quicksand/Quicksand-VariableFont_wght.ttf",
+      path: "./fonts/Quicksand/Quicksand-VariableFont_wght.woff2",
       weight: "300 700",
       style: "normal",
     },
@@ -37,7 +36,6 @@ export default function RootLayout({
       )}>
         <SiteJsonLd />
         {children}
-        <LoadingScreen />
         <ScrollToTop />
         <CookieConsent />
         <ChatbaseWidget />
