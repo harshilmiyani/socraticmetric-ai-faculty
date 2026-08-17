@@ -25,10 +25,14 @@ export const SparklesCore = ({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Skip on mobile — sparkles are a hover effect, not useful on touch
+    if (window.innerWidth < 768) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let animationFrameId: number;
+    let isVisible = true;
     let particles: Array<{
       x: number;
       y: number;
@@ -39,9 +43,23 @@ export const SparklesCore = ({
       opacitySpeed: number;
     }> = [];
 
+    // Pause when off-screen
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animationFrameId) animate();
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
+
+    const isTablet = window.innerWidth < 1024;
+
     const initParticles = () => {
       particles = [];
-      const density = Math.floor((canvas.width * canvas.height) / 10000) * (particleDensity / 50);
+      const baseDensity = Math.floor((canvas.width * canvas.height) / 10000) * (particleDensity / 50);
+      // Reduce on tablet, cap max particles
+      const density = Math.min(isTablet ? Math.floor(baseDensity * 0.4) : baseDensity, 60);
       
       for (let i = 0; i < density; i++) {
         particles.push({
@@ -69,26 +87,27 @@ export const SparklesCore = ({
     window.addEventListener("resize", handleResize);
 
     const animate = () => {
+      if (!isVisible) {
+        animationFrameId = 0;
+        return;
+      }
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       particles.forEach((p) => {
-        // Move
         p.y += p.speedY;
         p.x += p.speedX;
         
-        // Twinkle (oscillate opacity)
         p.opacity += p.opacitySpeed;
         if (p.opacity >= 1 || p.opacity <= 0.1) {
           p.opacitySpeed = -p.opacitySpeed;
         }
 
-        // Wrap around edges
         if (p.y < 0) p.y = canvas.height;
         if (p.y > canvas.height) p.y = 0;
         if (p.x < 0) p.x = canvas.width;
         if (p.x > canvas.width) p.x = 0;
 
-        // Draw
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `${particleColor}${Math.floor(p.opacity * 255).toString(16).padStart(2, '0')}`;
@@ -103,6 +122,7 @@ export const SparklesCore = ({
     return () => {
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
     };
   }, [maxSize, minSize, particleColor, particleDensity]);
 

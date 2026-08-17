@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useId, useState } from "react";
+import React, { useEffect, useId, useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useRef } from "react";
 import { cn } from "@/lib/utils";
 import { SparklesCore } from "@/components/ui/sparkles";
 
@@ -18,8 +17,10 @@ export const Cover = ({
 
   const [containerWidth, setContainerWidth] = useState(0);
   const [beamPositions, setBeamPositions] = useState<number[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
     if (ref.current) {
       setContainerWidth(ref.current?.clientWidth ?? 0);
 
@@ -70,7 +71,7 @@ export const Cover = ({
                 background="transparent"
                 minSize={0.4}
                 maxSize={1.5}
-                particleDensity={500}
+                particleDensity={150}
                 className="w-full h-full"
                 particleColor="#F58022"
               />
@@ -78,7 +79,7 @@ export const Cover = ({
                 background="transparent"
                 minSize={0.4}
                 maxSize={1.5}
-                particleDensity={500}
+                particleDensity={150}
                 className="w-full h-full"
                 particleColor="#3370F7"
               />
@@ -86,7 +87,7 @@ export const Cover = ({
           </motion.div>
         )}
       </AnimatePresence>
-      {beamPositions.map((position, index) => (
+      {!isMobile && beamPositions.map((position, index) => (
         <Beam
           key={index}
           hovered={hovered}

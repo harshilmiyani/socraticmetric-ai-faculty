@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface Particle {
   x: number;
@@ -13,8 +13,14 @@ interface Particle {
 
 export function ParticleNetwork() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Disable entirely on mobile — saves significant CPU/GPU
+    const mobile = window.innerWidth < 768;
+    setIsMobile(mobile);
+    if (mobile) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -23,16 +29,27 @@ export function ParticleNetwork() {
 
     let particles: Particle[] = [];
     let animationFrameId: number;
+    let isVisible = true;
 
     const colors = ["#3370F7", "#4C8FD6", "#F58022", "#94a3b8"];
-    const connectionDistance = 150;
+    const isTablet = window.innerWidth < 1024;
+    const connectionDistance = isTablet ? 100 : 150;
     const mouseConnectionDistance = 200;
     
     // Track mouse position
     let mouse = { x: -1000, y: -1000 };
 
+    // Pause when off-screen to save resources
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animationFrameId) draw();
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
+
     const resize = () => {
-      // Get parent container dimensions
       const parent = canvas.parentElement;
       if (parent) {
         canvas.width = parent.clientWidth;
@@ -46,41 +63,46 @@ export function ParticleNetwork() {
 
     const initParticles = () => {
       particles = [];
-      const particleCount = Math.floor((canvas.width * canvas.height) / 15000); // Responsive count
+      // Reduce particles on tablet; desktop keeps original density
+      const divisor = isTablet ? 25000 : 15000;
+      const particleCount = Math.min(
+        Math.floor((canvas.width * canvas.height) / divisor),
+        isTablet ? 40 : 80
+      );
       
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.8, // Slow movement
+          vx: (Math.random() - 0.5) * 0.8,
           vy: (Math.random() - 0.5) * 0.8,
-          radius: Math.random() * 2 + 1, // 1 to 3
+          radius: Math.random() * 2 + 1,
           color: colors[Math.floor(Math.random() * colors.length)],
         });
       }
     };
 
     const draw = () => {
+      if (!isVisible) {
+        animationFrameId = 0;
+        return;
+      }
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Update and draw particles
       particles.forEach((p, index) => {
-        // Move
         p.x += p.vx;
         p.y += p.vy;
 
-        // Bounce off edges
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-        // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.globalAlpha = 0.6;
         ctx.fill();
 
-        // Connect particles
         for (let j = index + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dx = p.x - p2.x;
@@ -91,16 +113,14 @@ export function ParticleNetwork() {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            // Opacity based on distance
             const opacity = 1 - distance / connectionDistance;
-            // Use a subtle grey-blue for connections
             ctx.strokeStyle = `rgba(148, 163, 184, ${opacity * 0.2})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
 
-        // Connect to mouse
+        // Mouse connections (desktop only — no hover on touch devices)
         const dxMouse = p.x - mouse.x;
         const dyMouse = p.y - mouse.y;
         const distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
@@ -110,7 +130,7 @@ export function ParticleNetwork() {
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(mouse.x, mouse.y);
           const opacity = 1 - distanceMouse / mouseConnectionDistance;
-          ctx.strokeStyle = `rgba(51, 112, 247, ${opacity * 0.4})`; // Use primary blue for mouse connections
+          ctx.strokeStyle = `rgba(51, 112, 247, ${opacity * 0.4})`;
           ctx.lineWidth = 1.5;
           ctx.stroke();
         }
@@ -119,12 +139,10 @@ export function ParticleNetwork() {
       animationFrameId = requestAnimationFrame(draw);
     };
 
-    // Event Listeners
     window.addEventListener("resize", resize);
     
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
-      // Only track if mouse is within or near the hero section
       if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
         mouse = {
           x: e.clientX - rect.left,
@@ -142,7 +160,6 @@ export function ParticleNetwork() {
     window.addEventListener("mousemove", handleMouseMove);
     document.body.addEventListener("mouseleave", handleMouseLeave);
 
-    // Initial setup
     resize();
     draw();
 
@@ -151,8 +168,12 @@ export function ParticleNetwork() {
       window.removeEventListener("mousemove", handleMouseMove);
       document.body.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
     };
   }, []);
+
+  // Don't render canvas at all on mobile
+  if (isMobile) return null;
 
   return (
     <canvas

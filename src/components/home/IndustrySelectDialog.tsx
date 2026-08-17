@@ -98,7 +98,7 @@ export function IndustrySelectDialog() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[100] bg-[#0a0f1e]/60 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] bg-[#0a0f1e]/70"
             onClick={handleDismiss}
           />
 

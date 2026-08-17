@@ -179,8 +179,8 @@ export function Navbar() {
           "relative z-50 flex items-center justify-between transition-all duration-500",
           useSolidNav
             ? cn(
-                "w-full max-w-6xl rounded-full border border-white/70 bg-white/85 px-5 py-2.5 shadow-[0_8px_32px_rgb(15,23,42,0.08)] ring-1 ring-black/[0.06] backdrop-blur-xl sm:px-6 sm:py-3",
-                blogArticle && "bg-white/92 shadow-[0_12px_40px_rgb(15,23,42,0.12)] ring-black/[0.08]",
+                "w-full max-w-6xl rounded-full border border-white/70 bg-white px-5 py-2.5 shadow-[0_8px_32px_rgb(15,23,42,0.08)] ring-1 ring-black/[0.06] md:bg-white/85 md:backdrop-blur-xl sm:px-6 sm:py-3",
+                blogArticle && "md:bg-white/92 shadow-[0_12px_40px_rgb(15,23,42,0.12)] ring-black/[0.08]",
               )
             : "w-full max-w-full rounded-none border-b border-transparent bg-white/0 px-6 py-6 md:px-12",
         )}
@@ -280,7 +280,7 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="fixed inset-x-4 top-[88px] z-50 bg-white/90 backdrop-blur-2xl md:hidden flex flex-col border border-white/50 ring-1 ring-white/50 shadow-2xl rounded-3xl max-h-[calc(100vh-110px)] overflow-hidden"
+              className="fixed inset-x-4 top-[88px] z-50 bg-white md:hidden flex flex-col border border-slate-200 ring-1 ring-white/50 shadow-2xl rounded-3xl max-h-[calc(100vh-110px)] overflow-hidden"
             >
               <div className="p-6 md:p-8 space-y-4 max-w-sm mx-auto w-full overflow-y-auto flex-1 pb-8">
                 {navItems.map((item) => (
@@ -354,7 +354,7 @@ export function Navbar() {
               ))}
               </div>
               {!hideRequestDemoNavCta && (
-                <div className="p-6 md:p-8 pt-4 bg-white/80 backdrop-blur-lg border-t border-white/50 shrink-0 z-10 w-full">
+                <div className="p-6 md:p-8 pt-4 bg-white border-t border-slate-100 shrink-0 z-10 w-full">
                   <div className="max-w-sm mx-auto">
                     <Link
                       href={REQUEST_DEMO_BOOKING_HREF}

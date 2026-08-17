@@ -13,12 +13,26 @@ export const BackgroundBeams = ({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Skip entirely on mobile
+    if (window.innerWidth < 768) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let animationFrameId: number;
+    let isVisible = true;
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
+
+    // Pause when off-screen
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animationFrameId) render();
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
 
     const resize = () => {
       width = canvas.width = window.innerWidth;
@@ -26,9 +40,11 @@ export const BackgroundBeams = ({
     };
     window.addEventListener("resize", resize);
 
+    const isTablet = window.innerWidth < 1024;
+    const particleCount = isTablet ? 20 : 50;
     const particles: { x: number; y: number; speed: number; length: number; opacity: number }[] = [];
     
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
@@ -39,9 +55,13 @@ export const BackgroundBeams = ({
     }
 
     const render = () => {
+      if (!isVisible) {
+        animationFrameId = 0;
+        return;
+      }
+
       ctx.clearRect(0, 0, width, height);
 
-      // Add gradient base
       const gradient = ctx.createLinearGradient(0, 0, width, height);
       gradient.addColorStop(0, "rgba(51, 112, 247, 0.05)");
       gradient.addColorStop(1, "rgba(245, 128, 34, 0.05)");
@@ -78,6 +98,7 @@ export const BackgroundBeams = ({
     return () => {
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
     };
   }, []);
 

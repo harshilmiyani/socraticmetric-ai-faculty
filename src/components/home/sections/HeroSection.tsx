@@ -86,7 +86,7 @@ export function HeroSection() {
                 href={REQUEST_DEMO_BOOKING_HREF}
                 className="group relative inline-flex h-14 w-full min-w-[220px] items-center justify-center overflow-hidden rounded-full p-[2px] font-bold text-white shadow-xl shadow-[#3370F7]/30 outline-none ring-1 ring-[#3370F7]/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#3370F7]/50 active:scale-95 sm:w-auto"
               >
-                <span className="absolute inset-[-1000%] animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)]" />
+                <span className="absolute inset-[-1000%] hidden md:block animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#EAF1FE_0%,#3370F7_50%,#EAF1FE_100%)]" />
                 <span className="relative inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-[#3370F7] px-8 text-base font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#3370F7] group-hover:to-[#4C8FD6]">
                   Book a demo
                   <ArrowRight

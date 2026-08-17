@@ -136,7 +136,7 @@ export function HomePatents() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                    className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.09] sm:p-5"
+                    className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-4 md:backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.09] sm:p-5"
                   >
                     <div
                       className={`pointer-events-none absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r opacity-50 transition-opacity group-hover:opacity-100 ${stat.accent}`}
@@ -172,7 +172,7 @@ export function HomePatents() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.08] hover:shadow-xl hover:shadow-black/20 sm:p-7"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.05] p-6 md:backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.08] hover:shadow-xl hover:shadow-black/20 sm:p-7"
                 >
                   {/* Accent top line */}
                   <div
@@ -222,7 +222,7 @@ export function HomePatents() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="mt-10 flex justify-center md:mt-12"
             >
-              <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.06] px-5 py-2.5 backdrop-blur-md">
+              <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.06] px-5 py-2.5 md:backdrop-blur-md">
                 <ShieldCheck className="h-5 w-5 text-emerald-300" strokeWidth={2.5} />
                 <span className="text-sm font-semibold text-white">
                   Proprietary Oral Verification Technology
