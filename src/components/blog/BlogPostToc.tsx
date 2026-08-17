@@ -154,6 +154,7 @@ export function BlogPostToc({ items }: { items: TocEntry[] }) {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-controls={panelId}
+        aria-label="Toggle table of contents"
         className={cn(
           "fixed z-[65] flex items-center gap-2 rounded-full border border-[#3370F7]/25 bg-[#1F2A44] px-3 py-2.5 text-left text-[10px] font-bold uppercase tracking-[0.12em] text-white shadow-lg shadow-[#1F2A44]/25 ring-2 ring-white/10 transition-transform hover:scale-[1.02] hover:bg-[#252f4d] active:scale-[0.98] sm:px-4 sm:py-3 sm:text-[11px]",
           "left-[max(0.75rem,env(safe-area-inset-left,0px))] bottom-[max(1.25rem,env(safe-area-inset-bottom,0px))] sm:left-5 sm:bottom-8 lg:left-6",

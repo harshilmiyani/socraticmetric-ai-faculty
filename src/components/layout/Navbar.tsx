@@ -186,7 +186,7 @@ export function Navbar() {
         )}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group mr-8">
+        <Link href="/" className="flex items-center gap-2 group mr-8" aria-label="SocraticMetric Home">
           <Image 
             src="/img/logos/sm_nav_logo.svg" 
             alt="SocraticMetric" 
@@ -199,8 +199,11 @@ export function Navbar() {
         
         {/* Mobile Menu Toggle */}
         <button 
+          type="button"
           className="md:hidden p-2 text-[#85756F] hover:text-[#F58022]"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <X /> : <Menu />}
         </button>
@@ -302,8 +305,11 @@ export function Navbar() {
                     </Link>
                     {item.children && (
                       <button 
+                        type="button"
                         onClick={() => toggleMobileExpand(item.label)}
                         className="p-2 text-[#85756F] hover:text-[#3370F7] bg-[#F5F5F5] hover:bg-[#EAF1FE] rounded-full transition-colors"
+                        aria-label={`Toggle ${item.label} submenu`}
+                        aria-expanded={mobileExpanded === item.label}
                       >
                         <ChevronDown className={cn("w-5 h-5 transition-transform", mobileExpanded === item.label ? "rotate-180" : "")} />
                       </button>

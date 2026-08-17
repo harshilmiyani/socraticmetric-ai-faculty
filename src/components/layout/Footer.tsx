@@ -27,7 +27,7 @@ export function Footer() {
           
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-8 pr-0 lg:pr-8">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block" aria-label="SocraticMetric Home">
               <Image 
                 src="/img/logos/sm_nav_logo.svg" 
                 alt="SocraticMetric" 
@@ -36,24 +36,30 @@ export function Footer() {
                 className="w-auto h-10 sm:h-12"
               />
             </Link>
-            <p className="text-base text-[#85756F] leading-relaxed font-medium max-w-sm">
+            <p className="text-base text-slate-600 leading-relaxed font-medium max-w-sm">
               Verifying authentic comprehension beyond AI-written submissions. Prove they know it. Not the document. Them.
             </p>
             
             <div className="space-y-4 pt-2">
-              <div className="flex items-center gap-3 text-sm text-[#85756F]">
-                <MapPin className="w-4 h-4 text-[#3370F7]" />
+              <div className="flex items-center gap-3 text-sm text-slate-600">
+                <MapPin className="w-4 h-4 text-[#3370F7]" aria-hidden="true" />
                 <span>San Francisco, CA</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-[#85756F]">
-                <Mail className="w-4 h-4 text-[#3370F7]" />
-                <a href="mailto:support@socraticmetric.ai" className="hover:text-[#3370F7] transition-colors">support@socraticmetric.ai</a>
+              <div className="flex items-center gap-3 text-sm text-slate-600">
+                <Mail className="w-4 h-4 text-[#3370F7]" aria-hidden="true" />
+                <a href="mailto:support@socraticmetric.ai" className="hover:text-[#3370F7] transition-colors font-medium">support@socraticmetric.ai</a>
               </div>
             </div>
 
             <div className="flex gap-4 pt-4">
-               <a href="https://www.linkedin.com/company/socratic-metric/" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-[#3370F7] hover:text-white hover:border-[#3370F7] transition-all duration-300 shadow-sm hover:shadow-md">
-                  <Linkedin className="w-4 h-4" />
+               <a 
+                 href="https://www.linkedin.com/company/socratic-metric/" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 aria-label="SocraticMetric on LinkedIn"
+                 className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-[#3370F7] hover:text-white hover:border-[#3370F7] transition-all duration-300 shadow-sm hover:shadow-md"
+               >
+                  <Linkedin className="w-4 h-4" aria-hidden="true" />
                </a>
             </div>
           </div>
@@ -95,7 +101,7 @@ export function Footer() {
         </div>
         
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-slate-200/60 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-[#85756F] font-medium">
+        <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-600 font-medium">
           <p>&copy; {new Date().getFullYear()} Socratic Metric. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             <Link href="/privacy" className="hover:text-[#1F2A44] transition-colors">Privacy Policy</Link>

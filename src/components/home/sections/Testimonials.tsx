@@ -138,7 +138,7 @@ export function Testimonials() {
                 Demand Real Proof
               </span>
             </h2>
-            <p className="text-base leading-relaxed text-slate-500 md:text-lg">
+            <p className="text-base leading-relaxed text-slate-600 md:text-lg">
               Hear from educators, compliance leaders, and government directors who replaced guesswork with verified understanding.
             </p>
           </motion.div>
@@ -219,7 +219,7 @@ export function Testimonials() {
                   </div>
                   <div className="min-w-0">
                     <p className="truncate text-sm font-bold text-[#1F2A44]">{t.name}</p>
-                    <p className="truncate text-xs font-medium text-slate-400">
+                    <p className="truncate text-xs font-medium text-slate-500">
                       {t.title} · {t.org}
                     </p>
                   </div>
@@ -232,14 +232,18 @@ export function Testimonials() {
         {/* Mobile Navigation Buttons (visible only on small screens) */}
         <div className="mt-6 flex justify-center gap-3 md:hidden">
           <button
+            type="button"
             onClick={() => scroll("left")}
             className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm active:scale-95"
+            aria-label="Previous testimonials"
           >
             <ChevronLeft className="h-5 w-5 transition-transform group-hover:-translate-x-0.5" />
           </button>
           <button
+            type="button"
             onClick={() => scroll("right")}
             className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm active:scale-95"
+            aria-label="Next testimonials"
           >
             <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
           </button>

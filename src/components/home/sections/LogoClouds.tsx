@@ -32,7 +32,7 @@ export function LogoClouds({
             </span>
             <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#3370F7]/40" />
           </div>
-          <p className="text-slate-500 text-base md:text-lg font-medium max-w-lg mx-auto">
+          <p className="text-slate-600 text-base md:text-lg font-medium max-w-lg mx-auto">
             Partnering with institutions that demand verified understanding.
           </p>
         </div>
@@ -45,6 +45,7 @@ export function LogoClouds({
               alt={logos[0].name}
               width={logos[0].width}
               height={logos[0].height}
+              sizes="(max-width: 768px) 180px, 220px"
               className="h-12 w-auto object-contain md:h-16"
             />
           </div>

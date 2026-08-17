@@ -98,7 +98,7 @@ export function HowItWorks() {
           >
             How It Works
           </h2>
-          <p className="mt-6 text-lg font-medium leading-relaxed text-[#64748B] sm:text-xl">
+          <p className="mt-6 text-lg font-medium leading-relaxed text-slate-600 sm:text-xl">
             From assignment setup to audit-ready review—four steps to verify authentic understanding.
           </p>
         </motion.div>
@@ -156,7 +156,7 @@ export function HowItWorks() {
                     <h3 className="mb-3 text-xl font-bold leading-tight text-[#1F2A44] transition-colors duration-300 group-hover:text-[#3370F7]">
                       {step.title}
                     </h3>
-                    <p className="flex-1 text-[15px] font-medium leading-relaxed text-[#64748B]">
+                    <p className="flex-1 text-[15px] font-medium leading-relaxed text-slate-600">
                       {step.description}
                     </p>
                   </div>

@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: "https",
@@ -17,7 +18,7 @@ const nextConfig: NextConfig = {
   },
   transpilePackages: ["lucide-react", "sanity", "next-sanity"],
   experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion', '@fancyapps/ui'],
+    optimizePackageImports: ['lucide-react', 'framer-motion', '@fancyapps/ui', '@radix-ui/react-navigation-menu'],
   },
 };
 

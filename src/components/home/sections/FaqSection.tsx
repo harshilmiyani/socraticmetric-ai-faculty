@@ -245,69 +245,68 @@ export function FaqSection() {
                 </h3>
               </div>
 
-              <ul className="divide-y divide-slate-100">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={industry}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {items.map((item, index) => {
-                      const isOpen = openIndex === index;
-                      return (
-                        <li key={`${industry}-${index}`} className="py-2">
-                          <button
-                            type="button"
-                            onClick={() => toggle(index)}
-                            className="flex w-full items-start justify-between gap-6 py-4 text-left group"
-                            aria-expanded={isOpen}
-                          >
-                            <span className={cn(
-                              "flex-1 font-bold text-base sm:text-lg leading-snug transition-colors duration-200",
-                              isOpen ? "text-[#3370F7]" : "text-[#1F2A44] group-hover:text-[#3370F7]"
-                            )}>
-                              {item.question}
-                            </span>
-                            <span
-                              className={cn(
-                                "mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300",
-                                isOpen
-                                  ? "bg-[#EAF1FE] text-[#3370F7] rotate-180"
-                                  : "bg-slate-50 text-slate-400 group-hover:bg-[#EAF1FE] group-hover:text-[#3370F7]"
-                              )}
-                              aria-hidden
-                            >
-                              {isOpen ? (
-                                <Minus className="h-4 w-4" strokeWidth={2.5} />
-                              ) : (
-                                <Plus className="h-4 w-4" strokeWidth={2.5} />
-                              )}
-                            </span>
-                          </button>
-
-                          <AnimatePresence initial={false}>
-                            {isOpen && (
-                              <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                                className="overflow-hidden"
-                              >
-                                <p className="pb-6 pr-12 text-[#64748B] text-base leading-relaxed">
-                                  {item.answer}
-                                </p>
-                              </motion.div>
+              <AnimatePresence mode="wait">
+                <motion.ul
+                  key={industry}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="divide-y divide-slate-100"
+                >
+                  {items.map((item, index) => {
+                    const isOpen = openIndex === index;
+                    return (
+                      <li key={`${industry}-${index}`} className="py-2">
+                        <button
+                          type="button"
+                          onClick={() => toggle(index)}
+                          className="flex w-full items-start justify-between gap-6 py-4 text-left group"
+                          aria-expanded={isOpen}
+                        >
+                          <span className={cn(
+                            "flex-1 font-bold text-base sm:text-lg leading-snug transition-colors duration-200",
+                            isOpen ? "text-[#3370F7]" : "text-[#1F2A44] group-hover:text-[#3370F7]"
+                          )}>
+                            {item.question}
+                          </span>
+                          <span
+                            className={cn(
+                              "mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300",
+                              isOpen
+                                ? "bg-[#EAF1FE] text-[#3370F7] rotate-180"
+                                : "bg-slate-50 text-slate-400 group-hover:bg-[#EAF1FE] group-hover:text-[#3370F7]"
                             )}
-                          </AnimatePresence>
-                        </li>
-                      );
-                    })}
-                  </motion.div>
-                </AnimatePresence>
-              </ul>
+                            aria-hidden
+                          >
+                            {isOpen ? (
+                              <Minus className="h-4 w-4" strokeWidth={2.5} />
+                            ) : (
+                              <Plus className="h-4 w-4" strokeWidth={2.5} />
+                            )}
+                          </span>
+                        </button>
+
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                              className="overflow-hidden"
+                            >
+                              <p className="pb-6 pr-12 text-[#64748B] text-base leading-relaxed">
+                                {item.answer}
+                              </p>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </li>
+                    );
+                  })}
+                </motion.ul>
+              </AnimatePresence>
             </div>
           </div>
           
