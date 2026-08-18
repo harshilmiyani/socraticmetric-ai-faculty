@@ -2,7 +2,8 @@ import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/sections/HeroSection";
-import { IndustrySelectDialog } from "@/components/home/IndustrySelectDialog";
+// Temporarily disabled — re-enable for first-visit industry selector popup
+// import { IndustrySelectDialog } from "@/components/home/IndustrySelectDialog";
 import { createPageMetadata } from "@/lib/site-metadata";
 import { HomeJsonLd } from "@/components/seo/HomeJsonLd";
 
@@ -46,7 +47,7 @@ export default function Home() {
 
       <main className="flex-1">
         <HomeJsonLd />
-        <IndustrySelectDialog />
+        {/* <IndustrySelectDialog /> */}
         <HeroSection />
         <HowItWorks />
         <HomePullQuote />
