@@ -10,9 +10,9 @@ export function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time or wait for window load
+    // Allow animation to play smoothly while unlocking page interactivity
     const handleLoad = () => {
-      setTimeout(() => setIsLoading(false), 1500); // Allow animation to play for a bit
+      setTimeout(() => setIsLoading(false), 950);
     };
 
     if (document.readyState === "complete") {
@@ -22,8 +22,8 @@ export function LoadingScreen() {
       return () => window.removeEventListener("load", handleLoad);
     }
     
-    // Fallback timer just in case
-    const timer = setTimeout(() => setIsLoading(false), 3000);
+    // Fallback timer
+    const timer = setTimeout(() => setIsLoading(false), 2200);
     return () => clearTimeout(timer);
   }, []);
 
@@ -33,7 +33,7 @@ export function LoadingScreen() {
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#F1F5F9] overflow-hidden"
           >
             {/* Ambient Background Glows */}
@@ -47,7 +47,7 @@ export function LoadingScreen() {
               initial={{ scale: 0.9, opacity: 0, y: 10 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: -10 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col items-center gap-6 relative z-10"
             >
               <div className="relative flex items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-3xl bg-white/60 backdrop-blur-xl shadow-2xl shadow-[#3370F7]/10 border border-white/80 ring-1 ring-black/[0.02]">
@@ -70,7 +70,7 @@ export function LoadingScreen() {
                     className="h-full bg-gradient-to-r from-[#3370F7] to-[#4C8FD6] rounded-full"
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
-                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    transition={{ duration: 1.0, ease: "easeInOut" }}
                   />
                 </div>
               </div>

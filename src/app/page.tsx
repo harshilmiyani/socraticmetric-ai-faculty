@@ -14,59 +14,45 @@ export const metadata = createPageMetadata({
   absoluteTitle: true,
 });
 
-// Lazy load components that are not in the initial viewport
-const ThePlatform = dynamic(() => import("@/components/home/sections/ThePlatform").then(mod => mod.ThePlatform));
-const TheProcess = dynamic(() => import("@/components/home/sections/TheProcess").then(mod => mod.TheProcess));
-const Testimonials = dynamic(() => import("@/components/home/sections/Testimonials").then(mod => mod.Testimonials));
-const LogoClouds = dynamic(() => import("@/components/home/sections/LogoClouds").then(mod => mod.LogoClouds));
+const Testimonials = dynamic(() =>
+  import("@/components/home/sections/Testimonials").then((mod) => mod.Testimonials),
+);
+const LogoClouds = dynamic(() =>
+  import("@/components/home/sections/LogoClouds").then((mod) => mod.LogoClouds),
+);
+const FaqSection = dynamic(() =>
+  import("@/components/home/sections/FaqSection").then((mod) => mod.FaqSection),
+);
+const ContactSection = dynamic(() =>
+  import("@/components/home/sections/ContactSection").then((mod) => mod.ContactSection),
+);
+const HowItWorks = dynamic(() =>
+  import("@/components/home/sections/HowItWorks").then((mod) => mod.HowItWorks),
+);
+const HomePullQuote = dynamic(() =>
+  import("@/components/home/sections/HomePullQuote").then((mod) => mod.HomePullQuote),
+);
+const HomeMission = dynamic(() =>
+  import("@/components/home/sections/HomeMission").then((mod) => mod.HomeMission),
+);
+const HomePatents = dynamic(() =>
+  import("@/components/home/sections/HomePatents").then((mod) => mod.HomePatents),
+);
 
-const FaqSection = dynamic(() => import("@/components/home/sections/FaqSection").then(mod => mod.FaqSection));
-const ContactSection = dynamic(() => import("@/components/home/sections/ContactSection").then(mod => mod.ContactSection));
-const ValueComparison = dynamic(() => import("@/components/home/sections/ValueComparison").then(mod => mod.ValueComparison));
-const HowItWorks = dynamic(() => import("@/components/home/sections/HowItWorks").then(mod => mod.HowItWorks));
-const HomePullQuote = dynamic(() => import("@/components/home/sections/HomePullQuote").then(mod => mod.HomePullQuote));
-const HomeMission = dynamic(() => import("@/components/home/sections/HomeMission").then(mod => mod.HomeMission));
-const HomePatents = dynamic(() => import("@/components/home/sections/HomePatents").then(mod => mod.HomePatents));
-// const IndustryShortcuts = dynamic(() => import("@/components/home/sections/IndustryShortcuts").then(mod => mod.IndustryShortcuts));
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-[#F0F6FF] text-[#1F2A44] overflow-x-hidden font-sans">
       <Navbar />
 
       <main className="flex-1">
-        {/* Structured data schemas for rich snippets (FAQ, Video, Software) */}
         <HomeJsonLd />
-
-        {/* Industry selector dialog — first homepage visit only */}
         <IndustrySelectDialog />
-
-        {/* Load Hero immediately for LCP (Largest Contentful Paint) */}
         <HeroSection />
-
-        {/* How It Works — linked from hero "See How It Works" (#how-it-works) */}
         <HowItWorks />
-
-        {/* Lazy load the rest in order */}
-        {/* Built for Every Sector — temporarily hidden */}
-        {/* <IndustryShortcuts /> */}
-
-        {/* Highlight Quote */}
         <HomePullQuote />
-
-        {/* Logo Cloud — social proof */}
         <LogoClouds />
-
-        {/* Mission Statement */}
         <HomeMission />
-
-        {/* Patents — issued US patents showcase */}
         <HomePatents />
-
-        {/* Temporarily hidden sections */}
-        {/* <ValueComparison /> */}
-        {/* <ThePlatform /> */}
-        {/* <TheProcess /> */}
-        
         <Testimonials />
         <FaqSection />
         <ContactSection />

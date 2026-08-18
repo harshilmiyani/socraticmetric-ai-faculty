@@ -66,16 +66,16 @@ export function Footer() {
           
           {/* Links Columns */}
           <div className="lg:col-span-2">
-            <h4 className="font-bold text-[#1F2A44] mb-6 text-sm tracking-widest uppercase">Product</h4>
-            <ul className="space-y-4 text-sm text-[#85756F] font-medium">
+            <p className="font-bold text-[#1F2A44] mb-6 text-sm tracking-widest uppercase">Product</p>
+            <ul className="space-y-4 text-sm text-slate-600 font-medium">
               <li><Link href="/#how-it-works" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Platform</Link></li>
               <li><Link href="/science" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Science</Link></li>
             </ul>
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="font-bold text-[#1F2A44] mb-6 text-sm tracking-widest uppercase">Solutions</h4>
-            <ul className="space-y-4 text-sm text-[#85756F] font-medium">
+            <p className="font-bold text-[#1F2A44] mb-6 text-sm tracking-widest uppercase">Solutions</p>
+            <ul className="space-y-4 text-sm text-slate-600 font-medium">
               <li><Link href="/education" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Higher Education</Link></li>
               <li><Link href="/enterprise" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Enterprise</Link></li>
               <li><Link href="/government" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Government</Link></li>
@@ -83,16 +83,16 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="font-bold text-[#1F2A44] mb-6 text-sm tracking-widest uppercase">Resources</h4>
-            <ul className="space-y-4 text-sm text-[#85756F] font-medium">
+            <p className="font-bold text-[#1F2A44] mb-6 text-sm tracking-widest uppercase">Resources</p>
+            <ul className="space-y-4 text-sm text-slate-600 font-medium">
               <li><Link href="/blog" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Blog & Insights</Link></li>
               <li><Link href="#contact" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Support</Link></li>
             </ul>
           </div>
           
            <div className="lg:col-span-2">
-            <h4 className="font-bold text-[#1F2A44] mb-6 text-sm tracking-widest uppercase">Company</h4>
-            <ul className="space-y-4 text-sm text-[#85756F] font-medium">
+            <p className="font-bold text-[#1F2A44] mb-6 text-sm tracking-widest uppercase">Company</p>
+            <ul className="space-y-4 text-sm text-slate-600 font-medium">
               <li><Link href="/about" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">About Us</Link></li>
               <li><Link href="/about" className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Careers</Link></li>
               <li><Link href={REQUEST_DEMO_BOOKING_HREF} className="hover:text-[#3370F7] hover:translate-x-1 inline-block transition-all duration-300">Contact</Link></li>

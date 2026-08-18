@@ -70,24 +70,11 @@
       background-position: 350% 50%, 350% 50%;
     }
   }
-
-  @keyframes scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(-50% - 0.5rem));
-    }
-  }
 }
 
 @layer utilities {
   .animate-aurora {
     animation: aurora 60s linear infinite;
-  }
-
-  .animate-scroll {
-    animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
   }
 
   .bg-grid-slate-100 {

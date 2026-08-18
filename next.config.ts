@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
   },
   transpilePackages: ["lucide-react", "sanity", "next-sanity"],
   experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion', '@fancyapps/ui', '@radix-ui/react-navigation-menu'],
+    optimizePackageImports: ['lucide-react', 'framer-motion', '@radix-ui/react-navigation-menu'],
   },
 };
 
