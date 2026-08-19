@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function WhoNeedsIt() {
   const roles = [
     "Higher education leadership protecting long-term degree value",
@@ -28,19 +26,19 @@ export function WhoNeedsIt() {
 
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto">
           {roles.map((role, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+             
+             
+             
+             
               className="flex items-center gap-6 group bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300"
             >
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#F58022] shadow-lg shadow-[#F58022]/20 group-hover:scale-110 transition-transform duration-300" />
               <span className="text-lg font-medium text-[#1F2A44] leading-snug">
                 {role}
               </span>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

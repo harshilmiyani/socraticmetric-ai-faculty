@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { AlertTriangle, Lightbulb } from "lucide-react";
 
 export function ScienceChallengeSolution() {
@@ -21,10 +20,7 @@ export function ScienceChallengeSolution() {
           </p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/5 border border-slate-100 bg-white"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -33,7 +29,7 @@ export function ScienceChallengeSolution() {
             alt="The Challenge vs The Solution: Moving from static output to verified cognition"
             className="w-full h-auto block"
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Play } from "lucide-react";
-import { motion } from "framer-motion";
 import { useState } from "react";
 
 import { Cover } from "@/components/ui/cover";
@@ -13,23 +12,6 @@ import { youtubeEmbedSrc } from "@/lib/youtubeEmbed";
 export function HeroSection() {
   const YOUTUBE_VIDEO_ID = "B1LGkF_4vHA";
   const [playing, setPlaying] = useState(false);
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.04, delayChildren: 0.02 },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 22 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] as const },
-    },
-  };
 
   return (
     <section className="relative overflow-hidden pt-28 pb-14 selection:bg-[#F58022]/20 selection:text-[#1F2A44] md:pt-32 md:pb-20 lg:pt-36 lg:pb-24">
@@ -43,14 +25,10 @@ export function HeroSection() {
 
       <div className="container relative z-10 mx-auto px-6 md:px-12">
         <div className="mx-auto flex max-w-5xl flex-col items-center">
-          <motion.div
-            variants={container}
-            initial="hidden"
-            animate="visible"
+          <div
             className="flex w-full flex-col items-center text-center"
           >
-            <motion.div
-              variants={item}
+            <div
               className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#3370F7]/20 bg-white/70 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[#3370F7] shadow-sm backdrop-blur-md sm:text-sm"
             >
               <span className="relative flex h-2 w-2">
@@ -60,26 +38,23 @@ export function HeroSection() {
               <span>
                 <span className="font-bold">#1</span> in Live Cognitive Verification
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              variants={item}
+            <h1
               className="max-w-4xl font-serif text-[2.35rem] font-bold leading-[1.08] tracking-tight text-[#1F2A44] sm:text-5xl md:text-6xl lg:text-[4rem] lg:leading-[1.04]"
             >
               AI-Moderated Oral
               <br className="hidden sm:block" /> Assessment Platform
-            </motion.h1>
+            </h1>
 
-            <motion.div
-              variants={item}
+            <div
               className="mt-5 max-w-2xl text-lg font-medium leading-relaxed text-slate-600 sm:mt-6 sm:text-xl md:text-2xl"
             >
               Where True Understanding Is{" "}
               <Cover className="mt-1">Spoken, Not Just Submitted.</Cover>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={item}
+            <div
               className="mt-8 flex w-full flex-col items-center justify-center gap-3.5 sm:mt-10 sm:w-auto sm:flex-row sm:gap-4"
             >
               <Link
@@ -103,14 +78,11 @@ export function HeroSection() {
               >
                 See How It Works
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Demo video */}
-          <motion.div
-            initial={{ opacity: 0, y: 36, scale: 0.985 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.3, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          <div
             className="relative mt-12 w-full max-w-4xl md:mt-16"
           >
             <div
@@ -168,7 +140,7 @@ export function HeroSection() {
                 )}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

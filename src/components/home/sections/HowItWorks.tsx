@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Settings2,
   Share2,
@@ -78,11 +77,7 @@ export function HowItWorks() {
       </div>
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-24px" }}
-          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+        <div
           className="mx-auto mb-10 max-w-3xl text-center md:mb-14"
         >
           <div className="mb-6 flex items-center justify-center gap-3">
@@ -101,7 +96,7 @@ export function HowItWorks() {
           <p className="mt-6 text-lg font-medium leading-relaxed text-slate-600 sm:text-xl">
             From assignment setup to audit-ready review—four steps to verify authentic understanding.
           </p>
-        </motion.div>
+        </div>
 
         <div className="relative">
           {/* Dashed connection line for desktop */}
@@ -120,12 +115,12 @@ export function HowItWorks() {
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <motion.div
+                <div
                   key={step.number}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-20px" }}
-                  transition={{ duration: 0.25, delay: index * 0.03, ease: [0.22, 1, 0.36, 1] }}
+                 
+                 
+                 
+                 
                   className="group relative"
                 >
                   <div
@@ -160,18 +155,14 @@ export function HowItWorks() {
                       {step.description}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
         </div>
 
         {/* Bottom trust indicator & CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.25, delay: 0.6 }}
+        <div
           className="mt-10 flex flex-col items-center justify-center gap-6 md:mt-14 md:flex-row md:gap-8"
         >
           <div className="inline-flex items-center gap-3 rounded-full border border-slate-200/60 bg-white px-5 py-2.5 shadow-sm">
@@ -195,7 +186,7 @@ export function HowItWorks() {
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={2.5} />
             </span>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

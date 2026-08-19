@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
@@ -119,11 +118,7 @@ export function Testimonials() {
       <div className="container relative z-10 mx-auto px-6 md:px-12">
         {/* Header Section */}
         <div className="mb-10 flex flex-col items-center justify-between gap-6 md:mb-14 md:flex-row md:items-end">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-24px" }}
-            transition={{ duration: 0.25 }}
+          <div
             className="max-w-2xl text-center md:text-left"
           >
             <span className="mb-4 inline-block rounded-full border border-[#3370F7]/20 bg-[#EAF1FE] px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-[#3370F7]">
@@ -141,7 +136,7 @@ export function Testimonials() {
             <p className="text-base leading-relaxed text-slate-600 md:text-lg">
               Hear from educators, compliance leaders, and government directors who replaced guesswork with verified understanding.
             </p>
-          </motion.div>
+          </div>
 
           {/* Navigation Buttons */}
           <div className="hidden gap-3 md:flex">
@@ -180,11 +175,11 @@ export function Testimonials() {
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {testimonials.map((t, idx) => (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-20px" }}
-                transition={{ duration: 0.2, delay: idx * 0.1 }}
+              <div
+               
+               
+               
+               
                 key={idx}
                 className="group relative flex w-[280px] shrink-0 snap-center snap-always flex-col sm:w-[320px]"
               >
@@ -224,7 +219,7 @@ export function Testimonials() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

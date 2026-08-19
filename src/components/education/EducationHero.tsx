@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
-import { motion } from "framer-motion";
 import {
   BookOpen,
   ImageIcon,
@@ -69,10 +68,6 @@ const steps = [
 ] as const;
 
 export function EducationHero() {
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } },
-  };
 
   return (
     <section className="relative overflow-hidden bg-transparent pt-24 pb-16 md:pt-28 md:pb-24 lg:pb-28">
@@ -80,10 +75,7 @@ export function EducationHero() {
       <div className="pointer-events-none absolute bottom-[10%] right-[-10%] h-[600px] w-[600px] rounded-full bg-[#F58022]/5 blur-[120px]" />
 
       <div className="container relative z-10 mx-auto max-w-6xl px-6 md:px-12">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
+        <div
           className="flex flex-col items-center text-center"
         >
           <div className="mb-5">
@@ -241,7 +233,7 @@ export function EducationHero() {
             See how Socratic Metric solves this
             <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

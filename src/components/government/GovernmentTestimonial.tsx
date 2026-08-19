@@ -1,7 +1,6 @@
 "use client";
 
 import { Quote } from "lucide-react";
-import { motion } from "framer-motion";
 
 export function GovernmentTestimonial() {
   return (
@@ -23,10 +22,7 @@ export function GovernmentTestimonial() {
           </h2>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="max-w-4xl mx-auto"
         >
           <div className="relative rounded-3xl p-8 md:p-16 bg-white border border-slate-100 shadow-xl shadow-[#3370F7]/5 text-center overflow-hidden">
@@ -55,7 +51,7 @@ export function GovernmentTestimonial() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

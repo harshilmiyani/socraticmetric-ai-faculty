@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { CheckCircle2, Play } from "lucide-react";
-import { motion } from "framer-motion";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { Cover } from "@/components/ui/cover";
 
@@ -12,21 +11,6 @@ export function RequestDemoHero() {
     "Create defensible evidence of real understanding for high-stakes decisions",
     "Standardize oral assessments and reviews at scale"
   ];
-
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } }
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC]">
@@ -40,10 +24,10 @@ export function RequestDemoHero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left Column: Content */}
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
+          <div 
+           
+           
+           
             className="space-y-6 max-w-2xl"
           >
             <div className="flex items-center gap-4">
@@ -60,28 +44,28 @@ export function RequestDemoHero() {
               Socratic Metric turns high-stakes documentation into oral verification. Our platform helps teams confirm that people can explain, reason through, and defend the work they sign off on.
             </p>
 
-            <motion.div 
-              variants={staggerContainer}
-              initial="hidden"
-              animate="visible"
+            <div 
+             
+             
+             
               className="space-y-4 pt-4"
             >
               {features.map((feature, index) => (
-                <motion.div variants={fadeIn} key={index} className="flex items-start gap-4">
+                <div key={index} className="flex items-start gap-4">
                   <div className="mt-1 bg-blue-50 rounded-full p-1 shrink-0">
                     <CheckCircle2 className="w-5 h-5 text-[#3370F7]" />
                   </div>
                   <span className="text-[#1F2A44] font-medium text-lg leading-snug">{feature}</span>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Right Column: Premium Interactive Glass Card */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95, rotateY: 10 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ duration: 0.3, delay: 0.3, type: "spring", stiffness: 50 }}
+          <div 
+           
+           
+           
             className="relative perspective-1000 group"
           >
             {/* Ambient glows behind card */}
@@ -142,7 +126,7 @@ export function RequestDemoHero() {
                  </p>
                </div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function SciencePlatform() {
   const steps = [
     "Oral question presentation — Engages visual-motor-auditory integration and anchors attention through embodied focus.",
@@ -34,26 +32,23 @@ export function SciencePlatform() {
 
             <div className="space-y-6">
               {steps.map((step, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
+                 
+                 
+                 
+                 
                   className="flex items-start gap-4"
                 >
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#3370F7] flex items-center justify-center font-bold text-sm">
                     {i + 1}
                   </div>
                   <p className="text-slate-200 leading-relaxed pt-1">{step}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <div
               className="mt-8 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
             >
               <p className="text-slate-300 leading-relaxed">
@@ -61,14 +56,11 @@ export function SciencePlatform() {
                 proving that the cognitive benefits of oral engagement can scale securely to the
                 institutional level.
               </p>
-            </motion.div>
+            </div>
           </div>
 
           <div className="space-y-6">
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+            <div
               className="bg-white/10 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/10"
             >
               <h3 className="font-serif text-2xl font-bold mb-4 text-[#F58022]">
@@ -83,7 +75,7 @@ export function SciencePlatform() {
               <p className="text-slate-300 leading-relaxed">
                 The untimed, conversational format eliminates traditional testing time-pressure, allowing individuals to engage fully with the material at their own pace.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

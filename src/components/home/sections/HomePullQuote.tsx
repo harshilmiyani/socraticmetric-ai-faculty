@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function HomePullQuote() {
   return (
     <section className="relative z-10 px-6 pt-12 pb-4 md:pt-16 md:pb-6 overflow-hidden">
@@ -11,11 +9,7 @@ export function HomePullQuote() {
       </div>
 
       <div className="container relative mx-auto max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-24px" }}
-          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        <div
           className="mx-auto flex items-stretch gap-6 md:gap-8"
         >
           {/* Left visual accent: large quote mark and vertical line */}
@@ -35,7 +29,7 @@ export function HomePullQuote() {
               &ldquo;When AI can write the document, Socratic Metric evaluates live cognition—verifying real understanding, not just polished output.&rdquo;
             </h2>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

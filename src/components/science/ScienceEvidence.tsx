@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 export function ScienceEvidence() {
@@ -41,12 +40,12 @@ export function ScienceEvidence() {
 
             <div className="space-y-6">
               {studies.map((study, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
+                 
+                 
+                 
+                 
                   className="flex items-start gap-4"
                 >
                   <div className="mt-1 bg-blue-50 rounded-full p-1 shrink-0">
@@ -56,15 +55,12 @@ export function ScienceEvidence() {
                     <h4 className="font-bold text-[#1F2A44] text-lg mb-2">{study.author}</h4>
                     <p className="text-[#64748B] leading-relaxed">{study.finding}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+          <div
             className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-md"
           >
             <h3 className="font-serif text-2xl font-bold text-[#1F2A44] mb-6">
@@ -81,7 +77,7 @@ export function ScienceEvidence() {
                 Socratic Metric occupies the domain where verifiable authenticity and demonstrable learning are absolute priorities—precisely where traditional assessment fails in the AI age.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

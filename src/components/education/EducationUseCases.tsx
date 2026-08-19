@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function EducationUseCases() {
   const cases = [
     {
@@ -49,12 +47,12 @@ export function EducationUseCases() {
 
           <div className="space-y-6">
             {cases.slice(0, 2).map((item, i) => (
-              <motion.div
+              <div
                 key={item.id}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
+               
+               
+               
+               
                 className="flex flex-col sm:flex-row sm:items-start gap-6 group rounded-3xl border border-slate-200/60 bg-white p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 shadow-md shadow-blue-900/5"
               >
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#3370F7] text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-[#3370F7]/20 group-hover:scale-105 transition-transform duration-300">
@@ -68,18 +66,18 @@ export function EducationUseCases() {
                     {item.desc}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           <div className="space-y-6">
             {cases.slice(2, 4).map((item, i) => (
-              <motion.div
+              <div
                 key={item.id}
-                initial={{ opacity: 0, x: 12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: (i + 2) * 0.08 }}
+               
+               
+               
+               
                 className="flex flex-col sm:flex-row sm:items-start gap-6 group rounded-3xl border border-slate-200/60 bg-white p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 shadow-md shadow-blue-900/5"
               >
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#F58022] text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-[#F58022]/20 group-hover:scale-105 transition-transform duration-300">
@@ -93,7 +91,7 @@ export function EducationUseCases() {
                     {item.desc}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

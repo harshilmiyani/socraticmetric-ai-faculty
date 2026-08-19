@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
-import { motion } from "framer-motion";
 import { Check, FileText, Mic } from "lucide-react";
 
 const waveHeights = [4, 10, 6, 14, 8, 16, 10, 18, 7, 12, 9, 15, 6, 11, 8, 14, 5, 12];
@@ -25,10 +24,7 @@ function VerificationJourneyVisual() {
   return (
     <div className="mx-auto w-full max-w-md rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xl shadow-slate-300/25 sm:max-w-lg sm:p-6">
       {/* Unverified documentation */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.25, delay: 0.15 }}
+      <div
         className="rounded-xl border border-slate-100 bg-slate-50/90 p-4 sm:p-5"
       >
         <div className="flex items-start justify-between gap-3">
@@ -50,13 +46,10 @@ function VerificationJourneyVisual() {
           <div className="h-2 w-[92%] rounded-full bg-slate-200" />
           <div className="h-2 w-[78%] rounded-full bg-slate-200" />
         </div>
-      </motion.div>
+      </div>
 
       {/* Mic + waveform bridge */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.25, delay: 0.35 }}
+      <div
         className="flex items-center gap-3 py-4 sm:gap-4 sm:py-5"
       >
         <div className="relative flex h-[4.5rem] w-14 shrink-0 justify-center sm:h-[5rem] sm:w-16">
@@ -66,13 +59,10 @@ function VerificationJourneyVisual() {
           </div>
         </div>
         <Waveform />
-      </motion.div>
+      </div>
 
       {/* Verified understanding */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.25, delay: 0.5 }}
+      <div
         className="overflow-hidden rounded-xl border border-slate-100 bg-slate-50/90"
       >
         <div className="h-1 w-full bg-gradient-to-r from-emerald-500 via-teal-400 to-[#3370F7]" />
@@ -101,11 +91,11 @@ function VerificationJourneyVisual() {
               <div key={row.label} className="flex items-center gap-3">
                 <span className="w-[7.5rem] shrink-0 text-xs font-medium text-[#64748B] sm:text-sm">{row.label}</span>
                 <div className="h-2 min-w-0 flex-1 overflow-hidden rounded-full bg-slate-100">
-                  <motion.div
+                  <div
                     className={`h-full rounded-full ${row.color}`}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${row.value}%` }}
-                    transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                   
+                   
+                   
                   />
                 </div>
                 <span className="w-7 shrink-0 text-right text-sm font-bold tabular-nums text-[#1F2A44]">{row.value}</span>
@@ -113,16 +103,12 @@ function VerificationJourneyVisual() {
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
 
 export function WhyItMattersHero() {
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } },
-  };
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC] pb-20 pt-32 md:pb-32 md:pt-40">
@@ -131,10 +117,7 @@ export function WhyItMattersHero() {
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
+          <div
             className="max-w-2xl space-y-6"
           >
             <div className="flex items-center gap-4">
@@ -163,16 +146,13 @@ export function WhyItMattersHero() {
                 Talk to our team
               </Link>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
+          <div
             className="relative flex w-full flex-col items-center lg:items-end"
           >
             <VerificationJourneyVisual />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

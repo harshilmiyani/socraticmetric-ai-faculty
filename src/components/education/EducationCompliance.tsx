@@ -1,7 +1,6 @@
 "use client";
 
 import { CheckCircle2, RotateCw } from "lucide-react";
-import { motion } from "framer-motion";
 
 export function EducationCompliance() {
   const points = [
@@ -48,12 +47,12 @@ export function EducationCompliance() {
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3370F7]/40 to-transparent" />
               <div className="space-y-6 relative z-10">
                 {points.map((point, index) => (
-                  <motion.div
+                  <div
                     key={index}
-                    initial={{ opacity: 0, x: 16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.02 }}
+                   
+                   
+                   
+                   
                     className="flex items-start gap-4"
                   >
                     <div className="mt-1 bg-blue-50 rounded-full p-1 shrink-0">
@@ -63,7 +62,7 @@ export function EducationCompliance() {
                       <span className="font-bold">{point.title}: </span>
                       {point.body}
                     </span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 

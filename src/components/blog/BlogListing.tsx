@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { ArrowRight, Clock, Sparkles } from "lucide-react";
 import type { BlogPostCard } from "@/lib/sanity/types";
 
@@ -60,10 +59,7 @@ function ReadCircleLink({ slug, title }: { slug: string; title: string }) {
 
 function FeaturedPostCard({ post }: { post: BlogPostCard }) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+    <article
       className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white bg-white shadow-xl shadow-[#1F2A44]/[0.06] ring-1 ring-black/[0.05] transition-shadow duration-300 hover:shadow-2xl hover:ring-[#3370F7]/12"
     >
       <div className="grid lg:grid-cols-[1.25fr_1fr] lg:gap-0">
@@ -128,17 +124,13 @@ function FeaturedPostCard({ post }: { post: BlogPostCard }) {
           </div>
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }
 
 function GridPostCard({ post, i }: { post: BlogPostCard; i: number }) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-20px" }}
-      transition={{ delay: Math.min(i * 0.06, 0.36), duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+    <article
       className="group flex h-full flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-white bg-white shadow-lg shadow-[#1F2A44]/[0.04] ring-1 ring-black/[0.05] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#1F2A44]/[0.08] hover:ring-[#3370F7]/10"
     >
       <Link
@@ -194,16 +186,14 @@ function GridPostCard({ post, i }: { post: BlogPostCard; i: number }) {
           <ReadCircleLink slug={post.slug} title={post.title} />
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }
 
 export function BlogListing({ posts }: Props) {
   if (posts.length === 0) {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+      <div
         className="mx-auto max-w-lg rounded-2xl border border-white bg-white/90 px-8 py-14 text-center shadow-xl shadow-black/[0.04] ring-1 ring-black/5 sm:rounded-3xl sm:px-12"
       >
         <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#EAF1FE] to-[#F1F5F9] ring-1 ring-[#3370F7]/10">
@@ -214,7 +204,7 @@ export function BlogListing({ posts }: Props) {
           We don&apos;t have any articles published here yet. New perspectives on oral verification, learning, and
           assessment will appear when they&apos;re ready — please check back later.
         </p>
-      </motion.div>
+      </div>
     );
   }
 

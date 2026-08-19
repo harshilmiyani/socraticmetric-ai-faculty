@@ -1,10 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Brain, Focus, Ear } from "lucide-react";
 
 export function SciencePrinciples() {
-
 
   return (
     <section className="py-10 md:py-12 relative overflow-hidden">
@@ -20,10 +18,7 @@ export function SciencePrinciples() {
           </h2>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-orange-900/5 border border-slate-100 bg-white"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -32,7 +27,7 @@ export function SciencePrinciples() {
             alt="The Science Behind Oral Learning"
             className="w-full h-auto block"
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

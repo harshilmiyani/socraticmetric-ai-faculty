@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export function EnterpriseHero() {
@@ -20,11 +19,6 @@ export function EnterpriseHero() {
     return () => window.removeEventListener("message", onMessage);
   }, []);
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } }
-  };
-
   return (
     <div className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC]">
       <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px] pointer-events-none" />
@@ -32,10 +26,7 @@ export function EnterpriseHero() {
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
+          <div
             className="space-y-6 max-w-2xl"
           >
             <div className="flex items-center gap-4">
@@ -78,18 +69,12 @@ export function EnterpriseHero() {
                 See how it works
               </Link>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3, delay: 0.2 }}
+          <div
             className="relative perspective-1000 flex flex-col items-center"
           >
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+            <div
               className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-100 shadow-sm text-[#3370F7] text-xs font-bold tracking-wide uppercase z-20"
             >
               <span className="relative flex h-2 w-2">
@@ -97,7 +82,7 @@ export function EnterpriseHero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#3370F7]" />
               </span>
               Policy oral check preview
-            </motion.div>
+            </div>
 
             <div className="w-full max-w-full mx-auto">
               <iframe
@@ -111,7 +96,7 @@ export function EnterpriseHero() {
                 scrolling="no"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

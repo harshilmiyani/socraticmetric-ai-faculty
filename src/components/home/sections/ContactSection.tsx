@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
-import { motion } from "framer-motion";
 
 export function ContactSection() {
   return (
@@ -15,11 +14,7 @@ export function ContactSection() {
       </div>
 
       <div className="container relative z-10 mx-auto px-6 md:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-24px" }}
-          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        <div
           className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-12 md:flex-row md:items-center md:gap-16"
         >
           {/* Left: headline + supporting copy */}
@@ -55,7 +50,7 @@ export function ContactSection() {
               />
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

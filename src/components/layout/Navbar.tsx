@@ -163,7 +163,6 @@ export function Navbar() {
     setMobileExpanded(mobileExpanded === label ? null : label);
   };
 
-
   return (
     <div
       className={cn(

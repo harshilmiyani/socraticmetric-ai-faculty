@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function EducationSolution() {
   return (
     <section
@@ -24,10 +22,7 @@ export function EducationSolution() {
           </h2>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="max-w-5xl mx-auto overflow-hidden bg-transparent"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -36,7 +31,7 @@ export function EducationSolution() {
             alt="How Socratic Metric Works: Verifying authentic comprehension through dialogue"
             className="w-full h-auto block"
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

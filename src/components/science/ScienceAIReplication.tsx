@@ -1,15 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function ScienceAIReplication() {
   return (
     <section className="py-10 md:py-12 relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-4xl text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="space-y-6"
         >
           <div className="mb-6">
@@ -44,7 +39,7 @@ export function ScienceAIReplication() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

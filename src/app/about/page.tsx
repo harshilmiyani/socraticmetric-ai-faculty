@@ -3,14 +3,9 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ContactSection } from "@/components/home/sections/ContactSection";
-import { motion } from "framer-motion";
 import { CheckCircle2, Clock, ShieldCheck, Upload, Check, Activity } from "lucide-react";
 
 export default function AboutPage() {
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } }
-  };
 
   return (
     <div className="flex min-h-screen flex-col bg-[#F0F6FF] text-[#1F2A44] overflow-x-hidden font-sans">
@@ -22,10 +17,10 @@ export default function AboutPage() {
           <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Left: Text */}
-              <motion.div 
-                initial="hidden"
-                animate="visible"
-                variants={fadeIn}
+              <div 
+               
+               
+               
                 className="space-y-6 max-w-2xl"
               >
                 <div className="mb-4">
@@ -47,13 +42,13 @@ export default function AboutPage() {
                   </p>
                   <p>We built the platform to prove genuine human comprehension.</p>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Right: UI Mockup */}
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
+              <div 
+               
+               
+               
                 className="relative"
               >
                 <div className="bg-white rounded-2xl shadow-2xl shadow-[#3370F7]/10 border border-blue-100 overflow-hidden flex flex-col">
@@ -139,7 +134,7 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>

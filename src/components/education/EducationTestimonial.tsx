@@ -1,7 +1,6 @@
 "use client";
 
 import { Quote, Star } from "lucide-react";
-import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -68,12 +67,12 @@ export function EducationTestimonial() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {testimonials.map((t, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.25, delay: index * 0.03 }}
+             
+             
+             
+             
               className="group relative flex flex-col bg-white border border-slate-200/60 rounded-3xl p-6 md:p-8 shadow-md shadow-blue-900/5 hover:shadow-lg hover:border-slate-200 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
             >
               {/* Top accent bar */}
@@ -105,7 +104,7 @@ export function EducationTestimonial() {
                   <span className="text-slate-400 text-xs block truncate font-medium">{t.org}</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -2,7 +2,6 @@
 
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 export function BlogPageShell({ children }: { children: React.ReactNode }) {
@@ -23,10 +22,7 @@ export function BlogHero() {
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_50%,transparent_100%)] opacity-80" />
 
       <div className="relative z-10 mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-10 xl:px-14">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+        <div
           className="mx-auto max-w-4xl space-y-5 text-center sm:space-y-6 lg:space-y-7"
         >
           <div className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-slate-200/90 bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#85756F] shadow-sm backdrop-blur-md sm:text-xs">
@@ -54,7 +50,7 @@ export function BlogHero() {
             Exploring oral verification, cognitive science, and what proof of understanding means when written output is
             no longer enough.
           </p>
-        </motion.div>
+        </div>
       </div>
 
       <div

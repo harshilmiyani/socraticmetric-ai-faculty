@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function EducationOutcomes() {
   const outcomes = [
     { value: "72%", label: "Reduction in suspected academic integrity violations" },
@@ -34,12 +32,12 @@ export function EducationOutcomes() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {outcomes.map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
+             
+             
+             
+             
               className="bg-white p-8 rounded-3xl border border-slate-200/60 shadow-md shadow-blue-900/5 hover:shadow-lg hover:border-slate-200 transition-all duration-300 text-center flex flex-col items-center justify-center space-y-4 min-h-[220px]"
             >
               <div className="text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#F58022] to-[#D16D1A] tracking-tight">
@@ -48,7 +46,7 @@ export function EducationOutcomes() {
               <p className="text-base text-[#64748B] font-medium leading-relaxed max-w-[220px] mx-auto">
                 {item.label}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

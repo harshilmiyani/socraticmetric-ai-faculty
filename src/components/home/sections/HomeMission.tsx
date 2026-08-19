@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -14,11 +13,7 @@ export function HomeMission() {
       </div>
 
       <div className="container relative mx-auto max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-24px" }}
-          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+        <div
           className="flex flex-col items-center"
         >
           <div className="mb-8 flex items-center justify-center gap-3">
@@ -129,7 +124,7 @@ export function HomeMission() {
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

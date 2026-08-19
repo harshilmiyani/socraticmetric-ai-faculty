@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
-import { motion } from "framer-motion";
 
 import { youtubeEmbedSrc, youtubeThumbnailUrl } from "@/lib/youtubeEmbed";
 
@@ -123,15 +122,15 @@ export function EducationWalkthroughVideos() {
 
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-10 xl:gap-14">
           {VIDEOS.map((video, index) => (
-            <motion.div
+            <div
               key={video.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-20px" }}
-              transition={{ duration: 0.25, delay: index * 0.02 }}
+             
+             
+             
+             
             >
               <WalkthroughPlayer {...video} />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

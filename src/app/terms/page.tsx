@@ -2,7 +2,6 @@
 
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { motion } from "framer-motion";
 
 export default function TermsPage() {
   return (
@@ -13,22 +12,22 @@ export default function TermsPage() {
         {/* Header */}
         <section className="relative pt-40 pb-12 md:pt-48 md:pb-16 bg-white border-b border-[#f8fafc]">
           <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.25 }}
+            <h1 
+             
+             
+             
               className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-[#163460] leading-tight mb-4"
             >
               Terms of Service
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.25, delay: 0.1 }}
+            </h1>
+            <p 
+             
+             
+             
               className="text-[#64748b]"
             >
               Rules and regulations for using the SocraticMetric platform
-            </motion.p>
+            </p>
           </div>
         </section>
 
