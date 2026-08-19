@@ -8,6 +8,7 @@ import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { ChatbaseWidget } from "@/components/chatbot/ChatbaseWidget";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 import { rootMetadata } from "@/lib/site-metadata";
 
 const quicksand = localFont({
@@ -37,12 +38,14 @@ export default function RootLayout({
         quicksand.className
       )}>
         <SiteJsonLd />
-        {children}
-        {/* <LoadingScreen /> */}
-        <ScrollToTop />
-        <CookieConsent />
-        <ChatbaseWidget />
-        <GoogleAnalytics />
+        <MotionProvider>
+          {children}
+          {/* <LoadingScreen /> */}
+          <ScrollToTop />
+          <CookieConsent />
+          <ChatbaseWidget />
+          <GoogleAnalytics />
+        </MotionProvider>
       </body>
     </html>
   );

@@ -127,8 +127,8 @@ export function EducationWalkthroughVideos() {
               key={video.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
+              viewport={{ once: true, margin: "-20px" }}
+              transition={{ duration: 0.25, delay: index * 0.02 }}
             >
               <WalkthroughPlayer {...video} />
             </motion.div>

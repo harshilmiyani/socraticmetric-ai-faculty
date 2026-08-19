@@ -14,8 +14,8 @@ export function HomePullQuote() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, margin: "-24px" }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto flex items-stretch gap-6 md:gap-8"
         >
           {/* Left visual accent: large quote mark and vertical line */}

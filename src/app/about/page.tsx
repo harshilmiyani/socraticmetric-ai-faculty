@@ -9,7 +9,7 @@ import { CheckCircle2, Clock, ShieldCheck, Upload, Check, Activity } from "lucid
 export default function AboutPage() {
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } }
   };
 
   return (
@@ -53,7 +53,7 @@ export default function AboutPage() {
               <motion.div 
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
                 className="relative"
               >
                 <div className="bg-white rounded-2xl shadow-2xl shadow-[#3370F7]/10 border border-blue-100 overflow-hidden flex flex-col">

@@ -17,8 +17,8 @@ export function HomeMission() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, margin: "-24px" }}
+          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center"
         >
           <div className="mb-8 flex items-center justify-center gap-3">

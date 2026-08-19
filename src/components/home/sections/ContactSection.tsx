@@ -18,8 +18,8 @@ export function ContactSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, margin: "-24px" }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-12 md:flex-row md:items-center md:gap-16"
         >
           {/* Left: headline + supporting copy */}

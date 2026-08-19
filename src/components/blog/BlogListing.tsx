@@ -63,7 +63,7 @@ function FeaturedPostCard({ post }: { post: BlogPostCard }) {
     <motion.article
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white bg-white shadow-xl shadow-[#1F2A44]/[0.06] ring-1 ring-black/[0.05] transition-shadow duration-300 hover:shadow-2xl hover:ring-[#3370F7]/12"
     >
       <div className="grid lg:grid-cols-[1.25fr_1fr] lg:gap-0">
@@ -137,8 +137,8 @@ function GridPostCard({ post, i }: { post: BlogPostCard; i: number }) {
     <motion.article
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ delay: Math.min(i * 0.06, 0.36), duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, margin: "-20px" }}
+      transition={{ delay: Math.min(i * 0.06, 0.36), duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       className="group flex h-full flex-col overflow-hidden rounded-2xl sm:rounded-3xl border border-white bg-white shadow-lg shadow-[#1F2A44]/[0.04] ring-1 ring-black/[0.05] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#1F2A44]/[0.08] hover:ring-[#3370F7]/10"
     >
       <Link

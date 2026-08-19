@@ -28,7 +28,7 @@ function VerificationJourneyVisual() {
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.15 }}
+        transition={{ duration: 0.25, delay: 0.15 }}
         className="rounded-xl border border-slate-100 bg-slate-50/90 p-4 sm:p-5"
       >
         <div className="flex items-start justify-between gap-3">
@@ -56,7 +56,7 @@ function VerificationJourneyVisual() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.45, delay: 0.35 }}
+        transition={{ duration: 0.25, delay: 0.35 }}
         className="flex items-center gap-3 py-4 sm:gap-4 sm:py-5"
       >
         <div className="relative flex h-[4.5rem] w-14 shrink-0 justify-center sm:h-[5rem] sm:w-16">
@@ -72,7 +72,7 @@ function VerificationJourneyVisual() {
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
+        transition={{ duration: 0.25, delay: 0.5 }}
         className="overflow-hidden rounded-xl border border-slate-100 bg-slate-50/90"
       >
         <div className="h-1 w-full bg-gradient-to-r from-emerald-500 via-teal-400 to-[#3370F7]" />
@@ -121,7 +121,7 @@ function VerificationJourneyVisual() {
 export function WhyItMattersHero() {
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } },
   };
 
   return (
@@ -168,7 +168,7 @@ export function WhyItMattersHero() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
             className="relative flex w-full flex-col items-center lg:items-end"
           >
             <VerificationJourneyVisual />

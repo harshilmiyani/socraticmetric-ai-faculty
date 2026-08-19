@@ -99,8 +99,8 @@ export function HomePatents() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true, margin: "-24px" }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
               className="mx-auto mb-10 max-w-3xl text-center md:mb-14"
             >
               <div className="mb-6 flex items-center justify-center gap-3">
@@ -134,8 +134,8 @@ export function HomePatents() {
                     key={stat.description}
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                    viewport={{ once: true, margin: "-20px" }}
+                    transition={{ duration: 0.25, delay: index * 0.02, ease: [0.22, 1, 0.36, 1] }}
                     className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-4 md:backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.09] sm:p-5"
                   >
                     <div
@@ -170,8 +170,8 @@ export function HomePatents() {
                   key={patent.id}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true, margin: "-20px" }}
+                  transition={{ duration: 0.25, delay: index * 0.03, ease: [0.22, 1, 0.36, 1] }}
                   className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.05] p-6 md:backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.08] hover:shadow-xl hover:shadow-black/20 sm:p-7"
                 >
                   {/* Accent top line */}
@@ -219,7 +219,7 @@ export function HomePatents() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.25, delay: 0.4 }}
               className="mt-10 flex justify-center md:mt-12"
             >
               <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.06] px-5 py-2.5 md:backdrop-blur-md">

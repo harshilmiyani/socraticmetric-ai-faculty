@@ -73,7 +73,7 @@ export function EducationTestimonial() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.25, delay: index * 0.03 }}
               className="group relative flex flex-col bg-white border border-slate-200/60 rounded-3xl p-6 md:p-8 shadow-md shadow-blue-900/5 hover:shadow-lg hover:border-slate-200 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
             >
               {/* Top accent bar */}

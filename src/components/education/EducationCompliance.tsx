@@ -53,7 +53,7 @@ export function EducationCompliance() {
                     initial={{ opacity: 0, x: 16 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.08 }}
+                    transition={{ delay: index * 0.02 }}
                     className="flex items-start gap-4"
                   >
                     <div className="mt-1 bg-blue-50 rounded-full p-1 shrink-0">

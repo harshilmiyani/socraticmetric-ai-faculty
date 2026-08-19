@@ -18,7 +18,7 @@ export function HeroSection() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: 0.08 },
+      transition: { staggerChildren: 0.04, delayChildren: 0.02 },
     },
   };
 
@@ -27,7 +27,7 @@ export function HeroSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
+      transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] as const },
     },
   };
 
@@ -54,7 +54,7 @@ export function HeroSection() {
               className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#3370F7]/20 bg-white/70 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[#3370F7] shadow-sm backdrop-blur-md sm:text-sm"
             >
               <span className="relative flex h-2 w-2">
-                <span className="absolute inset-0 animate-ping rounded-full bg-[#F58022]/70" />
+                <span className="absolute inset-0 hidden animate-ping rounded-full bg-[#F58022]/70 lg:block" />
                 <span className="relative h-2 w-2 rounded-full bg-[#F58022]" />
               </span>
               <span>
@@ -110,7 +110,7 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 36, scale: 0.985 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.75, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.3, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
             className="relative mt-12 w-full max-w-4xl md:mt-16"
           >
             <div
@@ -152,7 +152,7 @@ export function HeroSection() {
                     <span className="relative flex flex-col items-center gap-3">
                       <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#3370F7] text-white shadow-lg shadow-[#3370F7]/40 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#4C8FD6] group-hover:shadow-xl sm:h-16 sm:w-16">
                         <span
-                          className="absolute inset-0 animate-ping rounded-full bg-[#3370F7] opacity-25"
+                          className="absolute inset-0 hidden animate-ping rounded-full bg-[#3370F7] opacity-25 lg:block"
                           aria-hidden
                         />
                         <Play

@@ -26,7 +26,7 @@ export function BlogHero() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-4xl space-y-5 text-center sm:space-y-6 lg:space-y-7"
         >
           <div className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-slate-200/90 bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#85756F] shadow-sm backdrop-blur-md sm:text-xs">

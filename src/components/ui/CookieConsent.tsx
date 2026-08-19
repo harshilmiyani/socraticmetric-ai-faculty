@@ -34,7 +34,7 @@ export function CookieConsent() {
           initial={{ y: 24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 24, opacity: 0 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="fixed bottom-0 left-0 right-0 z-[100] p-4 sm:p-5 md:p-6 pointer-events-none"
         >
           <div className="mx-auto max-w-5xl pointer-events-auto relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white bg-white/95 shadow-2xl shadow-[#1F2A44]/[0.12] ring-1 ring-black/[0.06] backdrop-blur-xl">

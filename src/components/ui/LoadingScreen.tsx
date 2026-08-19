@@ -33,7 +33,7 @@ export function LoadingScreen() {
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#F1F5F9] overflow-hidden"
           >
             {/* Ambient Background Glows */}
@@ -47,7 +47,7 @@ export function LoadingScreen() {
               initial={{ scale: 0.9, opacity: 0, y: 10 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: -10 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col items-center gap-6 relative z-10"
             >
               <div className="relative flex items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-3xl bg-white/60 backdrop-blur-xl shadow-2xl shadow-[#3370F7]/10 border border-white/80 ring-1 ring-black/[0.02]">

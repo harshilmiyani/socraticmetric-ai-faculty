@@ -15,7 +15,7 @@ export function RequestDemoHero() {
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.25 } }
   };
 
   const staggerContainer = {
@@ -81,7 +81,7 @@ export function RequestDemoHero() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.95, rotateY: 10 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, type: "spring", stiffness: 50 }}
+            transition={{ duration: 0.3, delay: 0.3, type: "spring", stiffness: 50 }}
             className="relative perspective-1000 group"
           >
             {/* Ambient glows behind card */}

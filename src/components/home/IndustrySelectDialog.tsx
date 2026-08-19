@@ -109,7 +109,7 @@ export function IndustrySelectDialog() {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.4, type: "spring", stiffness: 110, damping: 18 }}
+              transition={{ duration: 0.2, type: "spring", stiffness: 110, damping: 18 }}
               className="pointer-events-auto w-full sm:max-w-xl md:max-w-2xl bg-[#F0F6FF] sm:rounded-3xl rounded-t-3xl shadow-2xl shadow-black/25 border border-[#3370F7]/10 overflow-hidden"
             >
               {/* Header */}
