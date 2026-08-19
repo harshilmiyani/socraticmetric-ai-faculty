@@ -35,12 +35,7 @@ export function LoadingScreen() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#F1F5F9] overflow-hidden"
-          >
-            {/* Ambient Background Glows */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#3370F7]/10 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#F58022]/10 rounded-full blur-[100px] pointer-events-none" />
-            
-            {/* Subtle dot grid */}
+          >{/* Subtle dot grid */}
             <div className="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.15] pointer-events-none" />
 
             <motion.div

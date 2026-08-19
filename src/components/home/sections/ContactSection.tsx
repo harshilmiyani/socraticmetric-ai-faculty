@@ -5,11 +5,6 @@ import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
 export function ContactSection() {
   return (
     <section id="contact" className="relative overflow-hidden bg-[#101728] py-24 md:py-36">
-      {/* Subtle ambient glows */}
-      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
-        <div className="absolute -left-[15%] top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-[#3370F7]/10 blur-[130px]" />
-        <div className="absolute -right-[10%] bottom-0 h-[400px] w-[400px] rounded-full bg-[#F58022]/6 blur-[120px]" />
-      </div>
 
       <div className="container relative z-10 mx-auto px-6 md:px-12">
         <div

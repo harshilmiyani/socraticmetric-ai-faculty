@@ -110,8 +110,6 @@ export function WhyItMattersHero() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC] pb-20 pt-32 md:pb-32 md:pt-40">
-      <div className="pointer-events-none absolute left-[-10%] top-[0%] h-[500px] w-[500px] rounded-full bg-[#3370F7]/10 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-[10%] right-[-10%] h-[600px] w-[600px] rounded-full bg-[#F58022]/5 blur-[120px]" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">

@@ -14,11 +14,6 @@ export function Footer() {
         
         {/* Fade mask so the top edge blends perfectly */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#F1F5F9] via-[#F1F5F9]/80 to-transparent"></div>
-
-        {/* Ambient Glowing Orbs */}
-        <div className="absolute -bottom-[30%] -left-[10%] w-[700px] h-[700px] rounded-full bg-[#3370F7]/10 blur-[120px]"></div>
-        <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] rounded-full bg-[#F58022]/10 blur-[120px]"></div>
-        <div className="absolute top-[20%] left-[40%] w-[800px] h-[800px] rounded-full bg-[#EAF1FE]/80 blur-[150px]"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-6 md:px-12 max-w-7xl">

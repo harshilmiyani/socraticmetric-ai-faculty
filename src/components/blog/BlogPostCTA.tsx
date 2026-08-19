@@ -10,7 +10,6 @@ export function BlogPostCTA() {
     <section className="relative mt-12 sm:mt-16 overflow-hidden rounded-2xl bg-[#1F2A44] py-14 text-center shadow-xl shadow-[#1F2A44]/40 ring-1 ring-white/10 sm:rounded-3xl md:py-20">
       <BackgroundBeams />
       <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A44] via-transparent to-[#1F2A44]/80 pointer-events-none z-0" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100%,520px)] h-[min(100%,520px)] bg-[#3370F7]/20 rounded-full blur-[100px] pointer-events-none z-0" />
 
       <div className="relative z-10 px-6 sm:px-10 md:px-12 max-w-3xl mx-auto space-y-6">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(90%,320px)] h-px bg-gradient-to-r from-transparent via-[#F58022]/60 to-transparent" />

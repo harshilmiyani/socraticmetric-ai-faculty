@@ -5,8 +5,6 @@ import { LazyHeroPreview } from "@/components/ui/LazyHeroPreview";
 export function GovernmentHero() {
   return (
     <div className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC]">
-      <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px] pointer-events-none hidden md:block" />
-      <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px] pointer-events-none hidden md:block" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">

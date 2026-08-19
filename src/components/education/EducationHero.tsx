@@ -69,8 +69,6 @@ export function EducationHero() {
 
   return (
     <section className="relative overflow-hidden bg-transparent pt-24 pb-16 md:pt-28 md:pb-24 lg:pb-28">
-      <div className="pointer-events-none absolute left-[-10%] top-[0%] h-[500px] w-[500px] rounded-full bg-[#3370F7]/10 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-[10%] right-[-10%] h-[600px] w-[600px] rounded-full bg-[#F58022]/5 blur-[120px]" />
 
       <div className="container relative z-10 mx-auto max-w-6xl px-6 md:px-12">
         <div

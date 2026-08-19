@@ -39,14 +39,6 @@ export function CookieConsent() {
         >
           <div className="mx-auto max-w-5xl pointer-events-auto relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white bg-white/95 shadow-2xl shadow-[#1F2A44]/[0.12] ring-1 ring-black/[0.06] backdrop-blur-xl">
             <div
-              className="pointer-events-none absolute -top-24 -right-16 h-48 w-48 rounded-full bg-[#3370F7]/12 blur-3xl"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute -bottom-20 -left-12 h-44 w-44 rounded-full bg-[#F58022]/10 blur-3xl"
-              aria-hidden
-            />
-            <div
               className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:20px_20px] opacity-60"
               aria-hidden
             />

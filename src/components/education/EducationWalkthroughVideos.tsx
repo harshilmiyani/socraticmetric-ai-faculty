@@ -100,7 +100,6 @@ export function EducationWalkthroughVideos() {
       id="platform-walkthrough"
       className="relative overflow-hidden bg-transparent py-10 md:py-12"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(51,112,247,0.06)_0%,transparent_70%)]" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-12">
         <div className="mx-auto mb-8 max-w-3xl space-y-3 text-center">

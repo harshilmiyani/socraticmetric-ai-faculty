@@ -27,9 +27,6 @@ export function EnterpriseSolution() {
       id="how-it-works"
       className="relative py-20 md:py-32 bg-[#F8FAFC] overflow-hidden"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[20%] right-0 w-[400px] h-[400px] max-w-[80vw] rounded-full bg-[#EAF1FE]/80 blur-[100px]" />
-      </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
         <div className="text-center mb-16 max-w-4xl mx-auto">

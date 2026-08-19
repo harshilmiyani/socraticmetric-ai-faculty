@@ -7,7 +7,6 @@ export function SolutionsNavSideVisual({ variant }: { variant: SolutionsNavSideV
   if (variant === "education") {
     return (
       <div className="relative overflow-hidden rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-white to-indigo-50/80 p-3.5 shadow-sm">
-        <div className="pointer-events-none absolute -right-6 -top-8 h-28 w-28 rounded-full bg-violet-300/25 blur-2xl" />
         <div className="relative flex flex-wrap items-center justify-between gap-1.5 border-b border-violet-200/40 pb-2">
           <span className="text-[9px] font-bold uppercase tracking-wide text-violet-900/75">
             Academic integrity
@@ -71,7 +70,6 @@ export function SolutionsNavSideVisual({ variant }: { variant: SolutionsNavSideV
   if (variant === "enterprise") {
     return (
       <div className="relative overflow-hidden rounded-2xl border border-sky-200/70 bg-gradient-to-br from-slate-50 via-white to-sky-50/90 p-3.5 shadow-sm">
-        <div className="pointer-events-none absolute -left-4 bottom-0 h-24 w-24 rounded-full bg-sky-200/30 blur-2xl" />
         <div className="relative flex flex-wrap items-start justify-between gap-2 border-b border-sky-100 pb-2">
           <div className="flex min-w-0 items-center gap-2">
             <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-sky-200/80 bg-white shadow-sm">
@@ -122,7 +120,6 @@ export function SolutionsNavSideVisual({ variant }: { variant: SolutionsNavSideV
   /* government */
   return (
     <div className="relative overflow-hidden rounded-2xl border border-slate-300/80 bg-gradient-to-br from-slate-100 via-white to-emerald-50/60 p-3.5 shadow-sm">
-      <div className="pointer-events-none absolute right-0 top-0 h-20 w-20 rounded-full bg-emerald-400/15 blur-2xl" />
       <div className="relative flex flex-wrap items-start justify-between gap-2 border-b border-slate-200/80 pb-2">
         <div className="flex min-w-0 items-center gap-2">
           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-300/80 bg-slate-900 text-white shadow-sm">

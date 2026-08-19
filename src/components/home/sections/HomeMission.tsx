@@ -4,11 +4,6 @@ import Link from "next/link";
 export function HomeMission() {
   return (
     <section className="relative z-10 overflow-hidden px-6 py-12 md:py-16">
-      {/* Ambient background accents */}
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute -left-[8%] top-[15%] h-[420px] w-[420px] rounded-full bg-[#3370F7]/6 blur-[110px]" />
-        <div className="absolute -right-[8%] bottom-[10%] h-[420px] w-[420px] rounded-full bg-[#F58022]/6 blur-[110px]" />
-      </div>
 
       <div className="container relative mx-auto max-w-4xl">
         <div

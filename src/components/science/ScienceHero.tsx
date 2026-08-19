@@ -2,8 +2,6 @@ export function ScienceHero() {
 
   return (
     <section className="relative pt-24 pb-12 md:pt-28 md:pb-16 overflow-hidden">
-      <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-4xl text-center">
         <div

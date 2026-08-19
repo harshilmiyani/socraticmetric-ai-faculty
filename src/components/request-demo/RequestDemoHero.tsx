@@ -11,11 +11,6 @@ export function RequestDemoHero() {
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC]">
-      {/* Dynamic Background Effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
-        <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px]" />
-      </div>
       
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -50,7 +45,6 @@ export function RequestDemoHero() {
 
           {/* Right Column: Premium Interactive Glass Card */}
           <div className="relative perspective-1000 group">
-            <div className="absolute -inset-4 hidden rounded-[2.5rem] bg-gradient-to-tr from-[#3370F7]/40 to-[#F58022]/30 opacity-40 blur-2xl transition duration-1000 group-hover:opacity-60 md:block"></div>
             
             <div className="aspect-[4/3] w-full bg-white rounded-3xl shadow-2xl shadow-[#3370F7]/10 border border-white relative overflow-hidden flex flex-col transition-all duration-500 transform group-hover:-translate-y-1 md:bg-white/80 md:backdrop-blur-2xl">
 

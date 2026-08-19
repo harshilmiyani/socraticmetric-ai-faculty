@@ -59,9 +59,6 @@ export function RequestDemoForm() {
       id="book-demo"
       className="scroll-mt-28 py-20 md:py-32 md:scroll-mt-32 bg-white relative overflow-hidden"
     >
-      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#EAF1FE] rounded-full blur-[100px]" />
-      </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
@@ -80,7 +77,6 @@ export function RequestDemoForm() {
         </div>
 
         <div ref={mountRef} className="relative max-w-4xl mx-auto group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-[#3370F7] to-[#F58022] rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200 hidden md:block"></div>
           <div className="bg-white rounded-3xl p-4 md:p-8 shadow-2xl shadow-[#3370F7]/10 border border-slate-100 relative min-h-[520px]">
             {visible ? (
               <Cal

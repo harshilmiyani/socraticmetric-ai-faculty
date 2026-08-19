@@ -65,12 +65,7 @@ export function HowItWorks() {
       {/* Light aurora background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         {/* Soft vertical wash from white into the page tint */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F6FAFF] to-[#EFF5FF]" />
-        {/* Aurora color washes */}
-        <div className="absolute -top-[20%] left-[8%] h-[520px] w-[680px] rotate-[-12deg] rounded-full bg-gradient-to-r from-[#3370F7]/10 via-[#4C8FD6]/6 to-transparent blur-[90px]" />
-        <div className="absolute -bottom-[25%] right-[5%] h-[480px] w-[640px] rotate-[10deg] rounded-full bg-gradient-to-l from-[#F58022]/9 via-[#FFB347]/5 to-transparent blur-[90px]" />
-        <div className="absolute left-1/2 top-[30%] h-[380px] w-[380px] -translate-x-1/2 rounded-full bg-[#8FB0F5]/8 blur-[100px]" />
-        {/* Dotted texture */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F6FAFF] to-[#EFF5FF]" />        {/* Dotted texture */}
         <div className="absolute inset-0 bg-[radial-gradient(#3370F71a_1px,transparent_1px)] bg-[size:22px_22px] [mask-image:radial-gradient(ellipse_65%_55%_at_50%_45%,#000_50%,transparent_100%)]" />
       </div>
 

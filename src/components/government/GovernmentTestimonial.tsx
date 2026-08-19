@@ -3,10 +3,6 @@ import { Quote } from "lucide-react";
 export function GovernmentTestimonial() {
   return (
     <section className="relative py-20 md:py-32 bg-[#F0F4F8] overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 right-0 w-[min(100vw,600px)] h-[min(100vw,600px)] bg-[#3370F7]/10 rounded-full blur-[120px] translate-x-1/4 -translate-y-1/4" />
-        <div className="absolute bottom-0 left-0 w-[min(90vw,500px)] h-[min(90vw,500px)] bg-[#F58022]/5 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/4" />
-      </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
         <div className="text-center mb-16">

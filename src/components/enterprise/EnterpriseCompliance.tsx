@@ -9,9 +9,6 @@ export function EnterpriseCompliance() {
 
   return (
     <section className="relative py-20 md:py-32 bg-white overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] max-w-[90vw] rounded-full bg-[#3370F7]/5 blur-[100px]" />
-      </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 items-center gap-16 lg:gap-24">
@@ -36,7 +33,6 @@ export function EnterpriseCompliance() {
           </div>
 
           <div className="relative group">
-            <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-br from-[#3370F7]/25 to-[#F58022]/20 blur-md opacity-60 group-hover:opacity-90 transition duration-500" />
             <div className="relative rounded-3xl bg-white/95 backdrop-blur-xl border border-white p-8 md:p-12 shadow-2xl shadow-black/[0.06] overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3370F7]/40 to-transparent" />
               <div className="space-y-6 relative z-10">

@@ -83,11 +83,7 @@ export function HomePatents() {
           {/* Atmosphere inside the panel */}
           <div className="pointer-events-none absolute inset-0" aria-hidden>
             {/* Top edge highlight */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-            {/* Glow orbs */}
-            <div className="absolute -left-[15%] top-[10%] h-[420px] w-[420px] rounded-full bg-[#3370F7]/20 blur-[110px]" />
-            <div className="absolute -right-[10%] bottom-[5%] h-[380px] w-[380px] rounded-full bg-[#F58022]/12 blur-[100px]" />
-            {/* Fine grid */}
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />            {/* Fine grid */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,#000_40%,transparent_100%)]" />
           </div>
 

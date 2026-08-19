@@ -1,10 +1,6 @@
 export function HomePullQuote() {
   return (
     <section className="relative z-10 px-6 pt-12 pb-4 md:pt-16 md:pb-6 overflow-hidden">
-      {/* Ambient background accent */}
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute left-1/2 top-1/2 h-[320px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3370F7]/6 blur-[100px]" />
-      </div>
 
       <div className="container relative mx-auto max-w-4xl">
         <div
