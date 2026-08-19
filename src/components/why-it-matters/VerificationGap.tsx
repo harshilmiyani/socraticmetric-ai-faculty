@@ -1,5 +1,3 @@
-"use client";
-
 import { ClipboardCheck, FileSearch, Lightbulb } from "lucide-react";
 
 export function VerificationGap() {

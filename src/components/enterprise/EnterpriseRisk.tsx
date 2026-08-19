@@ -1,5 +1,3 @@
-"use client";
-
 import { Search, PenTool, ClipboardList, AlertCircle } from "lucide-react";
 
 export function EnterpriseRisk() {

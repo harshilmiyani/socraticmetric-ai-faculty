@@ -1,5 +1,3 @@
-"use client";
-
 import { Brain, Focus, Ear } from "lucide-react";
 
 export function SciencePrinciples() {

@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
 import { Check, FileText, Mic } from "lucide-react";

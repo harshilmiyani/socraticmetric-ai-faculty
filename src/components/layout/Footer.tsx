@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";

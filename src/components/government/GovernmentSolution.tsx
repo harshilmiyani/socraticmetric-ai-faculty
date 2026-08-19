@@ -1,5 +1,3 @@
-"use client";
-
 import { RefreshCw, ClipboardCheck, ShieldCheck } from "lucide-react";
 
 export function GovernmentSolution() {

@@ -1,5 +1,3 @@
-"use client";
-
 export function HomePullQuote() {
   return (
     <section className="relative z-10 px-6 pt-12 pb-4 md:pt-16 md:pb-6 overflow-hidden">

@@ -1,5 +1,3 @@
-"use client";
-
 import { CheckCircle2, RotateCw } from "lucide-react";
 
 export function EducationCompliance() {

@@ -1,5 +1,3 @@
-"use client";
-
 export function EducationOutcomes() {
   const outcomes = [
     { value: "72%", label: "Reduction in suspected academic integrity violations" },

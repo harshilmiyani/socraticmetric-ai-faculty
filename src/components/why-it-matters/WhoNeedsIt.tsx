@@ -1,5 +1,3 @@
-"use client";
-
 export function WhoNeedsIt() {
   const roles = [
     "Higher education leadership protecting long-term degree value",

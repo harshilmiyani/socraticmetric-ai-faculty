@@ -1,5 +1,3 @@
-"use client";
-
 import { HelpCircle, Cog, Eye, AlertTriangle } from "lucide-react";
 
 export function GovernmentRisk() {

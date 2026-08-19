@@ -114,3 +114,27 @@
     animation: none !important;
   }
 }
+
+/* Performance: skip expensive GPU blurs on phones */
+@media (max-width: 767px) {
+  [class*="blur-["],
+  .blur-sm,
+  .blur-md,
+  .blur-lg,
+  .blur-xl,
+  .blur-2xl,
+  .blur-3xl {
+    filter: none !important;
+  }
+
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl,
+  .backdrop-blur-3xl,
+  [class*="backdrop-blur"] {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}

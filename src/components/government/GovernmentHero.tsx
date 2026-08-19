@@ -1,28 +1,12 @@
-"use client";
-
 import Link from "next/link";
 import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
-import { useEffect, useState } from "react";
+import { LazyHeroPreview } from "@/components/ui/LazyHeroPreview";
 
 export function GovernmentHero() {
-  const [iframeHeightPx, setIframeHeightPx] = useState<number | null>(null);
-
-  useEffect(() => {
-    function onMessage(e: MessageEvent) {
-      if (e.origin !== window.location.origin) return;
-      const data = e.data as { type?: string; height?: number } | null;
-      if (data?.type === "sm-gov-hero" && typeof data.height === "number" && data.height > 0) {
-        setIframeHeightPx(Math.min(Math.max(Math.round(data.height), 240), 2400));
-      }
-    }
-    window.addEventListener("message", onMessage);
-    return () => window.removeEventListener("message", onMessage);
-  }, []);
-
   return (
     <div className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC]">
-      <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px] pointer-events-none hidden md:block" />
+      <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px] pointer-events-none hidden md:block" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -83,15 +67,10 @@ export function GovernmentHero() {
             </div>
 
             <div className="w-full max-w-full mx-auto">
-              <iframe
+              <LazyHeroPreview
                 src="/animation/hero-government-voice.html"
-                className="w-full block border-0 bg-transparent"
-                style={{
-                  height: iframeHeightPx != null ? `${iframeHeightPx}px` : undefined,
-                  minHeight: iframeHeightPx == null ? "min(52vh, 480px)" : undefined,
-                }}
                 title="SocraticMetric government pre-mission oral check — live preview"
-                scrolling="no"
+                messageType="sm-gov-hero"
               />
             </div>
           </div>

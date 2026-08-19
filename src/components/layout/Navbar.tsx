@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Button } from "../ui/Button";
 import { Menu, X, ChevronDown, GraduationCap, Building, Shield, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";
@@ -170,10 +169,7 @@ export function Navbar() {
         useSolidNav ? "px-4 pt-4" : "px-0 pt-0",
       )}
     >
-      <motion.header
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+      <header
         className={cn(
           "relative z-50 flex items-center justify-between transition-all duration-500",
           useSolidNav
@@ -263,7 +259,7 @@ export function Navbar() {
             </Link>
           </div>
         )}
-      </motion.header>
+      </header>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>

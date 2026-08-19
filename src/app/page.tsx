@@ -1,7 +1,14 @@
-import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/sections/HeroSection";
+import { HowItWorks } from "@/components/home/sections/HowItWorks";
+import { HomePullQuote } from "@/components/home/sections/HomePullQuote";
+import { LogoClouds } from "@/components/home/sections/LogoClouds";
+import { HomeMission } from "@/components/home/sections/HomeMission";
+import { HomePatents } from "@/components/home/sections/HomePatents";
+import { Testimonials } from "@/components/home/sections/Testimonials";
+import { FaqSection } from "@/components/home/sections/FaqSection";
+import { ContactSection } from "@/components/home/sections/ContactSection";
 // Temporarily disabled — re-enable for first-visit industry selector popup
 // import { IndustrySelectDialog } from "@/components/home/IndustrySelectDialog";
 import { createPageMetadata } from "@/lib/site-metadata";
@@ -14,31 +21,6 @@ export const metadata = createPageMetadata({
   path: "/",
   absoluteTitle: true,
 });
-
-const Testimonials = dynamic(() =>
-  import("@/components/home/sections/Testimonials").then((mod) => mod.Testimonials),
-);
-const LogoClouds = dynamic(() =>
-  import("@/components/home/sections/LogoClouds").then((mod) => mod.LogoClouds),
-);
-const FaqSection = dynamic(() =>
-  import("@/components/home/sections/FaqSection").then((mod) => mod.FaqSection),
-);
-const ContactSection = dynamic(() =>
-  import("@/components/home/sections/ContactSection").then((mod) => mod.ContactSection),
-);
-const HowItWorks = dynamic(() =>
-  import("@/components/home/sections/HowItWorks").then((mod) => mod.HowItWorks),
-);
-const HomePullQuote = dynamic(() =>
-  import("@/components/home/sections/HomePullQuote").then((mod) => mod.HomePullQuote),
-);
-const HomeMission = dynamic(() =>
-  import("@/components/home/sections/HomeMission").then((mod) => mod.HomeMission),
-);
-const HomePatents = dynamic(() =>
-  import("@/components/home/sections/HomePatents").then((mod) => mod.HomePatents),
-);
 
 export default function Home() {
   return (

@@ -1,5 +1,3 @@
-"use client";
-
 import { FileText, BookOpen, Award, Hourglass } from "lucide-react";
 
 export function EducationRisk() {

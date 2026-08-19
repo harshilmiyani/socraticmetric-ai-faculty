@@ -1,5 +1,3 @@
-"use client";
-
 import { AlertTriangle, Lightbulb } from "lucide-react";
 
 export function ScienceChallengeSolution() {

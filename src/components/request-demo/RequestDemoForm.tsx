@@ -1,13 +1,35 @@
 "use client";
 
 import Cal, { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const CALCOM_LINK = (process.env.NEXT_PUBLIC_CALCOM_BOOKING_URL || "")
   .replace(/^https?:\/\/cal\.com\//, "");
 
 export function RequestDemoForm() {
+  const mountRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
   useEffect(() => {
+    const el = mountRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "240px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+
     (async () => {
       const cal = await getCalApi();
       cal("ui", {
@@ -30,15 +52,14 @@ export function RequestDemoForm() {
         },
       });
     })();
-  }, []);
+  }, [visible]);
 
   return (
     <section
       id="book-demo"
       className="scroll-mt-28 py-20 md:py-32 md:scroll-mt-32 bg-white relative overflow-hidden"
     >
-      {/* Background UI Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#EAF1FE] rounded-full blur-[100px]" />
       </div>
 
@@ -58,17 +79,23 @@ export function RequestDemoForm() {
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-[#3370F7] to-[#F58022] rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
-          <div className="bg-white rounded-3xl p-4 md:p-8 shadow-2xl shadow-[#3370F7]/10 border border-slate-100 relative">
-            <Cal
-              calLink={CALCOM_LINK}
-              style={{ width: "100%", height: "100%", overflow: "auto" }}
-              config={{
-                layout: "month_view",
-                theme: "light",
-              }}
-            />
+        <div ref={mountRef} className="relative max-w-4xl mx-auto group">
+          <div className="absolute -inset-1 bg-gradient-to-r from-[#3370F7] to-[#F58022] rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200 hidden md:block"></div>
+          <div className="bg-white rounded-3xl p-4 md:p-8 shadow-2xl shadow-[#3370F7]/10 border border-slate-100 relative min-h-[520px]">
+            {visible ? (
+              <Cal
+                calLink={CALCOM_LINK}
+                style={{ width: "100%", height: "100%", overflow: "auto" }}
+                config={{
+                  layout: "month_view",
+                  theme: "light",
+                }}
+              />
+            ) : (
+              <div className="flex h-[520px] items-center justify-center text-sm font-medium text-slate-400">
+                Loading scheduler…
+              </div>
+            )}
           </div>
         </div>
       </div>

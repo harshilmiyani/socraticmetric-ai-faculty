@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import { CheckCircle2, Play } from "lucide-react";
-import { SparklesCore } from "@/components/ui/sparkles";
 import { Cover } from "@/components/ui/cover";
 
 export function RequestDemoHero() {
@@ -15,7 +12,7 @@ export function RequestDemoHero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-[#F0F4F8] to-[#F8FAFC]">
       {/* Dynamic Background Effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         <div className="absolute top-[0%] left-[-10%] w-[500px] h-[500px] bg-[#3370F7]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-[#F58022]/5 rounded-full blur-[120px]" />
       </div>
@@ -24,12 +21,7 @@ export function RequestDemoHero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left Column: Content */}
-          <div 
-           
-           
-           
-            className="space-y-6 max-w-2xl"
-          >
+          <div className="space-y-6 max-w-2xl">
             <div className="flex items-center gap-4">
               <div className="h-px w-8 bg-[#3370F7]" />
               <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Why Socratic Metric Matters</span>
@@ -44,12 +36,7 @@ export function RequestDemoHero() {
               Socratic Metric turns high-stakes documentation into oral verification. Our platform helps teams confirm that people can explain, reason through, and defend the work they sign off on.
             </p>
 
-            <div 
-             
-             
-             
-              className="space-y-4 pt-4"
-            >
+            <div className="space-y-4 pt-4">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <div className="mt-1 bg-blue-50 rounded-full p-1 shrink-0">
@@ -62,29 +49,10 @@ export function RequestDemoHero() {
           </div>
 
           {/* Right Column: Premium Interactive Glass Card */}
-          <div 
-           
-           
-           
-            className="relative perspective-1000 group"
-          >
-            {/* Ambient glows behind card */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-[#3370F7]/40 to-[#F58022]/30 rounded-[2.5rem] blur-2xl opacity-40 group-hover:opacity-60 transition duration-1000"></div>
+          <div className="relative perspective-1000 group">
+            <div className="absolute -inset-4 hidden rounded-[2.5rem] bg-gradient-to-tr from-[#3370F7]/40 to-[#F58022]/30 opacity-40 blur-2xl transition duration-1000 group-hover:opacity-60 md:block"></div>
             
-            {/* The Glass Card */}
-            <div className="aspect-[4/3] w-full bg-white/80 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-[#3370F7]/10 border border-white relative overflow-hidden flex flex-col transition-all duration-500 transform group-hover:-translate-y-1">
-               
-               {/* Internal Sparkles Effect */}
-               <div className="absolute inset-0 z-0">
-                  <SparklesCore
-                    background="transparent"
-                    minSize={0.4}
-                    maxSize={2}
-                    particleDensity={80}
-                    className="w-full h-full opacity-30 group-hover:opacity-100 transition-opacity duration-700"
-                    particleColor="#3370F7"
-                  />
-               </div>
+            <div className="aspect-[4/3] w-full bg-white rounded-3xl shadow-2xl shadow-[#3370F7]/10 border border-white relative overflow-hidden flex flex-col transition-all duration-500 transform group-hover:-translate-y-1 md:bg-white/80 md:backdrop-blur-2xl">
 
                {/* MacOS Style Header */}
                <div className="h-14 bg-white/60 border-b border-slate-100 flex items-center px-6 relative z-10 backdrop-blur-md">

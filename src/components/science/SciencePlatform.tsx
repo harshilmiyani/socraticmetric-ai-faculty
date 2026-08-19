@@ -1,5 +1,3 @@
-"use client";
-
 export function SciencePlatform() {
   const steps = [
     "Oral question presentation — Engages visual-motor-auditory integration and anchors attention through embodied focus.",

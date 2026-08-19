@@ -18,9 +18,9 @@ export function HeroSection() {
       {/* Atmosphere */}
       <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden>
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_55%_at_50%_0%,#000_55%,transparent_100%)]" />
-        <div className="pointer-events-none absolute left-1/2 top-[-12%] h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[#3370F7]/12 blur-[110px]" />
-        <div className="pointer-events-none absolute left-[8%] top-[38%] h-[320px] w-[320px] rounded-full bg-[#F58022]/10 blur-[90px]" />
-        <div className="pointer-events-none absolute right-[6%] top-[42%] h-[280px] w-[280px] rounded-full bg-[#4C8FD6]/10 blur-[80px]" />
+        <div className="pointer-events-none absolute left-1/2 top-[-12%] hidden h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[#3370F7]/12 blur-[110px] md:block" />
+        <div className="pointer-events-none absolute left-[8%] top-[38%] hidden h-[320px] w-[320px] rounded-full bg-[#F58022]/10 blur-[90px] md:block" />
+        <div className="pointer-events-none absolute right-[6%] top-[42%] hidden h-[280px] w-[280px] rounded-full bg-[#4C8FD6]/10 blur-[80px] md:block" />
       </div>
 
       <div className="container relative z-10 mx-auto px-6 md:px-12">

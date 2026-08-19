@@ -1,5 +1,3 @@
-"use client";
-
 export function EnterpriseUseCases() {
   const cases = [
     { id: "1", title: "Policy comprehension validation and regulatory framework defense" },

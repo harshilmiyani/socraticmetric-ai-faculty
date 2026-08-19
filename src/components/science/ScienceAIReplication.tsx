@@ -1,5 +1,3 @@
-"use client";
-
 export function ScienceAIReplication() {
   return (
     <section className="py-10 md:py-12 relative overflow-hidden">

@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { REQUEST_DEMO_BOOKING_HREF } from "@/lib/urls";

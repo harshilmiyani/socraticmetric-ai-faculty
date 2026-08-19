@@ -1,5 +1,3 @@
-"use client";
-
 import { RefreshCw, Repeat, ShieldCheck } from "lucide-react";
 
 export function EnterpriseSolution() {

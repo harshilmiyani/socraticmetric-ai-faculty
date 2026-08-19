@@ -1,5 +1,3 @@
-"use client";
-
 import { ShieldCheck, Eye, Target, PlayCircle } from "lucide-react";
 
 export function HowPlatformWorks() {

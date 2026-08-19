@@ -1,5 +1,3 @@
-"use client";
-
 import { BookOpen, Building2, ClipboardList, Shield, Sparkles, Users } from "lucide-react";
 
 export type SolutionsNavSideVariant = "education" | "enterprise" | "government";
