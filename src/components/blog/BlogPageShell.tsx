@@ -21,7 +21,7 @@ export function BlogHero() {
         <div
           className="mx-auto max-w-4xl space-y-5 text-center sm:space-y-6 lg:space-y-7"
         >
-          <div className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-slate-200/90 bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#85756F] shadow-sm backdrop-blur-md sm:text-xs">
+          <div className="hero-enter inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-slate-200/90 bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-[#85756F] shadow-sm backdrop-blur-md sm:text-xs">
             <Link href="/" className="text-[#3370F7] transition-colors hover:text-[#4C8FD6]">
               Home
             </Link>
@@ -31,18 +31,18 @@ export function BlogHero() {
             <span className="text-[#1F2A44]">Blog</span>
           </div>
 
-          <div className="flex flex-col items-center gap-2">
+          <div className="hero-enter hero-enter-delay-1 flex flex-col items-center gap-2">
             <span className="h-px w-12 rounded-full bg-gradient-to-r from-transparent via-[#3370F7]/50 to-transparent" aria-hidden />
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#3370F7] sm:text-sm">Insights</p>
           </div>
 
-          <h1 className="font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#1F2A44] sm:text-5xl md:text-6xl lg:text-[4.5rem]">
+          <h1 className="hero-enter hero-enter-delay-2 font-serif text-4xl font-bold leading-[1.08] tracking-tight text-[#1F2A44] sm:text-5xl md:text-6xl lg:text-[4.5rem]">
             Ideas on assessment, <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-[#3370F7] via-[#4C8FD6] to-[#F58022] bg-clip-text text-transparent">
               AI-era learning
             </span>
           </h1>
-          <p className="mx-auto max-w-2xl text-base leading-relaxed text-[#64748B] sm:text-lg md:text-xl">
+          <p className="hero-enter hero-enter-delay-3 mx-auto max-w-2xl text-base leading-relaxed text-[#64748B] sm:text-lg md:text-xl">
             Exploring oral verification, cognitive science, and what proof of understanding means when written output is
             no longer enough.
           </p>

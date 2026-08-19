@@ -26,7 +26,7 @@ export function HeroSection() {
             className="flex w-full flex-col items-center text-center"
           >
             <div
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#3370F7]/20 bg-white/70 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[#3370F7] shadow-sm backdrop-blur-md sm:text-sm"
+              className="hero-enter mb-6 inline-flex items-center gap-2 rounded-full border border-[#3370F7]/20 bg-white/70 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[#3370F7] shadow-sm backdrop-blur-md sm:text-sm"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inset-0 hidden animate-ping rounded-full bg-[#F58022]/70 lg:block" />
@@ -38,21 +38,21 @@ export function HeroSection() {
             </div>
 
             <h1
-              className="max-w-4xl font-serif text-[2.35rem] font-bold leading-[1.08] tracking-tight text-[#1F2A44] sm:text-5xl md:text-6xl lg:text-[4rem] lg:leading-[1.04]"
+              className="hero-enter hero-enter-delay-1 max-w-4xl font-serif text-[2.35rem] font-bold leading-[1.08] tracking-tight text-[#1F2A44] sm:text-5xl md:text-6xl lg:text-[4rem] lg:leading-[1.04]"
             >
               AI-Moderated Oral
               <br className="hidden sm:block" /> Assessment Platform
             </h1>
 
             <div
-              className="mt-5 max-w-2xl text-lg font-medium leading-relaxed text-slate-600 sm:mt-6 sm:text-xl md:text-2xl"
+              className="hero-enter hero-enter-delay-2 mt-5 max-w-2xl text-lg font-medium leading-relaxed text-slate-600 sm:mt-6 sm:text-xl md:text-2xl"
             >
               Where True Understanding Is{" "}
               <Cover className="mt-1">Spoken, Not Just Submitted.</Cover>
             </div>
 
             <div
-              className="mt-8 flex w-full flex-col items-center justify-center gap-3.5 sm:mt-10 sm:w-auto sm:flex-row sm:gap-4"
+              className="hero-enter hero-enter-delay-3 mt-8 flex w-full flex-col items-center justify-center gap-3.5 sm:mt-10 sm:w-auto sm:flex-row sm:gap-4"
             >
               <Link
                 href={REQUEST_DEMO_BOOKING_HREF}
@@ -80,7 +80,7 @@ export function HeroSection() {
 
           {/* Demo video */}
           <div
-            className="relative mt-12 w-full max-w-4xl md:mt-16"
+            className="hero-enter hero-enter-delay-4 relative mt-12 w-full max-w-4xl md:mt-16"
           >
 
             <div className="relative overflow-hidden rounded-2xl border border-white/70 bg-white/40 p-1.5 shadow-[0_30px_80px_-28px_rgba(31,42,68,0.45)] backdrop-blur-sm sm:rounded-3xl sm:p-2">

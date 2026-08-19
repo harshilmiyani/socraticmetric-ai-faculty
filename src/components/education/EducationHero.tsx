@@ -74,18 +74,18 @@ export function EducationHero() {
         <div
           className="flex flex-col items-center text-center"
         >
-          <div className="mb-5">
+          <div className="mb-5 hero-enter">
             <span className="inline-block rounded-full border border-[#3370F7]/20 bg-[#EAF1FE] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#3370F7]">
               Education
             </span>
           </div>
 
-          <h1 className="max-w-3xl font-serif text-3xl font-bold leading-[1.15] tracking-tight text-[#1F2A44] sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+          <h1 className="hero-enter hero-enter-delay-1 max-w-3xl font-serif text-3xl font-bold leading-[1.15] tracking-tight text-[#1F2A44] sm:text-4xl md:text-5xl lg:text-[3.25rem]">
             The AI cheating crisis{" "}
             <span className="italic text-[#3370F7]">in education.</span>
           </h1>
 
-          <div className="mt-8 inline-flex max-w-xl flex-col items-center rounded-2xl border border-[#3370F7]/20 bg-[#EAF1FE] px-8 py-5 sm:mt-10 sm:px-12 sm:py-6">
+          <div className="hero-enter hero-enter-delay-2 mt-8 inline-flex max-w-xl flex-col items-center rounded-2xl border border-[#3370F7]/20 bg-[#EAF1FE] px-8 py-5 sm:mt-10 sm:px-12 sm:py-6">
             <p className="text-4xl font-bold tracking-tight text-[#3370F7] sm:text-5xl md:text-6xl">
               90%
             </p>
@@ -94,7 +94,7 @@ export function EducationHero() {
             </p>
           </div>
 
-          <p className="mt-10 text-base font-medium text-[#64748B] sm:mt-12 sm:text-lg">
+          <p className="hero-enter hero-enter-delay-3 mt-10 text-base font-medium text-[#64748B] sm:mt-12 sm:text-lg">
             Their process usually looks like this:
           </p>
 
