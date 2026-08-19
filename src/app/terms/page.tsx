@@ -14,7 +14,7 @@ export default function TermsPage() {
              
              
              
-              className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-[#163460] leading-tight mb-4"
+              className="animate-text-enter font-serif text-4xl md:text-5xl font-bold tracking-tight text-[#163460] leading-tight mb-4"
             >
               Terms of Service
             </h1>

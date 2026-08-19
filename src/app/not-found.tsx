@@ -23,7 +23,7 @@ export default function NotFound() {
           <div className="inline-flex items-center justify-center px-4 py-1.5 mb-6 rounded-full bg-[#3370F7]/10 text-[#3370F7] text-sm font-bold tracking-widest uppercase">
             Error 404
           </div>
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1F2A44] leading-[1.1] mb-6">
+          <h1 className="animate-text-enter font-serif text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1F2A44] leading-[1.1] mb-6">
             Page Not Found
           </h1>
           <p className="text-lg md:text-xl text-[#64748B] leading-relaxed max-w-2xl mx-auto mb-10">

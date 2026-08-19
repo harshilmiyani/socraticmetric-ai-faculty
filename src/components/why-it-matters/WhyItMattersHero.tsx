@@ -116,25 +116,25 @@ export function WhyItMattersHero() {
           <div
             className="max-w-2xl space-y-6"
           >
-            <div className="hero-enter flex items-center gap-4">
+            <div className="flex items-center gap-4">
               <div className="h-px w-8 bg-[#3370F7]" />
               <span className="text-sm font-bold uppercase tracking-widest text-[#3370F7]">The Threat of False Assurance</span>
               <div className="h-px w-8 bg-[#3370F7]" />
             </div>
 
-            <h1 className="hero-enter hero-enter-delay-1 font-serif text-4xl font-bold leading-[1.15] tracking-tight text-[#1F2A44] sm:text-5xl md:text-6xl">
+            <h1 className="animate-text-enter font-serif text-4xl font-bold leading-[1.15] tracking-tight text-[#1F2A44] sm:text-5xl md:text-6xl">
               Verify True Comprehension When <br />
               <span className="text-[#3370F7]">AI Can Generate the Output</span>
             </h1>
 
-            <p className="hero-enter hero-enter-delay-2 text-lg leading-relaxed text-[#64748B] md:text-xl">
+            <p className="text-lg leading-relaxed text-[#64748B] md:text-xl">
               Generative AI creates a dangerous false assurance of competence by producing flawless
               documentation. Socratic Metric™ evaluates live cognition, providing defensible,
               identity-verified proof that your team can articulate, refine, and defend high-stakes
               decisions before operations go live.
             </p>
 
-            <div className="hero-enter hero-enter-delay-3 flex flex-col gap-4 pt-4 sm:flex-row">
+            <div className="flex flex-col gap-4 pt-4 sm:flex-row">
               <Link
                 href={REQUEST_DEMO_BOOKING_HREF}
                 className="inline-flex h-14 w-full items-center justify-center rounded-xl bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all hover:-translate-y-0.5 hover:bg-[#4C8FD6] hover:shadow-xl active:scale-95 sm:w-auto"
@@ -145,7 +145,7 @@ export function WhyItMattersHero() {
           </div>
 
           <div
-            className="hero-enter hero-enter-delay-4 relative flex w-full flex-col items-center lg:items-end"
+            className="relative flex w-full flex-col items-center lg:items-end"
           >
             <VerificationJourneyVisual />
           </div>

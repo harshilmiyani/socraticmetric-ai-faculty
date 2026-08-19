@@ -11,20 +11,20 @@ export function GovernmentHero() {
           <div
             className="space-y-6 max-w-2xl"
           >
-            <div className="hero-enter flex items-center gap-4">
+            <div className="flex items-center gap-4">
               <div className="h-px w-8 bg-[#3370F7]" />
               <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Government & Defense</span>
               <div className="h-px w-8 bg-[#3370F7]" />
             </div>
 
-            <h1 className="hero-enter hero-enter-delay-1 font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
+            <h1 className="animate-text-enter font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
               When AI can generate the procedure,{" "}
               <span className="text-[#3370F7]">
                 written output no longer guarantees operational readiness.
               </span>
             </h1>
 
-            <div className="hero-enter hero-enter-delay-2 space-y-4 text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
+            <div className="space-y-4 text-lg md:text-xl text-[#64748B] leading-relaxed max-w-lg">
               <p>
                 Generative AI can produce flawless mission plans, safety analyses, and operational
                 procedures, creating a dangerous false assurance of competence.
@@ -35,7 +35,7 @@ export function GovernmentHero() {
               </p>
             </div>
 
-            <div className="hero-enter hero-enter-delay-3 flex flex-col gap-4 pt-4 sm:flex-row">
+            <div className="flex flex-col gap-4 pt-4 sm:flex-row">
               <Link
                 href={REQUEST_DEMO_BOOKING_HREF}
                 className="inline-flex h-14 w-full items-center justify-center rounded-xl bg-[#3370F7] px-8 text-base font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all hover:-translate-y-0.5 hover:bg-[#4C8FD6] hover:shadow-xl active:scale-95 sm:w-auto"
@@ -52,7 +52,7 @@ export function GovernmentHero() {
           </div>
 
           <div
-            className="hero-enter hero-enter-delay-4 relative perspective-1000 flex flex-col items-center"
+            className="relative perspective-1000 flex flex-col items-center"
           >
             <div
               className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-100 shadow-sm text-[#3370F7] text-xs font-bold tracking-wide uppercase z-20"

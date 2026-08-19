@@ -17,21 +17,21 @@ export function RequestDemoHero() {
           
           {/* Left Column: Content */}
           <div className="space-y-6 max-w-2xl">
-            <div className="hero-enter flex items-center gap-4">
+            <div className="flex items-center gap-4">
               <div className="h-px w-8 bg-[#3370F7]" />
               <span className="text-[#3370F7] font-bold text-sm tracking-widest uppercase">Why Socratic Metric Matters</span>
               <div className="h-px w-8 bg-[#3370F7]" />
             </div>
 
-            <h1 className="hero-enter hero-enter-delay-1 font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
+            <h1 className="animate-text-enter font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
               See how Socratic Metric verifies real <Cover className="mt-1">understanding.</Cover>
             </h1>
 
-            <p className="hero-enter hero-enter-delay-2 text-lg md:text-xl text-[#64748B] leading-relaxed">
+            <p className="text-lg md:text-xl text-[#64748B] leading-relaxed">
               Socratic Metric turns high-stakes documentation into oral verification. Our platform helps teams confirm that people can explain, reason through, and defend the work they sign off on.
             </p>
 
-            <div className="hero-enter hero-enter-delay-3 space-y-4 pt-4">
+            <div className="space-y-4 pt-4">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <div className="mt-1 bg-blue-50 rounded-full p-1 shrink-0">
@@ -44,7 +44,7 @@ export function RequestDemoHero() {
           </div>
 
           {/* Right Column: Premium Interactive Glass Card */}
-          <div className="hero-enter hero-enter-delay-4 relative perspective-1000 group">
+          <div className="relative perspective-1000 group">
             
             <div className="aspect-[4/3] w-full bg-white rounded-3xl shadow-2xl shadow-[#3370F7]/10 border border-white relative overflow-hidden flex flex-col transition-all duration-500 transform group-hover:-translate-y-1 md:bg-white/80 md:backdrop-blur-2xl">
 

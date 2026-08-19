@@ -27,7 +27,7 @@ export default function AboutPage() {
                   </span>
                 </div>
                 
-                <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
+                <h1 className="animate-text-enter font-sans text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1F2A44] leading-[1.15]">
                   Bringing <br />
                   <span className="text-[#3370F7]">Verified Cognition</span> <br />
                   to the Age of AI

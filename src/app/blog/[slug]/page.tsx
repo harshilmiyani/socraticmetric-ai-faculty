@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }: Props) {
             </span>
           </div>
 
-          <h1 className="mb-6 max-w-[22ch] font-serif text-[2.25rem] font-bold leading-[1.08] tracking-tight text-white sm:max-w-[28ch] sm:text-4xl md:mb-8 md:text-5xl lg:text-[4rem] lg:leading-[1.06]">
+          <h1 className="animate-text-enter mb-6 max-w-[22ch] font-serif text-[2.25rem] font-bold leading-[1.08] tracking-tight text-white sm:max-w-[28ch] sm:text-4xl md:mb-8 md:text-5xl lg:text-[4rem] lg:leading-[1.06]">
             {post.title}
           </h1>
 
