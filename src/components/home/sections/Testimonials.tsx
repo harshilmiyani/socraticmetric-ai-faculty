@@ -121,7 +121,7 @@ export function Testimonials() {
           <div
             className="max-w-2xl text-center md:text-left"
           >
-            <span className="mb-4 inline-block rounded-full border border-[#3370F7]/20 bg-[#EAF1FE] px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-[#3370F7]">
+            <span className="mb-4 inline-block rounded-full border border-[#3370F7]/20 bg-[#EAF1FE] px-3.5 py-1.5 text-xs font-bold uppercase tracking-widest text-[#1D4ED8]">
               Testimonials
             </span>
             <h2

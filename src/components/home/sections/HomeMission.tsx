@@ -16,7 +16,7 @@ export function HomeMission() {
         >
           <div className="mb-8 flex items-center justify-center gap-3">
             <div className="h-px w-6 bg-gradient-to-r from-transparent to-[#3370F7]/40" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#3370F7]">
+            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#1D4ED8]">
               Our Mission
             </span>
             <div className="h-px w-6 bg-gradient-to-l from-transparent to-[#3370F7]/40" />
@@ -53,7 +53,7 @@ export function HomeMission() {
 
               <ul className="mx-auto max-w-2xl space-y-4">
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#3370F7]" strokeWidth={2} />
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#1D4ED8]" strokeWidth={2} />
                   <p className="text-[#475569]">
                     <strong className="font-semibold text-[#1F2A44]">
                       Authentic reasoning & articulate defense:
@@ -62,7 +62,7 @@ export function HomeMission() {
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#3370F7]" strokeWidth={2} />
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#1D4ED8]" strokeWidth={2} />
                   <p className="text-[#475569]">
                     <strong className="font-semibold text-[#1F2A44]">
                       Deep comprehension via adaptive questioning:
@@ -71,7 +71,7 @@ export function HomeMission() {
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#3370F7]" strokeWidth={2} />
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#1D4ED8]" strokeWidth={2} />
                   <p className="text-[#475569]">
                     <strong className="font-semibold text-[#1F2A44]">
                       Active learning & neural engagement:
@@ -80,7 +80,7 @@ export function HomeMission() {
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#3370F7]" strokeWidth={2} />
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#1D4ED8]" strokeWidth={2} />
                   <p className="text-[#475569]">
                     <strong className="font-semibold text-[#1F2A44]">
                       Audit-ready evaluation & feedback:
@@ -116,7 +116,7 @@ export function HomeMission() {
           <div className="mt-12 flex justify-center">
             <Link
               href="/request-demo"
-              className="group inline-flex h-14 items-center justify-center rounded-lg bg-[#F58022] px-8 text-base font-medium text-white shadow-md shadow-orange-200 transition-all duration-200 hover:bg-[#D16D1A] hover:shadow-lg hover:shadow-orange-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.98]"
+              className="group inline-flex h-14 items-center justify-center rounded-lg bg-[#EA580C] px-8 text-base font-bold text-white shadow-md shadow-orange-200 transition-all duration-200 hover:bg-[#C2410C] hover:shadow-lg hover:shadow-orange-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.98]"
             >
               Book a demo
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

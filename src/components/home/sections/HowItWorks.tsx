@@ -18,7 +18,7 @@ const steps = [
     accent: "from-blue-500 to-[#3370F7]",
     shadow: "shadow-blue-500/20",
     ring: "hover:ring-blue-200",
-    numColor: "text-blue-500",
+    numColor: "text-blue-700",
   },
   {
     number: "02",
@@ -29,7 +29,7 @@ const steps = [
     accent: "from-indigo-500 to-indigo-600",
     shadow: "shadow-indigo-500/20",
     ring: "hover:ring-indigo-200",
-    numColor: "text-indigo-500",
+    numColor: "text-indigo-700",
   },
   {
     number: "03",
@@ -40,7 +40,7 @@ const steps = [
     accent: "from-orange-400 to-[#F58022]",
     shadow: "shadow-orange-500/20",
     ring: "hover:ring-orange-200",
-    numColor: "text-[#F58022]",
+    numColor: "text-orange-700",
   },
   {
     number: "04",
@@ -51,7 +51,7 @@ const steps = [
     accent: "from-emerald-500 to-emerald-600",
     shadow: "shadow-emerald-500/20",
     ring: "hover:ring-emerald-200",
-    numColor: "text-emerald-500",
+    numColor: "text-emerald-700",
   },
 ];
 

@@ -253,7 +253,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center pl-4">
             <Link
               href={REQUEST_DEMO_BOOKING_HREF}
-              className="group inline-flex h-10 w-max items-center justify-center rounded-full bg-[#3370F7] px-6 py-2 text-sm font-bold text-white shadow-md shadow-[#3370F7]/20 transition-all duration-300 hover:bg-[#4C8FD6] hover:shadow-lg hover:shadow-[#3370F7]/40 hover:-translate-y-0.5 active:scale-95"
+              className="group inline-flex h-10 w-max items-center justify-center rounded-full bg-[#2558D8] px-6 py-2 text-sm font-bold text-white shadow-md shadow-[#2558D8]/20 transition-all duration-300 hover:bg-[#1D4ED8] hover:shadow-lg hover:shadow-[#2558D8]/40 hover:-translate-y-0.5 active:scale-95"
             >
               Book a demo
             </Link>

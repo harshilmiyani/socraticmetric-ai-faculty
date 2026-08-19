@@ -190,7 +190,7 @@ export function FaqSection() {
               </h2>
             </div>
             
-            <p className="text-lg text-[#64748B] leading-relaxed">
+            <p className="text-lg text-slate-600 leading-relaxed">
               Everything you need to know about how Socratic Metric works in your industry.
             </p>
 
@@ -296,7 +296,7 @@ export function FaqSection() {
                               transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                               className="overflow-hidden"
                             >
-                              <p className="pb-6 pr-12 text-[#64748B] text-base leading-relaxed">
+                              <p className="pb-6 pr-12 text-slate-600 text-base leading-relaxed">
                                 {item.answer}
                               </p>
                             </motion.div>

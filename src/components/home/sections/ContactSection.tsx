@@ -27,7 +27,7 @@ export function ContactSection() {
               </em>
             </h2>
 
-            <p className="mt-8 max-w-md text-[15px] leading-relaxed text-slate-400 sm:text-base">
+            <p className="mt-8 max-w-md text-[15px] leading-relaxed text-slate-300 sm:text-base">
               Whether you&apos;re assessing students, employees, or personnel,
               most organizations begin with a single pilot. We handle the
               questioning, capture, and evaluation — you keep full control over
@@ -39,7 +39,7 @@ export function ContactSection() {
           <div className="w-full shrink-0 md:w-auto">
             <Link
               href={REQUEST_DEMO_BOOKING_HREF}
-              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#3370F7] px-7 py-3.5 text-[15px] font-bold text-white shadow-lg shadow-[#3370F7]/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#4C8FD6] hover:shadow-xl hover:shadow-[#3370F7]/40 active:scale-95"
+              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#2558D8] px-7 py-3.5 text-[15px] font-bold text-white shadow-lg shadow-[#2558D8]/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1D4ED8] hover:shadow-xl hover:shadow-[#2558D8]/40 active:scale-95"
             >
               Book a demo
               <ArrowRight

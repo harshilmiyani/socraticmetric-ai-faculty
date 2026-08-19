@@ -27,7 +27,7 @@ export function LogoClouds({
         <div className="text-center mb-8 space-y-4">
           <div className="flex items-center justify-center gap-3">
             <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#3370F7]/40" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#3370F7]">
+            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#1D4ED8]">
               Trusted By
             </span>
             <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#3370F7]/40" />
