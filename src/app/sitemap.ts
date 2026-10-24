@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getBlogEntriesForSitemap } from "@/lib/sanity/posts";
+import { EDUCATION_SOLUTION_LINKS } from "@/lib/education-solutions";
 import { getSiteUrl } from "@/lib/site-url";
 
 /** Regenerate sitemap periodically so new Sanity posts are included without redeploying. */
@@ -43,5 +44,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...blogEntries];
+  const educationSolutionEntries: MetadataRoute.Sitemap = EDUCATION_SOLUTION_LINKS.map(({ slug }) => ({
+    url: `${base}/education/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
+
+  return [...staticEntries, ...educationSolutionEntries, ...blogEntries];
 }

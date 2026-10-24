@@ -1,0 +1,1038 @@
+.sm-create {
+  --create-ink: #0f172a;
+  --create-muted: #64748b;
+  --create-line: #e2e8f0;
+  --create-surface: #ffffff;
+  --create-bg: #f8fafc;
+  --create-primary: #2563eb;
+  --create-primary-hover: #1d4ed8;
+  --create-primary-soft: #eff6ff;
+  --create-danger: #dc2626;
+  --create-danger-bg: #fee2e2;
+  --create-danger-border: #fca5a5;
+  --create-font: inherit;
+
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--create-ink);
+  font-family: var(--create-font);
+  width: 100%;
+}
+
+.sm-create--embedded {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 0;
+  background: transparent;
+  color: var(--create-ink);
+  font-family: var(--create-font);
+  width: 100%;
+  max-width: 100%;
+}
+
+.sm-create *,
+.sm-create *::before,
+.sm-create *::after {
+  box-sizing: border-box;
+}
+
+.sm-create h1,
+.sm-create h2,
+.sm-create h3,
+.sm-create p {
+  margin: 0;
+}
+
+.sm-create button,
+.sm-create input,
+.sm-create textarea {
+  font-family: inherit;
+}
+
+.sm-create button {
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ============================================================
+   Full-Width Modern Stepper Header
+   ============================================================ */
+.sm-create__stepper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid var(--create-line);
+  border-radius: 14px;
+  padding: 10px 16px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+  width: 100%;
+}
+
+.sm-create__step-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  min-width: 0;
+}
+
+.sm-create__step-item:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.sm-create__step-item--current {
+  background: var(--create-primary-soft);
+  opacity: 1 !important;
+}
+
+.sm-create__step-item--done {
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.sm-create__step-item--done:hover {
+  background: #f1f5f9;
+}
+
+.sm-create__step-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  background: #e2e8f0;
+  color: #64748b;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.sm-create__step-item--current .sm-create__step-badge {
+  background: var(--create-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+}
+
+.sm-create__step-item--done .sm-create__step-badge {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.sm-create__step-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sm-create__step-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sm-create__step-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sm-create__step-item--current .sm-create__step-title {
+  color: var(--create-primary);
+  font-weight: 700;
+}
+
+.sm-create__step-item--done .sm-create__step-title {
+  color: #1e293b;
+}
+
+/* ============================================================
+   Form Layout & Cards (Full-Screen)
+   ============================================================ */
+.sm-create__form {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sm-create__step-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sm-create__section-card {
+  background: #ffffff;
+  border: 1px solid var(--create-line);
+  border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.sm-create__section-card--invalid {
+  border-color: #fca5a5;
+  background: #fffdfd;
+}
+
+.sm-create__grid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+}
+
+.sm-create__grid--title-row {
+  grid-template-columns: minmax(0, 2.8fr) minmax(260px, 1fr);
+  gap: 24px;
+}
+
+.sm-create__grid--two-col {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.sm-create__grid--config-layout {
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.9fr);
+  align-items: start;
+}
+
+/* ============================================================
+   Form Inputs & Labels
+   ============================================================ */
+.sm-create__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.sm-create__field label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.sm-create__field-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sm-create__section-heading {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sm-create__field-desc {
+  font-size: 12.5px;
+  color: var(--create-muted);
+  line-height: 1.45;
+  margin-top: 3px;
+}
+
+.sm-create__required {
+  color: var(--create-danger);
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.sm-create__input {
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #0f172a;
+  background: #ffffff;
+  outline: none;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.sm-create__input:focus {
+  border-color: var(--create-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.sm-create__textarea {
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #0f172a;
+  background: #ffffff;
+  outline: none;
+  resize: vertical;
+  transition: all 0.15s ease;
+  width: 100%;
+  font-family: inherit;
+}
+
+.sm-create__textarea:focus {
+  border-color: var(--create-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.sm-create__textarea--tall {
+  min-height: 220px;
+}
+
+.sm-create__field-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.sm-create__char-counter {
+  font-weight: 600;
+}
+
+.sm-create__field-hint {
+  color: #64748b;
+  font-style: italic;
+}
+
+.sm-create__invalid-tag {
+  color: #dc2626;
+  font-weight: 700;
+  font-size: 11.5px;
+  background: #fee2e2;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+/* Tooltip */
+.sm-create__info-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.sm-create__info-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f5f9;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sm-create__info-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.sm-create__info-tooltip {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 6px;
+  width: 260px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  z-index: 30;
+}
+
+/* Inline Suggestion Box */
+.sm-create__suggestion-box {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sm-create__suggestion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  color: #991b1b;
+}
+
+.sm-create__suggestion-box p {
+  font-size: 13px;
+  color: #7f1d1d;
+  line-height: 1.45;
+}
+
+.sm-create__apply-btn {
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.sm-create__apply-btn:hover {
+  background: #b91c1c;
+}
+
+/* ============================================================
+   Step 2: Reference File Upload
+   ============================================================ */
+.sm-create__dropzone {
+  border: 2px dashed #bfdbfe;
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 44px 24px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+  min-height: 200px;
+}
+
+.sm-create__dropzone:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.sm-create__dropzone-icon {
+  color: var(--create-primary);
+  margin-bottom: 4px;
+}
+
+.sm-create__dropzone-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.sm-create__dropzone-hint {
+  font-size: 12.5px;
+  color: var(--create-muted);
+}
+
+.sm-create__hidden-file {
+  display: none;
+}
+
+.sm-create__uploaded-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.sm-create__file-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e40af;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sm-create__remove-file-btn {
+  border: none;
+  background: transparent;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sm-create__remove-file-btn:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   Step 3: Configuration & Live Blueprint
+   ============================================================ */
+.sm-create__config-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sm-create__segmented {
+  display: flex;
+  gap: 10px;
+}
+
+.sm-create__segment-btn {
+  flex: 1;
+  height: 44px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sm-create__segment-btn:hover {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+.sm-create__segment-btn--active {
+  background: var(--create-primary-soft);
+  border-color: var(--create-primary);
+  color: var(--create-primary);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+.sm-create__qtypes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sm-create__qtype-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--create-line);
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.sm-create__qtype-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sm-create__qnum-pill {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1e293b;
+  background: #e2e8f0;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.sm-create__qtype-desc {
+  font-size: 12px;
+  color: var(--create-muted);
+}
+
+.sm-create__qtype-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.sm-create__qtype-opt {
+  flex: 1;
+  height: 36px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sm-create__qtype-opt:hover {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.sm-create__qtype-opt--active {
+  background: var(--create-primary-soft);
+  border-color: var(--create-primary);
+  color: var(--create-primary);
+  font-weight: 700;
+}
+
+.sm-create__difficulty-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.sm-create__diff-card {
+  flex: 1;
+  height: 44px;
+  padding: 0 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sm-create__diff-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.sm-create__diff-card:hover {
+  background: #f8fafc;
+}
+
+.sm-create__diff-card.is-selected {
+  border-color: var(--create-primary);
+  background: var(--create-primary-soft);
+}
+
+.sm-create__diff-card.is-selected .sm-create__diff-title {
+  color: var(--create-primary);
+}
+
+/* Right Column: Live Blueprint */
+.sm-create__blueprint-card {
+  background: #ffffff;
+  border: 1px solid var(--create-line);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sm-create__blueprint-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sm-create__blueprint-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 4px;
+}
+
+.sm-create__blueprint-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sm-create__bp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.sm-create__bp-label {
+  color: var(--create-muted);
+  font-weight: 500;
+}
+
+.sm-create__bp-val {
+  font-weight: 600;
+  color: #0f172a;
+  text-align: right;
+  word-break: break-word;
+}
+
+.sm-create__bp-divider {
+  height: 1px;
+  background: var(--create-line);
+  margin: 6px 0;
+}
+
+.sm-create__bp-prompt-box {
+  background: #f8fafc;
+  border: 1px solid var(--create-line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+/* ============================================================
+   Step 4: Student Essays
+   ============================================================ */
+.sm-create__essay-file-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sm-create__upload-btn {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: var(--create-primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sm-create__upload-btn:hover {
+  background: #dbeafe;
+}
+
+.sm-create__add-item-btn {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 9px;
+  border: none;
+  background: var(--create-primary);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+  align-self: flex-start;
+  transition: all 0.15s ease;
+}
+
+.sm-create__add-item-btn:hover {
+  background: var(--create-primary-hover);
+}
+
+.sm-create__error-banner {
+  color: var(--create-danger);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sm-create__essays-empty {
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--create-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sm-create__empty-hint {
+  font-size: 12.5px;
+  color: #94a3b8;
+}
+
+.sm-create__essays-roster {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.sm-create__essay-card {
+  padding: 12px 16px;
+  border: 1px solid var(--create-line);
+  border-radius: 10px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sm-create__essay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sm-create__essay-email {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sm-create__essay-del {
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.sm-create__essay-del:hover {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.sm-create__essay-snippet {
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* ============================================================
+   Docked Full-Width Footer
+   ============================================================ */
+.sm-create__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  background: #ffffff;
+  border: 1px solid var(--create-line);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);
+  width: 100%;
+}
+
+.sm-create__footer-step {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--create-muted);
+}
+
+.sm-create__footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sm-create__btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 42px;
+  padding: 0 20px;
+  border-radius: 10px;
+  background: var(--create-primary);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.22);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.sm-create__btn-primary:hover {
+  background: var(--create-primary-hover);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.32);
+  transform: translateY(-1px);
+}
+
+.sm-create__btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.sm-create__btn-secondary:hover {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+/* ============================================================
+   Modal: Topic Improvement
+   ============================================================ */
+.sm-create__modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sm-create__modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+.sm-create__modal-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid var(--create-line);
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 540px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 10;
+}
+
+.sm-create__modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sm-create__modal-header h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.sm-create__modal-close {
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sm-create__modal-copy {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.sm-create__modal-suggest-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sm-create__modal-suggest-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: #1e40af;
+  line-height: 1.5;
+}
+
+.sm-create__modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   Responsive Breakpoints
+   ============================================================ */
+@media (max-width: 1024px) {
+  .sm-create__grid--title-row,
+  .sm-create__grid--two-col,
+  .sm-create__grid--config-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sm-create__blueprint-card {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .sm-create__stepper {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .sm-create__step-item {
+    flex: 1 1 calc(50% - 4px);
+  }
+
+  .sm-create__footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .sm-create__footer-actions {
+    flex-direction: column;
+  }
+
+  .sm-create__btn-primary,
+  .sm-create__btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

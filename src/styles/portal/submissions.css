@@ -1,0 +1,54 @@
+.sm-submissions__assignment {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5b6b7c;
+}
+
+.sm-submissions__thead,
+.sm-submissions__row {
+  grid-template-columns:
+    minmax(100px, 0.9fr)
+    minmax(120px, 1.1fr)
+    minmax(120px, 1fr)
+    minmax(110px, 0.9fr)
+    minmax(100px, 0.8fr);
+}
+
+.sm-submissions__empty {
+  min-height: 220px;
+}
+
+.sm-submissions__status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sm-submissions__status--graded {
+  background: #e8f7ef;
+  color: #1f7a4d;
+}
+
+.sm-submissions__status--ungraded {
+  background: #fff4ec;
+  color: #b85d12;
+}
+
+.sm-submissions__status--in-progress {
+  background: #eaf1fe;
+  color: #3370f7;
+}
+
+@media (max-width: 900px) {
+  .sm-submissions__thead {
+    display: none;
+  }
+
+  .sm-submissions__row {
+    grid-template-columns: 1fr;
+  }
+}
