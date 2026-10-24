@@ -7,18 +7,47 @@ export type PortalStudent = {
 
 const STORAGE_KEY = "sm-faculty-students";
 
-const SEED_STUDENTS: PortalStudent[] = [];
+const SEED_STUDENTS: PortalStudent[] = [
+  {
+    id: "stu-cs101-1",
+    courseId: "cs-101",
+    name: "Alex Rivera",
+    email: "alex.rivera@university.edu",
+  },
+  {
+    id: "stu-cs101-2",
+    courseId: "cs-101",
+    name: "Elena Chen",
+    email: "elena.chen@university.edu",
+  },
+  {
+    id: "stu-cap611-1",
+    courseId: "cap-611",
+    name: "Marcus Vance",
+    email: "marcus.vance@university.edu",
+  },
+  {
+    id: "stu-cap611-2",
+    courseId: "cap-611",
+    name: "Sophia Patel",
+    email: "sophia.patel@university.edu",
+  },
+];
 
 function readAll(): PortalStudent[] {
-  if (typeof window === "undefined") return [];
+  if (typeof window === "undefined") return SEED_STUDENTS;
 
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      return [];
+      writeAll(SEED_STUDENTS);
+      return SEED_STUDENTS;
     }
     const parsed = JSON.parse(raw) as PortalStudent[];
-    if (!Array.isArray(parsed)) return [];
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      writeAll(SEED_STUDENTS);
+      return SEED_STUDENTS;
+    }
     const cleaned = parsed.filter(
       (item) =>
         item.id !== "s1" &&
@@ -26,12 +55,16 @@ function readAll(): PortalStudent[] {
         item.courseId !== "b71e15c3-e278-44e1-907c-be3593d78eea" &&
         item.courseId !== "1"
     );
+    if (cleaned.length === 0) {
+      writeAll(SEED_STUDENTS);
+      return SEED_STUDENTS;
+    }
     if (cleaned.length !== parsed.length) {
       writeAll(cleaned);
     }
     return cleaned;
   } catch {
-    return [];
+    return SEED_STUDENTS;
   }
 }
 

@@ -253,7 +253,7 @@ export function StudentsView({ courseId, courseTitle }: StudentsViewProps) {
               <p className="sm-assign__empty-desc">
                 Build your class roster by adding students individually or uploading a CSV file to enroll students in this course.
               </p>
-              <div className="sm-assign__empty-actions">
+              <div className="sm-assign__empty-actions mt-5">
                 <button
                   type="button"
                   className="sm-assign__btn-primary"

@@ -4,31 +4,48 @@ export type PortalCourse = {
   semester: string;
 };
 
-export const MOCK_COURSES: PortalCourse[] = [];
+export const MOCK_COURSES: PortalCourse[] = [
+  {
+    id: "cs-101",
+    title: "CS 101: Introduction to Computer Science",
+    semester: "Spring 2026",
+  },
+  {
+    id: "cap-611",
+    title: "CAP 611: SMART Capstone Project",
+    semester: "Spring 2026",
+  },
+];
 
 const STORAGE_KEY = "sm-faculty-courses";
 
 export function getCourses(): PortalCourse[] {
-  if (typeof window === "undefined") return [];
+  if (typeof window === "undefined") return MOCK_COURSES;
 
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      return [];
+      saveCourses(MOCK_COURSES);
+      return MOCK_COURSES;
     }
     const parsed = JSON.parse(raw) as PortalCourse[];
-    if (!Array.isArray(parsed)) {
-      return [];
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      saveCourses(MOCK_COURSES);
+      return MOCK_COURSES;
     }
     const cleaned = parsed.filter(
       (c) => c.id !== "b71e15c3-e278-44e1-907c-be3593d78eea" && c.id !== "1"
     );
+    if (cleaned.length === 0) {
+      saveCourses(MOCK_COURSES);
+      return MOCK_COURSES;
+    }
     if (cleaned.length !== parsed.length) {
       saveCourses(cleaned);
     }
     return cleaned;
   } catch {
-    return [];
+    return MOCK_COURSES;
   }
 }
 

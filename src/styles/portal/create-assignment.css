@@ -205,7 +205,7 @@
 }
 
 .sm-create__grid--title-row {
-  grid-template-columns: minmax(0, 2.8fr) minmax(260px, 1fr);
+  grid-template-columns: minmax(0, 2.4fr) minmax(310px, 1.2fr);
   gap: 24px;
 }
 

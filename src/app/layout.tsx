@@ -1,14 +1,6 @@
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import { CookieConsent } from "@/components/ui/CookieConsent";
-import { ScrollToTop } from "@/components/ui/ScrollToTop";
-// Temporarily disabled — re-enable to show site-wide loader on first paint
-// import { LoadingScreen } from "@/components/ui/LoadingScreen";
-import { ChatbaseWidget } from "@/components/chatbot/ChatbaseWidget";
-import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
-import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
-import { rootMetadata } from "@/lib/site-metadata";
 
 const quicksand = localFont({
   src: [
@@ -22,7 +14,10 @@ const quicksand = localFont({
   display: "swap",
 });
 
-export const metadata = rootMetadata;
+export const metadata: Metadata = {
+  title: "SocraticMetric | Faculty & Educator Portal",
+  description: "Administer Socratic oral defenses, verify student comprehension, and manage courses.",
+};
 
 export default function RootLayout({
   children,
@@ -31,18 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={cn(
-        "min-h-screen bg-[#F5F5F5] antialiased selection:bg-[#F58022]/20 selection:text-[#1F2A44]",
-        quicksand.variable,
-        quicksand.className
-      )}>
-        <SiteJsonLd />
+      <body className={`min-h-screen bg-[#F5F5F5] antialiased ${quicksand.variable} ${quicksand.className}`}>
         {children}
-        {/* <LoadingScreen /> */}
-        <ScrollToTop />
-        <CookieConsent />
-        <ChatbaseWidget />
-        <GoogleAnalytics />
       </body>
     </html>
   );

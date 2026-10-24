@@ -89,7 +89,8 @@ function CopySuccessIcon() {
 
 function formatDueDateDisplay(value?: string) {
   if (!value) return "No due date";
-  const parts = value.split("-");
+  const datePart = value.includes("T") ? value.split("T")[0] : value;
+  const parts = datePart.split("-");
   if (parts.length === 3 && parts[0].length === 4) {
     const [year, month, day] = parts;
     const d = new Date(Number(year), Number(month) - 1, Number(day));
@@ -221,9 +222,11 @@ export function AssignmentsView({ courseId, courseTitle }: AssignmentsViewProps)
             </div>
             <h2 className="sm-assign__empty-title">No assignments yet</h2>
             <p className="sm-assign__empty-desc">
-              Create an oral assessment or configure a final test for this course to evaluate student understanding through natural Socratic dialogue.
+              Create an oral assessment or configure a final test for this course
+              <br className="sm-assign__empty-br" />
+              to evaluate student understanding through natural Socratic dialogue.
             </p>
-            <div className="sm-assign__empty-actions">
+            <div className="sm-assign__empty-actions mt-5">
               <button
                 type="button"
                 className="sm-assign__btn-primary"

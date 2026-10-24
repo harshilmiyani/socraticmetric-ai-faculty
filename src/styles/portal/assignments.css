@@ -157,18 +157,33 @@
 }
 
 .sm-assign__empty-title {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--assign-ink);
-  margin-bottom: 8px;
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
 }
 
 .sm-assign__empty-desc {
-  font-size: 13.5px;
+  font-size: 14px;
   color: var(--assign-muted);
-  line-height: 1.55;
-  max-width: 440px;
-  margin: 0 auto 24px;
+  line-height: 1.6;
+  text-align: center;
+  text-wrap: balance;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto 36px;
+}
+
+.sm-assign__empty-br {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .sm-assign__empty-br {
+    display: inline;
+  }
 }
 
 .sm-assign__empty-actions {
@@ -305,7 +320,30 @@
   min-width: 0;
 }
 
-.sm-assign__due,
+.sm-assign__due {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  transition: all 0.15s ease;
+}
+
+.sm-assign__due:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.sm-assign__due svg {
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
 .sm-assign__cell-email {
   font-size: 13.5px;
   color: #334155;

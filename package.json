@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "studio": "sanity dev",
-    "sanity:schema": "sanity schema validate"
+    "start": "next start"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",

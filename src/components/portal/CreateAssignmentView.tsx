@@ -6,6 +6,7 @@ import { getSession } from "@/lib/portal/auth";
 import { addAssignment } from "@/lib/portal/assignments-store";
 import { findCourseById } from "@/lib/portal/mock-courses";
 import { PortalShell } from "@/components/portal/PortalShell";
+import { CalendarPicker } from "@/components/portal/CalendarPicker";
 import "@/styles/portal/create-assignment.css";
 
 const ASSIGNMENT_STEPS = [
@@ -124,9 +125,12 @@ function buildSuggestion(topic: string) {
 
 function formatDueDate(value: string) {
   if (!value) return "";
-  const [year, month, day] = value.split("-");
+  const datePart = value.includes("T") ? value.split("T")[0] : value;
+  const [year, month, day] = datePart.split("-");
   if (!year || !month || !day) return value;
-  return `${month}/${day}/${year}`;
+  const d = new Date(Number(year), Number(month) - 1, Number(day));
+  if (isNaN(d.getTime())) return value;
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
 function nameFromEmail(email: string) {
@@ -448,12 +452,10 @@ export function CreateAssignmentView({ courseId, courseTitle }: CreateAssignment
                     <label htmlFor="assignment-due-date">
                       Due Date <span className="sm-create__required">*</span>
                     </label>
-                    <input
+                    <CalendarPicker
                       id="assignment-due-date"
-                      type="date"
-                      className="sm-create__input"
                       value={dueDate}
-                      onChange={(e) => setDueDate(e.target.value)}
+                      onChange={setDueDate}
                       required
                     />
                   </div>

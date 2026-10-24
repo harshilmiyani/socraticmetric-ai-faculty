@@ -12,6 +12,7 @@ import {
 } from "@/lib/portal/assignments-store";
 import { findCourseById } from "@/lib/portal/mock-courses";
 import { PortalShell } from "@/components/portal/PortalShell";
+import { CalendarPicker } from "@/components/portal/CalendarPicker";
 import "@/styles/portal/edit-assignment.css";
 
 type EditAssignmentViewProps = {
@@ -529,11 +530,10 @@ export function EditAssignmentView({
 
             <div className="sm-edit__field">
               <label htmlFor="edit-due-date">Due Date</label>
-              <input
+              <CalendarPicker
                 id="edit-due-date"
-                type="date"
                 value={dueDate}
-                onChange={(event) => setDueDate(event.target.value)}
+                onChange={setDueDate}
                 required
               />
             </div>
@@ -644,11 +644,10 @@ export function EditAssignmentView({
 
             <div className="sm-edit__field">
               <label htmlFor="extension-date">Extended due date</label>
-              <input
+              <CalendarPicker
                 id="extension-date"
-                type="date"
                 value={extensionDate}
-                onChange={(event) => setExtensionDate(event.target.value)}
+                onChange={setExtensionDate}
                 required
               />
             </div>

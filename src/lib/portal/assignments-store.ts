@@ -36,32 +36,96 @@ export type PortalAssignment = {
 
 const STORAGE_KEY = "sm-faculty-assignments";
 
-const SEED_ASSIGNMENTS: PortalAssignment[] = [];
+const SEED_ASSIGNMENTS: PortalAssignment[] = [
+  {
+    id: "assign-cs101-1",
+    courseId: "cs-101",
+    name: "Sprint 1: Algorithms & Data Structures Defense",
+    dueDate: "2026-11-15",
+    kind: "assignment",
+    topic: "Sorting, Graph Algorithms, and Asymptotic Complexity",
+    difficulty: "medium",
+    questionCount: 3,
+    questionTypes: ["Application", "Perspective", "Reflection"],
+    minIterations: 2,
+    createdAt: "2026-10-20T10:00:00.000Z",
+  },
+  {
+    id: "final-cs101",
+    courseId: "cs-101",
+    name: "Comprehensive Oral Final Examination",
+    dueDate: "2026-12-10",
+    kind: "final",
+    topic: "Comprehensive CS 101 Oral Defense Assessment",
+    difficulty: "hard",
+    questionCount: 4,
+    questionTypes: ["Application", "Perspective", "Reflection", "Essay Defense"],
+    minIterations: 3,
+    createdAt: "2026-10-21T14:30:00.000Z",
+  },
+  {
+    id: "assign-cap611-1",
+    courseId: "cap-611",
+    name: "Sprint 1: Architecture Review & Security Defense",
+    dueDate: "2026-11-20",
+    kind: "assignment",
+    topic: "System Architecture, Threat Modeling, and Scalability",
+    difficulty: "medium",
+    questionCount: 3,
+    questionTypes: ["Application", "Perspective", "Reflection"],
+    minIterations: 2,
+    createdAt: "2026-10-20T11:00:00.000Z",
+  },
+  {
+    id: "final-cap611",
+    courseId: "cap-611",
+    name: "Capstone Project Oral Defense Final Exam",
+    dueDate: "2026-12-15",
+    kind: "final",
+    topic: "Capstone Viva Voce & Technical Synthesis",
+    difficulty: "hard",
+    questionCount: 4,
+    questionTypes: ["Application", "Perspective", "Reflection", "Essay Defense"],
+    minIterations: 3,
+    createdAt: "2026-10-21T15:00:00.000Z",
+  },
+];
 
 function readAll(): PortalAssignment[] {
-  if (typeof window === "undefined") return [];
+  if (typeof window === "undefined") return SEED_ASSIGNMENTS;
 
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      return [];
+      writeAll(SEED_ASSIGNMENTS);
+      return SEED_ASSIGNMENTS;
     }
     const parsed = JSON.parse(raw) as PortalAssignment[];
-    if (!Array.isArray(parsed)) return [];
-    const cleaned = parsed.filter(
-      (item) =>
-        item.id !== "a1" &&
-        item.id !== "a2" &&
-        item.courseId !== "b71e15c3-e278-44e1-907c-be3593d78eea" &&
-        item.courseId !== "1" &&
-        item.name !== "Sprint 1 Architecture Review"
-    );
-    if (cleaned.length !== parsed.length) {
-      writeAll(cleaned);
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      writeAll(SEED_ASSIGNMENTS);
+      return SEED_ASSIGNMENTS;
     }
+    const cleaned = parsed
+      .filter(
+        (item) =>
+          item.id !== "a1" &&
+          item.id !== "a2" &&
+          item.courseId !== "b71e15c3-e278-44e1-907c-be3593d78eea" &&
+          item.courseId !== "1" &&
+          item.name !== "Sprint 1 Architecture Review"
+      )
+      .map((item) => ({
+        ...item,
+        dueDate: item.dueDate && item.dueDate.includes("T") ? item.dueDate.split("T")[0] : item.dueDate,
+      }));
+    if (cleaned.length === 0) {
+      writeAll(SEED_ASSIGNMENTS);
+      return SEED_ASSIGNMENTS;
+    }
+    writeAll(cleaned);
     return cleaned;
   } catch {
-    return [];
+    return SEED_ASSIGNMENTS;
   }
 }
 

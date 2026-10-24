@@ -62,6 +62,23 @@ function CheckIcon() {
   );
 }
 
+const DEFAULT_SUBMISSIONS: Submission[] = [
+  {
+    id: "sub-1",
+    userId: "alex-rivera-101",
+    studentName: "Alex Rivera",
+    dateSubmitted: "Oct 22, 2026 • 2:45 PM",
+    gradedStatus: "Graded",
+  },
+  {
+    id: "sub-2",
+    userId: "elena-chen-102",
+    studentName: "Elena Chen",
+    dateSubmitted: "Oct 23, 2026 • 11:15 AM",
+    gradedStatus: "In Progress",
+  },
+];
+
 export function SubmissionsView({
   courseId,
   courseTitle,
@@ -70,7 +87,7 @@ export function SubmissionsView({
   const router = useRouter();
   const [ready, setReady] = useState(false);
   const [userEmail, setUserEmail] = useState("educator@socraticmetric.ai");
-  const [submissions] = useState<Submission[]>([]);
+  const [submissions] = useState<Submission[]>(DEFAULT_SUBMISSIONS);
   const [copied, setCopied] = useState(false);
 
   const resolvedTitle = useMemo(() => {
