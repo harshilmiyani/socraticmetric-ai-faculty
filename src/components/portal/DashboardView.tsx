@@ -25,15 +25,8 @@ type CourseForm = {
 const EMPTY_COURSE_FORM: CourseForm = {
   id: "",
   title: "",
-  semester: "SP26",
+  semester: "",
 };
-
-const SEMESTER_PRESETS = [
-  { label: "Spring 2026", value: "SP26" },
-  { label: "Fall 2026", value: "FA26" },
-  { label: "Summer 2026", value: "SU26" },
-  { label: "No Semester", value: "NO_SEMESTER" },
-];
 
 const formatSemester = (semester: string) => {
   if (!semester || semester === "NO_SEMESTER") {
@@ -189,11 +182,7 @@ export function DashboardView() {
   };
 
   const openAddCourse = () => {
-    setForm({
-      id: `course-${Date.now().toString().slice(-6)}`,
-      title: "",
-      semester: "SP26",
-    });
+    setForm(EMPTY_COURSE_FORM);
     setFormError("");
     setIsAddOpen(true);
   };
@@ -209,20 +198,20 @@ export function DashboardView() {
       if (formError) setFormError("");
     };
 
-  const generateRandomId = () => {
-    const randomSuffix = Math.random().toString(36).substring(2, 8);
-    setForm((prev) => ({ ...prev, id: `crs-${randomSuffix}` }));
-  };
-
   const handleSubmitCourse = (event: FormEvent) => {
     event.preventDefault();
 
     const id = form.id.trim();
     const title = form.title.trim();
-    const semester = form.semester.trim() || "NO_SEMESTER";
+    const semester = form.semester.trim();
 
-    if (!id || !title) {
-      setFormError("Please fill in both Course Title and Course ID.");
+    if (!title) {
+      setFormError("Please enter a Course Title.");
+      return;
+    }
+
+    if (!id) {
+      setFormError("Please enter a Course ID.");
       return;
     }
 
@@ -231,7 +220,7 @@ export function DashboardView() {
       return;
     }
 
-    const newCourse: Course = { id, title, semester };
+    const newCourse: Course = { id, title, semester: semester || "NO_SEMESTER" };
     addCourse(newCourse);
     setCourses(getCourses());
     closeAddCourse();
@@ -851,12 +840,13 @@ export function DashboardView() {
             aria-modal="true"
             aria-labelledby="add-course-title"
           >
+            {/* Drawer Header */}
             <div className="sm-drawer__header">
-              <div>
-                <p className="sm-drawer__eyebrow">Courses Management</p>
+              <div className="sm-drawer__header-text">
+                <span className="sm-drawer__eyebrow">Courses Management</span>
                 <h2 id="add-course-title">Add New Course</h2>
                 <p className="sm-drawer__subtitle">
-                  Configure a new course section to begin assigning Socratic oral assessments.
+                  Enter course details to set up your oral assessment section.
                 </p>
               </div>
               <button
@@ -865,118 +855,111 @@ export function DashboardView() {
                 onClick={closeAddCourse}
                 aria-label="Close drawer"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M18 6L6 18M6 6l12 12" />
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               </button>
             </div>
 
-            <form className="sm-drawer__form" onSubmit={handleSubmitCourse}>
-              <div className="sm-drawer__field">
-                <label htmlFor="course-title">
-                  Course Title <span className="sm-drawer__req">*</span>
-                </label>
-                <input
-                  ref={firstFieldRef}
-                  id="course-title"
-                  name="courseTitle"
-                  type="text"
-                  placeholder="e.g. CS 101: Introduction to Computer Science"
-                  value={form.title}
-                  onChange={handleFormChange("title")}
-                  required
-                />
-              </div>
+            {/* Drawer Form */}
+            <form className="sm-drawer__form-wrapper" onSubmit={handleSubmitCourse}>
+              <div className="sm-drawer__body">
+                <div className="sm-drawer__field">
+                  <label htmlFor="course-title">
+                    Course Title <span className="sm-drawer__req">*</span>
+                  </label>
+                  <input
+                    ref={firstFieldRef}
+                    id="course-title"
+                    name="courseTitle"
+                    type="text"
+                    placeholder="e.g. CS 101: Introduction to Computer Science"
+                    value={form.title}
+                    onChange={handleFormChange("title")}
+                    autoComplete="off"
+                    required
+                  />
+                  <span className="sm-drawer__field-hint">
+                    The official name of the course or lecture section.
+                  </span>
+                </div>
 
-              <div className="sm-drawer__field">
-                <div className="sm-drawer__field-label-row">
+                <div className="sm-drawer__field">
                   <label htmlFor="course-id">
                     Course ID <span className="sm-drawer__req">*</span>
                   </label>
-                  <button
-                    type="button"
-                    className="sm-drawer__gen-id-btn"
-                    onClick={generateRandomId}
-                    title="Generate a unique ID automatically"
-                  >
-                    Auto-generate ID
+                  <input
+                    id="course-id"
+                    name="courseId"
+                    type="text"
+                    placeholder="e.g. CS101, CAP611, or ENG-201"
+                    value={form.id}
+                    onChange={handleFormChange("id")}
+                    autoComplete="off"
+                    required
+                  />
+                  <span className="sm-drawer__field-hint">
+                    Custom unique code or section ID for your course.
+                  </span>
+                </div>
+
+                <div className="sm-drawer__field">
+                  <label htmlFor="course-semester">
+                    Academic Term / Semester <span className="sm-drawer__req">*</span>
+                  </label>
+                  <input
+                    id="course-semester"
+                    name="semester"
+                    type="text"
+                    placeholder="e.g. Spring 2026, Fall 2026, or Summer 2026"
+                    value={form.semester}
+                    onChange={handleFormChange("semester")}
+                    autoComplete="off"
+                    required
+                  />
+                  <span className="sm-drawer__field-hint">
+                    Specify the semester, quarter, or academic session.
+                  </span>
+                </div>
+
+                <div className="sm-drawer__info-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                  </svg>
+                  <p>
+                    After creating your course, you can immediately configure AI-driven oral prompts, upload rubrics, and invite students.
+                  </p>
+                </div>
+
+                {formError && (
+                  <div className="sm-drawer__error" role="alert">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="12" />
+                      <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    <span>{formError}</span>
+                  </div>
+                )}
+              </div>
+
+              {/* Drawer Actions Footer */}
+              <div className="sm-drawer__footer">
+                <div className="sm-drawer__actions">
+                  <button type="button" className="sm-drawer__cancel" onClick={closeAddCourse}>
+                    Cancel
+                  </button>
+                  <button type="submit" className="sm-drawer__submit">
+                    <span>Create Course</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
                   </button>
                 </div>
-                <input
-                  id="course-id"
-                  name="courseId"
-                  type="text"
-                  placeholder="e.g. cs101-sp26 or b71e-..."
-                  value={form.id}
-                  onChange={handleFormChange("id")}
-                  required
-                />
-                <span className="sm-drawer__field-hint">
-                  A unique identifier for URLs and student access links.
-                </span>
-              </div>
-
-              <div className="sm-drawer__field">
-                <label htmlFor="course-semester">
-                  Academic Term / Semester <span className="sm-drawer__req">*</span>
-                </label>
-                <input
-                  id="course-semester"
-                  name="semester"
-                  type="text"
-                  placeholder="e.g. SP26, FA26, or Fall 2026"
-                  value={form.semester}
-                  onChange={handleFormChange("semester")}
-                  required
-                />
-                <div className="sm-drawer__presets">
-                  <span className="sm-drawer__presets-label">Quick select:</span>
-                  {SEMESTER_PRESETS.map((preset) => (
-                    <button
-                      key={preset.value}
-                      type="button"
-                      className={`sm-drawer__preset-tag ${form.semester === preset.value ? "is-selected" : ""}`}
-                      onClick={() => setForm((prev) => ({ ...prev, semester: preset.value }))}
-                    >
-                      {preset.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="sm-drawer__info-box">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10" />
-                  <line x1="12" y1="16" x2="12" y2="12" />
-                  <line x1="12" y1="8" x2="12.01" y2="8" />
-                </svg>
-                <p>
-                  After creating your course, you can immediately configure AI-driven oral prompts, upload rubric docs, and add students.
-                </p>
-              </div>
-
-              {formError && (
-                <div className="sm-drawer__error" role="alert">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="12" y1="8" x2="12" y2="12" />
-                    <line x1="12" y1="16" x2="12.01" y2="16" />
-                  </svg>
-                  <span>{formError}</span>
-                </div>
-              )}
-
-              <div className="sm-drawer__actions">
-                <button type="button" className="sm-drawer__cancel" onClick={closeAddCourse}>
-                  Cancel
-                </button>
-                <button type="submit" className="sm-drawer__submit">
-                  <span>Create Course</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </button>
               </div>
             </form>
           </aside>
